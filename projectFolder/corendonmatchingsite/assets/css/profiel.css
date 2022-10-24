@@ -4,12 +4,36 @@ body {
     background-attachment: fixed;
     background-size: cover;
 }
-
+section.detail-info {
+    flex-grow:3;
+}
 * {
     box-sizing: border-box;
 }
 
+img.profile {
+    border-radius: 20px;
+    display: block;
+    width: 228px;
+    height: 294px;
+    margin: auto;
+}
+img.profile2 {
+    border-radius: 47px;
+    display: block;
+    width: 77px;
+    height: 90px;
+    margin: auto;
+}
+
+
 /* Navbar */
+.navbar {
+    background-color: #D81E05;
+    overflow: hidden;
+
+    border-radius: 20px;
+}
 
 .navbar {
     background-color: #D81E05;
@@ -59,6 +83,35 @@ nav a {
     font-family: 'Roboto', sans-serif;
     font-weight: 600;
     font-size: 36px;
+}
+/* Voor de profiel bewerkenknop */
+.navbar1 {
+    text-decoration: none;
+
+    margin: 0 auto;
+    padding:0px;
+
+    width: 100%;
+    height: 100%;
+
+    color: #000000;
+
+    transition-duration: 0.4s;
+    text-align: center;
+    font-style: normal;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 600;
+    font-size: 36px;
+
+}
+.move-me {
+    width: 100%;
+    height: 100px;
+    position: fixed;
+    top: 0px;
+    right: 100px;
+    left: 0px;
+
 }
 
 .home_icon {
@@ -111,16 +164,25 @@ nav a:hover {
     color: #FFFFFF;
 }
 
-/* Textbox */
+/* Textbox 2 voor profiel bewerken  */
+.textbox2 {
+    background: #D9D9D9;
+    border-radius: 10px;
+    width: 426px;
+    height: 55px;
+}
 
 .textbox {
-    background:green;
+    background: green;
+    border-radius: 20px;
+}
+.textbox1 {
     border-radius: 20px;
 }
 
 .text {
-    margin: 30px;
-    padding: 30px;
+    margin: 0px;
+    padding: 0px;
 
 
     font-family: 'Roboto', sans-serif;
@@ -129,10 +191,11 @@ nav a:hover {
     font-size: 28px;
     line-height: 34px;
 }
+/* Voor de groene bg daarbij */
 .textt {
-    margin: 20px;
-    padding:20px;
-
+    margin: 0px;
+    padding:0px;
+    position: center;
 
     font-family: 'Roboto', sans-serif;
     color: #FFFFFF;
@@ -141,6 +204,21 @@ nav a:hover {
     font-size: 28px;
     line-height: 34px;
 }
+/* Voor de matching history */
+.text3 {
+    margin: 0px;
+    padding:0px;
+
+
+    font-family: 'Roboto', sans-serif;
+    color: #FFFFFF;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 34px;
+}
+
+
 .box {
     width: 250px;
     height: 90px;
@@ -167,12 +245,19 @@ main {
         flex-wrap: wrap;
     }
 }
+
 /* Test */
 section {
     display: flex;
     flex-direction: column;
 }
+.container {
+    flex-direction: row;
+    justify-content:flex-start;
+    align-items: flex-start;
 
+
+}
 section.general-info {
     align-items: baseline;
 }
