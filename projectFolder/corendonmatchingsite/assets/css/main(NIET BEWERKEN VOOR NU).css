@@ -1,4 +1,4 @@
-                        /* Main dingen */
+/* Main dingen */
 
 body {
     background-image: url('../img/background.jpg');
@@ -11,7 +11,7 @@ body {
     box-sizing: border-box;
 }
 
-                        /* Navbar */
+/* Navbar */
 
 .navbar{
     background-color: #D81E05;
@@ -113,7 +113,7 @@ nav a:hover{
     color: #FFFFFF;
 }
 
-                         /* Textbox */
+/* Textbox */
 
 .textbox{
     background: rgba(217, 217, 217, 0.8);
@@ -132,7 +132,7 @@ nav a:hover{
     line-height: 34px;
 }
 
-                         /* Responsive layout */
+/* Responsive layout */
 
 @media (max-width: 360px){
     main{
