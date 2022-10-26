@@ -24,7 +24,6 @@ nav ul{
     display: flex;
     align-items: center;
     flex-direction: row;
-    flex-wrap: wrap;
     margin: 10px;
     padding: 0;
 }
@@ -33,11 +32,26 @@ nav li {
     display: flex;
 
     margin: 0 auto;
+}
 
-    width: 250px;
-    height: 90px;
+nav a{
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    text-decoration: none;
+
+    color: #000000;
 
     transition-duration: 0.4s;
+    font-style: normal;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 600;
+    font-size: 35px;
+
+    width: 250px;
+    height: 80px;
+
     background: #FFFFFF;
     border: 1px solid #000000;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
@@ -45,63 +59,13 @@ nav li {
     overflow: hidden;
 }
 
-nav a{
-    text-decoration: none;
-
-    margin: 0 auto;
-    padding: 10%;
-
-    color: #000000;
-
-    transition-duration: 0.4s;
-    text-align: center;
-    font-style: normal;
-    font-family: 'Roboto', sans-serif;
-    font-weight: 600;
-    font-size: 35px;
-}
-
-.home_icon{
-    background-color: #FFFFFF;
-    background-image: url('../img/home_button.png');
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
-
-    width: 250px;
-    height: 90px;
-
-    transition-duration: 0s;
-}
-
-.home_icon a{
-    font-size: 0;
-
-    width: auto;
-    height: auto;
-
-    transition-duration: 0s;
-}
-
-.home_icon a:hover{
-    background-image: url('../img/home_button_hover.png');
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
-
-    width: 250px;
-    height: 90px;
-
-    font-size: 0;
-    transition-duration: 0s;
-}
-
 .logo{
-    width: 360px;
-    height: 120px;
+    display: flex;
+    align-items: center;
 
-/*    src=../assets/img/logo.PNG height="90" width="247"*/
-    margin-inline: 100px;
+    width: 360px;
+    height: 100px;
+
 
     border: 0px solid #FFFFFF;
     background: #FFFFFF;
@@ -110,13 +74,17 @@ nav a{
     overflow: hidden;
 }
 
-nav li:hover{
-    background: #26A514;
-    border: 1px solid #FFFFFF;
+.logo-foto{
+    display: flex;
+    flex: auto;
+    width: 10%;
+    height: 110%;
 }
 
 nav a:hover{
     color: #FFFFFF;
+    background: #26A514;
+    border: 1px solid #FFFFFF;
 }
 
 .logo:hover{
