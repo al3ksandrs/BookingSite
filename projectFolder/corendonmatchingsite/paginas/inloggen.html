@@ -10,18 +10,47 @@
     <script src="../assets/js/main.js"></script>
 </head>
 
-<body>
-<nav class="navbar">                                                              <!--navbar + links/buttons-->
-    <ul>
-        <li class="home_icon"><a href="home.html">Home</a></li>
-        <li><a href="over%20ons.html">Over ons</a></li>
-        <li class="logo-test"><a href="template.html">
-            <div class="logo-text">Match 4 U</div>
-        </a></li>
-        <li><a href="inloggen.html">Inloggen</a></li>
-        <li><a href="registreren.html">Registreren</a></li>
-    </ul>
+<nav class="navbar">
+    <div class="nav_content">
+        <div class="nav_item home_icon">
+            <button onclick="window.location.href='home.html'">
+            </button>
+        </div>
+        <div class="nav_item">
+            <button onclick="window.location.href='over-ons.html'">
+                Over Ons
+            </button>
+        </div>
+        <div class="nav_item logo">
+            <button onclick="window.location.href='template.html'">
+                Match 4 U
+            </button>
+        </div>
+        <div class="nav_item">
+            <button onclick="window.location.href='inloggen.html'">
+                Inloggen
+            </button>
+        </div>
+        <div class="nav_item">
+            <button onclick="window.location.href='registreren.html'">
+                Registreren
+            </button>
+        </div>
+    </div>
 </nav>
+
+<body>
+<!--<nav class="navbar">                                                              &lt;!&ndash;navbar + links/buttons&ndash;&gt;-->
+<!--    <ul>-->
+<!--        <li class="home_icon"><a href="home.html">Home</a></li>-->
+<!--        <li><a href="over-ons.html">Over ons</a></li>-->
+<!--        <li class="logo-test"><a href="template.html">-->
+<!--            <div class="logo-text">Match 4 U</div>-->
+<!--        </a></li>-->
+<!--        <li><a href="inloggen.html">Inloggen</a></li>-->
+<!--        <li><a href="registreren.html">Registreren</a></li>-->
+<!--    </ul>-->
+<!--</nav>-->
 
 <main>
     <section class="textbox">
@@ -36,7 +65,7 @@
                     Email:
                 </div>
                 <div class="text">
-                    |Hello World|
+                    <input type="text">
                 </div>
             </div>
             <div class="test">
@@ -44,21 +73,15 @@
                     Wachtwoord:
                 </div>
                 <div class="text">
-                    |Hello World|
+                    <input type="text">
                 </div>
             </div>
         </section>
         <section class="buttons">
-            <a href="template.html">
-                <button>
+            <button type="submit" onclick="window.location.href='template.html'">
                     Annuleren
-                </button>
-            </a>
-            <a href="profiel.html">
-                <button>
-                    Verder
-                </button>
-            </a>
+            </button>
+            <input type="submit" value="Verder">
         </section>
     </section>
 </main>
