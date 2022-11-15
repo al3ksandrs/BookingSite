@@ -4,14 +4,16 @@ body {
     background-attachment: fixed;
     background-size: cover;
 }
+
 section.detail-info {
-    flex-grow:3;
+    flex-grow: 3;
 }
+
 * {
     box-sizing: border-box;
 }
-a.read
-{
+
+a.read {
     flex-direction: row;
 }
 
@@ -22,6 +24,7 @@ img.profile {
     height: 294px;
     margin: auto;
 }
+
 img.profile2 {
     border-radius: 47px;
     display: block;
@@ -29,6 +32,7 @@ img.profile2 {
     height: 90px;
     margin: auto;
 }
+
 img.profile3 {
     border-radius: 20px;
     display: block;
@@ -96,12 +100,13 @@ nav a {
     font-weight: 600;
     font-size: 36px;
 }
+
 /* Voor de profiel bewerkenknop */
 .navbar1 {
     text-decoration: none;
 
     margin: 0 auto;
-    padding:0px;
+    padding: 0px;
 
     width: 100%;
     height: auto;
@@ -116,6 +121,7 @@ nav a {
     font-size: 36px;
 
 }
+
 .move-me {
     width: 100%;
     height: 100px;
@@ -188,6 +194,7 @@ nav a:hover {
     background: green;
     border-radius: 20px;
 }
+
 .textbox1 {
     border-radius: 20px;
 }
@@ -203,22 +210,24 @@ nav a:hover {
     font-size: 28px;
     line-height: 34px;
 }
-.textright{
-margin: 0px;
-padding: 0px;
+
+.textright {
+    margin: 0px;
+    padding: 0px;
 
 
-font-family: 'Roboto', sans-serif;
-font-style: normal;
-font-weight: 400;
-font-size: 28px;
-line-height: 34px;
+    font-family: 'Roboto', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 28px;
+    line-height: 34px;
     text-align: justify-all;
 }
+
 /* Voor de groene bg daarbij */
 .textt {
     margin: 0px;
-    padding:0px;
+    padding: 0px;
     position: center;
 
     font-family: 'Roboto', sans-serif;
@@ -232,7 +241,7 @@ line-height: 34px;
 /* Voor de matching history */
 .text3 {
     margin: 0px;
-    padding:0px;
+    padding: 0px;
 
 
     font-family: 'Roboto', sans-serif;
@@ -276,13 +285,15 @@ section {
     display: flex;
     flex-direction: column;
 }
+
 .container {
     flex-direction: row;
-    justify-content:flex-start;
+    justify-content: flex-start;
     align-items: flex-start;
 
 
 }
+
 section.general-info {
     align-items: baseline;
 }
@@ -301,12 +312,14 @@ article {
     align-items: flex-start;
 
 }
+
 article.c {
     text-align: right;
 }
+
 /* Voor de social media */
 .button {
-    color:transparent;
+    color: transparent;
     border-radius: 50%;
     border: none;
     text-align: end;
@@ -317,9 +330,10 @@ article.c {
     cursor: pointer;
     padding: 5px;
 }
+
 .button1 {
-    color:transparent;
-    border-radius:100%;
+    color: transparent;
+    border-radius: 100%;
     border: none;
     text-align: end;
     text-decoration: none;
@@ -328,4 +342,80 @@ article.c {
     margin: 4px 2px;
     cursor: pointer;
     padding: 5px;
+}
+
+.button2 {
+    background-color: transparent;
+    width: 200px;
+    font-size: 20px;
+    padding: 10px;
+    border-radius: 5px;
+    color: black;
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+}
+
+
+body{
+    font-size: 14px;
+    line-height: 22px;
+}
+
+.wrapper{
+    width: 500px;
+    padding: 30px 40px;
+    border-radius: 3px;
+    margin: 50px auto 0;
+    background: #fff;
+    box-shadow: 1px 1px 2px rgba(0,0,0,0.125);
+}
+
+.wrapper .title{
+    font-size: 18px;
+    text-align: center;
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+
+.wrapper  ul{
+    height: 120px;
+    overflow: hidden;
+    padding-left: 15px;
+}
+
+.wrapper  ul.active{
+    height: auto;
+}
+
+.wrapper  ul li{
+    margin-bottom: 5px;
+    list-style: none;
+    position: relative;
+}
+
+.wrapper  ul li:before{
+    content: "";
+    position: absolute;
+    top: 8px;
+    border-radius: 50%;
+    background: #bfbfbf;
+    left: -12px;
+    width: 5px;
+    height: 5px;
+}
+
+.wrapper .toggle_btn{
+    cursor: pointer;
+    margin-left: 70%;
+    font-size: 15px;
+    padding: 10px;
+    margin-top: 15px;
+    font-weight: 700;
+    color: #ffffff;
+    border-radius: 5px;
+    background: rgb(204, 12, 79);
+}
+
+.wrapper .toggle_btn.active .fas{
+    transform: rotate(180deg);
 }
