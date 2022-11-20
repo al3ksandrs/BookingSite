@@ -13,7 +13,6 @@
 
     <!--    <script src="https://cdn.fys.cloud/fyscloud/0.0.4/fyscloud.min.js"></script>-->
     <script src="../assets/js/config.js"></script>
-    <script src="../assets/js/inloggen.js"></script>
 </head>
 
 <body>
@@ -80,39 +79,42 @@
             <h1>Inloggen</h1>
         </div>
         <section class="invoer">
-            <!--            <div class="test">-->
-            <!--                <div class="text">-->
-            <!--                    Email:-->
-            <!--                </div>-->
-            <!--                <div class="text">-->
-            <!--                    <input type="text">-->
-            <!--                </div>-->
-            <!--            </div>-->
-            <!--            <div class="test">-->
-            <!--                <div class="text">-->
-            <!--                    Wachtwoord:-->
-            <!--                </div>-->
-            <!--                <div class="text">-->
-            <!--                    <input type="text">-->
-            <!--                </div>-->
-            <!--            </div>-->
+            <comment>
+                <!--            <div class="test">-->
+                <!--                <div class="text">-->
+                <!--                    Email:-->
+                <!--                </div>-->
+                <!--                <div class="text">-->
+                <!--                    <input type="text">-->
+                <!--                </div>-->
+                <!--            </div>-->
+                <!--            <div class="test">-->
+                <!--                <div class="text">-->
+                <!--                    Wachtwoord:-->
+                <!--                </div>-->
+                <!--                <div class="text">-->
+                <!--                    <input type="text">-->
+                <!--                </div>-->
+                <!--            </div>-->
+            </comment>
             <section class="instr text">
-                <div>Email:</div>
-                <div>Wachtwoord:</div>
+                <label for="emailin">Email:</label>
+                <label for="wachtwoordin">Wachtwoord:</label>
             </section>
-            <label class="inputs text">
-                <input type="text">
-                <input type="text">
-            </label>
+            <section class="inputs text">
+                <input id="emailin" name="email" type="text" placeholder="Type Hier...">
+                <input id="wachtwoordin" name="wachtwoord" type="password" placeholder="Type Hier...">
+            </section>
         </section>
         <section class="buttons">
             <button type="submit" onclick="window.location.href='template.html'">
                 Annuleren
             </button>
-            <input type="submit" value="Verder" onclick="window.location.href='#'">
+            <input type="submit" value="Verder" onclick="checkIn()">
         </section>
     </section>
 </main>
+<script src="../assets/js/inloggen.js"></script>
 <script src="../assets/js/main.js"></script>
 </body>
 </html>
