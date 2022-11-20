@@ -1,3 +1,10 @@
+FYSCloud.API.configure({
+    url: "https://api.fys.cloud",
+    apiKey: "fys_is104_4.7xrJee8RutPdAeea",
+    database: "fys_workshop_local",
+    environment: "dev"
+});
+
 //filter van de matching+filter
 const dropdowns = document.querySelectorAll('.dropdown');
 
