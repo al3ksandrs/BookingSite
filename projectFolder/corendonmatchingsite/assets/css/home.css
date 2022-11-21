@@ -91,6 +91,8 @@ nav li {
 .textbox {
     background: rgba(217, 217, 217, 0.8);
     border-radius: 20px;
+    margin-left: 100px;
+    margin-right: 100px;
 }
 
 .text {
