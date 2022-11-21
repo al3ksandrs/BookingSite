@@ -192,6 +192,12 @@ nav li {
         width: 180px;
         height: 70px;
     }
+
+    .textbox {
+        margin-left: 0;
+        margin-right: 0;
+    }
+
 }
 
 @media (max-width: 890px) {
