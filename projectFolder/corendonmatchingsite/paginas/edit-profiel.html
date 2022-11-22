@@ -5,22 +5,77 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Profielpagina</title>
+    <link href="../assets/css/navbar-en-notifications.css" rel="stylesheet">    <!--Navbar en notifications-->
     <link href="../assets/css/edit-profiel.css" rel="stylesheet">
     <script src="../assets/js/main.js"></script>
 </head>
 
 <body>
-<nav class="navbar">                                                              <!--navbar + links/buttons-->
+<nav class="navbar">                                                              <!--normale navbar-->
     <ul>
-        <li class="home_icon"><a href="template_niet_ingelogd.html">Home</a></li>
-        <li><a href="over%20ons.html">Over ons</a></li>
-        <img class="logo" src=../assets/img/logo.PNG height="200" width="247"/>
-        <li><a href="matching.html">Matches</a></li>
-        <li><a href="profiel.html">Profiel</a></li>
+        <li><a href="home.html" class="navbar-normale-button">Home</a></li>
+        <li><a href="over-ons.html" class="navbar-normale-button">Over ons</a></li>
+        <li class="logo"><img src=../assets/img/logo.PNG class="logo-foto"></src></li>
+        <li><a href="matching.html" class="navbar-normale-button">Matches</a></li>
+        <li><a href="profiel.html" class="navbar-normale-button">Profiel</a></li>
+
+        <input id="navbar-menu-toggle" type="checkbox"/>                               <!--navbar menu voor mobile-->
+        <label class='navbar-menu-container' for="navbar-menu-toggle">
+            <div class='navbar-menu-button'><img src=../assets/img/burger-menu.png class="navbar-foto"></src></div>
+        </label>
+        <ul class="navbar-links">
+            <li><a href="home.html" class="navbar-menu-link">Home</a></li>
+            <li><a href="over-ons.html" class="navbar-menu-link">Over ons</a></li>
+            <li><a href="matching.html" class="navbar-menu-link">Matches</a></li>
+            <li><a href="profiel.html" class="navbar-menu-link">Profiel</a></li>
+        </ul>
     </ul>
 </nav>
 
 <main>
+    <input id="notification-toggle" type="checkbox"/>                               <!--notification knop-->
+    <label class="notification-container" for="notification-toggle">
+        <div class="notification-menu-button"><img src=../assets/img/notification-knop-alert.png class="notification-foto"></src></div>
+    </label>
+
+    <ul class="notification-menu">
+        <li>        <!--NOTIFICATION-->
+            <article class = "notification-item">
+                <p class="notification-text">Gematched met:</p>
+                <a href="andermans-profiel.html" class="notification-button">Bezoek profiel</a>
+            </article>
+            <article class="notification-informatie">
+                <img src=../assets/img/rayan.png class="notification-item-foto"></src>
+                <article class="notification-naam-leeftijd">
+                    <p class="notification-foto-naam">Ryan</p>
+                    <p class="notification-foto-leeftijd">42</p>
+                </article>
+            </article>
+            <button class="notification-delete" onclick="this.parentNode.parentNode.removeChild(this.parentNode);">
+                <i><img src=../assets/img/delete.webp class = "kruis" height="30" width="30"></i>
+            </button>
+        </li>
+
+        <li>        <!--NOTIFICATION-->
+            <article class = "notification-item">
+                <p class="notification-text">Gematched met:</p>
+                <a href="andermans-profiel.html" class="notification-button">Bezoek profiel</a>
+            </article>
+            <article class="notification-informatie">
+                <img src=../assets/img/salmah.jpg class="notification-item-foto"></src>
+                <article class="notification-naam-leeftijd">
+                    <p class="notification-foto-naam">Salmah</p>
+                    <p class="notification-foto-leeftijd">34</p>
+                </article>
+            </article>
+            <button class="notification-delete" onclick="this.parentNode.parentNode.removeChild(this.parentNode);">
+                <i><img src=../assets/img/delete.webp class = "kruis" height="30" width="30"></i>
+            </button>
+        </li>
+    </ul>
+
+    <!--EINDE NOTIFICATIONS-->
+
     <section class="general-info">
         <!--name and profile-->
         <article class="textbox1"><img src=" ../assets/img/Salmah.jpg" width="228" height="294" alt="default profile"
