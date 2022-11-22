@@ -265,7 +265,7 @@ nav li {
     padding: 10px;
 }
 
-#notification-delete{
+.notification-delete{
     position: relative;
     margin-right: 20px;
     width: 30px;
