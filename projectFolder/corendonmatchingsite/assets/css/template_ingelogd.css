@@ -160,31 +160,36 @@ nav li {
 }
 
 .notification-foto{
-    display: flex;
-    flex: auto;
     width: 80px;
     height: 80px;
 }
 
 .notification-item{
     display: flex;
+    flex-direction: column;
     justify-content: center;
-    position: relative;
-    right: 40px;
-    width: 432px;
-    height: 175px;
+    margin-right: 30px;
+    margin-left: 30px;
+}
+
+.notification-informatie{
+    display: flex;
+    flex-direction: column;
+}
+
+.notification-naam-leeftijd{
+    display: flex;
+    justify-content: space-around;
 }
 
 .notification-menu{
     display: flex;
     position: absolute;
     top: 110px;
-    right: -40px;
+    right: 7px;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background: rgb(255, 255, 255);
-    border-radius: 20px;
+    margin: 0;
+    padding: 0;
 }
 
 #notification-toggle ~ .notification-menu li {
@@ -196,11 +201,11 @@ nav li {
     transition: height 400ms cubic-bezier(0.23, 1, 0.32, 1);
 }
 
-#notification-toggle ~ .notification-menu {
+#notification-toggle ~ .notification-menu li {
     border: 0;
 }
 
-#notification-toggle:checked ~ .notification-menu {
+#notification-toggle:checked ~ .notification-menu li {
     border: 1px solid #000000;
 }
 
@@ -210,75 +215,64 @@ nav li {
     width: 27em;
     padding: 0;
     border-bottom: 1px solid black;
+
+    justify-content: space-evenly;
+    align-items: center;
+    background: rgb(255, 255, 255);
+    border-radius: 20px;
+    margin-bottom: 5px;
 }
 
 .notification-item-foto{
-    display: flex;
-    position: relative;
     width: 120px;
     height: 120px;
-    right: -350px;
-    top: 25px;
+    border-radius: 20px;
+    aspect-ratio: 1 / 1;
+    margin: 10px;
 }
 
 .notification-foto-naam{
-    display: flex;
-    position: relative;
-    width: 120px;
-    height: 15px;
-    right: -113px;
-    top: 140px;
-
     font-family: 'Roboto', sans-serif;
     font-size: 14px;
+    margin: 0;
 }
 
 .notification-foto-leeftijd{
-    display: flex;
-    position: relative;
-    width: 15px;
-    height: 15px;
-    right: -100px;
-    top: 140px;
-
     font-family: 'Roboto', sans-serif;
     font-size: 14px;
+    margin: 0;
 }
 
 .notification-text{
-    display: flex;
-    position: relative;
-    width: auto;
-    height: 30px;
-    right: 40px;
-    top: 20px;
-
     font-family: 'Roboto', sans-serif;
-    font-size: 26px;
+    font-size: 20px;
+    padding-bottom: 20px;
 }
 
 .notification-button{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    top: 120px;
-    right: 310px;
-
     text-decoration: none;
+    text-align: center;
     color: #ffffff;
     transition-duration: 0.4s;
     font-family: 'Roboto', sans-serif;
     font-size: 14px;
-
-    width: 120px;
-    height: 40px;
 
     background: #26A514;
     border: 1px solid #000000;
     box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 10px;
     overflow: hidden;
+    padding: 10px;
+}
+
+#notification-delete{
+    position: relative;
+    margin-right: 20px;
+    width: 30px;
+    height: 30px;
+    background-color: transparent;
+    cursor: pointer;
+    border: none;
 }
 
 /* Responsive layout */
@@ -291,12 +285,32 @@ nav li {
         width: 150px;
         height: 60px;
     }
+    .notification-container{
+        top: 40px;
+        right: 25px;
+        width: 60px;
+        height: 60px;
+    }
+    .notification-foto{
+        width: 60px;
+        height: 60px;
+    }
 }
 
 @media (max-width: 1070px) {
+    .notification-container{
+        top: 17px;
+    }
+    .notification-menu{
+        top: 90px;
+    }
     .logo {
         width: 180px;
         height: 70px;
+    }
+    .notification-container {
+        top: 28px;
+        right: 25px;
     }
 }
 
@@ -366,7 +380,6 @@ nav li {
         width: 95%;
         background-color: #D81E05;
         font-size: 22px;
-
     }
 
     .navbar-menu-link {
