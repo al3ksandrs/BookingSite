@@ -300,4 +300,7 @@ div.dropdownmenu {
     nav ul{
         flex-wrap: wrap;
     }
+    div.dropdownmenu{
+        grid-template-columns: repeat(2, 1fr);
+    }
 }
