@@ -218,7 +218,7 @@ comment {
     background: rgba(217, 217, 217, 0.8);
     border-radius: 20px;
     width: 95%;
-    height: 84vh;
+    min-height: 84vh;
     margin: 10px auto auto auto;
     flex-direction: column;
     justify-content: space-evenly;

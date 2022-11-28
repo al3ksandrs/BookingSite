@@ -170,21 +170,16 @@ main {
         font-size: 1.5em;
     }
 }
-
 /* Test */
 section {
     display: flex;
     flex-direction: column;
 }
-
 .container {
     flex-direction: row;
     justify-content: flex-start;
     align-items: flex-start;
-
-
 }
-
 section.general-info {
     align-items: baseline;
 }
