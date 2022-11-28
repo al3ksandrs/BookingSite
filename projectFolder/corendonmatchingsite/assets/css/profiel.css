@@ -43,144 +43,11 @@ img.profile3 {
 }
 
 
-/* Navbar */
-.navbar {
-    background-color: #D81E05;
-    overflow: hidden;
+/* voor het geval wij de navbar willen laten bewegen */
+ a{
+     text-decoration: none;
+ }
 
-    border-radius: 20px;
-}
-
-.navbar {
-    background-color: #D81E05;
-    overflow: hidden;
-
-    border-radius: 20px;
-}
-
-nav ul {
-    display: flex;
-    align-items: center;
-    flex-direction: row;
-    margin: 10px;
-    padding: 0;
-}
-
-nav li {
-    display: flex;
-
-    margin: 0 auto;
-
-    width: 250px;
-    height: 90px;
-
-    transition-duration: 0.4s;
-    background: #FFFFFF;
-    border: 3px solid #000000;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    border-radius: 20px;
-    overflow: hidden;
-}
-
-nav a {
-    text-decoration: none;
-
-    margin: 0 auto;
-    padding: 20px;
-
-    width: 100%;
-    height: 100%;
-
-    color: #000000;
-
-    transition-duration: 0.4s;
-    text-align: center;
-    font-style: normal;
-    font-family: 'Roboto', sans-serif;
-    font-weight: 600;
-    font-size: 36px;
-}
-
-/* Voor de profiel bewerkenknop */
-.navbar1 {
-    text-decoration: none;
-
-    margin: 0 auto;
-    padding: 0px;
-
-    width: 100%;
-    height: auto;
-
-    color: #000000;
-
-    transition-duration: 0.4s;
-    text-align: center;
-    font-style: normal;
-    font-family: 'Roboto', sans-serif;
-    font-weight: 600;
-    font-size: 36px;
-
-}
-
-.move-me {
-    width: 100%;
-    height: 100px;
-    position: fixed;
-    top: 0px;
-    right: 100px;
-    left: 0px;
-
-}
-
-.home_icon {
-    background-color: #FFFFFF;
-    background-image: url('../img/home_button.png');
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
-
-    width: 250px;
-    height: 90px;
-
-    transition-duration: 0s;
-}
-
-.home_icon a {
-    font-size: 0;
-
-    transition-duration: 0s;
-}
-
-.home_icon a:hover {
-    background-image: url('../img/home_button_hover.png');
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
-
-    font-size: 0;
-    transition-duration: 0s;
-}
-
-.logo {
-    width: 360px;
-    height: 120px;
-
-    margin-inline: 100px;
-
-    background: #FFFFFF;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    border-radius: 50px;
-    overflow: hidden;
-}
-
-nav li:hover {
-    background: #26A514;
-    border: 3px solid #FFFFFF;
-}
-
-nav a:hover {
-    color: #FFFFFF;
-}
 
 /* Textbox 2 voor profiel bewerken  */
 .textbox2 {
@@ -262,6 +129,7 @@ main {
     display: flex;
     flex-direction: row;
     padding: 0 30px 30px 30px;
+    font-family: 'Roboto', sans-serif;
 }
 
 /* Popup CCS */
@@ -288,7 +156,7 @@ main {
 }
 
 .popup-box .popup-content{
-    background-color: white;
+    background-image: url('../img/turkije.jpg');
     width: 900px;
     position: absolute;
     left: 50%;
@@ -298,6 +166,7 @@ main {
 }
 
 .popup-box .popup-header{
+    background-color: white;
     padding: 15px 40px 15px 15px;
     border-bottom: 1px solid #dddddd;
 
@@ -306,13 +175,14 @@ main {
     margin:0;
     color:green;
     font-size: 20px;
+
 }
 .popup-box .popup-header .popup-close-icon{
     position: absolute;
     height: 80px;
     width: 100px;
     text-align: center;
-    color: #555555;
+    color: #26A514;
     font-size: 28px;
     line-height: 30px;
     right: 5px;
@@ -320,30 +190,34 @@ main {
     cursor: pointer;
 }
 .popup-box .popup-body{
+    background-image: url('../img/turkije.jpg');
     padding: 15px;
     max-height: 600px;
     max-width: 900px;
-    overflow-y: auto;
+    overflow-y: auto;border-radius: 20px;
 }
 .popup-box .popup-body img{
     width: 100%;
     display: block;
     margin-top: 0px;
+
 }
 .popup-box .popup-body p{
     font-size: 16px;
     color:#555555;
     margin:0 0 15px;
+
 }
 .popup-box .popup-footer{
+    background-color: white;
     padding: 15px;
-    border-top:1px solid #dddddd;
+    border-top:1px solid #26A514;
     text-align: right;
 }
 .popup-box .popup-footer .btn{
     padding: 8px 15px;
-    border:1px solid #555555;
-    color:#555555;
+    border:1px solid #26A514;
+    color:#26A514;
     font-size: 16px;
     background-color: transparent;
     cursor: pointer;
@@ -364,7 +238,7 @@ main {
 }
 
 .services .service-items .item-inner{
-    border:1px solid #dddddd;
+    border:1px solid #26A514;
     padding: 30px;
 }
 .read-more-cont{
@@ -394,8 +268,8 @@ main {
 .service-items .item-inner .btn{
     font-size: 16px;
     background-color: transparent;
-    border:1px solid #555555;
-    color:#555555;
+    border:1px solid #26A514;
+    color:#26A514;
     padding: 8px 15px;
     cursor: pointer;
 }
@@ -411,21 +285,133 @@ main {
     flex-direction: row;
 }
 
+/*Voor de hovering van de buttons van mijn pagina  profiel */
+button {
+
+    cursor: pointer;
+    position: relative;
+    padding: 22px 46px;
+    font-size: 28px;
+    text-transform: uppercase;
+    color: #ffffff;
+    background: rgba(255, 255, 255, .1);
+    border: 3px solid rgba(255, 255, 255, .2);
+    border-radius: 18px;
+    transition: .4s;
+}
+
+button:hover {
+    z-index: 1;
+    border-color: transparent;
+    background: linear-gradient(
+            90deg,
+            #f9d923,
+            #00a19d,
+            #0c87b7,
+            #cb49ff,
+            #ff6666,
+            #f9d923
+    );
+    background-size: 400%;
+    box-shadow: 0 0 15px rgb(2, 4, 24);
+    animation: glow 12s linear forwards;
+}
+
+@keyframes glow {
+
+    from {
+        background-position: 0%;
+    }
+
+    to {
+        background-position: 400%;
+    }
+
+}
+
+button::before {
+    content: '';
+    position: absolute;
+    top: -1px;
+    right: -1px;
+    bottom: -1px;
+    left: -1px;
+    background: inherit;
+    filter: blur(36px);
+    opacity: 0;
+    transition: .4s ease-out;
+}
+
+button:hover::before {
+    opacity: 1;
+    z-index: -1;
+}
+
+/*Voor de profielbewerken*/
+button4 {
+    width: 700px;
+    height: 20px;
+    cursor: pointer;
+    position: relative;
+    padding: 22px 46px;
+    font-size: 28px;
+    text-transform: uppercase;
+    color: #ffffff;
+    background: rgba(255, 255, 255, .1);
+    border: 3px solid rgba(255, 255, 255, .2);
+    border-radius: 18px;
+    transition: .4s;
+}
+
+button4:hover {
+    z-index: 1;
+    border-color: transparent;
+    background: linear-gradient(
+            90deg,
+            #f9d923,
+            #00a19d,
+            #0c87b7,
+            #cb49ff,
+            #ff6666,
+            #f9d923
+    );
+    background-size: 400%;
+    box-shadow: 0 0 15px rgb(2, 4, 24);
+    animation: glow 12s linear forwards;
+}
+
+@keyframes glow {
+
+    from {
+        background-position: 0%;
+    }
+
+    to {
+        background-position: 400%;
+    }
+
+}
+
+button4::before {
+    content: '';
+    position: absolute;
+    top: -1px;
+    right: -1px;
+    bottom: -1px;
+    left: -1px;
+    background: inherit;
+    filter: blur(36px);
+    opacity: 0;
+    transition: .4s ease-out;
+}
+
+button4:hover::before {
+    opacity: 1;
+    z-index: -1;
+}
+
 /* Responsive layout */
 
-@media (max-width: 360px) {
-    main {
-        flex-direction: column;
-    }
-
-    h1 {
-        font-size: 1.5em;
-    }
-
-    nav ul {
-        flex-wrap: wrap;
-    }
-}
 
 /* Test */
 section {
@@ -463,6 +449,8 @@ article {
 article.c {
     text-align: right;
 }
+
+
 
 /* Voor de social media */
 .button {
@@ -508,61 +496,22 @@ body{
     line-height: 22px;
 }
 
-.wrapper{
-    width: 500px;
-    padding: 30px 40px;
-    border-radius: 3px;
-    margin: 50px auto 0;
-    background: #fff;
-    box-shadow: 1px 1px 2px rgba(0,0,0,0.125);
-}
 
-.wrapper .title{
-    font-size: 18px;
-    text-align: center;
-    font-weight: 700;
-    margin-bottom: 15px;
-}
+/* Pop up media */
+@media (max-width: 400px) {
+    main {
+        flex-direction: column;
+    }
 
-.wrapper  ul{
-    height: 120px;
-    overflow: hidden;
-    padding-left: 15px;
-}
 
-.wrapper  ul.active{
-    height: auto;
-}
+    .diveroo {
+        flex-direction: column;
+        display: table;
 
-.wrapper  ul li{
-    margin-bottom: 5px;
-    list-style: none;
-    position: relative;
-}
+    }
 
-.wrapper  ul li:before{
-    content: "";
-    position: absolute;
-    top: 8px;
-    border-radius: 50%;
-    background: #bfbfbf;
-    left: -12px;
-    width: 5px;
-    height: 5px;
-}
-
-.wrapper .toggle_btn{
-    cursor: pointer;
-    margin-left: 70%;
-    font-size: 15px;
-    padding: 10px;
-    margin-top: 15px;
-    font-weight: 700;
-    color: #ffffff;
-    border-radius: 5px;
-    background: rgb(204, 12, 79);
-}
-
-.wrapper .toggle_btn.active .fas{
-    transform: rotate(180deg);
+    .profile2 {
+        width: 100%;
+        height: auto;
+    }
 }
