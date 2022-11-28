@@ -7,41 +7,20 @@
     <meta name="viewpocrt" content="width=device-width, initial-scale=1.0">
     <title>Match 4 u</title>
     <link href="../assets/css/edit-reizen-naar.css" rel="stylesheet">
-    <script src="../assets/js/edit-reizen-naar.js"></script>
+    <link href="../assets/css/navbar-en-notifications.css" rel="stylesheet">
+    <script src="../assets/js/config.js" defer></script>
+    <script src="https://cdn.fys.cloud/fyscloud/0.0.4/fyscloud.min.js" defer></script>
     <script src="../assets/js/edit-reizen-naar.js"></script>
 </head>
 
 <body>
-<nav class="navbar">                                                              <!--normale navbar-->
+<nav class="navbar">                                                         <!--normale navbar-->
     <ul>
         <li><a href="home.html" class="navbar-normale-button">Home</a></li>
         <li><a href="over-ons.html" class="navbar-normale-button">Over ons</a></li>
-        <li class="logo"><img src=../assets/img/logo.PNG class="logo-foto"></li>
+        <li class="logo"><img src=../assets/img/logo.PNG class="logo-foto"></src></li>
         <li><a href="matching.html" class="navbar-normale-button">Matches</a></li>
         <li><a href="profiel.html" class="navbar-normale-button">Profiel</a></li>
-
-        <input id="notification-toggle" type="checkbox"/>                               <!--notification knop-->
-        <label class="notification-container" for="notification-toggle">
-            <div class="notification-menu-button"><img src=../assets/img/notification-knop-alert.png class="notification-foto"></div>
-        </label>
-        <ul class="notification-menu">
-            <li>
-                <article class = "notification-item">
-                    <img src=../assets/img/rayan.png class="notification-item-foto">
-                    <p class="notification-text">Gematched met:</p>
-                    <a href="andermans-profiel.html" class="notification-button">Bezoek profiel</a>
-                </article>
-            </li>
-            <li>
-                <article class = "notification-item">
-                    <img src=../assets/img/salmah.jpg class="notification-item-foto">
-                    <p class="notification-text">Gematched met:</p>
-                    <p class="notification-foto-naam">Salmah</p>
-                    <p class="notification-foto-leeftijd">58</p>
-                    <a href="andermans-profiel.html" class="notification-button">Bezoek profiel</a>
-                </article>
-            </li>
-        </ul>
 
         <input id="navbar-menu-toggle" type="checkbox"/>                               <!--navbar menu voor mobile-->
         <label class='navbar-menu-container' for="navbar-menu-toggle">
@@ -53,7 +32,6 @@
             <li><a href="matching.html" class="navbar-menu-link">Matches</a></li>
             <li><a href="profiel.html" class="navbar-menu-link">Profiel</a></li>
         </ul>
-
     </ul>
 </nav>
 
@@ -147,20 +125,13 @@
 
     </section>
     <footer>
-            <div class="bottomleft">
-                <p> Bron: Corendon.nl</p>
-            </div>
-
+        <p> Bron: Corendon.nl</p>
             <div class="main">
                 <p class="button"> Annuleren</p>
             </div>
 
             <div class="main">
                 <p class="button"> Opslaan</p>
-            </div>
-
-            <div class="bottomright">
-
             </div>
     </footer>
 
