@@ -29,6 +29,14 @@ main {
 }
 
 .tekst {
+    padding-left: 40px;
+    font-size: 36px;
+    font-family: "Roboto Thin", sans-serif;
+}
+
+.vlaggen {
+    align-items: end;
+    margin-left: 30px;
     padding-left: 30px;
     font-size: 36px;
     font-family: "Roboto Thin", sans-serif;
@@ -48,6 +56,7 @@ main {
     margin-top: 13px;
 }
 .bovenleft {
+    width: 22%;
     margin-top: 20px;
 }
 
@@ -57,10 +66,12 @@ main {
     margin-top: 20px;
 }
 
-.left, .right {
+.right, .left {
     display: flex;
     flex-direction: row;
+    width: 50%;
 }
+
 .left {
     border-right: solid;
 }
@@ -71,13 +82,7 @@ main {
     margin-top: 36px;
 
 }
-.main {
 
-
-}
-.bottomright {
-
-}
 .button {
     background-color: rgb(38, 165, 20);
     border-radius: 15px;
@@ -426,9 +431,21 @@ nav li {
         flex-direction: column;
     }
 
+    .bovenleft {
+        width: 100%;
+    }
+
+    .left, .right {
+        width: 100%;
+    }
+
     .left {
         border-right: none;
     }
+    footer {
+        flex-direction: column;
+    }
+
     .bottomleft, .bottomright {
         width: 100%;
     }
