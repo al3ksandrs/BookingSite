@@ -115,7 +115,7 @@ main {
 
 /* Hide the browser's default checkbox */
 .container input {
-    float: left;
+    display: flex;
     opacity: 0;
     cursor: pointer;
     height: 0;
@@ -124,21 +124,21 @@ main {
 
 /* Create a custom checkbox */
 .checkmark {
+    display: flex;
     border: solid;
-    float: left;
-    height: 25px;
-    width: 25px;
+    height: 23px;
+    width: 23px;
     background-color: #eee;
 }
 
 /* On mouse-over, add a grey background color */
 .container:hover input ~ .checkmark {
-    background-color: #ccc;
+    background-color: #fff;
 }
 
 /* When the checkbox is checked, add a blue background */
 .container input:checked ~ .checkmark {
-    background-color: #2196F3;
+    background-color: rgb(80,150,255);
 }
 
 /* Create the checkmark/indicator (hidden when not checked) */
