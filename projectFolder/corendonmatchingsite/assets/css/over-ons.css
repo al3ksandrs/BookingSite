@@ -38,6 +38,11 @@ main {
 
 .foto {
     margin: 15px;
+    border-radius: 20px;
+}
+
+.contact {
+    margin-left: 20px;
 }
 
 .droom {
