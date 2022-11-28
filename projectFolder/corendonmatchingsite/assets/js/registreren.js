@@ -14,12 +14,10 @@ function checkIn() {
     let wachtwoord2 = document.getElementById("wachtwoord2in")
     if (ValidateEmail(email) === true) {
         if (ValidateWachtwoord(wachtwoord, wachtwoord2) === true) {
-            window.location.href="email-confirmation.html";
+            window.location.href="../paginas/aanmaken-interesses.html";
         }
     }
 }
-
-// Valideert de email op karakters, later ook op database bestaan
 
 function ValidateEmail(inputText)
 {

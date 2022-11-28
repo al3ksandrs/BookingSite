@@ -1,5 +1,5 @@
-// // Fys Cloud stuff
-//
+// Fys Cloud stuff
+
 // FYSCloud.API.queryDatabase(
 //     "SELECT * FROM message"
 // ).then(function(data) {
@@ -42,5 +42,5 @@ function ValidateEmail(inputText)
 
 function ValidateAccount(inputEText, inputWText)
 {
-    return true;
+    return true;    // For now returns true all the time
 }

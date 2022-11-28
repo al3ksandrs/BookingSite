@@ -1,78 +1,103 @@
 <!DOCTYPE html>
 <html lang="nl">
-
+<!-- Made By Zakaria-->
 <head>
     <!--Titel en links naar css + javascript-->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Match 4 u | Registreren</title>
+    <title>Match 4 u | Aanmaken Intresses</title>
+
+    <link href="../assets/css/navbar-en-notifications.css" rel="stylesheet">
     <link href="../assets/css/inloggen.css" rel="stylesheet">
-    <script src="../assets/js/main.js"></script>
+
+<!--    <script src="https://cdn.fys.cloud/fyscloud/0.0.4/fyscloud.min.js"></script>-->
+<!--    <script src="../assets/js/config.js"></script>-->
 </head>
 
 <body>
-<nav class="navbar">                                                              <!--navbar + links/buttons-->
+<nav class="navbar">                                                              <!--normale navbar-->
     <ul>
-        <li class="home_icon"><a href="home.html">Home</a></li>
-        <li><a href="over%20ons.html">Over ons</a></li>
-        <li class="logo-test"><a href="template_niet_ingelogd.html">
-            <div class="logo-text">Match 4 U</div>
-        </a></li>
-        <li><a href="inloggen.html">Inloggen</a></li>
-        <li><a href="registreren.html">Registreren</a></li>
+        <li><a href="home.html" class="navbar-normale-button">Home</a></li>
+        <li><a href="over-ons.html" class="navbar-normale-button">Over ons</a></li>
+        <li class="logo"><img src=../assets/img/logo.PNG class="logo-foto" alt="Match4U Logo"></li>
+        <li><a href="inloggen.html" class="navbar-normale-button">Inloggen</a></li>
+        <li><a href="registreren.html" class="navbar-normale-button">Registreren</a></li>
+    </ul>
+    <input id="navbar-menu-toggle" type="checkbox">
+    <!--navbar menu voor mobile-->
+    <label class='navbar-menu-container' for="navbar-menu-toggle">
+        <img src=../assets/img/burger-menu.png class="navbar-foto" alt="Menu Icoon">
+    </label>
+
+    <ul class="navbar-links">
+        <li><a href="home.html" class="navbar-menu-link">Home</a></li>
+        <li><a href="over-ons.html" class="navbar-menu-link">Over ons</a></li>
+        <li><a href="inloggen.html" class="navbar-menu-link">Inloggen</a></li>
+        <li><a href="registreren.html" class="navbar-menu-link">Registreren</a></li>
     </ul>
 </nav>
+
+<comment>
+    <!--<nav class="navbar">-->
+    <!--    <ul class="nav_content">-->
+    <!--        <li class="nav_item home_icon">-->
+    <!--            <button onclick="window.location.href='home.html'"></button>-->
+    <!--        </li>-->
+    <!--        <li class="nav_item">-->
+    <!--            <button onclick="window.location.href='over-ons.html'">Over Ons</button>-->
+    <!--        </li>-->
+    <!--        <li class="nav_item logo">-->
+    <!--            <button onclick="window.location.href='template.html'">Match 4 U</button>-->
+    <!--        </li>-->
+    <!--        <li class="nav_item">-->
+    <!--            <button onclick="window.location.href='inloggen.html'">Inloggen</button>-->
+    <!--        </li>-->
+    <!--        <li class="nav_item">-->
+    <!--            <button onclick="window.location.href='registreren.html'">Registreren</button>-->
+    <!--        </li>-->
+    <!--    </ul>-->
+    <!--</nav>-->
+
+    <!---------------->
+    <!--<nav class="navbar">                                                              &lt;!&ndash;navbar + links/buttons&ndash;&gt;-->
+    <!--    <ul>-->
+    <!--        <li class="home_icon"><a href="home.html">Home</a></li>-->
+    <!--        <li><a href="over-ons.html">Over ons</a></li>-->
+    <!--        <li class="logo-test"><a href="template.html">-->
+    <!--            <div class="logo-text">Match 4 U</div>-->
+    <!--        </a></li>-->
+    <!--        <li><a href="inloggen.html">Inloggen</a></li>-->
+    <!--        <li><a href="registreren.html">Registreren</a></li>-->
+    <!--    </ul>-->
+    <!--</nav>-->
+</comment>
 
 <main>
     <section class="textbox">
         <div class="titel">
-            <h1>
-                Registreren
-            </h1>
-            <h1>
-                Aanmaken Profiel
-            </h1>
+            <h1>Aanmaken Intresses</h1>
         </div>
         <section class="invoer">
-            <div class="test">
-                <div class="text">
-                    Upload een Profielfoto
-                </div>
-                <div class="text">
-                    |Hello World|
-                </div>
-            </div>
-            <div class="test">
-                <div class="text">
-                    Wat is uw naam:
-                </div>
-                <div class="text">
-                    |Hello World|
-                </div>
-            </div>
-            <div class="test">
-                <div class="text">
-                    Stel uzelf even voor:
-                </div>
-                <div class="text">
-                    |Hello World|
-                </div>
-            </div>
+            <section class="instr text">
+                <label for="emailin">Email:</label>
+                <label for="wachtwoordin">Wachtwoord:</label>
+                <label for="wachtwoord2in">Wachtwoord Herhalen:</label>
+            </section>
+            <section class="inputs text">
+                <input id="emailin" name="email" type="text" placeholder="Type Hier...">
+                <input id="wachtwoordin" name="wachtwoord" type="password" placeholder="Type Hier...">
+                <input id="wachtwoord2in" name="wachtwoord2" type="password" placeholder="Type Hier...">
+            </section>
         </section>
         <section class="buttons">
-            <a href="registreren.html">
-                <button>
-                    Annuleren
-                </button>
-            </a>
-            <a href="profiel.html">
-                <button>
-                    Verder
-                </button>
-            </a>
+            <button type="submit" onclick="window.location.href='template.html'">
+                Annuleren
+            </button>
+            <input type="submit" value="Verder" onclick="checkIn()">
         </section>
     </section>
 </main>
-
+<!--<script src="../assets/js/aanmaken-interesses.js"></script>-->
+<!--<script src="../assets/js/main.js"></script>-->
 </body>
 </html>
