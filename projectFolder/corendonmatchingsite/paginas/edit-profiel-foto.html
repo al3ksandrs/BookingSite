@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>Edit Profiel Foto</title>
     <link href="../assets/css/edit-profiel-foto.css" rel="stylesheet">
+    <script src="../assets/js/edit-profiel-foto.js" defer></script>
     <!-- API & FYS Cloud -->
     <script src="https://cdn.fys.cloud/fyscloud/0.0.4/fyscloud.min.js" defer></script>
     <script src="../assets/js/config.js" defer></script>
@@ -29,8 +30,8 @@
                 <div>
                     <label class="text" for="geslacht">Geslacht:</label>
                     <select name="geslacht" id="geslacht">
-                        <option value="Taal1">Vrouw</option>
-                        <option value="Taal2">Man</option>
+                        <option value="vrouw">Vrouw</option>
+                        <option value="man">Man</option>
                     </select></div>
                 <div id="alert">
                     <input id="opslaan" type="submit" value="Opslaan"/>
@@ -48,10 +49,17 @@
                 <article class="textbox2"><p class="kopjes">Biografie</p>
 
                 </article>
-                <form class="biografie-form" action="profiel.html" method="post">
+                <form class="biografie-form" action="" method="post">
                     <div>
                         <label for="biografie"></label>
-                        <textarea id="biografie" name="biografie" rows="4" cols="40" maxlength="500"></textarea>
+                        <textarea id="biografie" name="biografie" rows="4" cols="40" maxlength="500">Ervaren projectmanager met een bewezen geschiedenis van werken in de vrijetijds- en reis- en
+            toerismebranche.
+            Bekwaam in evenementenbeheer, toerisme en in het bijzonder in duurzame ontwikkeling van toerisme.
+            Met een masterdiploma gericht op milieuwetenschappen en GIS van Université Grenoble Alpes, Institut de
+            Géographie Alpine, zijn milieuaspecten van toerisme en wereldwijde trends op dit gebied van bijzonder
+            belang voor mij.
+             Wie weet word ik jou match!</textarea>
+
                     </div>
                     <div>
                         <input type="submit" value="Opslaan">
@@ -78,10 +86,10 @@
             <br>
             <hr>
             <article class="textbox2"><p class="kopjes">Interesses</p></article>
-            <form>
+            <form class="interesses-activiteit" action="" method="get">
                 <ul>
                     <li>Shoppen
-                        <input type="checkbox" name="checkbox1" value="checked off" checked>
+                        <input type="checkbox" name="checkbox1" id="checkboxShopen" value="checked off" checked>
                     </li>
                     <li>Zwemmen
                         <input type="checkbox" name="checkbox2" value="checked off" checked>
@@ -128,5 +136,4 @@
     </section>
 </main>
 </body>
-<script src="../assets/js/edit-profiel-foto.js" defer></script>
 </html>

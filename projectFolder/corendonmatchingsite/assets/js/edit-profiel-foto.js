@@ -49,19 +49,25 @@
 //TAKE 2
 // document.getElementsByName('voornaam')[0].valueOf();
 
-//TAKE 1 - PROBEREN
-const form = document.querySelector('.profielc-form');
+//input profiel content
+const form = document.querySelector('.profielc-form,.biografie-form,.interesses-form,.interesses-activiteit');
 const taskInput = document.getElementById('voornaam');
+const taskInput1 = document.getElementById('leeftijd');
+const taskInput2 = document.getElementById('image');
+const taskInput3 = document.getElementById('geslacht');
+//input Biografie
+const taskInput4 = document.getElementById('biografie');
+// input interesses
+const taskInput5 = document.getElementById('gebruikersnaam');
+
 form.addEventListener('submit',runEvent);
 function runEvent(e){
     console.log(`EVENT TYPE: ${e.type}`);
 
 //Get Input value
-console.log(taskInput.value);
+console.log(taskInput.value,taskInput1.value,taskInput2.value,taskInput3.value,taskInput4,taskInput5.value);
 e.preventDefault();
 }
-
-
 // input opslaan selector
 // const select = document.querySelector("select");
 // //change event
