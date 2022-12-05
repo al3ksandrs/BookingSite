@@ -1,7 +1,7 @@
 // Fys Cloud stuff
 
 FYSCloud.API.queryDatabase(
-    "SELECT * FROM gebruiker WHERE id = 1"
+    "SELECT * FROM gebruiker WHERE email = 'example@email.com'"
 ).then(function(data) {
     console.log(data);
 }).catch(function(reason) {
