@@ -490,7 +490,6 @@ body{
         flex-direction: column;
     }
 
-
     .diveroo {
         flex-direction: column;
         display: table;
@@ -498,7 +497,20 @@ body{
     }
 
     .profile2 {
-        width: 100%;
+        width: 50%;
         height: auto;
+    }
+    .container {
+        flex-direction: column;
+        height: auto;
+    }
+    .textt{
+        line-height: revert;
+    }
+    .containerMatching{
+        flex-direction: column-reverse;
+    }
+    .popup-box .popup-content {
+        width: inherit;
     }
 }

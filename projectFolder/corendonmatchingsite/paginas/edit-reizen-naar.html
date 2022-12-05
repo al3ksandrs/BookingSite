@@ -8,9 +8,9 @@
     <title>Match 4 u</title>
     <link href="../assets/css/edit-reizen-naar.css" rel="stylesheet">
     <link href="../assets/css/navbar-en-notifications.css" rel="stylesheet">
-    <script src="../assets/js/config.js" defer></script>
     <script src="https://cdn.fys.cloud/fyscloud/0.0.4/fyscloud.min.js" defer></script>
-    <script src="../assets/js/edit-reizen-naar.js"></script>
+    <script src="../assets/js/config.js" defer></script>
+    <script src="../assets/js/edit-reizen-naar.js" defer></script>
 </head>
 
 <body>
@@ -18,13 +18,14 @@
     <ul>
         <li><a href="home.html" class="navbar-normale-button">Home</a></li>
         <li><a href="over-ons.html" class="navbar-normale-button">Over ons</a></li>
-        <li class="logo"><img src=../assets/img/logo.PNG class="logo-foto"></src></li>
+        <li class="logo"><img src=../assets/img/logo.PNG class="logo-foto" alt="default.png">/li>
         <li><a href="matching.html" class="navbar-normale-button">Matches</a></li>
         <li><a href="profiel.html" class="navbar-normale-button">Profiel</a></li>
 
         <input id="navbar-menu-toggle" type="checkbox"/>                               <!--navbar menu voor mobile-->
         <label class='navbar-menu-container' for="navbar-menu-toggle">
-            <div class='navbar-menu-button'><img src=../assets/img/burger-menu.png class="navbar-foto"></src></div>
+            <div class='navbar-menu-button'><img src=../assets/img/burger-menu.png alt="default" class="navbar-foto">
+            </div>
         </label>
         <ul class="navbar-links">
             <li><a href="home.html" class="navbar-menu-link">Home</a></li>
@@ -63,25 +64,26 @@
                 <p class="vlaggen">
                     <Strong>Vlag</Strong><br><br>
                     &#127466;&#127480;
-                    <label class="container"> <input type="checkbox"> <span class="checkmark"></span></label><br>
-                    &#127468;&#127479;
-                    <label class="container"> <input type="checkbox"> <span class="checkmark"></span></label><br>
-                    &#127468;&#127474;
-                    <label class="container"> <input type="checkbox"> <span class="checkmark"></span></label><br>
-                    &#127481;&#127479;
-                    <label class="container"> <input type="checkbox"> <span class="checkmark"></span></label><br>
-                    &#127470;&#127465;
-                    <label class="container"> <input type="checkbox"> <span class="checkmark"></span></label><br>
-                    &#127477;&#127481;
-                    <label class="container"> <input type="checkbox"> <span class="checkmark"></span></label><br>
-                    &#127474;&#127462;
-                    <label class="container"> <input type="checkbox"> <span class="checkmark"></span></label><br>
-                    &#127464;&#127484;
-                    <label class="container"> <input type="checkbox"> <span class="checkmark"></span></label><br>
-                    &#127474;&#127472;
-                    <label class="container"> <input type="checkbox"> <span class="checkmark"></span></label><br>
-                    &#127466;&#127468;
-                    <label class="container"> <input type="checkbox"> <span class="checkmark"></span></label>
+                    <label class="container"> <input onclick="log1()" type="checkbox"> <span class="checkmark"></span>
+                    </label><br>&#127468;&#127479;
+                    <label class="container"> <input onclick="log2()" type="checkbox"> <span class="checkmark"></span>
+                    </label><br>&#127468;&#127474;
+                    <label class="container"> <input onclick="log3()" type="checkbox"> <span class="checkmark"></span>
+                    </label><br>&#127481;&#127479;
+                    <label class="container"> <input onclick="log4()" type="checkbox"> <span class="checkmark"></span>
+                    </label><br>&#127470;&#127465;
+                    <label class="container"> <input onclick="log5()" type="checkbox"> <span class="checkmark"></span>
+                    </label><br>&#127477;&#127481;
+                    <label class="container"> <input onclick="log6()" type="checkbox"> <span class="checkmark"></span>
+                    </label><br>&#127474;&#127462;
+                    <label class="container"> <input onclick="log7()" type="checkbox"> <span class="checkmark"></span>
+                    </label><br>&#127464;&#127484;
+                    <label class="container"> <input onclick="log8()" type="checkbox"> <span class="checkmark"></span>
+                    </label><br>&#127474;&#127472;
+                    <label class="container"> <input onclick="log9()" type="checkbox"> <span class="checkmark"></span>
+                    </label><br>&#127466;&#127468;
+                    <label class="container"> <input onclick="log10()" type="checkbox"> <span class="checkmark"></span>
+                    </label>
                 </p>
             </div>
         </article>
@@ -100,25 +102,26 @@
                 <p class="vlaggen" >
                     <Strong>Vlag</Strong><br><br>
                     &#127466;&#127480;
-                    <label class="container"> <input type="checkbox"> <span class="checkmark"></span></label><br>
-                    &#127468;&#127479;
-                    <label class="container"> <input type="checkbox"> <span class="checkmark"></span></label><br>
-                    &#127468;&#127474;
-                    <label class="container"> <input type="checkbox"> <span class="checkmark"></span></label><br>
-                    &#127481;&#127479;
-                    <label class="container"> <input type="checkbox"> <span class="checkmark"></span></label><br>
-                    &#127470;&#127465;
-                    <label class="container"> <input type="checkbox"> <span class="checkmark"></span></label><br>
-                    &#127477;&#127481;
-                    <label class="container"> <input type="checkbox"> <span class="checkmark"></span></label><br>
-                    &#127474;&#127462;
-                    <label class="container"> <input type="checkbox"> <span class="checkmark"></span></label><br>
-                    &#127464;&#127484;
-                    <label class="container"> <input type="checkbox"> <span class="checkmark"></span></label><br>
-                    &#127474;&#127472;
-                    <label class="container"> <input type="checkbox"> <span class="checkmark"></span></label><br>
-                    &#127466;&#127468;
-                    <label class="container"> <input type="checkbox"> <span class="checkmark"></span></label><br>
+                    <label class="container"> <input onclick="log11()" type="checkbox"> <span class="checkmark"></span>
+                    </label><br>&#127468;&#127479;
+                    <label class="container"> <input onclick="log12()" type="checkbox"> <span class="checkmark"></span>
+                    </label><br>&#127468;&#127474;
+                    <label class="container"> <input onclick="log13()" type="checkbox"> <span class="checkmark"></span>
+                    </label><br>&#127481;&#127479;
+                    <label class="container"> <input onclick="log14()" type="checkbox"> <span class="checkmark"></span>
+                    </label><br>&#127470;&#127465;
+                    <label class="container"> <input onclick="log15()" type="checkbox"> <span class="checkmark"></span>
+                    </label><br>&#127477;&#127481;
+                    <label class="container"> <input onclick="log16()" type="checkbox"> <span class="checkmark"></span>
+                    </label><br>&#127474;&#127462;
+                    <label class="container"> <input onclick="log17()" type="checkbox"> <span class="checkmark"></span>
+                    </label><br>&#127464;&#127484;
+                    <label class="container"> <input onclick="log18()" type="checkbox"> <span class="checkmark"></span>
+                    </label><br>&#127474;&#127472;
+                    <label class="container"> <input onclick="log19()" type="checkbox"> <span class="checkmark"></span>
+                    </label><br>&#127466;&#127468;
+                    <label class="container"> <input onclick="log20()" type="checkbox"> <span class="checkmark"></span>
+                    </label><br>
                 </p>
             </div>
         </article>
