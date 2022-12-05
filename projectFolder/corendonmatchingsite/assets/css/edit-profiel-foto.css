@@ -80,3 +80,6 @@ main {
     padding: 0 30px 30px 30px;
     flex-wrap: wrap;
 }
+#biografie{
+    resize: none;
+}

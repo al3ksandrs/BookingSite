@@ -82,10 +82,21 @@
         <article class="textbox1"><img src=" ../assets/img/Salmah.jpg" width="228" height="294" alt="default profile"
                                        class="profile">
 
-            <button class="button button1">Kies foto</button>
+            <form action="" method="get">
+                <div> <input type="file" name="image" id="image" accept="image/*"><br></div>
             </a>
-            <pre class="textt">                    <pre class="text">Emily             56</pre></pre>
-
+                <div>
+                    <label class="text" for="voornaam">Voornaam:</label>
+                    <input type="text" name="voornaam" id="voornaam" size="5" value="Emily" required><br><br>
+                </div>
+                <div>
+                    <label class="text" for="leeftijd"> Leeftijd:</label>
+                    <input type="number" name="leeftijd" min="40" max="100" id="leeftijd" value="56" required>
+                </div>
+                <div>
+                    <input type="submit" value="Opslaan">
+                </div>
+            </form>
         </article>
         <section class="container"></section>
         <article class="container">
@@ -97,25 +108,27 @@
                 <article class="textbox"><p class="textt"> Interesses </p>
                 </article>
                 <li>Shoppen
-                    <button class="button button1">x</button>
+                    <input type="checkbox" name="checkbox5" value="checked off" checked>
                 </li>
                 <li>Zwemmen
-                    <button class="button button1">x</button>
+                    <input type="checkbox" name="checkbox6" value="checked off" checked>
                 </li>
                 <li>Uitgaan
-                    <button class="button button1">x</button>
+                    <input type="checkbox" name="checkbox7" value="checked off" checked>
                 </li>
-                <button class="button button1">+</button>
+                <div>
+                    <input type="submit" value="Opslaan">
+                </div>
                 <hr>
                 <article class="textbox"><p class="textt">Wilt reizen naar </p>
                 </article>
-                <li> Azië</li>
+                <li> Azië <input type="checkbox" name="checkbox8" value="checked off" checked>
+                </li>
                 <hr>
                 <a href="profiel.html">
-                    <button class="button button1">Annuleren</button>
+                    <input type="submit" value="Opslaan">
                 </a>
                 <a href="profiel.html">
-                    <button class="button button1">Opslaan</button>
                 </a>
             </article>
     </section>
