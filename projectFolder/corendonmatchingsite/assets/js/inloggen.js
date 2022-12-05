@@ -1,12 +1,12 @@
 // Fys Cloud stuff
 
-// FYSCloud.API.queryDatabase(
-//     "SELECT * FROM message"
-// ).then(function(data) {
-//     console.log(data);
-// }).catch(function(reason) {
-//     console.log(reason);
-// });
+FYSCloud.API.queryDatabase(
+    "SELECT * FROM gebruiker WHERE id = 300"
+).then(function(data) {
+    console.log(data);
+}).catch(function(reason) {
+    console.log(reason);
+});
 
 function checkIn() {
     let email = document.getElementById("emailin");
