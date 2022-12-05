@@ -1,132 +1,132 @@
 <!DOCTYPE html>
-<html lang="nl" >
+<html lang="nl">
 <head>
     <meta charset="UTF-8">
     <title>Edit Profiel Foto</title>
-    <link href="../assets/css/edit-profiel-foto.css" rel="stylesheet">
-    <script src="../assets/js/edit-profiel-foto.js"></script>
+    <link href="../assets/css/edit-profiel-foto.css" rel="stylesheet" defer>
+    <script src="../assets/js/edit-profiel-foto.js" defer></script>
     <!-- API & FYS Cloud -->
     <script src="https://cdn.fys.cloud/fyscloud/0.0.4/fyscloud.min.js" defer></script>
     <script src="../assets/js/config.js" defer></script>
-
 </head>
-
 <body>
 <main>
-<!--Nav content area-->
-<!--Naam en profiel content area-->
-<section class="general-info">
-    <article class="textbox1"><img src="../assets/img/Salmah.jpg" width="228" height="294"
-     alt="default profile" class="profile">
-                <form class="profiel-content-form" action="" method="get">
-                    <div> <input type="file" name="image" id="image" accept="image/*"><br></div>
-            <div>
-                <label class="text" for="voornaam">Voornaam:</label>
-                <input type="text" name="voornaam" id="voornaam" size="10" value="Emily" required><br><br>
-            </div>
-            <div>
-                <label class="text" for="leeftijd"> Leeftijd:</label>
-                <input type="date" name="leeftijd" min="1982-01-01" max="1922-01-01" id="leeftijd" value="1982-07-25" required>
-            </div>
-                    <div>
-                        <label class="text" for="geslacht">Geslacht:</label>
-                        <select name="geslacht" id="geslacht">
-                            <option value="Taal1">Vrouw</option>
-                            <option value="Taal2">Man</option>
-                        </select></div>
-            <div>
-                <input type="submit" value="Opslaan">
-            </div>
-        </form>
-    </article>
-</section>
-
-<!--bio content area -->
-<section>
-    <article>
-        <article class="textbox2"> <p class="kopjes">Profiel Bewerken</p>
-        </article>
-        <article>
-        <article class="textbox2"> <p class="kopjes">Biografie</p>
-
-        </article>
-                <form class="biografie-form" action="profiel.html" method="post">
-            <div>
-                <label for="biografie"></label>
-                <textarea id="biografie" name="biografie" rows="4" cols="40" maxlength="500"></textarea>
-            </div>
-            <div>
-                <input type="submit" value="Opslaan">
-            </div>
-        </form>
-    </article>
-    </article>
-</section>
-
-<!--Gebruikersnaam,interesses & Wilt reizen naar content area-->
-<section>
-    <article class="container">
-        <article class="textbox2"> <p class="kopjes">Gebruikersnaam</p>
-        </article>
-        <form class="interesses-form" action="" method="get">
-            <div class="naaminvoer">
-                <label class="text" for="gebruikersnaam"></label>
-                <input type="text" name="gebruikersnaam" id="gebruikersnaam" value="Emily" required>
+    <!--Nav content area-->
+    <!--Naam en profiel content area-->
+    <section class="general-info">
+        <article class="textbox1"><img src="../assets/img/Salmah.jpg" width="228" height="294"
+                                       alt="default profile" class="profile">
+            <form class="profielc-form" action="" method="get">
+                <div><input type="file" name="image" id="image" accept="image/*"><br></div>
                 <div>
-                    <input type="submit" value="Opslaan">
+                    <label class="text" for="voornaam">Voornaam:</label>
+                    <input type="text" name="voornaam" id="voornaam" size="10" value="Emily" required><br><br>
                 </div>
-            </div>
-        </form>
-        <br>
-<hr>
-            <article class="textbox2"> <p class="kopjes">Interesses</p></article>
+                <div>
+                    <label class="text" for="leeftijd"> Leeftijd:</label>
+                    <input type="date" name="leeftijd" min="1982-01-01" max="1922-01-01" id="leeftijd"
+                           value="1982-07-25" required>
+                </div>
+                <div>
+                    <label class="text" for="geslacht">Geslacht:</label>
+                    <select name="geslacht" id="geslacht">
+                        <option value="Taal1">Vrouw</option>
+                        <option value="Taal2">Man</option>
+                    </select></div>
+                <div id="alert">
+                    <input type="button" value="Opslaan" onclick="wawa()"  />
+                </div>
+            </form>
+        </article>
+    </section>
+
+    <!--bio content area -->
+    <section>
+        <article>
+            <article class="textbox2"><p class="kopjes">Profiel Bewerken</p>
+            </article>
+            <article>
+                <article class="textbox2"><p class="kopjes">Biografie</p>
+
+                </article>
+                <form class="biografie-form" action="profiel.html" method="post">
+                    <div>
+                        <label for="biografie"></label>
+                        <textarea id="biografie" name="biografie" rows="4" cols="40" maxlength="500"></textarea>
+                    </div>
+                    <div>
+                        <input type="submit" value="Opslaan">
+                    </div>
+                </form>
+            </article>
+        </article>
+    </section>
+
+    <!--Gebruikersnaam,interesses & Wilt reizen naar content area-->
+    <section>
+        <article class="container">
+            <article class="textbox2"><p class="kopjes">Gebruikersnaam</p>
+            </article>
+            <form class="interesses-form" action="" method="get">
+                <div class="naaminvoer">
+                    <label class="text" for="gebruikersnaam"></label>
+                    <input type="text" name="gebruikersnaam" id="gebruikersnaam" value="Emily" required>
+                    <div>
+                        <input type="submit" value="Opslaan">
+                    </div>
+                </div>
+            </form>
+            <br>
+            <hr>
+            <article class="textbox2"><p class="kopjes">Interesses</p></article>
             <form>
                 <ul>
-                <li>Shoppen
-                <input type="checkbox" name="checkbox1" value="checked off" checked>
-                </li>
-                <li>Zwemmen
-                <input type="checkbox" name="checkbox2" value="checked off" checked>
-                </li>
-                <li>Uitgaan <input type="checkbox" name="checkbox3" value="checked off" checked>
-                </li></ul>
+                    <li>Shoppen
+                        <input type="checkbox" name="checkbox1" value="checked off" checked>
+                    </li>
+                    <li>Zwemmen
+                        <input type="checkbox" name="checkbox2" value="checked off" checked>
+                    </li>
+                    <li>Uitgaan <input type="checkbox" name="checkbox3" value="checked off" checked>
+                    </li>
+                </ul>
                 <div>
                     <input type="submit" value="Opslaan">
                 </div>
 
             </form>
-        <hr>
-        <article class="textbox2"> <p class="kopjes">Wilt reizen naar</p></article>
-        <ul>
-        <li>Azië
-            <input type="checkbox" name="checkbox4" value="checked off" checked>
-        </li></ul>
-        <hr>
-        <div>
-            <input type="submit" value="Opslaan">
-        </div>
-
-    </article>
-</section>
-<!--spreekt content area-->
-<section>
-    <article class="container">
-        <article class="textbox2"> <p class="kopjes">Spreekt</p></article>
-        <ul>
-        <li>Nederlands <input type="checkbox" name="checkbox5" value="checked off" checked>
-        </li>
-        <li>Engels <input type="checkbox" name="checkbox6" value="checked off" checked>
-        </li>
-        <li>Duits <input type="checkbox" name="checkbox7" value="checked off" checked>
-        </li>
-        <li>Frans <input type="checkbox" name="checkbox8" value="checked off" checked>
-        </li></ul>
-        <div>
-            <input type="submit" value="Opslaan">
-        </div>
-            </article>
-
-</section>
+            <hr>
+            <article class="textbox2"><p class="kopjes">Wilt reizen naar</p></article>
+            <ul>
+                <li>Azië
+                    <input type="checkbox" name="checkbox4" value="checked off" checked>
+                </li>
+            </ul>
+            <hr>
+            <div>
+                <input type="submit" value="Opslaan">
+            </div>
+        </article>
+    </section>
+    <!--spreekt content area-->
+    <section>
+        <article class="container">
+            <article class="textbox2"><p class="kopjes">Spreekt</p></article>
+            <ul>
+                <li>Nederlands <input type="checkbox" name="checkbox5" value="checked off" checked>
+                </li>
+                <li>Engels <input type="checkbox" name="checkbox6" value="checked off" checked>
+                </li>
+                <li>Duits <input type="checkbox" name="checkbox7" value="checked off" checked>
+                </li>
+                <li>Frans <input type="checkbox" name="checkbox8" value="checked off" checked>
+                </li>
+            </ul>
+            <div>
+                <input type="submit" value="Opslaan">
+            </div>
+        </article>
+    </section>
 </main>
 </body>
 </html>
