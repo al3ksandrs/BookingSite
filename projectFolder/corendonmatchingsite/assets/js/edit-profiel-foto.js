@@ -50,9 +50,9 @@
 // document.getElementsByName('voornaam')[0].valueOf();
 
 //TAKE 1 - PROBEREN
-const form = document.getElementsByClassName('profielc-form');
+const form = document.querySelector('.profielc-form');
 const taskInput = document.getElementById('voornaam');
-taskInput.addEventListener('submit',runEvent);
+form.addEventListener('submit',runEvent);
 function runEvent(e){
     console.log(`EVENT TYPE: ${e.type}`);
 

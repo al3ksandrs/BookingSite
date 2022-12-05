@@ -3,8 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Edit Profiel Foto</title>
-    <link href="../assets/css/edit-profiel-foto.css" rel="stylesheet" defer>
-    <script src="../assets/js/edit-profiel-foto.js" defer></script>
+    <link href="../assets/css/edit-profiel-foto.css" rel="stylesheet">
     <!-- API & FYS Cloud -->
     <script src="https://cdn.fys.cloud/fyscloud/0.0.4/fyscloud.min.js" defer></script>
     <script src="../assets/js/config.js" defer></script>
@@ -24,8 +23,8 @@
                 </div>
                 <div>
                     <label class="text" for="leeftijd"> Leeftijd:</label>
-                    <input type="date" name="leeftijd" min="1982-01-01" max="1922-01-01" id="leeftijd"
-                           value="1982-07-25" required>
+                    <input type="date" name="leeftijd" max="1982-01-01" min="1922-01-01" id="leeftijd"
+                           value="1981-07-25" required>
                 </div>
                 <div>
                     <label class="text" for="geslacht">Geslacht:</label>
@@ -34,7 +33,7 @@
                         <option value="Taal2">Man</option>
                     </select></div>
                 <div id="alert">
-                    <input type="button" value="Opslaan" onclick="wawa()"  />
+                    <input id="opslaan" type="submit" value="Opslaan"/>
                 </div>
             </form>
         </article>
@@ -129,4 +128,5 @@
     </section>
 </main>
 </body>
+<script src="../assets/js/edit-profiel-foto.js" defer></script>
 </html>
