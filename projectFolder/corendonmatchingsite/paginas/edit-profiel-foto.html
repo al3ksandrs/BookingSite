@@ -7,7 +7,7 @@
     <script src="../assets/js/edit-profiel-foto.js"></script>
     <!-- API & FYS Cloud -->
     <script src="https://cdn.fys.cloud/fyscloud/0.0.4/fyscloud.min.js" defer></script>
-    <script src="../assets/js/config.js"></script>
+    <script src="../assets/js/config.js" defer></script>
 
 </head>
 
@@ -28,6 +28,12 @@
                 <label class="text" for="leeftijd"> Leeftijd:</label>
                 <input type="date" name="leeftijd" min="1982-01-01" max="1922-01-01" id="leeftijd" value="1982-07-25" required>
             </div>
+                    <div>
+                        <label class="text" for="geslacht">Geslacht:</label>
+                        <select name="geslacht" id="geslacht">
+                            <option value="Taal1">Vrouw</option>
+                            <option value="Taal2">Man</option>
+                        </select></div>
             <div>
                 <input type="submit" value="Opslaan">
             </div>
@@ -62,7 +68,7 @@
     <article class="container">
         <article class="textbox2"> <p class="kopjes">Gebruikersnaam</p>
         </article>
-        <form class="interesses-form" action="profiel.html" method="get">
+        <form class="interesses-form" action="" method="get">
             <div class="naaminvoer">
                 <label class="text" for="gebruikersnaam"></label>
                 <input type="text" name="gebruikersnaam" id="gebruikersnaam" value="Emily" required>
@@ -118,7 +124,8 @@
         <div>
             <input type="submit" value="Opslaan">
         </div>
-    </article>
+            </article>
+
 </section>
 </main>
 </body>
