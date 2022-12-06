@@ -31,6 +31,10 @@ console.log(taskInput.value,taskInput1.value,taskInput2.value,taskInput3.value,t
 e.preventDefault();
 }
 
+//checkbox
+const cb = document.querySelector('#checkboxShopen,#checkboxZwemmen,#checkboxUitgaan');
+console.log(cb.checked); // false
+
 // input opslaan selector
 // const select = document.querySelector("select");
 // //change event

@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <title>Edit Profiel Foto</title>
     <link href="../assets/css/edit-profiel-foto.css" rel="stylesheet">
-    <script src="../assets/js/edit-profiel-foto.js" defer></script>
     <!-- API & FYS Cloud -->
     <script src="https://cdn.fys.cloud/fyscloud/0.0.4/fyscloud.min.js" defer></script>
     <script src="../assets/js/config.js" defer></script>
@@ -12,6 +11,7 @@
 <body>
 <main>
     <!--Nav content area-->
+
     <!--Naam en profiel content area-->
     <section class="general-info">
         <article class="textbox1"><img src="../assets/img/Salmah.jpg" width="228" height="294"
@@ -92,9 +92,9 @@
                         <input type="checkbox" name="checkbox1" id="checkboxShopen" value="checked off" checked>
                     </li>
                     <li>Zwemmen
-                        <input type="checkbox" name="checkbox2" value="checked off" checked>
+                        <input type="checkbox" name="checkbox2" id="checkboxZwemmen" value="checked off" checked>
                     </li>
-                    <li>Uitgaan <input type="checkbox" name="checkbox3" value="checked off" checked>
+                    <li>Uitgaan <input type="checkbox" name="checkbox3" id="checkboxUitgaan"  value="checked off" checked>
                     </li>
                 </ul>
                 <div>
@@ -132,8 +132,11 @@
             <div>
                 <input type="submit" value="Opslaan">
             </div>
+            <div class="annuleer-knop">
+            </div>
         </article>
     </section>
+    <script src="../assets/js/edit-profiel-foto.js" defer></script>
 </main>
 </body>
 </html>
