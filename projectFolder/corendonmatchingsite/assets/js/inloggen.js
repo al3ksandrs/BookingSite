@@ -26,7 +26,7 @@ function ValidateEmail(inputEText)
     let mailformat = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
     if(inputEText.value.match(mailformat))
     {
-        console.log("You have entered a valid email address!");    //The pop-up alert for a valid email address
+        console.log("You have entered a valid email address!");    // Dit wordt een div
 
         // Database Query
         FYSCloud.API.queryDatabase(
@@ -37,7 +37,7 @@ function ValidateEmail(inputEText)
             ValidateAccount(email, wachtwoord);
         // Vangnet
         }).catch(function (reason) {
-            console.log("Er is iets fout gegaan!");
+            console.log("Er is iets fout gegaan!"); // Ook een div
             console.log(reason)
         });
     }
@@ -45,7 +45,7 @@ function ValidateEmail(inputEText)
     // Voor als het niet een correcte email is
     else
     {
-        console.log("You have entered an invalid email address!");    //The pop-up alert for an invalid email address
+        console.log("You have entered an invalid email address!");    // Dit wordt een div die tevoorschijn komt
         email.focus();
         wachtwoord.value='';
     }
@@ -67,7 +67,7 @@ function ValidateAccount(inputEText, inputWText)
             // ...Verzenden naar profiel ...
             window.location.href="profiel.html";
         } else {
-            console.log("Wachtwoord verkeerd!")
+            console.log("Wachtwoord verkeerd!") // dit wordt een div die tevoorschijn komt
             email.focus();
             wachtwoord.value='';
         }
