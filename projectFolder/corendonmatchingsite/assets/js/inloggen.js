@@ -1,5 +1,5 @@
 // Fys Cloud stuff
-
+//
 // FYSCloud.API.queryDatabase(
 //     "SELECT * FROM gebruiker WHERE email = 'example@email.com'"
 // ).then(function(data) {
@@ -8,9 +8,11 @@
 //     console.log(reason);
 // });
 
+// Set the document references
 let email = document.getElementById("emailin");
 let wachtwoord = document.getElementById("wachtwoordin");
 
+// Activator voor inloggen HTML (veranderen naar listener)
 function checkIn() {
     console.log(wachtwoord.value);
     ValidateEmail(email);
@@ -25,15 +27,22 @@ function ValidateEmail(inputEText)
     if(inputEText.value.match(mailformat))
     {
         console.log("You have entered a valid email address!");    //The pop-up alert for a valid email address
+
+        // Database Query
         FYSCloud.API.queryDatabase(
             'SELECT email FROM gebruiker WHERE email = ?', [inputEText.value]
         ).then(function (){
+
+            // Roep account validatie aan
             ValidateAccount(email, wachtwoord);
+        // Vangnet
         }).catch(function (reason) {
             console.log("Er is iets fout gegaan!");
             console.log(reason)
         });
     }
+
+    // Voor als het niet een correcte email is
     else
     {
         console.log("You have entered an invalid email address!");    //The pop-up alert for an invalid email address
@@ -42,18 +51,28 @@ function ValidateEmail(inputEText)
     }
 }
 
+// Validatie Account met de Database
 function ValidateAccount(inputEText, inputWText)
 {
+    // Database Query
     FYSCloud.API.queryDatabase(
     "SELECT wachtwoord FROM gebruiker WHERE email = ?", [inputEText.value]
     ).then(function (data){
+
+        // Vergelijking Database en Waarde input
         if (inputWText.value === data[0].wachtwoord) {
+            // Aanmaken Session ID ...
+            // Do something
+
+            // ...Verzenden naar profiel ...
             window.location.href="profiel.html";
         } else {
             console.log("Wachtwoord verkeerd!")
             email.focus();
             wachtwoord.value='';
         }
+
+    // Vangnet
     }).catch(function (reason){
         console.log("Er ging iets mis, probeer nogmaals");
         console.log(reason)
