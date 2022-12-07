@@ -62,6 +62,7 @@ function ValidateAccount(inputEText, inputWText)
         // Vergelijking Database en Waarde input
         if (inputWText.value === data[0].wachtwoord) {
             // Aanmaken Session ID ...
+            FYSCloud.Session.set("userId", inputEText.value);
             // Do something
 
             // ...Verzenden naar profiel ...

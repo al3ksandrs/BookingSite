@@ -47,3 +47,5 @@ function popupBox() {
 
 // Fys Cloud stuff
 
+console.log(FYSCloud.Session.get("userId", "Not Found"));
+FYSCloud.Session.clear();
