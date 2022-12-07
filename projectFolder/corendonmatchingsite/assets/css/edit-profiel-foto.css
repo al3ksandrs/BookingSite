@@ -88,4 +88,5 @@ main {
 @media (max-width: 400px) {
     main {
         flex-direction: column;
+        flex-wrap: nowrap;
     }}
