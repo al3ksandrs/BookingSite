@@ -25,6 +25,7 @@ img.profile {
 
 img.like {
     border-radius: 20px;
+    padding: 5px;
 }
 
 img.profile2 {
@@ -73,6 +74,7 @@ button.dislike { background-color: #D81E05;;}
 div.informatieVak {
     display: flex;
     flex-direction: row;
+    width: 100%;
 }
 div.info {
     display: flex;
@@ -116,6 +118,10 @@ p.socialtext {
     margin: 30px 10px 10px 10px;
     font-size: 25px;
     color: black;
+}
+p.biografie {
+    width: 97%;
+    padding: 25px;
 }
 
 
@@ -163,7 +169,7 @@ a{
     line-height: 10px;
 }
 
-main {
+.inhoud {
     display: flex;
     flex-direction: row;
     padding: 0 30px 30px 30px;
@@ -190,21 +196,15 @@ section.detail-info {
 }
 
 article {
+    display: flex;
+    flex-direction: column;
     background: rgba(217, 217, 217, 0.8);
     border-radius: 20px;
     border: #565656 1px solid;
     margin: 15px;
     padding: 15px;
-    max-width: 800px;
-    align-items: flex-start;
-
+    max-width: 1020px;
 }
-
-article.c {
-    text-align: right;
-}
-
-
 
 /* Voor de social media */
 .button {
@@ -236,15 +236,12 @@ body{
 }
 
 @media (max-width: 900px) {
-    main {
+    .inhoud {
         flex-direction: column;
         justify-content: center;
     }
     section.general-info {
         justify-content: center;
-    }
-    article {
-        align-items: center;
     }
     p.buttontext {
         margin: 20px 5px 5px 5px;
@@ -253,7 +250,7 @@ body{
 }
 
 @media (max-width: 600px) {
-    main {
+    .inhoud {
         padding: 0 0 0 0;
     }
     p.buttontext {
@@ -264,7 +261,7 @@ body{
 
 /* Pop up media */
 @media (max-width: 400px) {
-    main {
+    .inhoud {
         flex-direction: column;
         padding: 0 0 0 0;
     }
