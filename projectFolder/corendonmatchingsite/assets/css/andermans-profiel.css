@@ -1,0 +1,498 @@
+body {
+    background-image: url('../img/background.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+section.detail-info {
+    flex-grow: 3;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+a.read {
+    flex-direction: row;
+}
+
+img.profile {
+    border-radius: 20px;
+    display: block;
+    width: 228px;
+    height: 294px;
+    margin: auto;
+}
+
+img.profile2 {
+    border-radius: 47px;
+    display: block;
+    width: 77px;
+    height: 90px;
+    margin: auto;
+}
+
+img.profile3 {
+    border-radius: 20px;
+    display: block;
+    width: 100px;
+    position: absolute;
+    alignment: right;
+    flex-direction: row;
+}
+
+
+/* voor het geval wij de navbar willen laten bewegen */
+a{
+    text-decoration: none;
+}
+
+
+/* Textbox 2 voor profiel bewerken  */
+.textbox2 {
+    background: #D9D9D9;
+    border-radius: 10px;
+    width: 426px;
+    height: 55px;
+}
+
+.textbox {
+    background: green;
+    border-radius: 20px;
+}
+
+.textbox1 {
+    border-radius: 20px;
+}
+
+.text {
+    margin: 0px;
+    padding: 0px;
+
+
+    font-family: 'Roboto', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 28px;
+    line-height: 34px;
+}
+
+/* Voor de groene bg daarbij */
+.textt {
+    margin: 0px;
+    padding: 0px;
+    position: center;
+
+    font-family: 'Roboto', sans-serif;
+    color: #FFFFFF;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 28px;
+    line-height: 10px;
+}
+
+/* Voor de matching history */
+.text3 {
+    margin: 0px;
+    padding: 0px;
+
+
+    font-family: 'Roboto', sans-serif;
+    color: #FFFFFF;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 34px;
+}
+
+
+.box {
+    width: 250px;
+    height: 90px;
+}
+
+main {
+    display: flex;
+    flex-direction: row;
+    padding: 0 30px 30px 30px;
+    font-family: 'Roboto', sans-serif;
+}
+
+/* Popup CCS */
+
+.popup_stuff {
+    display: none;
+}
+
+.popup-box{
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    left: 0;
+    top:0;
+    background-color: rgba(0,0,0,0.5);
+    z-index: 700;
+    visibility: hidden;
+    opacity:0;
+    transition: all 0.5s ease-in-out;
+}
+.popup-box.open{
+    visibility: visible;
+    opacity:1;
+}
+
+.popup-box .popup-content{
+    background-image: url('../img/turkije.jpg');
+    width: 900px;
+    position: absolute;
+    left: 50%;
+    top:50%;
+    transform: translate(-50%,-50%);
+    border-radius: 8px;
+}
+
+.popup-box .popup-header{
+    background-color: white;
+    padding: 15px 40px 15px 15px;
+    border-bottom: 1px solid #dddddd;
+
+}
+.popup-box .popup-header h3{
+    margin:0;
+    color:green;
+    font-size: 20px;
+
+}
+.popup-box .popup-header .popup-close-icon{
+    position: absolute;
+    height: 80px;
+    width: 100px;
+    text-align: center;
+    color: #26A514;
+    font-size: 28px;
+    line-height: 30px;
+    right: 5px;
+    top: 5px;
+    cursor: pointer;
+}
+.popup-box .popup-body{
+    background-image: url('../img/turkije.jpg');
+    padding: 15px;
+    max-height: 600px;
+    max-width: 900px;
+    overflow-y: auto;border-radius: 20px;
+}
+.popup-box .popup-body img{
+    width: 100%;
+    display: block;
+    margin-top: 0px;
+
+}
+.popup-box .popup-body p{
+    font-size: 16px;
+    color:#555555;
+    margin:0 0 15px;
+
+}
+.popup-box .popup-footer{
+    background-color: white;
+    padding: 15px;
+    border-top:1px solid #26A514;
+    text-align: right;
+}
+.popup-box .popup-footer .btn{
+    padding: 8px 15px;
+    border:1px solid #26A514;
+    color:#26A514;
+    font-size: 16px;
+    background-color: transparent;
+    cursor: pointer;
+    border-radius: 4px;
+}
+.popup-box .popup-footer .btn:focus{
+    outline: none;
+}
+
+.services .service-items{
+    flex:0 0 100%;
+    max-width: 100%;
+}
+.services .service-items .item{
+    flex:0 0 33.33%;
+    max-width: 33.33%;
+    padding: 15px;
+}
+
+.services .service-items .item-inner{
+    border:1px solid #26A514;
+    padding: 30px;
+}
+.read-more-cont{
+    display: none;
+}
+.service-items .item-inner h3{
+    font-size: 20px;
+    color:#000000;
+    margin-bottom: 30px;
+    position: relative;
+}
+.service-items .item-inner h3::before{
+    content: '';
+    height: 1px;
+    width: 80px;
+    background-color: #000000;
+    position: absolute;
+    left:0;
+    bottom:-10px;
+}
+
+.service-items .item-inner p{
+    color:#555555;
+    font-size: 16px;
+    margin:0 0 30px;
+}
+.service-items .item-inner .btn{
+    font-size: 16px;
+    background-color: transparent;
+    border:1px solid #26A514;
+    color:#26A514;
+    padding: 8px 15px;
+    cursor: pointer;
+}
+
+.containerMatching {
+    flex-direction: revert;
+    justify-content: start;
+    align-items: flex-start;
+}
+
+.diveroo {
+    display: flex;
+    flex-direction: row;
+}
+
+/*Voor de hovering van de buttons van mijn pagina  profiel */
+button {
+
+    cursor: pointer;
+    position: relative;
+    padding: 22px 46px;
+    font-size: 28px;
+    text-transform: uppercase;
+    color: #ffffff;
+    background: rgba(255, 255, 255, .1);
+    border: 3px solid rgba(255, 255, 255, .2);
+    border-radius: 18px;
+    transition: .4s;
+}
+
+button:hover {
+    z-index: 1;
+    border-color: transparent;
+    background: linear-gradient(
+            90deg,
+            #f9d923,
+            #00a19d,
+            #0c87b7,
+            #cb49ff,
+            #ff6666,
+            #f9d923
+    );
+    background-size: 400%;
+    box-shadow: 0 0 15px rgb(2, 4, 24);
+    animation: glow 12s linear forwards;
+}
+
+@keyframes glow {
+
+    from {
+        background-position: 0%;
+    }
+
+    to {
+        background-position: 400%;
+    }
+
+}
+
+button::before {
+    content: '';
+    position: absolute;
+    top: -1px;
+    right: -1px;
+    bottom: -1px;
+    left: -1px;
+    background: inherit;
+    filter: blur(36px);
+    opacity: 0;
+    transition: .4s ease-out;
+}
+
+button:hover::before {
+    opacity: 1;
+    z-index: -1;
+}
+
+/*Voor de profielbewerken*/
+button4 {
+    width: 700px;
+    height: 20px;
+    cursor: pointer;
+    position: relative;
+    padding: 22px 46px;
+    font-size: 28px;
+    text-transform: uppercase;
+    color: #ffffff;
+    background: rgba(255, 255, 255, .1);
+    border: 3px solid rgba(255, 255, 255, .2);
+    border-radius: 18px;
+    transition: .4s;
+}
+
+button4:hover {
+    z-index: 1;
+    border-color: transparent;
+    background: linear-gradient(
+            90deg,
+            #f9d923,
+            #00a19d,
+            #0c87b7,
+            #cb49ff,
+            #ff6666,
+            #f9d923
+    );
+    background-size: 400%;
+    box-shadow: 0 0 15px rgb(2, 4, 24);
+    animation: glow 12s linear forwards;
+}
+
+@keyframes glow {
+
+    from {
+        background-position: 0%;
+    }
+
+    to {
+        background-position: 400%;
+    }
+
+}
+
+/* Responsive layout */
+
+
+/* Test */
+section {
+    display: flex;
+    flex-direction: column;
+}
+
+.container {
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+
+
+}
+
+section.general-info {
+    align-items: baseline;
+}
+
+section.detail-info {
+    flex-grow: 3;
+}
+
+article {
+    background: rgba(217, 217, 217, 0.8);
+    border-radius: 20px;
+    border: #565656 1px solid;
+    margin: 15px;
+    padding: 15px;
+    max-width: 800px;
+    align-items: flex-start;
+
+}
+
+article.c {
+    text-align: right;
+}
+
+
+
+/* Voor de social media */
+.button {
+    color: transparent;
+    border-radius: 50%;
+    border: none;
+    text-align: end;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    padding: 5px;
+}
+
+.button1 {
+    color: transparent;
+    border-radius: 100%;
+    border: none;
+    text-align: end;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    padding: 5px;
+}
+
+.button2 {
+    background-color: transparent;
+    width: 200px;
+    font-size: 20px;
+    padding: 10px;
+    border-radius: 5px;
+    color: black;
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+}
+
+
+body{
+    font-size: 14px;
+    line-height: 22px;
+}
+
+
+/* Pop up media */
+@media (max-width: 400px) {
+    main {
+        flex-direction: column;
+    }
+
+    .diveroo {
+        flex-direction: column;
+        display: table;
+
+    }
+
+    .profile2 {
+        width: 50%;
+        height: auto;
+    }
+    .container {
+        flex-direction: column;
+        height: auto;
+    }
+    .textt{
+        line-height: revert;
+    }
+    .containerMatching{
+        flex-direction: column-reverse;
+    }
+    .popup-box .popup-content {
+        width: inherit;
+    }
+}
