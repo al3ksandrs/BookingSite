@@ -98,7 +98,7 @@ div.info {
 
 h3.infotext {
     margin: 10px 10px 10px 25px;
-    font-size: 23px;
+    font-size: 20px;
 }
 a.infotext {
     font-size: 25px;
@@ -172,8 +172,13 @@ a{
 .inhoud {
     display: flex;
     flex-direction: row;
-    padding: 0 30px 30px 30px;
+    padding: 0 30px 0 30px;
     font-family: 'Roboto', sans-serif;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
 }
 
 section {
@@ -187,8 +192,10 @@ section {
     align-items: flex-start;
 }
 
-section.general-info {
+div.general-info {
     align-items: baseline;
+    display: flex;
+    flex-direction: column;
 }
 
 section.detail-info {
@@ -204,6 +211,7 @@ article {
     margin: 15px;
     padding: 15px;
     max-width: 1020px;
+    width: 92%;
 }
 
 /* Voor de social media */
@@ -240,8 +248,9 @@ body{
         flex-direction: column;
         justify-content: center;
     }
-    section.general-info {
+    div.general-info {
         justify-content: center;
+        align-items: center;
     }
     p.buttontext {
         margin: 20px 5px 5px 5px;
