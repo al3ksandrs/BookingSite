@@ -8,8 +8,11 @@
     <title>Match 4 u</title>
     <link href="../assets/css/template_ingelogd.css" rel="stylesheet">
     <link href="../assets/css/navbar-en-notifications.css" rel="stylesheet">    <!--Navbar en notifications-->
+    <script src="../assets/js/notifications.js" defer></script>
+
     <script src="../assets/js/template-ingelogd.js" defer></script>
     <script src="../assets/js/config.js" defer></script>
+
     <script src="https://cdn.fys.cloud/fyscloud/0.0.4/fyscloud.min.js" defer></script> <!--FYS Cloud API-->
 </head>
 
@@ -38,43 +41,11 @@
 <main>
     <input id="notification-toggle" type="checkbox"/>                               <!--notification knop-->
     <label class="notification-container" for="notification-toggle">
-        <div class="notification-menu-button"><img src=../assets/img/notification-knop-alert.png class="notification-foto"></src></div>
+        <div class="notification-menu-button"><img src=../assets/img/notification-knop-alert.png
+                                                   id="notification-foto"></src></div>
     </label>
 
     <ul class="notification-menu">
-        <li>        <!--NOTIFICATION-->
-            <article class = "notification-item">
-                <p class="notification-text">Gematched met:</p>
-                <a href="andermans-profiel.html" class="notification-button">Bezoek profiel</a>
-            </article>
-            <article class="notification-informatie">
-                <img src=../assets/img/rayan.png class="notification-item-foto"></src>
-                <article class="notification-naam-leeftijd">
-                    <p class="notification-foto-naam">Ryan</p>
-                    <p class="notification-foto-leeftijd">42</p>
-                </article>
-            </article>
-            <button class="notification-delete" onclick="this.parentNode.parentNode.removeChild(this.parentNode);">
-                <i><img src=../assets/img/delete.webp class = "kruis" height="30" width="30"></i>
-            </button>
-        </li>
-
-        <li>        <!--NOTIFICATION-->
-            <article class = "notification-item">
-                <p class="notification-text">Gematched met:</p>
-                <a href="andermans-profiel.html" class="notification-button">Bezoek profiel</a>
-            </article>
-            <article class="notification-informatie">
-                <img src=../assets/img/salmah.jpg class="notification-item-foto"></src>
-                <article class="notification-naam-leeftijd">
-                    <p class="notification-foto-naam">Salmah</p>
-                    <p class="notification-foto-leeftijd">34</p>
-                </article>
-            </article>
-            <button class="notification-delete" onclick="this.parentNode.parentNode.removeChild(this.parentNode);">
-                <i><img src=../assets/img/delete.webp class = "kruis" height="30" width="30"></i>
-            </button>
-        </li>
     </ul>
 
     <article class="textbox">                                                       <!--Lorem ipsum textbox-->
