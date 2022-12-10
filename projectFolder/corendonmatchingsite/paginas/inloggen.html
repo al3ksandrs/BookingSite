@@ -80,25 +80,6 @@
             <h1>Inloggen</h1>
         </div>
         <section class="invoer">
-            <comment>
-                <!--            <div class="test">-->
-                <!--                <div class="text">-->
-                <!--                    Email:-->
-                <!--                </div>-->
-                <!--                <div class="text">-->
-                <!--                    <input type="text">-->
-                <!--                </div>-->
-                <!--            </div>-->
-                <!--            <div class="test">-->
-                <!--                <div class="text">-->
-                <!--                    Wachtwoord:-->
-                <!--                </div>-->
-                <!--                <div class="text">-->
-                <!--                    <input type="text">-->
-                <!--                </div>-->
-                <!--            </div>-->
-            </comment>
-
             <section class="instr text">
                 <label for="emailin">Email:</label>
                 <label for="wachtwoordin">Wachtwoord:</label>
@@ -107,12 +88,15 @@
                 <input id="emailin" name="email" type="text" placeholder="Type Hier...">
                 <input id="wachtwoordin" name="wachtwoord" type="password" placeholder="Type Hier...">
             </section>
+            <section class="alert">
+                <div></div>
+            </section>
         </section>
         <section class="buttons">
-            <button type="submit" onclick="window.location.href='template.html'">
+            <button id="backout" type="button">
                 Annuleren
             </button>
-            <input type="submit" value="Verder" onclick="checkIn()">
+            <input id="submit" type="submit" value="Verder">
         </section>
     </section>
 </main>

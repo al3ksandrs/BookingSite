@@ -11,6 +11,9 @@ FYSCloud.API.queryDatabase(
     console.log(reason);
 });
 
+// Inhoud Stuff
+const bioInh = document.querySelector("#biografie_inhoud");
+
 // Popup stuff
 const serviceItems = document.querySelector(".service-items");
 const popup = document.querySelector(".popup-box")
@@ -19,7 +22,7 @@ const popupCloseIcon = popup.querySelector(".popup-close-icon");
 
 // Klikfunctie in de console
 serviceItems.addEventListener("click", function (event) {
-    if (event.target.tagName.toLowerCase() == "button") {
+    if (event.target.tagName.toLowerCase() === "button") {
         console.log("Clicked")
 // retourneert de elementen in het document die overeenkomt met de opgegeven selector of groep selectors.
         const item = document.querySelector(".popup_stuff");
@@ -36,7 +39,7 @@ popupCloseBtn.addEventListener("click", popupBox);
 popupCloseIcon.addEventListener("click", popupBox);
 // Popup
 popup.addEventListener("click", function (event) {
-    if (event.target == popup) {
+    if (event.target === popup) {
         popupBox();
     }
 })
@@ -48,4 +51,12 @@ function popupBox() {
 // Fys Cloud stuff
 
 console.log(FYSCloud.Session.get("userId", "Not Found"));
-FYSCloud.Session.clear();
+console.log(FYSCloud.Session.get("email", "Not Found"))
+
+FYSCloud.API.queryDatabase(
+    'SELECT * FROM gebruiker WHERE id = ?', [FYSCloud.Session.get("userId", "Not Found")]
+).then(function (data){
+    bioInh.innerHTML = data[0].biografie
+}).catch(function (reason){
+    console.log(reason)
+})

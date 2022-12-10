@@ -230,6 +230,7 @@ comment {
     display: flex;
     align-items: center;
     width: 100%;
+    flex-wrap: wrap;
 }
 
 button, input[type="submit"] {
@@ -250,16 +251,13 @@ button:hover, input[type="submit"]:hover {
 .instr, .inputs {
     display: flex;
     flex-direction: column;
-    width: 50%;
-    margin: 5px 10px;
+    width: 48%;
+    margin: 5px auto;
     padding: 0;
     align-items: flex-end;
 }
 
 .inputs {
-    display: flex;
-    flex-direction: column;
-    width: 50%;
     align-items: flex-start;
 }
 
@@ -273,4 +271,15 @@ button:hover, input[type="submit"]:hover {
     border-radius: 20px;
     padding: 10px;
     background-color: rgba(255, 255, 255, 0.5);
+}
+
+.alert {
+    display: flex;
+    justify-content: center;
+    height: 34px;
+    width: 100%;
+}
+
+.alert div {
+    margin: 20px;
 }
