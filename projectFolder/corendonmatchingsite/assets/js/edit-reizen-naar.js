@@ -9,6 +9,13 @@ FYSCloud.API.queryDatabase(
 }).catch(function (reason) {
     console.log(reason);});
 
+function checkCheckbox() {
+    var spanje = document.getElementById("spanje");
+    if (spanje.checked === true) {
+
+    }
+}
+
     // On click functie voor keuzes van Landen
 function log1() {
     console.log("Je hebt Spanje gekozen");

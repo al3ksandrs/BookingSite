@@ -18,13 +18,24 @@ article{
     justify-content: flex-start;
     align-items: flex-start;
 }
-section{
+.container2 {
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+/*section{
     display: flex;
     flex-direction: column;
-}
+}*/
 /*textbox 1 waar de foto staat*/
 section.general-info{
-    align-items: baseline;
+    align-items: start;
+    display: flex;
+    flex-direction: row;
+}
+section.general-info2{
+    align-items: start;
+    display: flex;
+    flex-direction: row;
 }
 img.profile {
     border-radius: 20px;
@@ -76,10 +87,31 @@ textarea{
 }
 main {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     padding: 0 30px 30px 30px;
-    flex-wrap: wrap;
+    font-family: 'Roboto', sans-serif;
 }
 #biografie{
     resize: none;
+}
+.textbox4{
+    width: 600px;
+   height: auto;
+}
+.textbox3{
+    width: 300px;
+    height: 219px;
+}
+
+/* responsive */
+@media (max-width: 1434px) {
+    main {
+        flex-direction: column;
+        /*flex-wrap: nowrap;*/
+    }
+    section.general-info {
+        display: flex;
+        flex-direction: column;
+    }
+
 }

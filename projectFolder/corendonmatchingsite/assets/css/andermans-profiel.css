@@ -1,0 +1,291 @@
+body {
+    background-image: url('../img/background.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+section.detail-info {
+    flex-grow: 3;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+a.read {
+    flex-direction: row;
+}
+
+img.profile {
+    border-radius: 20px;
+    display: block;
+}
+
+img.like {
+    border-radius: 20px;
+    padding: 5px;
+}
+
+img.profile2 {
+    border-radius: 47px;
+    display: block;
+    width: 77px;
+    height: 90px;
+    margin: auto;
+}
+
+img.profile3 {
+    border-radius: 20px;
+    display: block;
+    width: 100px;
+    position: absolute;
+    alignment: right;
+    flex-direction: row;
+}
+
+/* Like en dislike buttons */
+.buttontext {
+    margin: 50px 10px 10px 10px;
+    font-size: 30px;
+    text-align: center;
+}
+
+article.buttons {
+    display: flex;
+    flex-direction: row;
+    width: 92%;
+    justify-content: space-around;
+    margin-top: 0;
+    max-width: 420px;
+}
+
+button.like, button.dislike {
+    display:flex;
+    border-radius: 20px;
+    background-color: green;
+    cursor: pointer;
+}
+button.like { background-color: green;}
+button.dislike { background-color: #D81E05;;}
+
+/* Interesses, spreekt, wilt reizen naar en socials */
+div.informatieVak {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+div.info {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+}
+.green {
+    display: flex;
+    font-family: Roboto , sans-serif;
+    background: green;
+    border-radius: 20px;
+    margin: 15px;
+    padding: 15px;
+    color: #fff;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 10px;
+    font-size: 20px;
+    align-items: flex-start;
+}
+
+h3.infotext {
+    margin: 10px 10px 10px 25px;
+    font-size: 14px;
+}
+a.infotext {
+    font-size: 25px;
+    margin: 10px 10px 20px 20px;
+}
+
+button.socials {
+    background: none;
+    border: none;
+}
+a.social {
+    display: flex;
+    flex-direction: row;
+}
+
+p.socialtext {
+    margin: 30px 10px 10px 10px;
+    font-size: 25px;
+    color: black;
+}
+p.biografie {
+    width: 97%;
+    padding: 25px;
+}
+
+
+
+/* voor het geval wij de navbar willen laten bewegen */
+a{
+    text-decoration: none;
+}
+
+
+.textbox {
+    background: green;
+    border-radius: 20px;
+}
+
+.textbox1 {
+    display: flex;
+    flex-direction: column;
+    border-radius: 20px;
+    justify-content: center;
+    width: 93%;
+    max-width: 260px;
+    max-height: 390px;
+}
+
+.tekst {
+    margin-left: 15px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 28px;
+    text-align: center;
+    color: #FFFFFF;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 10px;
+}
+
+
+.inhoud {
+    display: flex;
+    flex-direction: row;
+    padding: 0 30px 0 30px;
+    font-family: 'Roboto', sans-serif;
+    justify-content: center;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+}
+
+section {
+    display: flex;
+    flex-direction: column;
+}
+
+.container {
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+div.general-info {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+}
+
+section.detail-info {
+    flex-grow: 3;
+}
+
+article {
+    display: flex;
+    flex-direction: column;
+    background: rgba(217, 217, 217, 0.8);
+    border-radius: 20px;
+    border: #565656 1px solid;
+    margin: 15px;
+    padding: 15px;
+    max-width: 1020px;
+    width: 60%;
+}
+
+/* Voor de social media */
+.button {
+    color: transparent;
+    border-radius: 50%;
+    border: none;
+    text-align: end;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    padding: 5px;
+}
+
+
+body{
+    font-size: 14px;
+    line-height: 22px;
+}
+/* Responsive layout */
+@media (max-width: 1200px) {
+    div.informatieVak {
+        flex-direction: column;
+    }
+    div.info {
+        width: 100%;
+    }
+}
+
+@media (max-width: 900px) {
+    .inhoud {
+        flex-direction: column;
+        justify-content: center;
+    }
+    div.general-info {
+        justify-content: center;
+        align-items: center;
+    }
+    p.buttontext {
+        margin: 20px 5px 5px 5px;
+        font-size: 30px;
+    }
+    article {
+        width: 93%;
+    }
+}
+
+@media (max-width: 600px) {
+    .inhoud {
+        padding: 0 0 0 0;
+    }
+    p.buttontext {
+        margin: 20px 5px 5px 5px;
+        font-size: 24px;
+    }
+}
+
+/* Pop up media */
+@media (max-width: 400px) {
+    .inhoud {
+        flex-direction: column;
+        padding: 0 0 0 0;
+    }
+    img.like {
+        width: 100px;
+        height: 100px;
+    }
+    p.buttontext {
+        margin: 10px 5px 5px 5px;
+        font-size: 24px;
+    }
+
+    .diveroo {
+        flex-direction: column;
+        display: table;
+    }
+
+    .container {
+        flex-direction: column;
+        height: auto;
+    }
+    .textt{
+        line-height: revert;
+    }
+}
