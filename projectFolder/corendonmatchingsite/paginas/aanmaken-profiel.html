@@ -5,14 +5,14 @@
     <!--Titel en links naar css + javascript-->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Match 4 u | Registreren</title>
+    <title>Match 4 u | Aanmaken profiel</title>
 
     <link href="../assets/css/navbar-en-notifications.css" rel="stylesheet">
     <link href="../assets/css/inloggen.css" rel="stylesheet">
 
     <script src="https://cdn.fys.cloud/fyscloud/0.0.4/fyscloud.min.js" defer></script>
     <script src="../assets/js/config.js" defer></script>
-    <script src="../assets/js/registreren.js" defer></script>
+    <script src="../assets/js/aanmaken-profiel.js" defer></script>
     <script src="../assets/js/main.js" defer></script>
 </head>
 
@@ -77,28 +77,30 @@
 <main>
     <section class="textbox">
         <div class="titel">
-            <h1>Registreren</h1>
+            <h1>Aanmaken Intresses</h1>
         </div>
         <section class="invoer">
             <section class="instr text">
-                <label for="emailin">Email:</label>
-                <label for="wachtwoordin">Wachtwoord:</label>
-                <label for="wachtwoord2in">Wachtwoord Herhalen:</label>
+                <label for="foto-bestand">Upload een foto:</label>
+                <label for="naam">Wat is uw naam:</label>
+                <label for="leeftijd">Wanneer bent u geboren:</label>
+                <label for="bio">Stel u even voor:</label>
             </section>
             <section class="inputs text">
-                <input id="emailin" name="email" type="text" placeholder="Type Hier...">
-                <input id="wachtwoordin" name="wachtwoord" type="password" placeholder="Type Hier...">
-                <input id="wachtwoord2in" name="wachtwoord2" type="password" placeholder="Type Hier...">
-            </section>
-            <section class="alert">
-                <div></div>
+                <label for="foto-bestand">
+                    <img id="imagePreview" src="../assets/img/profielfoto.png" alt="profielfoto preview">
+                </label>
+                <input id="foto-bestand" name="foto-bestand" type="file" accept="image/*" onchange="gogo()">
+                <input id="naam" name="naam" type="text" placeholder="Type Hier...">
+                <input id="leeftijd" name="leeftijd" type="date">
+                <textarea id="bio" name="bio" placeholder="Type Hier..." maxlength="1200"></textarea>
             </section>
         </section>
         <section class="buttons">
-            <button id="backout" type="button">
+            <button type="submit" onclick="window.location.href='template.html'">
                 Annuleren
             </button>
-            <input id="submit" type="submit" value="Verder">
+            <input type="submit" value="Verder" onclick="gogo()">
         </section>
     </section>
 </main>

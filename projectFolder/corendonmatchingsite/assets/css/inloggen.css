@@ -9,6 +9,7 @@ body {
 
 h1 {
     font-size: 40px;
+    margin: 20px;
 }
 
 * {
@@ -218,7 +219,7 @@ comment {
     background: rgba(217, 217, 217, 0.8);
     border-radius: 20px;
     width: 95%;
-    min-height: 84vh;
+    min-height: 80vh;
     margin: 10px auto auto auto;
     flex-direction: column;
     justify-content: space-evenly;
@@ -265,12 +266,22 @@ button:hover, input[type="submit"]:hover {
     margin: 10px;
 }
 
-.inputs input {
-    margin: 6px 0;
+.inputs input, .inputs label, .inputs textarea {
+    margin: 7px 0;
     border-color: transparent;
     border-radius: 20px;
     padding: 10px;
     background-color: rgba(255, 255, 255, 0.5);
+    resize: none;
+}
+
+.inputs label img {
+    width: 114px;
+    height: 114px;
+}
+
+.inputs label img:hover {
+    cursor: pointer;
 }
 
 .alert {
@@ -282,4 +293,13 @@ button:hover, input[type="submit"]:hover {
 
 .alert div {
     margin: 20px;
+}
+
+input[type="file"] {
+    display: none;
+}
+
+textarea[name="bio"] {
+    width: 300px;
+    height: 144px;
 }

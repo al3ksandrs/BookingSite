@@ -16,19 +16,6 @@ let backout = document.querySelector("#backout")
 let alerts = document.querySelector(".alert div")
 let mailFormat = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 
-// Activator voor inloggen HTML (veranderen naar listener)
-// function checkIn() {
-//     ValidateEmail(email);
-// }
-
-backout.addEventListener("click", function (event) {
-    window.location.href = "../paginas/home.html"
-})
-
-submission.addEventListener("click",
-    function () {
-        ValidateEmail(email)
-    })
 
 // Valideert de email op karakters, later ook op database bestaan
 function ValidateEmail(inputEText) {
@@ -51,6 +38,7 @@ function ValidateEmail(inputEText) {
                 "<a href='../paginas/registreren.html'>" +
                 "Maak er een aan?" +
                 "</a>"
+            console.log(reason)
         });
     }
     // Voor als het niet een correcte email is
@@ -86,7 +74,16 @@ function ValidateAccount(inputEText, inputWText) {
         // Vangnet
     }).catch(function (reason) {
         console.log("Er ging iets mis, probeer nogmaals");
-        // console.log(reason)
+        console.log(reason)
         email.focus();
     })
 }
+
+submission.addEventListener("click",
+    function () {
+        ValidateEmail(email)
+    })
+
+backout.addEventListener("click", function () {
+    window.location.href = "../paginas/home.html"
+})
