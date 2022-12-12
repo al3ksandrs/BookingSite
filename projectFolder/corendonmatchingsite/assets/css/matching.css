@@ -10,6 +10,7 @@ body {
 * {
     font-family: Roboto;
     box-sizing: border-box;
+    text-decoration: none;
 }
 
 /* Navbar */
@@ -149,7 +150,7 @@ font-weight: bold;
 }
 
 div li{
-    font-size: 36px;
+    font-size: 23px;
     font-weight: normal;
 }
 .flexbox-item-3{
@@ -176,6 +177,7 @@ div li{
     border-radius: 10px;
 }
 
+
 .profiel_link{
     background-color: #FFFFFF;
     border-radius: 21px;
@@ -187,6 +189,8 @@ div li{
     transition-duration: 0.4s;
     border: 1px solid #000000;
     box-shadow:  4px 4px rgba(0, 0, 0, 0.25);
+    text-decoration: none;
+
 }
 
 .profiel_link:hover{
@@ -229,7 +233,7 @@ div.dropdownmenu {
 }
 
 .select:hover{
-    background: #323741;
+    background: #26A514;
 }
 
 .caret{
@@ -248,7 +252,7 @@ div.dropdownmenu {
 .menu {
     list-style: none;
     padding: 0.2em 0.5em;
-    background: #363a43;
+    background: #26A514;
     border: 1px #363a43 solid;
     box-shadow: 0 0.5em 1em rgba(0, 0, 0, 0.2);
     border-radius: 0.5em;
