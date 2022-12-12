@@ -28,3 +28,5 @@ dropdowns.forEach(dropdown => {
     });
 });
 
+console.log(FYSCloud.Session.get("userId"))
+console.log(FYSCloud.Session.get("email"))

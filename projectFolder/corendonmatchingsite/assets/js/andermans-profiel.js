@@ -8,3 +8,7 @@ FYSCloud.API.queryDatabase(
 // waarom het mis gaat
 }).catch(function (reason) {
     console.log(reason);});
+
+
+// LIKE/MATCHING SYSTEEM
+
