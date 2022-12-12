@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../assets/css/matching.css">
+    <link href="../assets/css/navbar-en-notifications.css" rel="stylesheet">    <!--Navbar en notifications-->
+    <script src="../assets/js/main.js" defer></script>
+    <title>Matchingpagina met filter</title>
+</head>
+<body>
+<nav class="navbar">                                                              <!--normale navbar-->
+                                                              <!--normale navbar-->
+    <ul>
+        <li><a href="home.html" class="navbar-normale-button">Home</a></li>
+        <li><a href="over-ons.html" class="navbar-normale-button">Over ons</a></li>
+        <li class="logo"><img src=../assets/img/logo.PNG class="logo-foto">></li>
+        <li><a href="matching.html" class="navbar-normale-button">Matchen</a></li>
+        <li><a href="profiel.html" class="navbar-normale-button">Profiel</a></li>
+
+        <input id="navbar-menu-toggle" type="checkbox"/>                               <!--navbar menu voor mobile-->
+        <label class='navbar-menu-container' for="navbar-menu-toggle">
+            <div class='navbar-menu-button'><img src=../assets/img/burger-menu.png class="navbar-foto"></src></div>
+        </label>
+        <ul class="navbar-links">
+            <li><a href="home.html" class="navbar-menu-link">Home</a></li>
+            <li><a href="over-ons.html" class="navbar-menu-link">Over ons</a></li>
+            <li><a href="matching.html" class="navbar-menu-link">Matches</a></li>
+            <li><a href="profiel.html" class="navbar-menu-link">Profiel</a></li>
+        </ul>
+    </ul>
+</nav>
+
+<main>
+<div class="dropdownmenu">
+    <div class="dropdown">
+        <div class="select">
+            <span class="selected">Interesses</span>
+            <div class="caret"></div>
+        </div>
+        <ul class="menu">
+            <li>Shoppen</li>
+            <li>Clubben</li>
+            <li class="active">Uitgaan</li>
+            <li>Zwemmen</li>
+            <li>Wandelen</li>
+        </ul>
+    </div>
+
+    <div class="dropdown">
+        <div class="select">
+            <span class="selected">Geslacht</span>
+            <div class="caret"></div>
+        </div>
+        <ul class="menu">
+            <li>Man</li>
+            <li class="active">Vrouw</li>
+        </ul>
+    </div>
+
+    <div class="dropdown">
+        <div class="select">
+            <span class="selected">Leeftijd</span>
+            <div class="caret"></div>
+        </div>
+        <ul class="menu">
+            <li>45 - 55</li>
+            <li class="active">55 - 65</li>
+            <li>65+</li>
+        </ul>
+    </div>
+
+    <div class="dropdown">
+        <div class="select">
+            <span class="selected">Bestemming</span>
+            <div class="caret"></div>
+        </div>
+        <ul class="menu">
+            <li class="active">Azie</li>
+            <li>Europa</li>
+            <li>Africa</li>
+            <li>VS</li>
+        </ul>
+    </div>
+</div>
+
+
+    <div class="flexbox-container">
+        <div class="flexbox-item flexbox-item-1">
+            <img src=../assets/img/Jennifer_Love.jpg alt="foto Jennifer" class="match_foto">
+            <p class="naam">
+                Jennifer &nbsp;&nbsp;&nbsp; 48
+            </p>
+        </div>
+        <div class="flexbox-item flexbox-item-2">
+            <ul>
+                Interesses
+                <li>Musea bezoeken</li>
+                <li>Lezen</li>
+                <li>Uitgaan</li>
+            </ul>
+            <ul>
+                Spreekt
+                <li>Nederlands</li>
+                <li>Engels</li>
+                <li>Frans</li>
+                <li>Duits</li>
+            </ul>
+            <ul>
+                Wilt graag naar:
+                <li>Azie</li>
+            </ul>
+            <p class="profiel_link grid-col-span-2">
+                Bezoek Profiel
+            </p>
+
+
+        </div>
+    </div>
+    <div class="flexbox-container">
+        <div class="flexbox-item flexbox-item-3">
+            <img src=../assets/img/rayan.png alt="foto Rayan" class="match_foto">
+            <p class="naam">
+                Rayan &nbsp;&nbsp;&nbsp;53
+            </p>
+        </div>
+        <div class="flexbox-item flexbox-item-2">
+            <ul>
+                Interesses
+                <li>Clubben</li>
+                <li>Wandelen</li>
+                <li>Uitgaan</li>
+            </ul>
+            <ul>
+                Spreekt
+                <li>Nederlands</li>
+                <li>Engels</li>
+                <li>Spaans</li>
+                <li>Turks</li>
+            </ul>
+            <ul>
+                Wilt graag naar:
+                <li>Azie</li>
+            </ul>
+
+            <p class="profiel_link grid-col-span-2">
+
+                  <a href="andermans-profiel.html"> Bezoek Profiel  </a> </p>
+
+
+        </div>
+    </div>
+
+</main>
+
+</body>
+
+</html>

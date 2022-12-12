@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <!--Titel en links naar css + javascript-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profielpagina</title>
+    <link href="../assets/css/navbar-en-notifications.css" rel="stylesheet">    <!--Navbar en notifications-->
+    <link href="../assets/css/edit-profiel.css" rel="stylesheet">
+    <script src="../assets/js/main.js"></script>
+</head>
+
+<body>
+<nav class="navbar">                                                              <!--normale navbar-->
+    <ul>
+        <li><a href="home.html" class="navbar-normale-button">Home</a></li>
+        <li><a href="over-ons.html" class="navbar-normale-button">Over ons</a></li>
+        <li class="logo"><img src=../assets/img/logo.PNG class="logo-foto"></src></li>
+        <li><a href="matching.html" class="navbar-normale-button">Matches</a></li>
+        <li><a href="profiel.html" class="navbar-normale-button">Profiel</a></li>
+
+        <input id="navbar-menu-toggle" type="checkbox"/>                               <!--navbar menu voor mobile-->
+        <label class='navbar-menu-container' for="navbar-menu-toggle">
+            <div class='navbar-menu-button'><img src=../assets/img/burger-menu.png class="navbar-foto"></src></div>
+        </label>
+        <ul class="navbar-links">
+            <li><a href="home.html" class="navbar-menu-link">Home</a></li>
+            <li><a href="over-ons.html" class="navbar-menu-link">Over ons</a></li>
+            <li><a href="matching.html" class="navbar-menu-link">Matches</a></li>
+            <li><a href="profiel.html" class="navbar-menu-link">Profiel</a></li>
+        </ul>
+    </ul>
+</nav>
+
+<main>
+    <input id="notification-toggle" type="checkbox"/>                               <!--notification knop-->
+    <label class="notification-container" for="notification-toggle">
+        <div class="notification-menu-button"><img src=../assets/img/notification-knop-alert.png
+                                                   class="notification-foto"></src></div>
+    </label>
+
+    <ul class="notification-menu">
+        <li>        <!--NOTIFICATION-->
+            <article class="notification-item">
+                <p class="notification-text">Gematched met:</p>
+                <a href="andermans-profiel.html" class="notification-button">Bezoek profiel</a>
+            </article>
+            <article class="notification-informatie">
+                <img src=../assets/img/rayan.png class="notification-item-foto"></src>
+                <article class="notification-naam-leeftijd">
+                    <p class="notification-foto-naam">Ryan</p>
+                    <p class="notification-foto-leeftijd">42</p>
+                </article>
+            </article>
+            <button class="notification-delete" onclick="this.parentNode.parentNode.removeChild(this.parentNode);">
+                <i><img src=../assets/img/delete.webp class="kruis" height="30" width="30"></i>
+            </button>
+        </li>
+
+        <li>        <!--NOTIFICATION-->
+            <article class="notification-item">
+                <p class="notification-text">Gematched met:</p>
+                <a href="andermans-profiel.html" class="notification-button">Bezoek profiel</a>
+            </article>
+            <article class="notification-informatie">
+                <img src=../assets/img/salmah.jpg class="notification-item-foto"></src>
+                <article class="notification-naam-leeftijd">
+                    <p class="notification-foto-naam">Salmah</p>
+                    <p class="notification-foto-leeftijd">34</p>
+                </article>
+            </article>
+            <button class="notification-delete" onclick="this.parentNode.parentNode.removeChild(this.parentNode);">
+                <i><img src=../assets/img/delete.webp class="kruis" height="30" width="30"></i>
+            </button>
+        </li>
+    </ul>
+
+    <!--EINDE NOTIFICATIONS-->
+
+    <section class="general-info">
+        <!--name and profile-->
+        <article class="textbox1"><img src=" ../assets/img/Salmah.jpg" width="228" height="294" alt="default profile"
+                                       class="profile">
+
+            <form action="" method="get">
+                <div> <input type="file" name="image" id="image" accept="image/*"><br></div>
+            </a>
+                <div>
+                    <label class="text" for="voornaam">Voornaam:</label>
+                    <input type="text" name="voornaam" id="voornaam" size="5" value="Emily" required><br><br>
+                </div>
+                <div>
+                    <label class="text" for="leeftijd"> Leeftijd:</label>
+                    <input type="number" name="leeftijd" min="40" max="100" id="leeftijd" value="56" required>
+                </div>
+                <div>
+                    <input type="submit" value="Opslaan">
+                </div>
+            </form>
+        </article>
+        <section class="container"></section>
+        <article class="container">
+            <article class="container">
+                <article class="textbox"><p class="textt"> Gebruikersnaam </p>
+                </article>
+                Emily
+                <hr>
+                <article class="textbox"><p class="textt"> Interesses </p>
+                </article>
+                <li>Shoppen
+                    <input type="checkbox" name="checkbox5" value="checked off" checked>
+                </li>
+                <li>Zwemmen
+                    <input type="checkbox" name="checkbox6" value="checked off" checked>
+                </li>
+                <li>Uitgaan
+                    <input type="checkbox" name="checkbox7" value="checked off" checked>
+                </li>
+                <div>
+                    <input type="submit" value="Opslaan">
+                </div>
+                <hr>
+                <article class="textbox"><p class="textt">Wilt reizen naar </p>
+                </article>
+                <li> Azië <input type="checkbox" name="checkbox8" value="checked off" checked>
+                </li>
+                <hr>
+                <a href="profiel.html">
+                    <input type="submit" value="Opslaan">
+                </a>
+                <a href="profiel.html">
+                </a>
+            </article>
+        </article></section>
+</nav>
+    <section>
+
+
+        </nav>
+        <article>
+            <article class="textbox"><p class="textt">Profiel bewerken</p>
+            </article>
+            <article>
+                <article class="textbox"><p class="textt">Biografie</p>
+                </article>
+
+                Ervaren projectmanager met een bewezen geschiedenis van werken in de vrijetijds- en reis- en
+                toerismebranche.
+                Bekwaam in evenementenbeheer, toerisme en in het bijzonder in duurzame ontwikkeling van toerisme.
+                Met een masterdiploma gericht op milieuwetenschappen en GIS van Université Grenoble Alpes, Institut de
+                Géographie Alpine, zijn milieuaspecten van toerisme en wereldwijde trends op dit gebied van bijzonder
+                belang voor mij.
+                Maar dat allemaal is niet belangrijk naast het genieten van mijn vakanties. Ik houd van reizen en vooral
+                in de zomer.
+                Ik heb al wat landen bezocht : 🇮🇹, 🇫🇷,🇨🇭,🇵🇹,🇬🇷 en ik wil mijn lijstje uitbreiden tot een hele
+                wereldreis. Helaas heb ik niet zoveel mensen om me heen die met mij willen reizen en die geen tijd
+                hebben om met mij te reizen.
+                Gelukkig heb ik gehoord dat ik een match kan vinden die soortgelijke interesses heeft als mij om met
+                degene te reizen. Wie weet word ik jou match!
+
+
+                <a href="profiel.html">
+                    <button class="button button1">Annuleren</button>
+                </a>
+                <a href="profiel.html">
+                    <button class="button button1">Opslaan</button>
+                </a>
+            </article>
+        </article>
+
+        <article class="container">
+            <article class="textbox"><p class="textt">Spreekt </p>
+            </article>
+            <li>Nederlands</li>
+            <li>Engels</li>
+            <li>Duits</li>
+            <li>Frans</li>
+
+            <a href="profiel.html">
+                <button class="button button1">Annuleren</button>
+            </a>
+            <a href="profiel.html">
+                <button class="button button1">Opslaan</button>
+            </a>
+        </article>
+
+    </section>
+</main>
+</body>
+</html>

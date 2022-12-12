@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="nl">
+<!-- Made By Zakaria-->
+<head>
+    <!--Titel en links naar css + javascript-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Match 4 u | Aanmaken profiel</title>
+
+    <link href="../assets/css/navbar-en-notifications.css" rel="stylesheet">
+    <link href="../assets/css/inloggen.css" rel="stylesheet">
+
+    <script src="https://cdn.fys.cloud/fyscloud/0.0.4/fyscloud.min.js" defer></script>
+    <script src="../assets/js/config.js" defer></script>
+    <script src="../assets/js/aanmaken-profiel.js" defer></script>
+    <script src="../assets/js/main.js" defer></script>
+</head>
+
+<body>
+<nav class="navbar">                                                              <!--normale navbar-->
+    <ul>
+        <li><a href="home.html" class="navbar-normale-button">Home</a></li>
+        <li><a href="over-ons.html" class="navbar-normale-button">Over ons</a></li>
+        <li class="logo"><img src=../assets/img/logo.PNG class="logo-foto" alt="Match4U Logo"></li>
+        <li><a href="inloggen.html" class="navbar-normale-button">Inloggen</a></li>
+        <li><a href="registreren.html" class="navbar-normale-button">Registreren</a></li>
+    </ul>
+    <input id="navbar-menu-toggle" type="checkbox">
+    <!--navbar menu voor mobile-->
+    <label class='navbar-menu-container' for="navbar-menu-toggle">
+        <img src=../assets/img/burger-menu.png class="navbar-foto" alt="Menu Icoon">
+    </label>
+
+    <ul class="navbar-links">
+        <li><a href="home.html" class="navbar-menu-link">Home</a></li>
+        <li><a href="over-ons.html" class="navbar-menu-link">Over ons</a></li>
+        <li><a href="inloggen.html" class="navbar-menu-link">Inloggen</a></li>
+        <li><a href="registreren.html" class="navbar-menu-link">Registreren</a></li>
+    </ul>
+</nav>
+
+<comment>
+    <!--<nav class="navbar">-->
+    <!--    <ul class="nav_content">-->
+    <!--        <li class="nav_item home_icon">-->
+    <!--            <button onclick="window.location.href='home.html'"></button>-->
+    <!--        </li>-->
+    <!--        <li class="nav_item">-->
+    <!--            <button onclick="window.location.href='over-ons.html'">Over Ons</button>-->
+    <!--        </li>-->
+    <!--        <li class="nav_item logo">-->
+    <!--            <button onclick="window.location.href='template.html'">Match 4 U</button>-->
+    <!--        </li>-->
+    <!--        <li class="nav_item">-->
+    <!--            <button onclick="window.location.href='inloggen.html'">Inloggen</button>-->
+    <!--        </li>-->
+    <!--        <li class="nav_item">-->
+    <!--            <button onclick="window.location.href='registreren.html'">Registreren</button>-->
+    <!--        </li>-->
+    <!--    </ul>-->
+    <!--</nav>-->
+
+    <!---------------->
+    <!--<nav class="navbar">                                                              &lt;!&ndash;navbar + links/buttons&ndash;&gt;-->
+    <!--    <ul>-->
+    <!--        <li class="home_icon"><a href="home.html">Home</a></li>-->
+    <!--        <li><a href="over-ons.html">Over ons</a></li>-->
+    <!--        <li class="logo-test"><a href="template.html">-->
+    <!--            <div class="logo-text">Match 4 U</div>-->
+    <!--        </a></li>-->
+    <!--        <li><a href="inloggen.html">Inloggen</a></li>-->
+    <!--        <li><a href="registreren.html">Registreren</a></li>-->
+    <!--    </ul>-->
+    <!--</nav>-->
+</comment>
+
+<main>
+    <section class="textbox">
+        <div class="titel">
+            <h1>Aanmaken Intresses</h1>
+        </div>
+        <section class="invoer">
+            <section class="instr text">
+                <label for="foto-bestand">Upload een foto:</label>
+                <label for="naam">Wat is uw naam:</label>
+                <label for="leeftijd">Wanneer bent u geboren:</label>
+                <label for="bio">Stel u even voor:</label>
+            </section>
+            <section class="inputs text">
+                <label for="foto-bestand">
+                    <img id="imagePreview" src="../assets/img/profielfoto.png" alt="profielfoto preview">
+                </label>
+                <input id="foto-bestand" name="foto-bestand" type="file" accept="image/*">
+                <input id="naam" name="naam" type="text" placeholder="Type Hier...">
+                <input id="leeftijd" name="leeftijd" type="date">
+                <textarea id="bio" name="bio" placeholder="Type Hier..." maxlength="1200"></textarea>
+            </section>
+        </section>
+        <section class="buttons">
+            <button type="submit" onclick="window.location.href='template.html'">
+                Annuleren
+            </button>
+            <input id="verder" type="submit" value="Verder">
+        </section>
+    </section>
+</main>
+</body>
+</html>
