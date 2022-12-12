@@ -60,7 +60,7 @@ function insertGebruikerDb(gebruiker) {
         [gebruiker.email,  gebruiker.wachtwoord, gebruiker.naam, gebruiker.leeftijd, gebruiker.biografie]
     )
         .then(response => {
-            Gebruiker.id = response.insertId;
+            gebruiker.id = response.insertId;
         })
         .catch(function(reason) {
             console.error(reason);
