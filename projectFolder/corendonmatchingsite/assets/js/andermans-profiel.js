@@ -12,3 +12,6 @@ FYSCloud.API.queryDatabase(
 
 // LIKE/MATCHING SYSTEEM
 
+function likeButtonClick(){
+    console.log("Huidige gebruiker: " + FYSCloud.Session.get("userId"));
+}
