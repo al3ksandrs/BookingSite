@@ -41,21 +41,30 @@ FYSCloud.API.queryDatabase(
 
 function initializeGebruiker(){
     document.querySelector("#verder").addEventListener("click", evt => submitGebruiker(evt))
+    loadGebruikers();
+}
+
+function loadGebruikers(){
+    FYSCloud.API.queryDatabase(
+        "SELECT * FROM gebruiker")
+        .then(gebruikers => {
+            for (const gebruikerJson of gebruikers) {
+                convertDbJson(gebruikerJson)
+            }
+        })
+        .catch(function(reason) {
+            console.error(reason);
+        });
 }
 
 function submitGebruiker(evt) {
     evt.preventDefault();
 
     let email = FYSCloud.Session.get("temp_email");
-    console.log(email);
     let wachtwoord = FYSCloud.Session.get("temp_pass")
-    console.log(wachtwoord);
     let naam = document.querySelector("#naam").value;
-    console.log(naam);
     let leeftijd = document.querySelector("#leeftijd").value;
-    console.log(leeftijd);
     let biografie = document.querySelector("#bio").value;
-    console.log(biografie);
 
     let gebruiker = new Gebruiker(null, email, wachtwoord, naam, leeftijd, biografie);
     console.log(gebruiker);
@@ -64,7 +73,7 @@ function submitGebruiker(evt) {
 
 function insertGebruikerDb(gebruiker) {
     FYSCloud.API.queryDatabase(
-        "INSERT INTO 'gebruiker' ('email', 'wachtwoord', 'naam', 'leeftijd', 'biografie') VALUES (?,?,?,?,?);",
+        "INSERT INTO `gebruiker` (`email`, `wachtwoord`, `naam`, `leeftijd`, `biografie`) VALUES (?,?,?,?,?);",
         [gebruiker.email,  gebruiker.wachtwoord, gebruiker.naam, gebruiker.leeftijd, gebruiker.biografie]
     )
         .then(response => {
@@ -82,4 +91,13 @@ function Gebruiker(id, email, wachtwoord, naam, leeftijd, biografie) {
     this.naam = naam;
     this.leeftijd = leeftijd;
     this.biografie = biografie;
+}
+
+function convertDbJson(gebruikerJson) {
+    return new Gebruiker(gebruikerJson['id'],
+        gebruikerJson['email'],
+        gebruikerJson['wachtwoord'],
+        gebruikerJson['naam'],
+        gebruikerJson['leeftijd'],
+        gebruikerJson['biografie']);
 }
