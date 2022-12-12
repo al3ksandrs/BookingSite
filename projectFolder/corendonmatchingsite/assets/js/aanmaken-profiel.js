@@ -32,17 +32,22 @@ function initialize() {
 }
 
 function initializeGebruiker(){
-    document.querySelector("input").addEventListener("click", evt => submitGebruiker(evt))
+    document.querySelector("#verder").addEventListener("click", evt => submitGebruiker(evt))
 }
 
 function submitGebruiker(evt) {
     evt.preventDefault();
 
     let email = FYSCloud.Session.get("temp_email");
+    console.log(email);
     let wachtwoord = FYSCloud.Session.get("temp_pass")
+    console.log(wachtwoord);
     let naam = document.querySelector("#naam").value;
+    console.log(naam);
     let leeftijd = document.querySelector("#leeftijd").value;
+    console.log(leeftijd);
     let biografie = document.querySelector("#bio").value;
+    console.log(biografie);
 
     let gebruiker = new Gebruiker(null, email, wachtwoord, naam, leeftijd, biografie);
     console.log(gebruiker);
