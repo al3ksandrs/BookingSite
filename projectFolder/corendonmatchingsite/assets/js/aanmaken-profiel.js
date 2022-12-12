@@ -31,6 +31,14 @@ function initialize() {
     initializeGebruiker();
 }
 
+FYSCloud.API.queryDatabase(
+    "SELECT * FROM gebruiker"
+).then(function(data) {
+    console.log(data);
+}).catch(function(reason) {
+    console.log(reason);
+});
+
 function initializeGebruiker(){
     document.querySelector("#verder").addEventListener("click", evt => submitGebruiker(evt))
 }
