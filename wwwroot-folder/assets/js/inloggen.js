@@ -35,7 +35,7 @@ function ValidateEmail(inputEText) {
             // Vangnet
         }).catch(function (reason) {
             alerts.innerHTML = "Geen account gevonden! " +
-                "<a href='../paginas/registreren.html'>" +
+                "<a href='registreren.html'>" +
                 "Maak er een aan?" +
                 "</a>"
             console.log(reason)
@@ -85,5 +85,5 @@ submission.addEventListener("click",
     })
 
 backout.addEventListener("click", function () {
-    window.location.href = "../paginas/home.html"
+    window.location.href = "home.html"
 })

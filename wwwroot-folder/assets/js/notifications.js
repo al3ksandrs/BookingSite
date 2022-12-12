@@ -12,14 +12,14 @@ function nieuweNotification(naam, leeftijd) {
                 <a href="andermans-profiel.html" class="notification-button">Bezoek profiel</a>
             </article>
             <article class="notification-informatie">
-                <img src=../assets/img/rayan.png alt = "profielfoto" class="notification-item-foto"></src>
+                <img src=assets/img/rayan.png alt = "profielfoto" class="notification-item-foto"></src>
                 <article class="notification-naam-leeftijd">
                     <p class="notification-foto-naam">`+ naam +`</p>
                     <p class="notification-foto-leeftijd">`+ leeftijd +`</p>
                 </article>
             </article>
             <button class="notification-delete" onclick="this.parentNode.parentNode.removeChild(this.parentNode); verwijderNotification();">
-                <i><img src=../assets/img/delete.webp alt = "verwijder" class="kruis" height="30" width="30"></i>
+                <i><img src=assets/img/delete.webp alt = "verwijder" class="kruis" height="30" width="30"></i>
             </button>`
 
     let list = document.createElement("li");
@@ -35,10 +35,10 @@ function nieuweNotification(naam, leeftijd) {
 /* Checken of lijstLengte 0 is zodat de alert op de menuknop weggaat of blijft. */
 function checkNotificationMenuFoto(){
     if(lijstLengte === 0){
-        notificationMenuFoto.src="../assets/img/notification-knop.png"
+        notificationMenuFoto.src="assets/img/notification-knop.png"
     }
     else{
-        notificationMenuFoto.src="../assets/img/notification-knop-alert.png"
+        notificationMenuFoto.src="assets/img/notification-knop-alert.png"
     }
 }
 
