@@ -275,6 +275,11 @@ button:hover, input[type="submit"]:hover {
     resize: none;
 }
 
+.inputs label{
+    width: 134px;
+    height: 134px;
+}
+
 .inputs label img {
     width: 114px;
     height: 114px;

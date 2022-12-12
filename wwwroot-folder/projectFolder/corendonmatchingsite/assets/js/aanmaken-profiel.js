@@ -1,8 +1,10 @@
-let email = FYSCloud.Session.get("temp_email");
-let wachtwoord = FYSCloud.Session.get("temp_pass")
-let naam = document.querySelector("#naam");
-let leeftijd = document.querySelector("#leeftijd");
-let biografie = document.querySelector("#bio");
+const email = FYSCloud.Session.get("temp_email");
+const wachtwoord = FYSCloud.Session.get("temp_pass")
+const naam = document.querySelector("#naam");
+const leeftijd = document.querySelector("#leeftijd");
+const biografie = document.querySelector("#bio");
+let fotobestand;
+let id;
 
 document.querySelector("#foto-bestand").addEventListener("change",
 
@@ -24,7 +26,7 @@ document.querySelector("#verder").addEventListener("click", function (){
     FYSCloud.Utils.getDataUrl("#foto-bestand")
         .then(function (data) {
             if (data.isImage) {
-                fotobestand = data.url;
+                fotobestand = data.value;
             }
             console.log(fotobestand)
             console.log(data)
@@ -38,11 +40,18 @@ document.querySelector("#verder").addEventListener("click", function (){
 
 function insertGebruikerDb(id, email, wachtwoord, naam, leeftijd, biografie, fotobestand) {
     FYSCloud.API.queryDatabase(
-        "INSERT INTO `gebruiker` SET id = ?, email = ?, wachtwoord = ?, naam = ?, leeftijd = ?, biografie = ?, fotobestand = ?;",
-        [id, email, wachtwoord, naam.value, leeftijd.value, biografie.value, fotobestand]
+        "INSERT INTO `gebruiker` SET id = ?, email = ?, wachtwoord = ?, naam = ?, leeftijd = ?, biografie = ?;",
+        [id, email, wachtwoord, naam.value, leeftijd.value, biografie.value]
         ).then(response => {
             console.log("thenned")
-
+        FYSCloud.API.uploadFile(
+            "test.png",
+            fotobestand.url
+        ).then(function(data) {
+            console.log(data);
+        }).catch(function(reason) {
+            console.log(reason);
+        });
 
         })
         .catch(function(reason) {
