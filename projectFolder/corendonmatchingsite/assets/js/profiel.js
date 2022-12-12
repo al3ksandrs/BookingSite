@@ -13,7 +13,7 @@ FYSCloud.API.queryDatabase(
 
 // Inhoud Stuff
 const bioInh = document.querySelector("#biografie_inhoud");
-
+const interessesInh = document.querySelector("#biografie_inhoud");
 // Popup stuff
 const serviceItems = document.querySelector(".service-items");
 const popup = document.querySelector(".popup-box")
@@ -56,6 +56,7 @@ console.log(FYSCloud.Session.get("email", "Not Found"))
 FYSCloud.API.queryDatabase(
     'SELECT * FROM gebruiker WHERE id = ?', [FYSCloud.Session.get("userId", "Not Found")]
 ).then(function (data){
+
     bioInh.innerHTML = data[0].biografie
 }).catch(function (reason){
     console.log(reason)
