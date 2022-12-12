@@ -1,103 +1,52 @@
-// FYSCloud.Utils
-//     .getDataUrl(document.querySelector("#foto-bestand"))
-//     .then(function(data) {
-//         FYSCloud.API.uploadFile(
-//             "test.png",
-//             data.url
-//         ).then(function(data) {
-//             console.log(data);
-//         }).catch(function(reason) {
-//             console.log(reason);
-//         });
-//     }).catch(function(reason) {
-//     console.log(reason);
-// })
+let email = FYSCloud.Session.get("temp_email");
+let wachtwoord = FYSCloud.Session.get("temp_pass")
+let naam = document.querySelector("#naam");
+let leeftijd = document.querySelector("#leeftijd");
+let biografie = document.querySelector("#bio");
 
-function gogo() {
+document.querySelector("#foto-bestand").addEventListener("change",
+
+function updateImage() {
     FYSCloud.Utils.getDataUrl("#foto-bestand")
-            .then(function (data) {
-                if (data.isImage) {
-                    document.querySelector("#imagePreview").src = data.url;
-                }
-                console.log(data)
-            }).catch(function (reason) {
-                console.log(reason);
-            })
-}
-
-window.addEventListener("DOMContentLoaded", initialize);
-
-function initialize() {
-    initializeGebruiker();
-}
-
-FYSCloud.API.queryDatabase(
-    "SELECT * FROM gebruiker"
-).then(function(data) {
-    console.log(data);
-}).catch(function(reason) {
-    console.log(reason);
-});
-
-function initializeGebruiker(){
-    document.querySelector("#verder").addEventListener("click", evt => submitGebruiker(evt))
-    loadGebruikers();
-}
-
-function loadGebruikers(){
-    FYSCloud.API.queryDatabase(
-        "SELECT * FROM gebruiker")
-        .then(gebruikers => {
-            for (const gebruikerJson of gebruikers) {
-                convertDbJson(gebruikerJson)
+        .then(function (data) {
+            if (data.isImage) {
+                document.querySelector("#imagePreview").src = data.url;
             }
-        })
-        .catch(function(reason) {
-            console.error(reason);
-        });
-}
+            console.log(data)
+        }).catch(function (reason) {
+        console.log(reason);
+    })
+})
 
-function submitGebruiker(evt) {
-    evt.preventDefault();
+document.querySelector("#verder").addEventListener("click", function (){
+    id = Math.floor(Math.random() * Date.now())
 
-    let email = FYSCloud.Session.get("temp_email");
-    let wachtwoord = FYSCloud.Session.get("temp_pass")
-    let naam = document.querySelector("#naam").value;
-    let leeftijd = document.querySelector("#leeftijd").value;
-    let biografie = document.querySelector("#bio").value;
+    FYSCloud.Utils.getDataUrl("#foto-bestand")
+        .then(function (data) {
+            if (data.isImage) {
+                fotobestand = data.url;
+            }
+            console.log(fotobestand)
+            console.log(data)
+        }).catch(function (reason) {
+        console.log(reason);
+    })
 
-    let gebruiker = new Gebruiker(null, email, wachtwoord, naam, leeftijd, biografie);
-    console.log(gebruiker);
-    insertGebruikerDb(gebruiker);
-}
+    insertGebruikerDb(id, email, wachtwoord, naam, leeftijd, biografie, fotobestand)
+})
 
-function insertGebruikerDb(gebruiker) {
+
+function insertGebruikerDb(id, email, wachtwoord, naam, leeftijd, biografie, fotobestand) {
     FYSCloud.API.queryDatabase(
-        "INSERT INTO `gebruiker` (`email`, `wachtwoord`, `naam`, `leeftijd`, `biografie`) VALUES (?,?,?,?,?);",
-        [gebruiker.email,  gebruiker.wachtwoord, gebruiker.naam, gebruiker.leeftijd, gebruiker.biografie]
-    )
-        .then(response => {
-            gebruiker.id = response.insertId;
+        "INSERT INTO `gebruiker` SET id = ?, email = ?, wachtwoord = ?, naam = ?, leeftijd = ?, biografie = ?, fotobestand = ?;",
+        [id, email, wachtwoord, naam.value, leeftijd.value, biografie.value, fotobestand]
+        ).then(response => {
+            console.log("thenned")
+
+
         })
         .catch(function(reason) {
+            console.log("thunded")
             console.error(reason);
-        });
-}
-
-function Gebruiker(id, email, wachtwoord, naam, leeftijd, biografie) {
-    this.id = id;
-    this.email = email
-    this.wachtwoord = wachtwoord;
-    this.naam = naam;
-    this.leeftijd = leeftijd;
-    this.biografie = biografie;
-}
-
-function convertDbJson(gebruikerJson) {
-    return new Gebruiker(gebruikerJson['id'],
-        gebruikerJson['email'],
-        gebruikerJson['wachtwoord'],
-        gebruikerJson['naam'],
-        gebruikerJson['leeftijd'],
-        gebruikerJson['biografie']);
+        })
 }
