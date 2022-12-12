@@ -32,7 +32,7 @@ function initialize() {
 }
 
 function initializeGebruiker(){
-    document.querySelector("input").addEventListener("click", evt => submitGebruiker(evt))
+    document.querySelector("#verder").addEventListener("click", evt => submitGebruiker(evt))
 }
 
 function submitGebruiker(evt) {

@@ -56,7 +56,7 @@ function handleEmail(inputE, inputW1) {
 //     }).catch(function(reason) {
 //         console.log(reason);
 //     })
-    window.location.href="../paginas/aanmaken-intresses.html";
+    window.location.href="../paginas/aanmaken-profiel.html";
 }
 
 submission.addEventListener("click",
