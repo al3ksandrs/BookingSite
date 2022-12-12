@@ -44,39 +44,6 @@
     </label>
 
     <ul class="notification-menu">
-        <li>        <!--NOTIFICATION-->
-            <article class="notification-item">
-                <p class="notification-text">Gematched met:</p>
-                <a href="andermans-profiel.html" class="notification-button">Bezoek profiel</a>
-            </article>
-            <article class="notification-informatie">
-                <img src=../assets/img/rayan.png alt="default.png" class="notification-item-foto">
-                <article class="notification-naam-leeftijd">
-                    <p class="notification-foto-naam">Ryan</p>
-                    <p class="notification-foto-leeftijd">42</p>
-                </article>
-            </article>
-            <button class="notification-delete" onclick="this.parentNode.parentNode.removeChild(this.parentNode);">
-                <i><img src=../assets/img/delete.webp alt="default" class="kruis" height="30" width="30"></i>
-            </button>
-        </li>
-
-        <li>        <!--NOTIFICATION-->
-            <article class="notification-item">
-                <p class="notification-text">Gematched met:</p>
-                <a href="andermans-profiel.html" class="notification-button">Bezoek profiel</a>
-            </article>
-            <article class="notification-informatie">
-                <img src=../assets/img/salmah.jpg class="notification-item-foto">
-                <article class="notification-naam-leeftijd">
-                    <p class="notification-foto-naam">Salmah</p>
-                    <p class="notification-foto-leeftijd">34</p>
-                </article>
-            </article>
-            <button class="notification-delete" onclick="this.parentNode.parentNode.removeChild(this.parentNode);">
-                <i><img src=../assets/img/delete.webp class="kruis" height="30" width="30"></i>
-            </button>
-        </li>
     </ul>
     <section class="inhoud">
     <div class="general-info">
@@ -88,7 +55,7 @@
 
         </article>
         <article class="buttons">
-            <button class="like"><img src=" ../assets/img/thumbsup.png" width="120" height="120" class="like"></button>
+            <button class="like" onclick="likeButtonClick()"><img src=" ../assets/img/thumbsup.png" width="120" height="120" class="like"></button>
             <p class="buttontext">OR</p>
             <button class="dislike"><img src=" ../assets/img/thumbsdown.png" width="120" height="120" class="like"></button>
 
