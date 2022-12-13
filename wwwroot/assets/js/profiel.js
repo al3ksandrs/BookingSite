@@ -57,7 +57,7 @@ FYSCloud.API.queryDatabase(
     'SELECT * FROM gebruiker WHERE id = ?', [FYSCloud.Session.get("userId", "Not Found")]
 ).then(function (data){
     bioInh.innerHTML = data[0].biografie
-    pfpInh.src = "/upload/" + data[0].id + "/test." + data[0].fotoextensie
+    pfpInh.src = "/uploads/" + data[0].id + "/test." + data[0].fotoextensie
 }).catch(function (reason){
     console.log(reason)
 })
