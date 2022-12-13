@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Profiel Foto</title>
+    <link href="assets/css/edit-profiel-foto.css" rel="stylesheet">
+    <!-- API & FYS Cloud -->
+    <script src="https://cdn.fys.cloud/fyscloud/0.0.4/fyscloud.min.js" defer></script>
+    <script src="assets/js/config.js" defer></script>
+    <script src="assets/js/main.js" defer></script>
+</head>
+<body>
+<main>
+    <!--Nav content area-->
+
+    <!--Naam en profiel content area-->
+    <section class="general-info">
+        <article class="textbox1"><img src="assets/img/salmah.jpg" width="228" height="294"
+                                       alt="default profile" class="profile">
+            <form class="profielc-form" action="" method="get">
+                <div><input type="file" name="image" id="image" accept="image/*"><br></div>
+                <div>
+                    <label class="text" for="voornaam">Voornaam:</label>
+                    <input type="text" name="voornaam" id="voornaam" size="10" value="Pieter" required><br><br>
+                </div>
+                <div>
+                    <label class="text" for="leeftijd"> Leeftijd:</label>
+                    <input type="date" name="leeftijd" max="1982-01-01" min="1922-01-01" id="leeftijd"
+                           value="1981-07-25" required>
+                </div>
+                <div>
+                    <label class="text" for="geslacht">Geslacht:</label>
+                    <select name="geslacht" id="geslacht">
+                        <option value="vrouw">Vrouw</option>
+                        <option value="man">Man</option>
+                    </select></div>
+                <div id="alert">
+                    <input id="opslaan" type="submit" value="Opslaan"/>
+                </div>
+            </form>
+        </article>
+
+
+    <!--bio content area -->
+
+        <article>
+            <article><p class="kopjes">Profiel Bewerken</p>
+            </article>
+            <article>
+                <article class="textbox2"><p class="kopjes">Biografie</p>
+
+                </article>
+                <form class="biografie-form" action="" method="post">
+                    <div>
+                        <label for="biografie"></label>
+                        <textarea id="biografie" name="biografie" rows="4" cols="40" maxlength="500">Ervaren projectmanager met een bewezen geschiedenis van werken in de vrijetijds- en reis- en
+            toerismebranche.
+            Bekwaam in evenementenbeheer, toerisme en in het bijzonder in duurzame ontwikkeling van toerisme.
+            Met een masterdiploma gericht op milieuwetenschappen en GIS van Université Grenoble Alpes, Institut de
+            Géographie Alpine, zijn milieuaspecten van toerisme en wereldwijde trends op dit gebied van bijzonder
+            belang voor mij.
+                            Wie weet word ik jou match!</textarea>
+
+                    </div>
+                    <div>
+                        <input type="submit" value="Opslaan">
+                    </div>
+                </form>
+            </article>
+        </article>
+    </section>
+
+    <!--Gebruikersnaam,interesses & Wilt reizen naar content area-->
+    <section class="general-info2">
+        <article class="container2 textbox4">
+            <article class="textbox2"><p class="kopjes">Gebruikersnaam</p>
+            </article>
+            <form class="interesses-form" action="" method="get">
+                <div class="naaminvoer">
+                    <label class="text" for="gebruikersnaam"></label>
+                    <input type="text" name="gebruikersnaam" id="gebruikersnaam" value="Emily" required>
+                    <div>
+                        <input type="submit" value="Opslaan">
+                    </div>
+                </div>
+            </form>
+            <br>
+            <hr>
+            <article class="container2"><p class="kopjes">Interesses</p></article>
+            <form class="interesses-activiteit" action="" method="get">
+                <ul>
+                    <li>Shoppen
+                        <input type="checkbox" name="checkbox1" id="checkboxShopen" value="checked off" checked>
+                    </li>
+                    <li>Zwemmen
+                        <input type="checkbox" name="checkbox2" id="checkboxZwemmen" value="checked off" checked>
+                    </li>
+                    <li>Uitgaan <input type="checkbox" name="checkbox3" id="checkboxUitgaan"  value="checked off" checked>
+                    </li>
+                </ul>
+                <div>
+                    <input type="submit" value="Opslaan">
+                </div>
+
+            </form>
+            <hr>
+            <article class="textbox2"><p class="kopjes">Wilt reizen naar</p></article>
+            <ul>
+                <li>Azië
+                    <input type="checkbox" name="checkbox4" value="checked off" checked>
+                </li>
+            </ul>
+            <hr>
+            <div>
+                <input type="submit" value="Opslaan">
+            </div>
+        </article>
+
+    <!--spreekt content area-->
+        <article class="container2 textbox3">
+            <article class="textbox2"><p class="kopjes">Spreekt</p></article>
+            <ul>
+                <li>Nederlands <input type="checkbox" name="checkbox5" value="checked off" checked>
+                </li>
+                <li>Engels <input type="checkbox" name="checkbox6" value="checked off" checked>
+                </li>
+                <li>Duits <input type="checkbox" name="checkbox7" value="checked off" checked>
+                </li>
+                <li>Frans <input type="checkbox" name="checkbox8" value="checked off" checked>
+                </li>
+            </ul>
+            <div>
+                <input type="submit" value="Opslaan">
+            </div>
+            <div class="annuleer-knop">
+            </div>
+        </article>
+    </section>
+    <script src="assets/js/edit-profiel-foto.js" defer></script>
+</main>
+</body>
+</html>
