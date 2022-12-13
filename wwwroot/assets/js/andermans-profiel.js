@@ -15,3 +15,13 @@ FYSCloud.API.queryDatabase(
 function likeButtonClick(){
     console.log("Huidige gebruiker: " + FYSCloud.Session.get("userId"));
 }
+
+const naam = document.querySelector("#naamtext");
+
+FYSCloud.API.queryDatabase(
+    'SELECT * FROM gebruiker WHERE id = ?', [FYSCloud.Session.get("userId", "Not Found")]
+).then(function (data){
+    naam.innerHTML = data[0].naam
+}).catch(function (reason){
+    console.log(reason)
+})
