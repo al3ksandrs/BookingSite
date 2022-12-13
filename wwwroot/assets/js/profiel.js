@@ -14,6 +14,8 @@
 // Inhoud Stuff
 const bioInh = document.querySelector("#biografie_inhoud");
 const pfpInh = document.querySelector("#profielfoto");
+const prlInh = document.querySelector("#profielnaam");
+
 // Popup stuff
 const serviceItems = document.querySelector(".service-items");
 const popup = document.querySelector(".popup-box")
@@ -57,7 +59,9 @@ FYSCloud.API.queryDatabase(
     'SELECT * FROM gebruiker WHERE id = ?', [FYSCloud.Session.get("userId", "Not Found")]
 ).then(function (data){
     bioInh.innerHTML = data[0].biografie
-    pfpInh.src = "/uploads/" + data[0].id + "/test." + data[0].fotoextensie
+    pfpInh.src = "/uploads/" + data[0].id + "." + data[0].fotoextensie
+    prlInh.innerHTML = data[0].naam + "         " + data[0].leeftijd
+
 }).catch(function (reason){
     console.log(reason)
 })

@@ -35,6 +35,21 @@ e.preventDefault();
 const cb = document.querySelector('#checkboxShopen,#checkboxZwemmen,#checkboxUitgaan');
 console.log(cb.checked); // false
 
+
+
+
+const voornaam  = document.getElementById("voornaam");
+
+FYSCloud.API.queryDatabase(
+    'SELECT * FROM gebruiker WHERE id = ?', [FYSCloud.Session.get("userId", "Not Found")]
+).then(function (data){
+    voornaam.innerHTML = data[0].naam
+
+}).catch(function (reason){
+    console.log(reason)
+})
+
+
 // input opslaan selector
 // const select = document.querySelector("select");
 // //change event

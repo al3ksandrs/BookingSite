@@ -31,7 +31,7 @@ function insertGebruikerDb(id, email, wachtwoord, naam, leeftijd, biografie) {
         .then(function (data) {
             if (data.isImage) {
                 FYSCloud.API.uploadFile(
-                    id + "/test." + data.extension,
+                    id + "." + data.extension,
                     data.url
                 ).then(function (data1) {
                     FYSCloud.API.queryDatabase(
