@@ -1,19 +1,19 @@
-// Fys cloud datebase
-FYSCloud.API.queryDatabase(
-    "SELECT * FROM gebruiker WHERE email = 'emily56@email.com'"
-
-// wat de datebase terug stuurt
-)
-    .then(function (data) {
-    console.log(data);
-// waarom het mis gaat
-}).catch(function (reason) {
-    console.log(reason);
-});
+// // Fys cloud datebase
+// FYSCloud.API.queryDatabase(
+//     "SELECT * FROM gebruiker WHERE email = 'emily56@email.com'"
+//
+// // wat de datebase terug stuurt
+// )
+//     .then(function (data) {
+//     console.log(data);
+// // waarom het mis gaat
+// }).catch(function (reason) {
+//     console.log(reason);
+// });
 
 // Inhoud Stuff
 const bioInh = document.querySelector("#biografie_inhoud");
-const interessesInh = document.querySelector("#biografie_inhoud");
+const pfpInh = document.querySelector("#profielfoto");
 // Popup stuff
 const serviceItems = document.querySelector(".service-items");
 const popup = document.querySelector(".popup-box")
@@ -56,8 +56,8 @@ console.log(FYSCloud.Session.get("email", "Not Found"))
 FYSCloud.API.queryDatabase(
     'SELECT * FROM gebruiker WHERE id = ?', [FYSCloud.Session.get("userId", "Not Found")]
 ).then(function (data){
-
     bioInh.innerHTML = data[0].biografie
+    pfpInh.src = "upload/" + data[0].id + "/test." + data[0].fotoextensie
 }).catch(function (reason){
     console.log(reason)
 })
