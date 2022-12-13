@@ -19,7 +19,7 @@ function ValidateEmail(inputE, inputW1, inputW2) {
                 VerifyPass(inputE, inputW1, inputW2)
             } else alerts.innerHTML = "Voer een geldig email :D"
 
-        } else alerts.innerHTML = ('Deze gebruiker bestaat al ;p. Hier kan je <a href="../paginas/inloggen.html">inloggen!</a>')
+        } else alerts.innerHTML = ('Deze gebruiker bestaat al ;p. Hier kan je <a href="../../inloggen.html">inloggen!</a>')
 
     }).catch(function (reason){
         console.log(reason)
@@ -56,7 +56,7 @@ function handleEmail(inputE, inputW1) {
 //     }).catch(function(reason) {
 //         console.log(reason);
 //     })
-    window.location.href="../paginas/aanmaken-profiel.html";
+    window.location.href="aanmaken-profiel.html";
 }
 
 submission.addEventListener("click",
@@ -65,5 +65,5 @@ submission.addEventListener("click",
     })
 
 backout.addEventListener("click", function () {
-    window.location.href = "../paginas/home.html"
+    window.location.href = "home.html"
 })
