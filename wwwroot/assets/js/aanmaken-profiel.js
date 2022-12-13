@@ -38,7 +38,9 @@ function insertGebruikerDb(id, email, wachtwoord, naam, leeftijd, biografie) {
                         "INSERT INTO `gebruiker` SET id = ?, email = ?, wachtwoord = ?, naam = ?, leeftijd = ?, biografie = ?, fotonaam = ?, fotoextensie = ?;",
                         [id, email, wachtwoord, naam.value, leeftijd.value, biografie.value, "test", data.extension]
                     ).then(function () {
-                        console.log("thenned")
+                        FYSCloud.Session.set("userId", id)
+                        FYSCloud.Session.set("email", email)
+                        window.location.href = "profiel.html"
                     }).catch(function (reason) {
                         console.log(reason)
                     })
