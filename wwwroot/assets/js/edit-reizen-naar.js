@@ -9,38 +9,57 @@ FYSCloud.API.queryDatabase(
         country = Object.keys(data[0])[i]
         console.log(Object.values(data[0])[i])
         console.log(country)
-        document.getElementById(country).checked = Object.values(data[0])[i] === "1";
+        if (Object.values(data[0])[i] === 1) {
+            document.getElementById(country).checked = true;
+        } else {
+            document.getElementById(country).checked = false;
+        }
     }
-}).catch(function (reason){
+}).catch(function (reason) {
     console.log(reason)
 })
 
-
-
 // checkt of de checkbox gecheckt is
 function Check(checkbox) {
+    let x = controleren(checkbox);
     if (checkbox.checked === true) {
         console.log("Je hebt gekozen voor " + checkbox.id);
-        checkboxTrueDb(checkbox);
+        checkboxTrueDb(checkbox, x);
     } else {
         console.log("Je hebt niet meer gekozen voor " + checkbox.id);
-        checkboxFalseDb(checkbox);
+        checkboxFalseDb(checkbox, x);
     }
 }
+
 const currentUser = FYSCloud.Session.get("userId", "Not Found");
 
+function controleren(checkbox) {
+    FYSCloud.API.queryDatabase(
+        'SELECT * FROM `reis` WHERE (`gebruiker_id` = ?)', [2]
+    ).then(function (data) {
+        for (let i = 1; i < Object.keys(data[0]).length; i++) {
+            if (Object.keys(data[0])[i] === checkbox.id) {
+                return (Object.keys(data[0])[i]);
+            } else return null;
+        }
+    }).catch(function (reason) {
+        console.log(reason)
+    })
+}
+
 // functie voor het veranderen van checkbox waarde in de database
-function checkboxTrueDb(checkbox) {
+function checkboxTrueDb(checkbox, x) {
     FYSCloud.API.queryDatabase(
         "UPDATE `reis` SET ? = '1' WHERE (`gebruiker_id` = ?)",
-        [checkbox.id, currentUser]
+        [x, currentUser]
         // wat de datebase terug stuurt
     ).then(function (data) {
         console.log(data);
         console.log(checkbox.id);
         // waarom het mis gaat
     }).catch(function (reason) {
-        console.log(reason);});
+        console.log(reason);
+    });
 }
 
 function checkboxFalseDb(checkbox) {
@@ -53,5 +72,6 @@ function checkboxFalseDb(checkbox) {
         console.log(checkbox.id);
         // waarom het mis gaat
     }).catch(function (reason) {
-        console.log(reason);});
+        console.log(reason);
+    });
 }
