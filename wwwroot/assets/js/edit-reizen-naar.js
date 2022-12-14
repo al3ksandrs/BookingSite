@@ -1,14 +1,15 @@
 // ophalen checkbox waarde uit database
+let country
 FYSCloud.API.queryDatabase(
     'SELECT * FROM `reis` WHERE (`gebruiker_id` = ?)', [2]
 ).then(function (data) {
-    console.log(data);
-    for (let i = 0; i < data.length; i++) {
-        if (data[i] === 1) {
-            document.getElementById(data[i]).checked = true;
-        } else {
-            document.getElementById(data[i]).checked = false;
-        }
+    console.log(Object.keys(data[0]).length);
+
+    for (let i = 1; i < Object.keys(data[0]).length; i++) {
+        country = Object.keys(data[0])[i]
+        console.log(Object.values(data[0])[i])
+        console.log(country)
+        document.getElementById(country).checked = Object.values(data[0])[i] === "1";
     }
 }).catch(function (reason){
     console.log(reason)
