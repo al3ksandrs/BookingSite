@@ -41,13 +41,13 @@ FYSCloud.API.queryDatabase(
 // LIKE/MATCHING SYSTEEM
 
 function likeButtonClick(){             //kan nu const window.location.search gebruiken
-    console.log("Huidige gebruiker: " + FYSCloud.Session.get("userId"));
+    console.log("Huidige gebruiker: " + userId);
 }
 
 const naam = document.querySelector("#profielnaam");
 
 FYSCloud.API.queryDatabase(                 //kan nu const window.location.search gebruiken
-    'SELECT * FROM gebruiker WHERE id = ?', [FYSCloud.Session.get("userId", "Not Found")]
+    'SELECT * FROM gebruiker WHERE id = ?', [userId]
 ).then(function (data){
     naam.innerHTML = data[0].naam
 }).catch(function (reason){
