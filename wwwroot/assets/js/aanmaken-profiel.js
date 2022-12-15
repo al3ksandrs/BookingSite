@@ -40,6 +40,12 @@ function insertGebruikerDb(id, email, wachtwoord, naam, leeftijd, biografie) {
                     ).then(function () {
                         FYSCloud.Session.set("userId", id)
                         FYSCloud.Session.set("email", email)
+                        FYSCloud.API.queryDatabase(
+                            "INSERT INTO `reis` SET gebruiker_id = ?;",
+                            [id])
+                        FYSCloud.API.queryDatabase(
+                            "INSERT INTO `talen` SET gebruiker_id = ?;",
+                            [id])
                         window.location.href = "profiel.html"
                     }).catch(function (reason) {
                         console.log(reason)

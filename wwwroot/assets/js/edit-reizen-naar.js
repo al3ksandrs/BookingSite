@@ -1,15 +1,14 @@
 // ophalen checkbox waarde uit database
+const currentUser = FYSCloud.Session.get("userId", "Not Found");
 let country
-FYSCloud.API.queryDatabase(
-    'SELECT * FROM `reis` WHERE (`gebruiker_id` = ?)', [2]
-).then(function (data) {
-    console.log(Object.keys(data[0]).length);
 
+FYSCloud.API.queryDatabase(
+    'SELECT * FROM `reis` WHERE (`gebruiker_id` = ?)', [currentUser]
+).then(function (data) {
+// Loop through all the columns of first row
     for (let i = 1; i < Object.keys(data[0]).length; i++) {
         country = Object.keys(data[0])[i]
-        console.log(Object.values(data[0])[i])
-        console.log(country)
-        document.getElementById(country).checked = Object.values(data[0])[i] === "1";
+        document.getElementById(country).checked = Object.values(data[0])[i] === 1;
     }
 }).catch(function (reason){
     console.log(reason)
@@ -19,38 +18,52 @@ FYSCloud.API.queryDatabase(
 
 // checkt of de checkbox gecheckt is
 function Check(checkbox) {
+    const checkId = checkbox.id;
     if (checkbox.checked === true) {
-        console.log("Je hebt gekozen voor " + checkbox.id);
-        checkboxTrueDb(checkbox);
+        console.log("Je hebt gekozen voor " + checkId);
+        checkboxDb(checkbox, true);
+        // checkboxTrueDb(checkbox)
     } else {
-        console.log("Je hebt niet meer gekozen voor " + checkbox.id);
-        checkboxFalseDb(checkbox);
+        console.log("Je hebt niet meer gekozen voor " + checkId);
+        checkboxDb(checkbox, false);
+        // checkboxFalseDb(checkbox)
     }
 }
-const currentUser = FYSCloud.Session.get("userId", "Not Found");
+
 
 // functie voor het veranderen van checkbox waarde in de database
-function checkboxTrueDb(checkbox) {
-    FYSCloud.API.queryDatabase(
-        "UPDATE `reis` SET ? = '1' WHERE (`gebruiker_id` = ?)",
-        [checkbox.id, currentUser]
-        // wat de datebase terug stuurt
-    ).then(function (data) {
-        console.log(data);
-        console.log(checkbox.id);
-        // waarom het mis gaat
-    }).catch(function (reason) {
-        console.log(reason);});
-}
+// function checkboxTrueDb(checkbox) {
+//     FYSCloud.API.queryDatabase(
+//         "UPDATE `reis` SET ? = true WHERE (`gebruiker_id` = ?)",
+//         [checkbox.id, '2']
+//         // wat de datebase terug stuurt
+//     ).then(function (data) {
+//         console.log(data);
+//         console.log(checkbox.id);
+//         // waarom het mis gaat
+//     }).catch(function (reason) {
+//         console.log(reason);});
+// }
+//
+// function checkboxFalseDb(checkbox) {
+//     FYSCloud.API.queryDatabase(
+//         "UPDATE `reis` SET ? = false WHERE (`gebruiker_id` = ?)",
+//         [checkbox.id, '2']
+//         // wat de datebase terug stuurt
+//     ).then(function (data) {
+//         console.log(data);
+//         console.log(checkbox.id);
+//         // waarom het mis gaat
+//     }).catch(function (reason) {
+//         console.log(reason);});
+// }
 
-function checkboxFalseDb(checkbox) {
+function checkboxDb(checkbox, bool) {
     FYSCloud.API.queryDatabase(
-        "UPDATE `reis` SET `spanje` = '0' WHERE (`gebruiker_id` = ?)",
-        [currentUser]
+        "UPDATE `reis` SET " + checkbox.id + " = ? WHERE `gebruiker_id` = ?;",
+        [bool, currentUser]
         // wat de datebase terug stuurt
     ).then(function (data) {
-        console.log(data);
-        console.log(checkbox.id);
         // waarom het mis gaat
     }).catch(function (reason) {
         console.log(reason);});
