@@ -41,7 +41,7 @@ FYSCloud.API.queryDatabase(
 // LIKE/MATCHING SYSTEEM
 
 function likeButtonClick(){             //kan nu const window.location.search gebruiken
-    console.log("Huidige gebruiker: " + userId);
+    console.log("Huidige gebruiker: " + FYSCloud.Session.get("userId", "Not Found"));
 }
 
 const naam = document.querySelector("#profielnaam");
