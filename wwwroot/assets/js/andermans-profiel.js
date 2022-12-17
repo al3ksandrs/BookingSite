@@ -42,6 +42,11 @@ FYSCloud.API.queryDatabase(
 function likeButtonClick(){
     console.log("Huidige gebruikerID van bezochte profiel: " + userId);
     console.log("Huidige gebruikerID van ingelogde gebruiker: " + FYSCloud.Session.get("userId", "Not Found"));
+
+    FYSCloud.API.queryDatabase(
+        "INSERT INTO `gebruiker_has_gebruiker` SET ingelogde_gebruiker_id = ?, liked_persoon_id = ?;",
+        [FYSCloud.Session.get("userId", "Not Found"), userId]
+    )
 }
 
 const naam = document.querySelector("#profielnaam");
