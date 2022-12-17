@@ -54,14 +54,32 @@ function createInfo(id) {
     infoBox.classList.add("flexbox-item");
     infoBox.classList.add("flexbox-item-2");
 
+    let ul1 = createUl("Interesses");
+    let ul2 = createUl("Spreekt");
+    let ul3 = createUl("Wilt graag naar");
+
     let button = document.createElement("a");
     button.classList.add("profiel_link");
     button.classList.add("grid-col-span-2");
     button.setAttribute("href", ("https://mockup-is104-4.fys.cloud/andermans-profiel.html?"+ id));
     button.innerText = "Bezoek profiel";
 
-    infoBox.append(button);
+    infoBox.append(ul1, ul2, ul3, button);
     return infoBox;
+}
+
+function createUl(textUl) {
+    let ul = document.createElement("ul");
+    ul.innerText = textUl;
+    let li1 = document.createElement("li");
+    li1.innerText = "informatie 1"
+    let li2 = document.createElement("li");
+    li2.innerText = "informatie 2"
+    let li3 = document.createElement("li");
+    li3.innerText = "informatie 3"
+
+    ul.append(li1,li2,li3);
+    return ul
 }
 
 function Gebruiker(id, naam, leeftijd, fotonaam, fotoextensie) {
