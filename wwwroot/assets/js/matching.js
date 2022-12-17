@@ -26,8 +26,9 @@ function displayMessage(gebruiker) {
     let matchElement = document.createElement("div");
     matchElement.classList.add("flexbox-container");
     let pfBox = createFoto(gebruiker.id, gebruiker.fotoextensie, gebruiker.naam, gebruiker.leeftijd);
+    let infoBox = createInfo(gebruiker.id);
 
-    matchElement.append(pfBox);
+    matchElement.append(pfBox, infoBox);
     document.querySelector("main").appendChild(matchElement);
 }
 
@@ -48,11 +49,19 @@ function createFoto(id, fotoextensie, naam, leeftijd) {
     return pfBox;
 }
 
-function createInfo(messageDate) {
-    let dateBox = document.createElement("p");
-    dateBox.classList.add("dateP");
-    dateBox.innerText = messageDate;
-    return dateBox;
+function createInfo(id) {
+    let infoBox = document.createElement("div");
+    infoBox.classList.add("flexbox-item");
+    infoBox.classList.add("flexbox-item-2");
+
+    let button = document.createElement("a");
+    button.classList.add("profiel_link");
+    button.classList.add("grid-col-span-2");
+    button.setAttribute("href", ("https://mockup-is104-4.fys.cloud/andermans-profiel.html?"+ id));
+    button.innerText = "Bezoek profiel";
+
+    infoBox.append(button);
+    return infoBox;
 }
 
 function Gebruiker(id, naam, leeftijd, fotonaam, fotoextensie) {
