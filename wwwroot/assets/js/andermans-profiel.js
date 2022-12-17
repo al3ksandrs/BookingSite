@@ -17,7 +17,6 @@ const prlInh = document.querySelector("#profielnaam");
 // removing the first character '?'
 const search = window.location.search;
 const userId = search.slice(1);
-console.log(userId);
 
 function age(dateString) {
     let birth = new Date(dateString);
@@ -40,10 +39,9 @@ FYSCloud.API.queryDatabase(
 
 // LIKE/MATCHING SYSTEEM
 
-console.log(userId)
-
-function likeButtonClick(){             //kan nu const window.location.search gebruiken
-    console.log("Huidige gebruiker: " + FYSCloud.Session.get("userId", "Not Found"));
+function likeButtonClick(){
+    console.log("Huidige gebruikerID van bezochte profiel: " + userId);
+    console.log("Huidige gebruikerID van ingelogde gebruiker: " + FYSCloud.Session.get("userId", "Not Found"));
 }
 
 const naam = document.querySelector("#profielnaam");
