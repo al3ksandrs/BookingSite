@@ -10,7 +10,6 @@ FYSCloud.API.queryDatabase(
 }).catch(function (reason) {
     console.log(reason);});
 
-
 //input profiel content
 const form = document.querySelector('.profielc-form,.biografie-form,.interesses-form,.interesses-activiteit');
 const taskInput = document.getElementById('voornaam');
@@ -81,26 +80,10 @@ FYSCloud.API.queryDatabase(
 //     }
 // }
 
-//TAKE 6
-// let biografieForm = document.getElementById("biografie");
-// console.log(biografieForm.value)
-//TAKE 5
-
-// document.querySelector('form').addEventListener('submit',
-//     function (e){
-//     const task = document.getElementById('biografie').value;
-//     console.log(biografie);
-//
-//     e.preventDefault();
-//     });
-
-//TAKE 4-
-//document.getElementById('voornaam').value = "Emily";
-//TAKE 3
-// function wawa () {
-//     var variable = document.getElementById('voornaam').value;
-//     document.getElementById('alert').innerHTML = 'The user input is: ' + variable;
-// }
-
-//TAKE 2
-// document.getElementsByName('voornaam')[0].valueOf();
+FYSCloud.API.queryDatabase(
+    'SELECT * FROM gebruiker WHERE id = ?', [FYSCloud.Session.get("userId", "Not Found")]
+).then(function (data){
+    bioInh.innerHTML = data[0].biografie
+}).catch(function (reason){
+    console.log(reason)
+})

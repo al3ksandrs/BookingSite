@@ -35,9 +35,7 @@
                         <option value="vrouw">Vrouw</option>
                         <option value="man">Man</option>
                     </select></div>
-                <div id="alert">
-                    <input id="opslaan" type="submit" value="Opslaan"/>
-                </div>
+
             </form>
         </article>
 
@@ -63,9 +61,7 @@
                             Wie weet word ik jou match!</textarea>
 
                     </div>
-                    <div>
-                        <input type="submit" value="Opslaan">
-                    </div>
+
                 </form>
             </article>
         </article>
@@ -79,14 +75,12 @@
             <form class="interesses-form" action="" method="get">
                 <div class="naaminvoer">
                     <label class="text" for="gebruikersnaam"></label>
-                    <input type="text" name="gebruikersnaam" id="gebruikersnaam" value="Emily" required>
-                    <div>
-                        <input type="submit" value="Opslaan">
-                    </div>
-                </div>
+                    <input type="text" name="gebruikersnaam" id="gebruikersnaam" size="10" value="Emily" required>
+                                    </div>
             </form>
             <br>
             <hr>
+            <form class="Interesses" method="get" action="edit-interesses.html">
             <article class="container2"><p class="kopjes">Interesses</p></article>
             <form class="interesses-activiteit" action="" method="get">
                 <ul>
@@ -98,26 +92,28 @@
                     </li>
                     <li>Uitgaan <input type="checkbox" name="checkbox3" id="checkboxUitgaan"  value="checked off" checked>
                     </li>
+                    <div> <input type="submit" name="ToevoegenInteresses" value="+"> </div>
                 </ul>
-                <div>
-                    <input type="submit" value="Opslaan">
-                </div>
-
             </form>
             <hr>
+
+            <form class="Reizen" method="get" action="edit-reizen-naar.html">
             <article class="textbox2"><p class="kopjes">Wilt reizen naar</p></article>
             <ul>
                 <li>Azië
                     <input type="checkbox" name="checkbox4" value="checked off" checked>
+
+                    <div> <input type="submit" name="ToevoegenReizen" value="+"> </div>
                 </li>
             </ul>
             <hr>
             <div>
                 <input type="submit" value="Opslaan">
             </div>
-        </article>
-
+            </article>
+        </form>
     <!--spreekt content area-->
+        <form class="Talen" method="get" action="edit-talen.html">
         <article class="container2 textbox3">
             <article class="textbox2"><p class="kopjes">Spreekt</p></article>
             <ul>
@@ -128,14 +124,11 @@
                 <li>Duits <input type="checkbox" name="checkbox7" value="checked off" checked>
                 </li>
                 <li>Frans <input type="checkbox" name="checkbox8" value="checked off" checked>
+                    <div> <input type="submit" name="ToevoegenTalen" value="+"> </div>
                 </li>
             </ul>
-            <div>
-                <input type="submit" value="Opslaan">
-            </div>
-            <div class="annuleer-knop">
-            </div>
-        </article>
+                            </article>
+        </form>
     </section>
     <script src="assets/js/edit-profiel-foto.js" defer></script>
 </main>
