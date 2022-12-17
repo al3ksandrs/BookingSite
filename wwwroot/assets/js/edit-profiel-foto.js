@@ -42,7 +42,7 @@ const voornaam  = document.getElementById("voornaam");
 FYSCloud.API.queryDatabase(
     'SELECT * FROM gebruiker WHERE id = ?', [FYSCloud.Session.get("userId", "Not Found")]
 ).then(function (data){
-    voornaam.innerHTML = data[0].naam
+    voornaam.innerHTML = data[2].naam
 
 }).catch(function (reason){
     console.log(reason)
