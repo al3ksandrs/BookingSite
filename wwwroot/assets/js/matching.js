@@ -1,4 +1,6 @@
 window.addEventListener("DOMContentLoaded", initialize);
+let column_name;
+const LIMIT_INFO = 3;
 
 function initialize() {
     initializeMessageBoard();
@@ -55,9 +57,9 @@ function createInfo(id) {
     infoBox.classList.add("flexbox-item");
     infoBox.classList.add("flexbox-item-2");
 
-    let ul1 = createUl("Interesses");
-    let ul2 = createUl("Spreekt");
-    let ul3 = createUl("Wilt graag naar");
+    let interesses = createUlInteresses("Interesses", id);
+    let spreekt = createUlSpreekt("Spreekt", id);
+    let reis = createUlReis("Wilt graag naar", id);
 
     let button = document.createElement("a");
     button.classList.add("profiel_link");
@@ -65,22 +67,80 @@ function createInfo(id) {
     button.setAttribute("href", ("https://mockup-is104-4.fys.cloud/andermans-profiel.html?"+ id));
     button.innerText = "Bezoek profiel";
 
-    infoBox.append(ul1, ul2, ul3, button);
+    infoBox.append(interesses, spreekt, reis, button);
     return infoBox;
 }
 
-function createUl(textUl) {
+function createUlInteresses(interessesText, id) {
     let ul = document.createElement("ul");
-    ul.innerText = textUl;
-    let li1 = document.createElement("li");
-    li1.innerText = "informatie 1"
-    let li2 = document.createElement("li");
-    li2.innerText = "informatie 2"
-    let li3 = document.createElement("li");
-    li3.innerText = "informatie 3"
+    ul.innerText = interessesText;
+    let count = 0;
+    FYSCloud.API.queryDatabase(
+        'SELECT * FROM `interesses` WHERE (`gebruiker_id` = ?)', [id]
+    ).then(function (data) {
+        // Loop through all the columns of first row
+        for (let i = 1; i < Object.keys(data[0]).length; i++) {
+            column_name = Object.keys(data[0])[i];
+            if (Object.values(data[0])[i] === 1) {
+                let x = document.createElement("li");
+                x.innerText = column_name;
+                ul.append(x);
+                count += 1;
+            }
+            if (count === LIMIT_INFO) {break;}
+        }
+    }).catch(function (reason){
+        console.log(reason)
+    })
+    return ul;
+}
 
-    ul.append(li1,li2,li3);
-    return ul
+function createUlSpreekt(spreektText, id) {
+    let ul = document.createElement("ul");
+    ul.innerText = spreektText;
+    let count = 0;
+    FYSCloud.API.queryDatabase(
+        'SELECT * FROM `talen` WHERE (`gebruiker_id` = ?)', [id]
+    ).then(function (data) {
+        // Loop through all the columns of first row
+        for (let i = 1; i < Object.keys(data[0]).length; i++) {
+            column_name = Object.keys(data[0])[i];
+            if (Object.values(data[0])[i] === 1) {
+                let x = document.createElement("li");
+                x.innerText = column_name;
+                ul.append(x);
+                count += 1;
+            }
+            if (count === LIMIT_INFO) {break;}
+        }
+    }).catch(function (reason){
+        console.log(reason)
+    })
+    return ul;
+}
+
+function createUlReis(reisText, id) {
+    let ul = document.createElement("ul");
+    ul.innerText = reisText;
+    let count = 0;
+    FYSCloud.API.queryDatabase(
+        'SELECT * FROM `reis` WHERE (`gebruiker_id` = ?)', [id]
+    ).then(function (data) {
+        // Loop through all the columns of first row
+        for (let i = 1; i < Object.keys(data[0]).length; i++) {
+            column_name = Object.keys(data[0])[i]
+            if (Object.values(data[0])[i] === 1) {
+                let x = document.createElement("li");
+                x.innerText = column_name;
+                ul.append(x);
+                count += 1;
+            }
+            if (count === LIMIT_INFO) {break;}
+        }
+    }).catch(function (reason){
+        console.log(reason)
+    })
+    return ul;
 }
 
 function Gebruiker(id, naam, leeftijd, fotonaam, fotoextensie) {
