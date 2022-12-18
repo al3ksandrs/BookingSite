@@ -1,15 +1,14 @@
 // alert ('Hello World ');
-FYSCloud.API.queryDatabase(
-    "SELECT * FROM gebruiker WHERE email = 'emily56@email.com'"
-
- // Dit stuurt de data terug van de database
-).then(function (data) {
-    console.log(data);
-
-// melding als er iets mis is gegaan
-}).catch(function (reason) {
-    console.log(reason);});
-
+// FYSCloud.API.queryDatabase(
+//     "SELECT * FROM gebruiker WHERE email = 'emily56@email.com'"
+//
+//  // Dit stuurt de data terug van de database
+// ).then(function (data) {
+//     console.log(data);
+//
+// // melding als er iets mis is gegaan
+// }).catch(function (reason) {
+//     console.log(reason);});
 
 //input profiel content
 const form = document.querySelector('.profielc-form,.biografie-form,.interesses-form,.interesses-activiteit');
@@ -37,70 +36,56 @@ console.log(cb.checked); // false
 
 
 
+//weet niet zeker of ik dit nodig heb
+// const voornaam  = document.getElementById("voornaam");
+//
+// FYSCloud.API.queryDatabase(
+//     'SELECT * FROM gebruiker WHERE id = ?', [FYSCloud.Session.get("userId", "Not Found")]
+// ).then(function (data){
+//     voornaam.innerHTML = data[2].naam
+//
+// }).catch(function (reason){
+//     console.log(reason)
+// })
 
-const voornaam  = document.getElementById("voornaam");
+//persoonlijke informatie uit de database
+// document.querySelector("#foto-bestand").addEventListener("change",
+//
+//     function updateImage() {
+//         FYSCloud.Utils.getDataUrl("#foto-bestand")
+//             .then(function (data) {
+//                 if (data.isImage) {
+//                     document.querySelector("#imagePreview").src = data.url;
+//                 }
+//                 console.log(data)
+//             }).catch(function (reason) {
+//             console.log(reason);
+//         })
+//     })
+
+const bioInh = document.querySelector("#biografie");
+// const pfpInh = document.querySelector("#profielfoto");
+// const prlInh = document.querySelector("#profielnaam");
+
+
+
+console.log(FYSCloud.Session.get("userId", "Not Found"));
+console.log(FYSCloud.Session.get("email", "Not Found"))
+
+function age(dateString){
+    let birth = new Date(dateString);
+    let now = new Date();
+    let beforeBirth = ((() => {birth.setDate(now.getDate());birth.setMonth(now.getMonth()); return birth.getTime()})() < birth.getTime()) ? 0 : 1;
+    return now.getFullYear() - birth.getFullYear() - beforeBirth;
+}
 
 FYSCloud.API.queryDatabase(
     'SELECT * FROM gebruiker WHERE id = ?', [FYSCloud.Session.get("userId", "Not Found")]
 ).then(function (data){
-    voornaam.innerHTML = data[0].naam
+    bioInh.innerHTML = data[0].biografie
+    pfpInh.src = "/uploads/" + data[0].id + "." + data[0].fotoextensie
+    prlInh.innerHTML = data[0].naam + "         " + age(data[0].leeftijd)
 
 }).catch(function (reason){
     console.log(reason)
 })
-
-
-// input opslaan selector
-// const select = document.querySelector("select");
-// //change event
-// select.addEventListener('change', runEvent);
-
-//get from storage
-// const name = localStorage.getItem('name');
-// console.log(name);
-
-// //TAKE 8 - OPSLAAN FOTO
-// const inputFoto = document.getElementById('image');
-// inputFoto.addEventListener('change', (event)=> {
-//     const image = event.target.files[0];
-// });
-
-//TAKE7 foto opslaan
-// function readURL(input)
-// {
-//     document.getElementById("image").style.display = "block";
-//
-//     if (input.files && input.files[0]) {
-//         var reader = new FileReader();
-//
-//         reader.onload = function (e) {
-//             document.getElementById('image').src =  e.target.result;
-//         }
-//
-//         reader.readAsDataURL(input.files[0]);
-//     }
-// }
-
-//TAKE 6
-// let biografieForm = document.getElementById("biografie");
-// console.log(biografieForm.value)
-//TAKE 5
-
-// document.querySelector('form').addEventListener('submit',
-//     function (e){
-//     const task = document.getElementById('biografie').value;
-//     console.log(biografie);
-//
-//     e.preventDefault();
-//     });
-
-//TAKE 4-
-//document.getElementById('voornaam').value = "Emily";
-//TAKE 3
-// function wawa () {
-//     var variable = document.getElementById('voornaam').value;
-//     document.getElementById('alert').innerHTML = 'The user input is: ' + variable;
-// }
-
-//TAKE 2
-// document.getElementsByName('voornaam')[0].valueOf();

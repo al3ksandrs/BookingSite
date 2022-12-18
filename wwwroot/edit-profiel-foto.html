@@ -13,16 +13,36 @@
 <body>
 <main>
     <!--Nav content area-->
+    <nav class="navbar">                                                         <!--normale navbar-->
+        <ul>
+            <li><a href="index.html" class="navbar-normale-button">Home</a></li>
+            <li><a href="over-ons.html" class="navbar-normale-button">Over ons</a></li>
+            <li class="logo"><img src=assets/img/logo.PNG class="logo-foto" alt="default.png">/li>
+            <li><a href="matching-met-filter.html" class="navbar-normale-button">Matches</a></li>
+            <li><a href="profiel.html" class="navbar-normale-button">Profiel</a></li>
 
+            <input id="navbar-menu-toggle" type="checkbox"/>                               <!--navbar menu voor mobile-->
+            <label class='navbar-menu-container' for="navbar-menu-toggle">
+                <div class='navbar-menu-button'><img src=assets/img/burger-menu.png alt="default" class="navbar-foto">
+                </div>
+            </label>
+            <ul class="navbar-links">
+                <li><a href="inloggen.html" class="navbar-menu-link">Home</a></li>
+                <li><a href="over-ons.html" class="navbar-menu-link">Over ons</a></li>
+                <li><a href="matching.html" class="navbar-menu-link">Matches</a></li>
+                <li><a href="profiel.html" class="navbar-menu-link">Profiel</a></li>
+            </ul>
+        </ul>
+    </nav>
     <!--Naam en profiel content area-->
     <section class="general-info">
-        <article class="textbox1"><img src="assets/img/salmah.jpg" width="228" height="294"
+        <article class="textbox1"><img id="profiel-foto" src="assets/img/salmah.jpg" width="228" height="294"
                                        alt="default profile" class="profile">
             <form class="profielc-form" action="" method="get">
                 <div><input type="file" name="image" id="image" accept="image/*"><br></div>
                 <div>
-                    <label class="text" for="voornaam">Voornaam:</label>
-                    <input type="text" name="voornaam" id="voornaam" size="10" value="Pieter" required><br><br>
+                    <label class="text" for="profiel-naam">Voornaam:</label>
+                    <input type="text" name="profiel-naam" id="profiel-naam" size="10" value="Pieter" required><br><br>
                 </div>
                 <div>
                     <label class="text" for="leeftijd"> Leeftijd:</label>
@@ -35,9 +55,7 @@
                         <option value="vrouw">Vrouw</option>
                         <option value="man">Man</option>
                     </select></div>
-                <div id="alert">
-                    <input id="opslaan" type="submit" value="Opslaan"/>
-                </div>
+
             </form>
         </article>
 
@@ -45,7 +63,7 @@
     <!--bio content area -->
 
         <article>
-            <article><p class="kopjes">Profiel Bewerken</p>
+            <article class="textbox2"><p class="kopjes">Profiel Bewerken</p>
             </article>
             <article>
                 <article class="textbox2"><p class="kopjes">Biografie</p>
@@ -54,18 +72,11 @@
                 <form class="biografie-form" action="" method="post">
                     <div>
                         <label for="biografie"></label>
-                        <textarea id="biografie" name="biografie" rows="4" cols="40" maxlength="500">Ervaren projectmanager met een bewezen geschiedenis van werken in de vrijetijds- en reis- en
-            toerismebranche.
-            Bekwaam in evenementenbeheer, toerisme en in het bijzonder in duurzame ontwikkeling van toerisme.
-            Met een masterdiploma gericht op milieuwetenschappen en GIS van Université Grenoble Alpes, Institut de
-            Géographie Alpine, zijn milieuaspecten van toerisme en wereldwijde trends op dit gebied van bijzonder
-            belang voor mij.
-                            Wie weet word ik jou match!</textarea>
+                        <textarea id="biografie" name="biografie" rows="4" cols="40" maxlength="500">[Aan het Laden...]
+                [Of er is iets fout gegaan...]</textarea>
 
                     </div>
-                    <div>
-                        <input type="submit" value="Opslaan">
-                    </div>
+
                 </form>
             </article>
         </article>
@@ -79,16 +90,14 @@
             <form class="interesses-form" action="" method="get">
                 <div class="naaminvoer">
                     <label class="text" for="gebruikersnaam"></label>
-                    <input type="text" name="gebruikersnaam" id="gebruikersnaam" value="Emily" required>
-                    <div>
-                        <input type="submit" value="Opslaan">
-                    </div>
-                </div>
+                    <input type="text" name="gebruikersnaam" id="gebruikersnaam" size="10" value="Emily" required>
+                                    </div>
             </form>
             <br>
             <hr>
-            <article class="container2"><p class="kopjes">Interesses</p></article>
-            <form class="interesses-activiteit" action="" method="get">
+            <form class="Interesses" method="get" action="">
+            <article class="textbox2 container2"><p class="kopjes">Interesses</p></article></form>
+            <form class="interesses-activiteit" action="edit-interesses.html" method="get">
                 <ul>
                     <li>Shoppen
                         <input type="checkbox" name="checkbox1" id="checkboxShopen" value="checked off" checked>
@@ -98,26 +107,28 @@
                     </li>
                     <li>Uitgaan <input type="checkbox" name="checkbox3" id="checkboxUitgaan"  value="checked off" checked>
                     </li>
+                    <div> <input type="submit" name="ToevoegenInteresses" value="+"> </div>
                 </ul>
-                <div>
-                    <input type="submit" value="Opslaan">
-                </div>
-
             </form>
             <hr>
+
+            <form class="Reizen" method="get" action="edit-reizen-naar.html">
             <article class="textbox2"><p class="kopjes">Wilt reizen naar</p></article>
             <ul>
                 <li>Azië
                     <input type="checkbox" name="checkbox4" value="checked off" checked>
+
+                    <div> <input type="submit" name="ToevoegenReizen" value="+"> </div>
                 </li>
             </ul>
             <hr>
             <div>
                 <input type="submit" value="Opslaan">
             </div>
-        </article>
-
+            </form>
+            </article>
     <!--spreekt content area-->
+        <form class="Talen" method="get" action="edit-talen.html">
         <article class="container2 textbox3">
             <article class="textbox2"><p class="kopjes">Spreekt</p></article>
             <ul>
@@ -128,14 +139,11 @@
                 <li>Duits <input type="checkbox" name="checkbox7" value="checked off" checked>
                 </li>
                 <li>Frans <input type="checkbox" name="checkbox8" value="checked off" checked>
+                    <div> <input type="submit" name="ToevoegenTalen" value="+"> </div>
                 </li>
             </ul>
-            <div>
-                <input type="submit" value="Opslaan">
-            </div>
-            <div class="annuleer-knop">
-            </div>
-        </article>
+                            </article>
+        </form>
     </section>
     <script src="assets/js/edit-profiel-foto.js" defer></script>
 </main>
