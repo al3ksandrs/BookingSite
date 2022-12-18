@@ -40,6 +40,7 @@ function createFoto(id, fotoextensie, naam, leeftijd) {
     let imageBox = document.createElement("img");
     imageBox.classList.add("match_foto");
     imageBox.src = "/uploads/" + id + "." + fotoextensie
+    imageBox.setAttribute("alt", "default.jpg")
 
     let textBox = document.createElement("p");
     textBox.classList.add("naam");
