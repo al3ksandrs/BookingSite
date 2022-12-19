@@ -48,7 +48,8 @@ function likeButtonClick(){
 }
 
 FYSCloud.API.queryDatabase(
-    "SELECT * FROM `fys_is104_4_dev`.`gebruiker_has_gebruiker` WHERE ingelogde_gebruiker_id = \"0\" AND liked_persoon_id = \"1661805171101\" OR liked_persoon_id = \"0\" AND ingelogde_gebruiker_id = \"1661805171101\";",
+    "SELECT * FROM `fys_is104_4_dev`.`gebruiker_has_gebruiker` WHERE ingelogde_gebruiker_id = ? AND liked_persoon_id = ? OR liked_persoon_id = ? AND ingelogde_gebruiker_id = ?;",
+    [FYSCloud.Session.get("userId", "Not Found"), userId, FYSCloud.Session.get("userId", "Not Found"), userId]
 ).then(function (data){
     FYSCloud.API.queryDatabase(
         "INSERT INTO `matches` SET `gebruiker_id1` = ?, `gebruiker_id2` = ?;",
