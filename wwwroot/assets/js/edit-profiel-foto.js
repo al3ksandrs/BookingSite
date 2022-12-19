@@ -112,27 +112,35 @@ document.querySelector("#image").addEventListener("change",
     })
 
 document.querySelector("#verder").addEventListener("click", function (){
-    updateGebruikerDb(prlInh.value, leeftijd.value, bioInh.innerHTML)
+    updateGebruikerDb(prlInh, leeftijd, bioInh)
 })
 
 function updateGebruikerDb(naam, leeftijd, biografie) {
-    console.log(naam.value)
+    FYSCloud.queryDatabase(
+        "SELECT fotoextensie FROM gebruiker WHERE id = ?" [FYSCloud.Session.get("userId", "Not Found")]
+    ).then(function (data) {
+        FYSCloud.API.deleteFile(FYSCloud.Session.get("userId", "Not Found") + "." + data[0].fotoextensie)
+    }).catch(function (reason){
+        console.log(reason)
+    })
     FYSCloud.Utils.getDataUrl("#image")
         .then(function (data) {
             if (data.isImage) {
                 FYSCloud.API.uploadFile(
-                    FYSCloud.Session.get("userId", "Not Found") + "." + data.extension,
-                    data.url
-                ).then(function (data1) {
-                    FYSCloud.API.queryDatabase(
-                        "UPDATE gebruiker SET naam = ?, leeftijd = ?, biografie = ?, fotonaam = ?, fotoextensie = ? WHERE id = ?;",
-                        [naam.value, leeftijd.value, biografie.value, FYSCloud.Session.get("userId", "Not Found"), data.extension, FYSCloud.Session.get("userId", "Not Found")])
-
+                    FYSCloud.Session.get("userId", "Not Found") + "." + data.extension, data.url
+                ).then(function () {
+                    updateLeDB(data)
                 }).catch(function (reason) {
-                    console.log(reason);
+                    updateLeDB(data)
                 });
             }
         }).catch(function (reason) {
         console.log(reason);
     })
+
+    function updateLeDB(data) {
+    FYSCloud.API.queryDatabase(
+        "UPDATE gebruiker SET naam = ?, leeftijd = ?, biografie = ?, fotonaam = ?, fotoextensie = ? WHERE id = ?;",
+        [naam.value, leeftijd.value, biografie.value, FYSCloud.Session.get("userId", "Not Found"), data.extension, FYSCloud.Session.get("userId", "Not Found")])
+    }
 }
