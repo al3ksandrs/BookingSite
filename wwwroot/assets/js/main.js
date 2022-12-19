@@ -55,5 +55,6 @@ FYSCloud.API.queryDatabase(
         "INSERT INTO `matches` SET `gebruiker_id1` = ?, `gebruiker_id2` = ?;",
         [FYSCloud.Session.get("userId", "Not Found"), userId]
     )
+    console.log("Match toegevoegd aan matches")
 })
 
