@@ -115,7 +115,7 @@ document.querySelector("#verder").addEventListener("click", function (){
 })
 
 function updateGebruikerDb(naam, leeftijd, biografie) {
-    FYSCloud.Utils.getDataUrl("#foto-bestand")
+    FYSCloud.Utils.getDataUrl("#image")
         .then(function (data) {
             if (data.isImage) {
                 FYSCloud.API.uploadFile(
