@@ -92,7 +92,7 @@
 //
 
 // Inhoud Stuff
-const bioInh = document.querySelector("#biografie_inhoud");
+const bioInh = document.querySelector("#biografieinhoud");
 const pfpInh = document.querySelector("#profielfoto");
 const prlInh = document.querySelector("#profielnaam");
 
