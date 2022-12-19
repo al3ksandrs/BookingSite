@@ -222,6 +222,11 @@ main {
     height: 219px;
 }
 
+/*annuleer knop*/
+.annuleerKnop{
+    color: black;
+    text-decoration: none;
+}
 /* responsive */
 @media (max-width: 1434px) {
     main {

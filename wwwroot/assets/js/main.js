@@ -1,3 +1,9 @@
+let btnClear = document.querySelector('button');
+let span = document.querySelectorAll('span')
+
+btnClear.addEventListener('click', () => {
+    span.forEach(span => span.value = '');
+})
 const dropdowns = document.querySelectorAll('.dropdown');
 
 dropdowns.forEach(dropdown => {
@@ -28,5 +34,8 @@ dropdowns.forEach(dropdown => {
     });
 });
 
+
+
 console.log(FYSCloud.Session.get("userId"))
 console.log(FYSCloud.Session.get("email"))
+
