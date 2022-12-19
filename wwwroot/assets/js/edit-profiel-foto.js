@@ -64,8 +64,8 @@ document.querySelector("#foto-bestand").addEventListener("change",
     })
 
 const bioInh = document.querySelector("#biografie");
-const pfpInh = document.querySelector("#profielfoto");
-const prlInh = document.querySelector("#profielnaam");
+const pfpInh = document.querySelector("#profiel-foto");
+const prlInh = document.querySelector("#profiel-naam");
 
 
 
