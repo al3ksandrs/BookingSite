@@ -21,7 +21,8 @@
             <li><a href="matching-met-filter.html" class="navbar-normale-button">Matches</a></li>
             <li><a href="profiel.html" class="navbar-normale-button">Profiel</a></li>
 
-            <input id="navbar-menu-toggle" type="checkbox"/>                               <!--navbar menu voor mobile-->
+            <input id="navbar-menu-toggle" type="checkbox"/>
+            <!--navbar menu voor mobile-->
             <label class='navbar-menu-container' for="navbar-menu-toggle">
                 <div class='navbar-menu-button'><img src=assets/img/burger-menu.png alt="default" class="navbar-foto">
                 </div>
@@ -42,27 +43,20 @@
             <form class="profielc-form" action="" method="get">
                 <div><input type="file" name="image" id="image" accept="image/*"><br></div>
                 <div>
-                    <label class="text" for="profielnaam" >Voornaam:
-                    <input type="text" name="profielnaam" id="profielnaam" placeholder="naam" size="10" required> </label>
+                    <label class="text" for="profielnaam">Voornaam:
+                        <input type="text" name="profielnaam" id="profielnaam" placeholder="naam" size="10" required>
+                    </label>
                     <br><br>
                 </div>
                 <div>
                     <label class="text" for="leeftijd"> Leeftijd:</label>
-                    <input type="date" name="leeftijd" max="1982-01-01" min="1922-01-01" id="leeftijd"
-                           value="1981-07-25" required>
+                    <input type="date" name="leeftijd" max="1982-01-01" min="1922-01-01" id="leeftijd" required>
                 </div>
-                <div>
-                    <label class="text" for="geslacht">Geslacht:</label>
-                    <select name="geslacht" id="geslacht">
-                        <option value="vrouw">Vrouw</option>
-                        <option value="man">Man</option>
-                    </select></div>
-
             </form>
         </article>
 
 
-    <!--bio content area -->
+        <!--bio content area -->
 
         <article>
             <article class="textbox2"><p class="kopjes">Profiel Bewerken</p>
@@ -87,64 +81,45 @@
     <!--Gebruikersnaam,interesses & Wilt reizen naar content area-->
     <section class="general-info2">
         <article class="container2 textbox4">
-            <article class="textbox2"><p class="kopjes">Gebruikersnaam</p>
-            </article>
-            <form class="interesses-form" action="" method="get">
-                <div class="naaminvoer">
-                    <label class="text" for="gebruikersnaam"></label>
-                    <input type="text" name="gebruikersnaam" id="gebruikersnaam" size="10"  required>
-                                    </div>
-            </form>
-            <br>
-            <hr>
             <form class="Interesses" method="get" action="">
-            <article class="textbox2 container2"><p class="kopjes">Interesses</p></article></form>
+                <article class="textbox2 container2"><p class="kopjes">Interesses</p></article>
+            </form>
             <form class="interesses-activiteit" action="edit-interesses.html" method="get">
+                <ul id="interesselijst">
+
+                </ul>
                 <ul>
-                    <li>Shoppen
-                        <input type="checkbox" name="checkbox1" id="checkboxShopen" value="checked off" checked>
-                    </li>
-                    <li>Zwemmen
-                        <input type="checkbox" name="checkbox2" id="checkboxZwemmen" value="checked off" checked>
-                    </li>
-                    <li>Uitgaan <input type="checkbox" name="checkbox3" id="checkboxUitgaan"  value="checked off" checked>
-                    </li>
-                    <div> <input type="submit" name="ToevoegenInteresses" value="+"> </div>
+                    <div><input type="submit" name="ToevoegenInteresses" value="+"></div>
                 </ul>
             </form>
             <hr>
 
             <form class="Reizen" method="get" action="edit-reizen-naar.html">
-            <article class="textbox2"><p class="kopjes">Wilt reizen naar</p></article>
-            <ul>
-                <li>Azië
-                    <input type="checkbox" name="checkbox4" value="checked off" checked>
+                <article class="textbox2"><p class="kopjes">Wilt reizen naar</p></article>
+                <ul id="reizenlijst">
+                </ul>
+                <ul>
+                    <div><input type="submit" name="ToevoegenReizen" value="+"></div>
 
-                    <div> <input type="submit" name="ToevoegenReizen" value="+"> </div>
-                </li>
-            </ul>
-            <hr>
+                </ul>
+                <hr>
+            </form>
             <div>
                 <input type="submit" value="Opslaan">
+                <button><a class="annuleerKnop" href="profiel.html"> Annuleer </a></button>
             </div>
-            </form>
-            </article>
-    <!--spreekt content area-->
+        </article>
+        <!--spreekt content area-->
         <form class="Talen" method="get" action="edit-talen.html">
-        <article class="container2 textbox3">
-            <article class="textbox2"><p class="kopjes">Spreekt</p></article>
-            <ul>
-                <li>Nederlands <input type="checkbox" name="checkbox5" value="checked off" checked>
-                </li>
-                <li>Engels <input type="checkbox" name="checkbox6" value="checked off" checked>
-                </li>
-                <li>Duits <input type="checkbox" name="checkbox7" value="checked off" checked>
-                </li>
-                <li>Frans <input type="checkbox" name="checkbox8" value="checked off" checked>
-                    <div> <input type="submit" name="ToevoegenTalen" value="+"> </div>
-                </li>
-            </ul>
-                            </article>
+            <article class="container2 textbox3">
+                <article class="textbox2"><p class="kopjes">Spreekt</p></article>
+                <ul id="spreektLijst">
+                </ul>
+                <ul>
+                    <div><input type="submit" name="ToevoegenTalen" value="+"></div>
+
+                </ul>
+            </article>
         </form>
     </section>
     <script src="assets/js/edit-profiel-foto.js" defer></script>

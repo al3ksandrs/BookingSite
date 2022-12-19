@@ -10,111 +10,88 @@
 // }).catch(function (reason) {
 //     console.log(reason);});
 
-//input profiel content
-// const form = document.querySelector('.profielc-form,.biografie-form,.interesses-form,.interesses-activiteit');
-// const taskInput = document.getElementById('voornaam');
-// const taskInput1 = document.getElementById('leeftijd');
-// const taskInput2 = document.getElementById('image');
-// const taskInput3 = document.getElementById('geslacht');
-// //input Biografie
-// const taskInput4 = document.getElementById('biografie');
-// // input interesses
-// const taskInput5 = document.getElementById('gebruikersnaam');
-//
-// form.addEventListener('submit',runEvent);
-// function runEvent(e){
-//     console.log(`EVENT TYPE: ${e.type}`);
-//
-// //Get Input value
-// console.log(taskInput.value,taskInput1.value,taskInput2.value,taskInput3.value,taskInput4,taskInput5.value);
-// e.preventDefault();
-// }
-//
-// //checkbox
-// const cb = document.querySelector('#checkboxShopen,#checkboxZwemmen,#checkboxUitgaan');
-// console.log(cb.checked); // false
-//
-
-
-//weet niet zeker of ik dit nodig heb
-// // const voornaam  = document.getElementById("voornaam");
-// //
-// // FYSCloud.API.queryDatabase(
-// //     'SELECT * FROM gebruiker WHERE id = ?', [FYSCloud.Session.get("userId", "Not Found")]
-// // ).then(function (data){
-// //     voornaam.innerHTML = data[2].naam
-// //
-// // }).catch(function (reason){
-// //     console.log(reason)
-// // })
-//
-// //persoonlijke informatie uit de database
-// document.querySelector("#foto-bestand").addEventListener("change",
-//
-//     function updateImage() {
-//         FYSCloud.Utils.getDataUrl("#foto-bestand")
-//             .then(function (data) {
-//                 if (data.isImage) {
-//                     document.querySelector("#imagePreview").src = data.url;
-//                 }
-//                 console.log(data)
-//             }).catch(function (reason) {
-//             console.log(reason);
-//         })
-//     })
-//
-// const bioInh = document.querySelector("#biografie");
-// const pfpInh = document.querySelector("#profiel-foto");
-// const prlInh = document.querySelector("#profiel-naam");
-//
-//
-//
-// console.log(FYSCloud.Session.get("userId", "Not Found"));
-// console.log(FYSCloud.Session.get("email", "Not Found"));
-//
-// function age(dateString){
-//     let birth = new Date(dateString);
-//     let now = new Date();
-//     let beforeBirth = ((() => {birth.setDate(now.getDate());birth.setMonth(now.getMonth()); return birth.getTime()})() < birth.getTime()) ? 0 : 1;
-//     return now.getFullYear() - birth.getFullYear() - beforeBirth;
-// }
-//
-// FYSCloud.API.queryDatabase(
-//     'SELECT * FROM gebruiker WHERE id = ?', [FYSCloud.Session.get("userId", "Not Found")]
-// ).then(function (data){
-//     bioInh.innerHTML = data[0].biografie
-//     pfpInh.src = "/uploads/" + data[0].id + "." + data[0].fotoextensie
-//     prlInh.innerHTML = data[0].naam + "         " + age(data[0].leeftijd)
-//
-// }).catch(function (reason){
-//     console.log(reason)
-// })
-//
-
 // Inhoud Stuff
 const bioInh = document.querySelector("#biografieinhoud");
 const pfpInh = document.querySelector("#profielfoto");
 const prlInh = document.querySelector("#profielnaam");
-
+const leeftijd = document.querySelector("#leeftijd");
+const LIMIT_INFO = 5;
+let column_name;
 // Fys Cloud stuff
-
 console.log(FYSCloud.Session.get("userId", "Not Found"));
 console.log(FYSCloud.Session.get("email", "Not Found"))
-
-function age(dateString){
-    let birth = new Date(dateString);
-    let now = new Date();
-    let beforeBirth = ((() => {birth.setDate(now.getDate());birth.setMonth(now.getMonth()); return birth.getTime()})() < birth.getTime()) ? 0 : 1;
-    return now.getFullYear() - birth.getFullYear() - beforeBirth;
-}
 
 FYSCloud.API.queryDatabase(
     'SELECT * FROM gebruiker WHERE id = ?', [FYSCloud.Session.get("userId", "Not Found")]
 ).then(function (data){
     bioInh.innerHTML = data[0].biografie
     pfpInh.src = "/uploads/" + data[0].id + "." + data[0].fotoextensie
-    prlInh.innerHTML = data[0].naam + "         " + age(data[0].leeftijd)
+    leeftijd.value = (data[0].leeftijd).slice(0, 10);
+    prlInh.value = data[0].naam
+
 }).catch(function (reason){
     console.log(reason)
 })
 
+// Interesses - checkbox
+    let ul = document.querySelector("#interesselijst");
+    let count = 0;
+    FYSCloud.API.queryDatabase(
+        'SELECT * FROM interesses WHERE (gebruiker_id = ?)', [FYSCloud.Session.get("userId", "Not Found")]
+    ).then(function (data) {
+        // Loop through all the columns of first row
+        for (let i = 1; i < Object.keys(data[0]).length; i++) {
+            column_name = Object.keys(data[0])[i];
+            if (Object.values(data[0])[i] === 1) {
+                let x = document.createElement("li");
+                x.innerText = column_name;
+                ul.append(x);
+                count += 1;
+            }
+            if (count === LIMIT_INFO) {break;}
+        }
+    }).catch(function (reason){
+        console.log(reason)
+    })
+
+// Reizen naar - checkbox
+let ulReizen = document.querySelector("#reizenlijst");
+let countReis = 0;
+FYSCloud.API.queryDatabase(
+    'SELECT * FROM reis WHERE (gebruiker_id = ?)', [FYSCloud.Session.get("userId", "Not Found")]
+).then(function (data) {
+    // Loop through all the columns of first row
+    for (let i = 1; i < Object.keys(data[0]).length; i++) {
+        column_name = Object.keys(data[0])[i];
+        if (Object.values(data[0])[i] === 1) {
+            let x = document.createElement("li");
+            x.innerText = column_name;
+            ulReizen.append(x);
+            countReis += 1;
+        }
+        if (countReis === LIMIT_INFO) {break;}
+    }
+}).catch(function (reason){
+    console.log(reason)
+})
+
+// Spreekt  - checkbox
+let ulSpreekt = document.querySelector("#spreektLijst");
+let countSpreekt = 0;
+FYSCloud.API.queryDatabase(
+    'SELECT * FROM talen WHERE (gebruiker_id = ?)', [FYSCloud.Session.get("userId", "Not Found")]
+).then(function (data) {
+    // Loop through all the columns of first row
+    for (let i = 1; i < Object.keys(data[0]).length; i++) {
+        column_name = Object.keys(data[0])[i];
+        if (Object.values(data[0])[i] === 1) {
+            let x = document.createElement("li");
+            x.innerText = column_name;
+            ulSpreekt.append(x);
+            countSpreekt += 1;
+        }
+        if (countSpreekt === LIMIT_INFO) {break;}
+    }
+}).catch(function (reason){
+    console.log(reason)
+})
