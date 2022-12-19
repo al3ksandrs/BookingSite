@@ -36,12 +36,27 @@ FYSCloud.API.queryDatabase(
     console.log(reason)
 })
 
-const naam = document.querySelector("#profielnaam");
+// CHECKEN OF ER MATCHES ZIJN
 
-FYSCloud.API.queryDatabase(                 //kan nu const window.location.search gebruiken
-    'SELECT * FROM gebruiker WHERE id = ?', [userId]
+function likeButtonClick(){
+    console.log("Huidige gebruikerID van bezochte profiel: " + userId);
+    console.log("Huidige gebruikerID van ingelogde gebruiker: " + FYSCloud.Session.get("userId", "Not Found"));
+
+    FYSCloud.API.queryDatabase(
+        "INSERT INTO `gebruiker_has_gebruiker` SET ingelogde_gebruiker_id = ?, liked_persoon_id = ?;",
+        [FYSCloud.Session.get("userId", "Not Found"), userId]
+    )
+
+    console.log("Query is gestuurd naar database. (Like systeem)")
+}
+
+FYSCloud.API.queryDatabase(
+    "SELECT * FROM `fys_is104_4_dev`.`gebruiker_has_gebruiker` WHERE ingelogde_gebruiker_id = ? AND liked_persoon_id = ? OR liked_persoon_id = ? AND ingelogde_gebruiker_id = ?;",
+    [FYSCloud.Session.get("userId", "Not Found"), userId, FYSCloud.Session.get("userId", "Not Found"), userId]
 ).then(function (data){
-    naam.innerHTML = data[0].naam
-}).catch(function (reason){
-    console.log(reason)
+    FYSCloud.API.queryDatabase(
+        "INSERT INTO `matches` SET `gebruiker_id1` = ?, `gebruiker_id2` = ?;",
+        [FYSCloud.Session.get("userId", "Not Found"), userId]
+    )
+    console.log("Match toegevoegd aan matches")
 })
