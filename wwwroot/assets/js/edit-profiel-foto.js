@@ -37,40 +37,69 @@
 
 
 //weet niet zeker of ik dit nodig heb
-// const voornaam  = document.getElementById("voornaam");
+// // const voornaam  = document.getElementById("voornaam");
+// //
+// // FYSCloud.API.queryDatabase(
+// //     'SELECT * FROM gebruiker WHERE id = ?', [FYSCloud.Session.get("userId", "Not Found")]
+// // ).then(function (data){
+// //     voornaam.innerHTML = data[2].naam
+// //
+// // }).catch(function (reason){
+// //     console.log(reason)
+// // })
+//
+// //persoonlijke informatie uit de database
+// document.querySelector("#foto-bestand").addEventListener("change",
+//
+//     function updateImage() {
+//         FYSCloud.Utils.getDataUrl("#foto-bestand")
+//             .then(function (data) {
+//                 if (data.isImage) {
+//                     document.querySelector("#imagePreview").src = data.url;
+//                 }
+//                 console.log(data)
+//             }).catch(function (reason) {
+//             console.log(reason);
+//         })
+//     })
+//
+// const bioInh = document.querySelector("#biografie");
+// const pfpInh = document.querySelector("#profiel-foto");
+// const prlInh = document.querySelector("#profiel-naam");
+//
+//
+//
+// console.log(FYSCloud.Session.get("userId", "Not Found"));
+// console.log(FYSCloud.Session.get("email", "Not Found"));
+//
+// function age(dateString){
+//     let birth = new Date(dateString);
+//     let now = new Date();
+//     let beforeBirth = ((() => {birth.setDate(now.getDate());birth.setMonth(now.getMonth()); return birth.getTime()})() < birth.getTime()) ? 0 : 1;
+//     return now.getFullYear() - birth.getFullYear() - beforeBirth;
+// }
 //
 // FYSCloud.API.queryDatabase(
 //     'SELECT * FROM gebruiker WHERE id = ?', [FYSCloud.Session.get("userId", "Not Found")]
 // ).then(function (data){
-//     voornaam.innerHTML = data[2].naam
+//     bioInh.innerHTML = data[0].biografie
+//     pfpInh.src = "/uploads/" + data[0].id + "." + data[0].fotoextensie
+//     prlInh.innerHTML = data[0].naam + "         " + age(data[0].leeftijd)
 //
 // }).catch(function (reason){
 //     console.log(reason)
 // })
+//
 
-//persoonlijke informatie uit de database
-document.querySelector("#foto-bestand").addEventListener("change",
+// Inhoud Stuff
+const bioInh = document.querySelector("#biografie_inhoud");
+const pfpInh = document.querySelector("#profielfoto");
+const prlInh = document.querySelector("#profielnaam");
 
-    function updateImage() {
-        FYSCloud.Utils.getDataUrl("#foto-bestand")
-            .then(function (data) {
-                if (data.isImage) {
-                    document.querySelector("#imagePreview").src = data.url;
-                }
-                console.log(data)
-            }).catch(function (reason) {
-            console.log(reason);
-        })
-    })
-
-const bioInh = document.querySelector("#biografie");
-const pfpInh = document.querySelector("#profiel-foto");
-const prlInh = document.querySelector("#profiel-naam");
-
-
+// Fys Cloud stuff
 
 console.log(FYSCloud.Session.get("userId", "Not Found"));
-console.log(FYSCloud.Session.get("email", "Not Found"));
+console.log(FYSCloud.Session.get("email", "Not Found"))
 
 function age(dateString){
     let birth = new Date(dateString);
@@ -89,3 +118,4 @@ FYSCloud.API.queryDatabase(
 }).catch(function (reason){
     console.log(reason)
 })
+
