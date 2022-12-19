@@ -95,6 +95,7 @@ FYSCloud.API.queryDatabase(
 }).catch(function (reason){
     console.log(reason)
 })
+
 // UPDATE NAAR DATABASE ----------------------------------------
 document.querySelector("#image").addEventListener("change",
 
@@ -115,6 +116,7 @@ document.querySelector("#verder").addEventListener("click", function (){
 })
 
 function updateGebruikerDb(naam, leeftijd, biografie) {
+    console.log(naam.value)
     FYSCloud.Utils.getDataUrl("#image")
         .then(function (data) {
             if (data.isImage) {
