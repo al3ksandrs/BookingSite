@@ -30,3 +30,29 @@ dropdowns.forEach(dropdown => {
 
 console.log(FYSCloud.Session.get("userId"))
 console.log(FYSCloud.Session.get("email"))
+
+
+
+// CHECKEN OF ER MATCHES ZIJN
+
+function likeButtonClick(){
+    console.log("Huidige gebruikerID van bezochte profiel: " + userId);
+    console.log("Huidige gebruikerID van ingelogde gebruiker: " + FYSCloud.Session.get("userId", "Not Found"));
+
+    FYSCloud.API.queryDatabase(
+        "INSERT INTO `gebruiker_has_gebruiker` SET ingelogde_gebruiker_id = ?, liked_persoon_id = ?;",
+        [FYSCloud.Session.get("userId", "Not Found"), userId]
+    )
+
+    console.log("Query is gestuurd naar database. (Like systeem)")
+}
+
+FYSCloud.API.queryDatabase(
+    "SELECT * FROM `fys_is104_4_dev`.`gebruiker_has_gebruiker` WHERE ingelogde_gebruiker_id = \"0\" AND liked_persoon_id = \"1661805171101\" OR liked_persoon_id = \"0\" AND ingelogde_gebruiker_id = \"1661805171101\";",
+).then(function (data){
+    FYSCloud.API.queryDatabase(
+        "INSERT INTO `matches` SET `gebruiker_id1` = ?, `gebruiker_id2` = ?;",
+        [FYSCloud.Session.get("userId", "Not Found"), userId]
+    )
+})
+
