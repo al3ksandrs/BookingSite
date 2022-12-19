@@ -36,7 +36,7 @@ function insertGebruikerDb(id, email, wachtwoord, naam, leeftijd, biografie) {
                 ).then(function (data1) {
                     FYSCloud.API.queryDatabase(
                         "INSERT INTO `gebruiker` SET id = ?, email = ?, wachtwoord = ?, naam = ?, leeftijd = ?, biografie = ?, fotonaam = ?, fotoextensie = ?;",
-                        [id, email, wachtwoord, naam.value, leeftijd.value, biografie.value, "test", data.extension]
+                        [id, email, wachtwoord, naam.value, leeftijd.value, biografie.value, id, data.extension]
                     ).then(function () {
                         FYSCloud.Session.set("userId", id)
                         FYSCloud.Session.set("email", email)
