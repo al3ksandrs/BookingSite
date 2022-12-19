@@ -37,40 +37,40 @@ console.log(cb.checked); // false
 
 
 //weet niet zeker of ik dit nodig heb
-// const voornaam  = document.getElementById("voornaam");
-//
-// FYSCloud.API.queryDatabase(
-//     'SELECT * FROM gebruiker WHERE id = ?', [FYSCloud.Session.get("userId", "Not Found")]
-// ).then(function (data){
-//     voornaam.innerHTML = data[2].naam
-//
-// }).catch(function (reason){
-//     console.log(reason)
-// })
+const voornaam  = document.getElementById("voornaam");
+
+FYSCloud.API.queryDatabase(
+    'SELECT * FROM gebruiker WHERE id = ?', [FYSCloud.Session.get("userId", "Not Found")]
+).then(function (data){
+    voornaam.innerHTML = data[2].naam
+
+}).catch(function (reason){
+    console.log(reason)
+})
 
 //persoonlijke informatie uit de database
-// document.querySelector("#foto-bestand").addEventListener("change",
-//
-//     function updateImage() {
-//         FYSCloud.Utils.getDataUrl("#foto-bestand")
-//             .then(function (data) {
-//                 if (data.isImage) {
-//                     document.querySelector("#imagePreview").src = data.url;
-//                 }
-//                 console.log(data)
-//             }).catch(function (reason) {
-//             console.log(reason);
-//         })
-//     })
+document.querySelector("#foto-bestand").addEventListener("change",
+
+    function updateImage() {
+        FYSCloud.Utils.getDataUrl("#foto-bestand")
+            .then(function (data) {
+                if (data.isImage) {
+                    document.querySelector("#imagePreview").src = data.url;
+                }
+                console.log(data)
+            }).catch(function (reason) {
+            console.log(reason);
+        })
+    })
 
 const bioInh = document.querySelector("#biografie");
-// const pfpInh = document.querySelector("#profielfoto");
-// const prlInh = document.querySelector("#profielnaam");
+const pfpInh = document.querySelector("#profielfoto");
+const prlInh = document.querySelector("#profielnaam");
 
 
 
 console.log(FYSCloud.Session.get("userId", "Not Found"));
-console.log(FYSCloud.Session.get("email", "Not Found"))
+console.log(FYSCloud.Session.get("email", "Not Found"));
 
 function age(dateString){
     let birth = new Date(dateString);
