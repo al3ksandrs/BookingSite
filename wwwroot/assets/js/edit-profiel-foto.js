@@ -95,3 +95,42 @@ FYSCloud.API.queryDatabase(
 }).catch(function (reason){
     console.log(reason)
 })
+// UPDATE NAAR DATABASE ----------------------------------------
+document.querySelector("#image").addEventListener("change",
+
+    function updateImage() {
+        FYSCloud.Utils.getDataUrl("#image")
+            .then(function (data) {
+                if (data.isImage) {
+                    document.querySelector("#profielfoto").src = data.url;
+                }
+                console.log(data)
+            }).catch(function (reason) {
+            console.log(reason);
+        })
+    })
+
+document.querySelector("#verder").addEventListener("click", function (){
+    updateGebruikerDb(prlInh.value, leeftijd.value, bioInh.innerHTML)
+})
+
+function updateGebruikerDb(naam, leeftijd, biografie) {
+    FYSCloud.Utils.getDataUrl("#foto-bestand")
+        .then(function (data) {
+            if (data.isImage) {
+                FYSCloud.API.uploadFile(
+                    FYSCloud.Session.get("userId", "Not Found") + "." + data.extension,
+                    data.url
+                ).then(function (data1) {
+                    FYSCloud.API.queryDatabase(
+                        "UPDATE gebruiker SET naam = ?, leeftijd = ?, biografie = ?, fotonaam = ?, fotoextensie = ? WHERE gebruiker_id = ?;",
+                        [naam.value, leeftijd.value, biografie.value, FYSCloud.Session.get("userId", "Not Found"), data.extension,FYSCloud.Session.get("userId", "Not Found")])
+
+                }).catch(function (reason) {
+                    console.log(reason);
+                });
+            }
+        }).catch(function (reason) {
+        console.log(reason);
+    })
+}
