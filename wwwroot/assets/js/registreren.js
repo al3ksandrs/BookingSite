@@ -29,7 +29,7 @@ function ValidateEmail(inputE, inputW1, inputW2) {
 function VerifyPass(inputE, inputW1, inputW2) {
     if ((inputW1 === inputW2) && (inputW1.length >= 6)) {
         handleEmail(inputE, inputW1);
-    } else console.log("Not match or too short") // Divify
+    } else alerts.innerHTML = ('Wachtwoorden matchen niet!') // Divify
 }
 
 function handleEmail(inputE, inputW1) {
