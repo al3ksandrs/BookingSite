@@ -252,6 +252,18 @@ nav li {
     border: none;
 }
 
+#uitlogButton{
+    position: absolute;
+    background-color: transparent;
+    background-repeat: no-repeat;
+    border: none;
+    cursor: pointer;
+    overflow: hidden;
+    color: #0000c8;
+    top: 17px;
+    right: 25px;
+}
+
 /* Responsive layout */
 
 @media (max-width: 1470px) {

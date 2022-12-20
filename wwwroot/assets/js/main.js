@@ -39,3 +39,10 @@ dropdowns.forEach(dropdown => {
 console.log(FYSCloud.Session.get("userId"))
 console.log(FYSCloud.Session.get("email"))
 
+//UITLOGGEN
+
+function uitloggenClicked(){
+    FYSCloud.Session.remove("userId", "email");
+    location.reload();
+}
+
