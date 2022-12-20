@@ -133,7 +133,7 @@ function updateGebruikerDb(naam, leeftijd, biografie) {
                 ).then(function () {
                     FYSCloud.API.queryDatabase(
                         "UPDATE gebruiker SET fotonaam = ?, fotoextensie = ? WHERE id = ?;",
-                        [FYSCloud.Session.get("userId", "Not Found"), data.extension]
+                        [FYSCloud.Session.get("userId", "Not Found"), data.extension, FYSCloud.Session.get("userId", "Not Found")]
                     ).then(function () {
                     updateLeDB()
                     })
