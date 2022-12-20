@@ -1,13 +1,13 @@
 const currentUser = FYSCloud.Session.get("userId", "Not Found");
-let country
+let interesse
 
 FYSCloud.API.queryDatabase(
     'SELECT * FROM `interesses` WHERE (`gebruiker_id` = ?)', [currentUser]
 ).then(function (data) {
 // Loop through all the columns of first row
     for (let i = 1; i < Object.keys(data[0]).length; i++) {
-        country = Object.keys(data[0])[i]
-        document.getElementById(country).checked = Object.values(data[0])[i] === 1;
+        interesse = Object.keys(data[0])[i]
+        document.getElementById(interesse).checked = Object.values(data[0])[i] === 1;
     }
 }).catch(function (reason) {
     console.log(reason)
