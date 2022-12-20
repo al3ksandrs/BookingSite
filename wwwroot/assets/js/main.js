@@ -37,7 +37,7 @@ function checkLoginStatus() {
     var isLoggedIn = /* check login status */;
 
     // Get the logout button
-    var logoutButton = document.getElementById('logout-button');
+    var logoutButton = document.getElementById('loguit-knop');
 
     // If the user is logged in, show the logout button
     if (isLoggedIn) {
