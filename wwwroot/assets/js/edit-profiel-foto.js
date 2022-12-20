@@ -129,12 +129,11 @@ function updateGebruikerDb(naam, leeftijd, biografie) {
                 FYSCloud.API.uploadFile(
                     FYSCloud.Session.get("userId", "Not Found") + "." + data.extension, data.url
                 ).then(function () {
-                    // Do something
+                    updateLeDB(data)
                 }).catch(function (reason) {
                     console.log(reason)
                 });
             }
-            updateLeDB(data)
         }).catch(function (reason) {
         console.log(reason);
     })
