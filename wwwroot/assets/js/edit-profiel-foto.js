@@ -131,19 +131,24 @@ function updateGebruikerDb(naam, leeftijd, biografie) {
                 FYSCloud.API.uploadFile(
                     FYSCloud.Session.get("userId", "Not Found") + "." + data.extension, data.url, true
                 ).then(function () {
-                    updateLeDB(data)
+                    FYSCloud.API.querySelector(
+                        "UPDATE gebruiker SET fotonaam = ?, fotoextensie = ? WHERE id = ?;",
+                        [FYSCloud.Session.get("userId", "Not Found"), data.extension]
+                    )
+                    updateLeDB()
                 }).catch(function (reason) {
                     console.log(reason)
                 });
             }
         }).catch(function (reason) {
         console.log(reason);
+        updateLeDB()
     })
 
-    function updateLeDB(data) {
+    function updateLeDB() {
     FYSCloud.API.queryDatabase(
-        "UPDATE gebruiker SET naam = ?, leeftijd = ?, biografie = ?, fotonaam = ?, fotoextensie = ? WHERE id = ?;",
-        [naam.value, leeftijd.value, biografie.value, FYSCloud.Session.get("userId", "Not Found"), data.extension, FYSCloud.Session.get("userId", "Not Found")]
+        "UPDATE gebruiker SET naam = ?, leeftijd = ?, biografie = ? WHERE id = ?;",
+        [naam.value, leeftijd.value, biografie.value, FYSCloud.Session.get("userId", "Not Found")]
     ).then(function (data) {
         // Logged
         window.location.href = "profiel.html"
