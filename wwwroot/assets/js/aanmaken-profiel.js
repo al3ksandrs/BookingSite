@@ -33,31 +33,35 @@ function insertGebruikerDb(id, email, wachtwoord, naam, leeftijd, biografie) {
                 FYSCloud.API.uploadFile(
                     id + "." + data.extension,
                     data.url
-                ).then(function (data1) {
-                    FYSCloud.API.queryDatabase(
-                        "INSERT INTO `gebruiker` SET id = ?, email = ?, wachtwoord = ?, naam = ?, leeftijd = ?, biografie = ?, fotonaam = ?, fotoextensie = ?;",
-                        [id, email, wachtwoord, naam.value, leeftijd.value, biografie.value, id, data.extension]
-                    ).then(function () {
-                        FYSCloud.Session.set("userId", id)
-                        FYSCloud.Session.set("email", email)
-                        FYSCloud.API.queryDatabase(
-                            "INSERT INTO `reis` SET gebruiker_id = ?;",
-                            [id])
-                        FYSCloud.API.queryDatabase(
-                            "INSERT INTO `talen` SET gebruiker_id = ?;",
-                            [id])
-                        FYSCloud.API.queryDatabase(
-                            "INSERT INTO `interesses` SET gebruiker_id = ?;",
-                            [id])
-                        window.location.href = "profiel.html"
-                    }).catch(function (reason) {
-                        console.log(reason)
-                    })
+                ).then(function () {
+                    finalize(data.extension, id, email, wachtwoord, naam, leeftijd, biografie, id)
                 }).catch(function (reason) {
                     console.log(reason);
                 });
             }
         }).catch(function (reason) {
         console.log(reason);
+        finalize("png", id, email, wachtwoord, naam, leeftijd, biografie, "default")
     })
+    function finalize(data, id, email, wachtwoord, naam, leeftijd, biografie, fotonaam) {
+        FYSCloud.API.queryDatabase(
+            "INSERT INTO `gebruiker` SET id = ?, email = ?, wachtwoord = ?, naam = ?, leeftijd = ?, biografie = ?, fotonaam = ?, fotoextensie = ?;",
+            [id, email, wachtwoord, naam.value, leeftijd.value, biografie.value, fotonaam, data]
+        ).then(function () {
+            FYSCloud.Session.set("userId", id)
+            FYSCloud.Session.set("email", email)
+            FYSCloud.API.queryDatabase(
+                "INSERT INTO `reis` SET gebruiker_id = ?;",
+                [id])
+            FYSCloud.API.queryDatabase(
+                "INSERT INTO `talen` SET gebruiker_id = ?;",
+                [id])
+            FYSCloud.API.queryDatabase(
+                "INSERT INTO `interesses` SET gebruiker_id = ?;",
+                [id])
+            window.location.href = "profiel.html"
+        }).catch(function (reason) {
+            console.log(reason)
+        })
+    }
 }

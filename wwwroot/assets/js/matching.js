@@ -27,7 +27,7 @@ function loadMatches(){
 function displayMessage(gebruiker) {
     let matchElement = document.createElement("div");
     matchElement.classList.add("flexbox-container");
-    let pfBox = createFoto(gebruiker.id, gebruiker.fotoextensie, gebruiker.naam, gebruiker.leeftijd);
+    let pfBox = createFoto(gebruiker.fotonaam, gebruiker.fotoextensie, gebruiker.naam, gebruiker.leeftijd);
     let infoBox = createInfo(gebruiker.id);
 
     matchElement.append(pfBox, infoBox);

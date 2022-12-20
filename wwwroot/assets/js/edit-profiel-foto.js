@@ -25,7 +25,7 @@ FYSCloud.API.queryDatabase(
     'SELECT * FROM gebruiker WHERE id = ?', [FYSCloud.Session.get("userId", "Not Found")]
 ).then(function (data){
     bioInh.innerHTML = data[0].biografie
-    pfpInh.src = "/uploads/" + data[0].id + "." + data[0].fotoextensie
+    pfpInh.src = "/uploads/" + data[0].fotonaam + "." + data[0].fotoextensie
     leeftijd.value = (data[0].leeftijd).slice(0, 10);
     prlInh.value = data[0].naam
 
@@ -115,19 +115,21 @@ document.querySelector("#verder").addEventListener("click", function (){
     updateGebruikerDb(prlInh, leeftijd, bioInh)
 })
 
+// Delete foto?
+// FYSCloud.API.queryDatabase(
+//     "SELECT fotoextensie, fotonaam FROM gebruiker WHERE id = ?", [FYSCloud.Session.get("userId", "Not Found")]
+// ).then(function (data) {
+//     FYSCloud.API.deleteFile(data[0].fotonaam + "." + data[0].fotoextensie)
+// }).catch(function (reason){
+//     console.log(reason)
+// })
+
 function updateGebruikerDb(naam, leeftijd, biografie) {
-    FYSCloud.API.queryDatabase(
-        "SELECT fotoextensie FROM gebruiker WHERE id = ?", [FYSCloud.Session.get("userId", "Not Found")]
-    ).then(function (data) {
-        FYSCloud.API.deleteFile((FYSCloud.Session.get("userId", "Not Found") + "." + data[0].fotoextensie))
-    }).catch(function (reason){
-        console.log(reason)
-    })
     FYSCloud.Utils.getDataUrl("#image")
         .then(function (data) {
             if (data.isImage) {
                 FYSCloud.API.uploadFile(
-                    FYSCloud.Session.get("userId", "Not Found") + "." + data.extension, data.url
+                    FYSCloud.Session.get("userId", "Not Found") + "." + data.extension, data.url, true
                 ).then(function () {
                     updateLeDB(data)
                 }).catch(function (reason) {
