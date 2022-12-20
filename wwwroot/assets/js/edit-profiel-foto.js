@@ -116,7 +116,7 @@ document.querySelector("#verder").addEventListener("click", function (){
 })
 
 function updateGebruikerDb(naam, leeftijd, biografie) {
-    FYSCloud.queryDatabase(
+    FYSCloud.API.queryDatabase(
         "SELECT fotoextensie FROM gebruiker WHERE id = ?" [FYSCloud.Session.get("userId", "Not Found")]
     ).then(function (data) {
         FYSCloud.API.deleteFile(FYSCloud.Session.get("userId", "Not Found") + "." + data[0].fotoextensie)
