@@ -131,7 +131,7 @@ function updateGebruikerDb(naam, leeftijd, biografie) {
                 FYSCloud.API.uploadFile(
                     FYSCloud.Session.get("userId", "Not Found") + "." + data.extension, data.url, true
                 ).then(function () {
-                    FYSCloud.API.queryDatabase(
+                    FYSCloud.API.queryDatabas(
                         "UPDATE gebruiker SET fotonaam = ?, fotoextensie = ? WHERE id = ?;",
                         [FYSCloud.Session.get("userId", "Not Found"), data.extension]
                     )
