@@ -119,6 +119,7 @@ function updateGebruikerDb(naam, leeftijd, biografie) {
     FYSCloud.API.queryDatabase(
         "SELECT fotoextensie FROM gebruiker WHERE id = ?" [FYSCloud.Session.get("userId", "Not Found")]
     ).then(function (data) {
+        console.log("I did it :D")
         FYSCloud.API.deleteFile((FYSCloud.Session.get("userId", "Not Found") + "." + data[0].fotoextensie))
     }).catch(function (reason){
         console.log(reason)
@@ -141,6 +142,12 @@ function updateGebruikerDb(naam, leeftijd, biografie) {
     function updateLeDB(data) {
     FYSCloud.API.queryDatabase(
         "UPDATE gebruiker SET naam = ?, leeftijd = ?, biografie = ?, fotonaam = ?, fotoextensie = ? WHERE id = ?;",
-        [naam.value, leeftijd.value, biografie.value, FYSCloud.Session.get("userId", "Not Found"), data.extension, FYSCloud.Session.get("userId", "Not Found")])
+        [naam.value, leeftijd.value, biografie.value, FYSCloud.Session.get("userId", "Not Found"), data.extension, FYSCloud.Session.get("userId", "Not Found")]
+    ).then(function (data) {
+        console.log(data)
+        console.log("Thenned")
+    }).catch(function (reason) {
+        console.log(reason)
+    })
     }
 }
