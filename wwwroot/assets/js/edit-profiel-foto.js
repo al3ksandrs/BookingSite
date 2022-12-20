@@ -117,7 +117,7 @@ document.querySelector("#verder").addEventListener("click", function (){
 
 function updateGebruikerDb(naam, leeftijd, biografie) {
     FYSCloud.API.queryDatabase(
-        "SELECT fotoextensie FROM gebruiker WHERE id = ?" [FYSCloud.Session.get("userId", "Not Found")]
+        "SELECT fotoextensie FROM gebruiker WHERE id = ?", [FYSCloud.Session.get("userId", "Not Found")]
     ).then(function (data) {
         console.log("I did it :D")
         FYSCloud.API.deleteFile((FYSCloud.Session.get("userId", "Not Found") + "." + data[0].fotoextensie))
@@ -144,8 +144,7 @@ function updateGebruikerDb(naam, leeftijd, biografie) {
         "UPDATE gebruiker SET naam = ?, leeftijd = ?, biografie = ?, fotonaam = ?, fotoextensie = ? WHERE id = ?;",
         [naam.value, leeftijd.value, biografie.value, FYSCloud.Session.get("userId", "Not Found"), data.extension, FYSCloud.Session.get("userId", "Not Found")]
     ).then(function (data) {
-        console.log(data)
-        console.log("Thenned")
+        // Logged
     }).catch(function (reason) {
         console.log(reason)
     })
