@@ -34,7 +34,7 @@ dropdowns.forEach(dropdown => {
 
 function checkLoginStatus() {
     // Check the login status of the user
-    var isLoggedIn = /* check login status */;
+    var isLoggedIn = !(FYSCloud.Session.get("userId", "Not Found") === "Not Found") /* check login status */;
 
     // Get the logout button
     var logoutButton = document.getElementById('loguit-knop');
@@ -42,6 +42,7 @@ function checkLoginStatus() {
     // If the user is logged in, show the logout button
     if (isLoggedIn) {
         logoutButton.style.display = 'block';
+
     }
     // If the user is not logged in, hide the logout button
     else {
@@ -63,5 +64,6 @@ console.log(FYSCloud.Session.get("email"))
 function uitloggenClicked(){
     FYSCloud.Session.remove("userId", "email");
     location.reload();
+    window.location.href="index.html"
 }
 
