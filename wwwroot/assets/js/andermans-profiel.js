@@ -65,29 +65,29 @@ FYSCloud.API.queryDatabase(
     console.log("Match toegevoegd aan matches")
 })
 
+
+
+
+
+
+
+
+
+
+
 // checkt of er een match is
 function checkMatch() {
     FYSCloud.API.queryDatabase(
-    "SELECT * FROM `gebruiker_has_gebruiker` WHERE ingelogde_gebruiker_id = ?;"
-        [FYSCloud.Session.get("userId", "Not Found")]
+    "SELECT * FROM gebruiker_has_gebruiker G INNER JOIN gebruiker G2 ON G.ingelogde_gebruiker_id = G2.id WHERE ingelogde_gebruiker_id = ? AND liked_persoon_id = ? AND liked_persoon_id IN (SELECT ingelogde_gebruiker_id FROM gebruiker_has_gebruiker WHERE liked_persoon_id = ?)"
+        [FYSCloud.Session.get("userId", "Not Found"), userId, FYSCloud.Session.get("userId", "Not Found")]
     ).then(function (data){
-        console.log(data);
-        for (let i = 0; i < data[0].length; i++) {
-            if(data[0][i] === userId) {
-                gematchedButton();
-                break;
-            }
+        if(data.length > 0){
+            alert("MAtCH GELUKTTTTTTTTTTTT!!")
         }
     })
 }
 
-function gematchedButton() {
-    let buttons = document.getElementsByClassName("buttons")
-    buttons.textContent = '';
-
-    buttons.innerText = "Gematched";
-}
-
+checkMatch();
 
 // Zakaria Testing
 // // // Fys cloud datebase
