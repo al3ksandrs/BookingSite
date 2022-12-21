@@ -90,9 +90,11 @@ function loadNavbar(){
         </ul>`
     if (isLoggedIn) {
         navbar.innerHTML = navbarIngelogd
+        console.log("Huidige navbar: Ingelogd")
     }
     else {
         navbar.innerHTML = navbarNietIngelogd
+        console.log("Huidige navbar: Niet Ingelogd")
     }
 }
 
