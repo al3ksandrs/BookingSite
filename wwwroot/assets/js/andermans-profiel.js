@@ -68,9 +68,10 @@ FYSCloud.API.queryDatabase(
 // checkt of er een match is
 function checkMatch() {
     FYSCloud.API.queryDatabase(
-    "SELECT * FROM `matches` WHERE gebruiker_id1 = ? OR gebruiker_id2 = ?;"
+    "SELECT * FROM `gebruiker_has_gebruiker` WHERE ingelogde_gebruiker_id = ?;"
         [FYSCloud.Session.get("userId", "Not Found")]
     ).then(function (data){
+        console.log(data);
         for (let i = 0; i < data[0].length; i++) {
             if(data[0][i] === userId) {
                 gematchedButton();
