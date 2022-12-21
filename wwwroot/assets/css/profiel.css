@@ -91,6 +91,19 @@ a {
     line-height: 10px;
 }
 
+.textName {
+    margin: 15px;
+    padding: 0px;
+    position: center;
+
+    font-family: 'Roboto', sans-serif;
+    color: #FFFFFF;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 28px;
+    line-height: 10px;
+}
+
 /* Voor de matching history */
 .text3 {
     margin: 0px;
