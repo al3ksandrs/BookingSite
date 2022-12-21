@@ -49,6 +49,8 @@ function checkLoginStatus() {
     }
 }
 
+// CORRECTE NAVBAR LOADEN WANNEER PAGE GE-OPENED IS
+
 function loadNavbar(){
     var isLoggedIn = !(FYSCloud.Session.get("userId", "Not Found") === "Not Found") /* check login status */;
 
@@ -102,7 +104,7 @@ function loadNavbar(){
 
     if (isLoggedIn) {
         navbar.innerHTML = navbarIngelogd
-        main.innerHTML = notificationMenu
+        main.innerHTML += notificationMenu
         console.log("Huidige navbar: Ingelogd")
     }
     else {
@@ -111,7 +113,7 @@ function loadNavbar(){
     }
 }
 
-// Run the checkLoginStatus function when the page loads
+// Run the checkLoginStatus + loadNavbar functions when the page loads
 window.onload = checkLoginStatus;
 window.onload = loadNavbar;
 
