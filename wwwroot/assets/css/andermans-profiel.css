@@ -290,3 +290,7 @@ body{
         line-height: revert;
     }
 }
+
+.gematched {
+    visibility: hidden;
+}

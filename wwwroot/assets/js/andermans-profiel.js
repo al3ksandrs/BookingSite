@@ -7,7 +7,6 @@ FYSCloud.API.queryDatabase(
 // waarom het mis gaat
 }).catch(function (reason) {
     console.log(reason);});
-
     // Laden van de database gebruiker gegevens
 
 // Inhoud Stuff
@@ -65,7 +64,25 @@ FYSCloud.API.queryDatabase(
 })
 
 // checkt of er een match is
+function checkMatch() {
+    console.log("MATCH SCRIPT")
+    console.log(userId);
+    console.log(FYSCloud.Session.get("userId", "Not Found"))
+    FYSCloud.API.queryDatabase(
+    "SELECT * FROM gebruiker_has_gebruiker G INNER JOIN gebruiker G2 ON G.ingelogde_gebruiker_id = G2.id WHERE ingelogde_gebruiker_id = ? AND liked_persoon_id = ? AND liked_persoon_id IN (SELECT ingelogde_gebruiker_id FROM gebruiker_has_gebruiker WHERE liked_persoon_id = ?)",
+        [FYSCloud.Session.get("userId", "Not Found"), userId, FYSCloud.Session.get("userId", "Not Found")]
+    ).then(function (data){
+        console.log(data + "DATA")
+        if(data.length > 0){
+            document.querySelector(".buttons").style.visibility = "hidden";
+            document.querySelector(".gematched").style.visibility = "visible";
+        }
 
+    })
+}
+console.log("test")
+
+checkMatch();
 
 // Zakaria Testing
 // // // Fys cloud datebase
