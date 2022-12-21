@@ -300,16 +300,16 @@ button {
     border-radius: 18px;
     transition: .4s;
 }
-/*De kleurenpanel voor de rgb button */
+/*De kleurenpanel voor de rg button */
 button:hover {
     z-index: 1;
     border-color: transparent;
     background: linear-gradient(
             90deg,
-            #ff6666,
-            #00a19d,
-            #00a19d,
-            #ff6666);
+            #D81E05,
+            #26A514,
+            #26A514,
+            #D81E05);
 
     );
     background-size: 400%;
