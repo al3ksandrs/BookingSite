@@ -1,6 +1,14 @@
-await new Promise(resolve => setTimeout(resolve, 4000)); // Wacht 4 seconden tot alles geladen is
-
 console.log("Notifications aan het laden! [0%]")
+
+function sleep(milliseconds) {
+    const date = Date.now();
+    let currentDate = null;
+    do {
+        currentDate = Date.now();
+    } while (currentDate - date < milliseconds);
+}
+
+sleep(4000) // Wacht 4 secondes toddat alles geladen is in de pagina
 
 const notificationMenu = document.querySelector('.notification-menu');
 const notificationItems = document.querySelector('.notification');
