@@ -1,9 +1,7 @@
-let btnClear = document.querySelector('button');
-let span = document.querySelectorAll('span')
+function clearIUnputFields() {
+    document.getElementById("interesses").value = '';
 
-btnClear.addEventListener('click', () => {
-    span.forEach(span => span.value = '');
-})
+}
 const dropdowns = document.querySelectorAll('.dropdown');
 
 dropdowns.forEach(dropdown => {
@@ -34,8 +32,38 @@ dropdowns.forEach(dropdown => {
     });
 });
 
+function checkLoginStatus() {
+    // Check the login status of the user
+    var isLoggedIn = !(FYSCloud.Session.get("userId", "Not Found") === "Not Found") /* check login status */;
+
+    // Get the logout button
+    var logoutButton = document.getElementById('loguit-knop');
+
+    // If the user is logged in, show the logout button
+    if (isLoggedIn) {
+        logoutButton.style.display = 'block';
+
+    }
+    // If the user is not logged in, hide the logout button
+    else {
+        logoutButton.style.display = 'none';
+    }
+}
+
+// Run the checkLoginStatus function when the page loads
+window.onload = checkLoginStatus;
+
+
 
 
 console.log(FYSCloud.Session.get("userId"))
 console.log(FYSCloud.Session.get("email"))
+
+//UITLOGGEN
+
+function uitloggenClicked(){
+    FYSCloud.Session.remove("userId", "email");
+    location.reload();
+    window.location.href="index.html"
+}
 
