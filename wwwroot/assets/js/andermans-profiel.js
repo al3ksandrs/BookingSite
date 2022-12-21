@@ -8,6 +8,7 @@ FYSCloud.API.queryDatabase(
 }).catch(function (reason) {
     console.log(reason);});
 
+checkMatch();
     // Laden van de database gebruiker gegevens
 
 // Inhoud Stuff
@@ -63,6 +64,29 @@ FYSCloud.API.queryDatabase(
     )
     console.log("Match toegevoegd aan matches")
 })
+
+// checkt of er een match is
+function checkMatch() {
+    FYSCloud.API.queryDatabase(
+    "SELECT * FROM `matches` WHERE gebruiker_id1 = ? OR gebruiker_id2 = ?;"
+        [FYSCloud.Session.get("userId", "Not Found")]
+    ).then(function (data){
+        for (let i = 0; i < data[0].length; i++) {
+            if(data[0][i] === userId) {
+                gematchedButton();
+                break;
+            }
+        }
+    })
+}
+
+function gematchedButton() {
+    let buttons = document.getElementsByClassName("buttons")
+    buttons.textContent = '';
+
+    buttons.innerText = "Gematched";
+}
+
 
 // Zakaria Testing
 // // // Fys cloud datebase
