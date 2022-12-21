@@ -1,11 +1,7 @@
 console.log("Notifications aan het laden! [0%]")
 
-function sleep(milliseconds) {
-    const date = Date.now();
-    let currentDate = null;
-    do {
-        currentDate = Date.now();
-    } while (currentDate - date < milliseconds);
+function sleep(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
 }
 
 sleep(4000) // Wacht 4 secondes toddat alles geladen is in de pagina
