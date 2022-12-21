@@ -127,7 +127,8 @@ console.log(FYSCloud.Session.get("email"))
 //UITLOGGEN
 
 function uitloggenClicked(){
-    FYSCloud.Session.remove("userId", "email");
+    FYSCloud.Session.remove("userId");
+    FYSCloud.Session.remove("email");
     window.location.href="index.html"
 }
 
