@@ -74,7 +74,7 @@ function checkMatch() {
     ).then(function (data){
         console.log(data + "DATA")
         if(data.length > 0){
-            alert("MAtCH GELUKTTTTTTTTTTTT!!")
+            document.querySelector(".buttons").style.visibility = " hidden";
         }
     })
 }
