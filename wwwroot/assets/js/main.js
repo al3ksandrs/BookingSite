@@ -51,7 +51,7 @@ function checkLoginStatus() {
 
 function loadNavbar(){
     var isLoggedIn = !(FYSCloud.Session.get("userId", "Not Found") === "Not Found") /* check login status */;
-    const navbar = dropdown.querySelector('.navbar');
+    const navbar = document.querySelector('.navbar');
     const navbarIngelogd = `    <ul>
         <li><a href="index.html" class="navbar-normale-button">Home</a></li>
         <li><a href="over-ons.html" class="navbar-normale-button">Over ons</a></li>
