@@ -3,8 +3,6 @@ window.addEventListener('load', function() {
     const notificationItems = document.getElementsByClassName("notification")
     const notificationMenuFoto = document.getElementById("notification-foto")
 
-    let lijstLengte = notificationItems.length
-
     /* Nieuwe notificatie aanmaken */
     function nieuweNotification(naam, leeftijd) {
         /* Notificatie template opslaan als variabel. */
@@ -39,6 +37,8 @@ window.addEventListener('load', function() {
     nieuweNotification("Alberto", 46)
 
 })
+
+let lijstLengte = notificationItems.length
 
 /* Checken of lijstLengte 0 is zodat de alert op de menuknop weggaat of blijft. */
 function checkNotificationMenuFoto(){
