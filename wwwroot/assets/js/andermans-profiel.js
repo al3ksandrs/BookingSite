@@ -86,6 +86,7 @@ function checkMatch() {
         }
     })
 }
+console.log("test")
 
 checkMatch();
 
