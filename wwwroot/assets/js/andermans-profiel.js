@@ -65,6 +65,7 @@ FYSCloud.API.queryDatabase(
 
 // checkt of er een match is
 function checkMatch() {
+    console.log("MATCH SCRIPT")
     FYSCloud.API.queryDatabase(
     "SELECT * FROM gebruiker_has_gebruiker G INNER JOIN gebruiker G2 ON G.ingelogde_gebruiker_id = G2.id WHERE ingelogde_gebruiker_id = ? AND liked_persoon_id = ? AND liked_persoon_id IN (SELECT ingelogde_gebruiker_id FROM gebruiker_has_gebruiker WHERE liked_persoon_id = ?)"
         [FYSCloud.Session.get("userId", "Not Found"), userId, FYSCloud.Session.get("userId", "Not Found")]
