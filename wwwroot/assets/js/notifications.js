@@ -1,6 +1,6 @@
-const notificationMenu = document.querySelector(".notification-menu")
-const notificationItems = document.querySelector(".notification")
-const notificationMenuFoto = document.querySelector("#notification-foto")
+const notificationMenu = document.getElementsByClassName("notification-menu")
+const notificationItems = document.getElementsByClassName("notification")
+const notificationMenuFoto = document.getElementById("notification-foto")
 
 let lijstLengte = notificationItems.length
 
