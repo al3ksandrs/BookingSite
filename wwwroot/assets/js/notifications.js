@@ -1,3 +1,6 @@
+await delay(5000) //Wachten tot pagina geladen is
+console.log("Notifications aan het laden! [0%]")
+
 const notificationMenu = document.querySelector('.notification-menu');
 const notificationItems = document.querySelector('.notification');
 const notificationMenuFoto = document.querySelector('#notification-foto');
@@ -31,6 +34,8 @@ function nieuweNotification(naam, leeftijd) {
     lijstLengte += 1
     console.log("Lijst lengte = " + lijstLengte)
 }
+
+console.log("Notifications geladen! [100%]")
 
 /* Checken of lijstLengte 0 is zodat de alert op de menuknop weggaat of blijft. */
 function checkNotificationMenuFoto(){
