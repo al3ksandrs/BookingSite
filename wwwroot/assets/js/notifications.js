@@ -6,14 +6,14 @@ function sleep(ms) {
 
 sleep(4000) // Wacht 4 secondes toddat alles geladen is in de pagina
 
-const notificationMenu = document.querySelector('.notification-menu');
+/*const notificationMenu = document.querySelector('.notification-menu');
 const notificationItems = document.querySelector('.notification');
 const notificationMenuFoto = document.querySelector('#notification-foto');
 let lijstLengte = notificationItems.length
 
-/* Nieuwe notificatie aanmaken */
+/!* Nieuwe notificatie aanmaken *!/
 function nieuweNotification(naam, leeftijd) {
-    /* Notificatie template opslaan als variabel. */
+    /!* Notificatie template opslaan als variabel. *!/
     const notification = `        <!--NOTIFICATION-->
             <article class="notification-item">
                 <p class="notification-text">Gematched met:</p>
@@ -35,14 +35,14 @@ function nieuweNotification(naam, leeftijd) {
     list.innerHTML = notification
     notificationMenu[0].appendChild(list)
 
-    /* lijstLengte aanpassen en output printen */
+    /!* lijstLengte aanpassen en output printen *!/
     lijstLengte += 1
     console.log("Lijst lengte = " + lijstLengte)
 }
 
 console.log("Notifications geladen! [100%]")
 
-/* Checken of lijstLengte 0 is zodat de alert op de menuknop weggaat of blijft. */
+/!* Checken of lijstLengte 0 is zodat de alert op de menuknop weggaat of blijft. *!/
 function checkNotificationMenuFoto(){
     if(lijstLengte === 0){
         notificationMenuFoto.src="assets/img/notification-knop.png"
@@ -56,9 +56,9 @@ function verwijderNotification(){
     lijstLengte -= 1
 }
 
-/* Voer elke 100 milliseconden checkNotificationMenuFoto() uit. */
+/!* Voer elke 100 milliseconden checkNotificationMenuFoto() uit. *!/
 setInterval(checkNotificationMenuFoto,100)
 
 nieuweNotification("Roberto", 40)
 nieuweNotification("Henrik", 54)
-nieuweNotification("Alberto", 46)
+nieuweNotification("Alberto", 46)*/
