@@ -51,7 +51,9 @@ function checkLoginStatus() {
 
 function loadNavbar(){
     var isLoggedIn = !(FYSCloud.Session.get("userId", "Not Found") === "Not Found") /* check login status */;
+
     const navbar = document.querySelector('.navbar');
+    const main = document.querySelector('main');
     const navbarIngelogd = `    <ul>
         <li><a href="index.html" class="navbar-normale-button">Home</a></li>
         <li><a href="over-ons.html" class="navbar-normale-button">Over ons</a></li>
@@ -88,8 +90,19 @@ function loadNavbar(){
             <li><a href="inloggen.html" class="navbar-menu-link">Inloggen</a></li>
             <li><a href="registreren.html" class="navbar-menu-link">Registreren</a></li>
         </ul>`
+    const notificationMenu = `    <input id="notification-toggle" type="checkbox"/>                               <!--notification knop-->
+    <label class="notification-container" for="notification-toggle">
+        <div class="notification-menu-button"><img src=assets/img/notification-knop-alert.png
+                                                   id="notification-foto"></src></div>
+    </label>
+
+    <ul class="notification-menu">
+    </ul>
+`
+
     if (isLoggedIn) {
         navbar.innerHTML = navbarIngelogd
+        main.innerHTML = notificationMenu
         console.log("Huidige navbar: Ingelogd")
     }
     else {
