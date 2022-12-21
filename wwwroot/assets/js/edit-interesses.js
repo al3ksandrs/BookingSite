@@ -30,7 +30,7 @@ function Check(checkbox) {
 
 function checkboxDb(checkbox, bool) {
     FYSCloud.API.queryDatabase(
-        "UPDATE `reis` SET " + checkbox.id + " = ? WHERE `gebruiker_id` = ?;",
+        "UPDATE `interesses` SET " + checkbox.id + " = ? WHERE `gebruiker_id` = ?;",
         [bool, currentUser]
         // wat de datebase terug stuurt
     ).then(function (data) {
