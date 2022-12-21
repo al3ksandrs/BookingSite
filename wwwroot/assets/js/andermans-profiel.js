@@ -75,7 +75,7 @@ function checkMatch() {
         console.log(data + "DATA")
         if(data.length > 0){
             document.querySelector(".buttons").style.display = "none";      //.visibility = "hidden";
-            document.querySelector(".gematched").style.visibility = "visible";
+            document.querySelector(".gematched").style.display = "flex";
         }
 
     })

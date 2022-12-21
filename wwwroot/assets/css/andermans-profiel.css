@@ -292,11 +292,12 @@ body{
 }
 
 .gematched {
-    display: flex;
+    display: none;
     flex-direction: row;
     width: 92%;
     justify-content: space-around;
     margin-top: 0;
     max-width: 420px;
-    visibility: hidden;
+
+    /* visibility: hidden; */
 }
