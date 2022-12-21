@@ -42,7 +42,6 @@ function checkLoginStatus() {
     // If the user is logged in, show the logout button
     if (isLoggedIn) {
         logoutButton.style.display = 'block';
-
     }
     // If the user is not logged in, hide the logout button
     else {
@@ -50,8 +49,56 @@ function checkLoginStatus() {
     }
 }
 
+function loadNavbar(){
+    var isLoggedIn = !(FYSCloud.Session.get("userId", "Not Found") === "Not Found") /* check login status */;
+    const navbar = dropdown.querySelector('.navbar');
+    const navbarIngelogd = `    <ul>
+        <li><a href="index.html" class="navbar-normale-button">Home</a></li>
+        <li><a href="over-ons.html" class="navbar-normale-button">Over ons</a></li>
+        <li class="logo"><img src=assets/img/logo.PNG class="logo-foto"></src></li>
+        <li><a href="matching-met-filter.html" class="navbar-normale-button">Matches</a></li>
+        <li><a href="profiel.html" class="navbar-normale-button">Profiel</a></li>
+
+        <input id="navbar-menu-toggle" type="checkbox"/>                               <!--navbar menu voor mobile-->
+        <label class='navbar-menu-container' for="navbar-menu-toggle">
+            <div class='navbar-menu-button'><img src=assets/img/burger-menu.png class="navbar-foto"></src></div>
+        </label>
+        <ul class="navbar-links">
+            <li><a href="index.html" class="navbar-menu-link">Home</a></li>
+            <li><a href="over-ons.html" class="navbar-menu-link">Over ons</a></li>
+            <li><a href="matching.html" class="navbar-menu-link">Matches</a></li>
+            <li><a href="profiel.html" class="navbar-menu-link">Profiel</a></li>
+        </ul>
+    </ul>
+    <button onclick="uitloggenClicked()" id="uitlogButton">Uitloggen</button>`
+    const navbarNietIngelogd = `    <ul>
+        <li><a href="index.html" class="navbar-normale-button">Home</a></li>
+        <li><a href="over-ons.html" class="navbar-normale-button">Over ons</a></li>
+        <li class="logo"><img src=assets/img/logo.PNG class="logo-foto"></src></li>
+        <li><a href="inloggen.html" class="navbar-normale-button">Inloggen</a></li>
+        <li><a href="registreren.html" class="navbar-normale-button">Registreren</a></li>
+
+        <input id="navbar-menu-toggle" type="checkbox"/>                               <!--navbar menu voor mobile-->
+        <label class='navbar-menu-container' for="navbar-menu-toggle">
+            <div class='navbar-menu-button'><img src=assets/img/burger-menu.png class="navbar-foto"></src></div>
+        </label>
+        <ul class="navbar-links">
+            <li><a href="index.html" class="navbar-menu-link">Home</a></li>
+            <li><a href="over-ons.html" class="navbar-menu-link">Over ons</a></li>
+            <li><a href="inloggen.html" class="navbar-menu-link">Inloggen</a></li>
+            <li><a href="registreren.html" class="navbar-menu-link">Registreren</a></li>
+        </ul>`
+    if (isLoggedIn) {
+        navbar.innerHTML = navbarIngelogd
+    }
+    else {
+        navbar.innerHTML = navbarNietIngelogd
+    }
+}
+
 // Run the checkLoginStatus function when the page loads
 window.onload = checkLoginStatus;
+window.onload = loadNavbar;
 
 
 
