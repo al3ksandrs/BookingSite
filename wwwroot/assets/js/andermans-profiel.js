@@ -7,8 +7,6 @@ FYSCloud.API.queryDatabase(
 // waarom het mis gaat
 }).catch(function (reason) {
     console.log(reason);});
-
-checkMatch();
     // Laden van de database gebruiker gegevens
 
 // Inhoud Stuff
@@ -64,16 +62,6 @@ FYSCloud.API.queryDatabase(
     )
     console.log("Match toegevoegd aan matches")
 })
-
-
-
-
-
-
-
-
-
-
 
 // checkt of er een match is
 function checkMatch() {
