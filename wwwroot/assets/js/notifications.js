@@ -1,4 +1,5 @@
-await delay(5000) //Wachten tot pagina geladen is
+await new Promise(resolve => setTimeout(resolve, 4000)); // Wacht 4 seconden tot alles geladen is
+
 console.log("Notifications aan het laden! [0%]")
 
 const notificationMenu = document.querySelector('.notification-menu');
