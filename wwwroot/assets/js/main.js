@@ -32,9 +32,11 @@ dropdowns.forEach(dropdown => {
     });
 });
 
-function checkLoginStatus() {
+// checkLoginStatus() heb ik gehide omdat logout button al in de navbar automatisch staat en als de navbar verandert dan is dit niet nodig
+
+/*function checkLoginStatus() {
     // Check the login status of the user
-    var isLoggedIn = !(FYSCloud.Session.get("userId", "Not Found") === "Not Found") /* check login status */;
+    var isLoggedIn = !(FYSCloud.Session.get("userId", "Not Found") === "Not Found") /!* check login status *!/;
 
     // Get the logout button
     var logoutButton = document.getElementById('loguit-knop');
@@ -47,12 +49,12 @@ function checkLoginStatus() {
     else {
         logoutButton.style.display = 'none';
     }
-}
+}*/
 
 // CORRECTE NAVBAR LOADEN WANNEER PAGE GE-OPENED IS
 
 function loadNavbar(){
-    var isLoggedIn = !(FYSCloud.Session.get("userId", "Not Found") === "Not Found") /* check login status */;
+    var isLoggedIn = !(FYSCloud.Session.get("userId", "Not Found") === "Not Found") /* checked login status */;
 
     const navbar = document.querySelector('.navbar');
     const main = document.querySelector('main');
@@ -114,12 +116,11 @@ function loadNavbar(){
 }
 
 // Run the checkLoginStatus + loadNavbar functions when the page loads
-window.onload = checkLoginStatus;
+/*window.onload = checkLoginStatus;*/
 window.onload = loadNavbar;
 
 
-
-
+// Checken of iemand op dit moment ingelogd is
 console.log(FYSCloud.Session.get("userId"))
 console.log(FYSCloud.Session.get("email"))
 
@@ -127,7 +128,6 @@ console.log(FYSCloud.Session.get("email"))
 
 function uitloggenClicked(){
     FYSCloud.Session.remove("userId", "email");
-    location.reload();
     window.location.href="index.html"
 }
 
