@@ -106,7 +106,7 @@ function loadNavbar(){
 
     if (isLoggedIn) {
         navbar.innerHTML = navbarIngelogd
-        main.innerHTML += notificationMenu
+        navbar.innerHTML += notificationMenu
         console.log("Huidige navbar: Ingelogd")
     }
     else {
