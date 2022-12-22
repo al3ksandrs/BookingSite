@@ -101,7 +101,8 @@ a {
 
 .textName {
     margin: 15px;
-    text-shadow: -3px -3px 0 #000, 3px -3px 0 #000, -3px 3px 0 #000, 3px 3px 0 #000;
+    /*text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;*/
+    text-shadow: 0 0 3px #FF0000, 0 0 5px #0000FF;
     position: center;
 
     font-family: 'Roboto', sans-serif;
