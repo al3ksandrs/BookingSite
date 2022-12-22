@@ -163,5 +163,7 @@ function infoStorage() {
     sessionStorage.setItem("tempBio", bioInh.innerHTML);
     sessionStorage.setItem("tempName", prlInh.value);
     sessionStorage.setItem("tempDate", leeftijd.value);
-    sessionStorage.setItem("tempFoto", pfpInh.src)
+    sessionStorage.setItem("tempFoto", pfpInh.src);
+    console.log(bioInh.innerHTML);
+    console.log(bioInh.innerText);
 }
