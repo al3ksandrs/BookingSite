@@ -1,15 +1,3 @@
-// alert ('Hello World ');
-// FYSCloud.API.queryDatabase(
-//     "SELECT * FROM gebruiker WHERE email = 'emily56@email.com'"
-//
-//  // Dit stuurt de data terug van de database
-// ).then(function (data) {
-//     console.log(data);
-//
-// // melding als er iets mis is gegaan
-// }).catch(function (reason) {
-//     console.log(reason);});
-
 // Inhoud Stuff
 const bioInh = document.querySelector("#biografieinhoud");
 const pfpInh = document.querySelector("#profielfoto");
@@ -164,6 +152,10 @@ function updateGebruikerDb(naam, leeftijd, biografie) {
         [naam.value, leeftijd.value, biografie.value, FYSCloud.Session.get("userId", "Not Found")]
     ).then(function (data) {
         // Logged
+        FYSCloud.Session.remove("tempBio")
+        FYSCloud.Session.remove("tempName")
+        FYSCloud.Session.remove("tempDate")
+        FYSCloud.Session.remove("tempFoto")
         window.location.href = "profiel.html"
     }).catch(function (reason) {
         console.log(reason)
