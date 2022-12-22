@@ -12,8 +12,9 @@ function initializeMessageBoard(){
 
 function loadMatches(){
     FYSCloud.API.queryDatabase(
-        "SELECT * FROM gebruiker")
-        .then(matches => {
+        "SELECT * FROM gebruiker WHERE NOT gebruiker_id = ?"
+    [FYSCloud.Session.get("userId", "Not Found")]
+    ).then(matches => {
             for (const matchJson of matches) {
                 let gebruiker = convertDbJson(matchJson)
                 displayMessage(gebruiker);
