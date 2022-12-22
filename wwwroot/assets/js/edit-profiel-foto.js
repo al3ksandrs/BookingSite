@@ -158,3 +158,10 @@ function updateGebruikerDb(naam, leeftijd, biografie) {
     })
     }
 }
+
+function infoStorage() {
+    sessionStorage.setItem("tempBio", bioInh.innerHTML);
+    sessionStorage.setItem("tempName", prlInh.value);
+    sessionStorage.setItem("tempDate", leeftijd.value);
+    sessionStorage.setItem("tempFoto", pfpInh.src)
+}
