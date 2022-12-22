@@ -169,3 +169,9 @@ function infoStorage() {
     FYSCloud.Session.set("tempDate", leeftijd.value);
     FYSCloud.Session.set("tempFoto", pfpInh.src)
 }
+function infoStorageRM() {
+    FYSCloud.Session.remove("tempBio")
+    FYSCloud.Session.remove("tempName")
+    FYSCloud.Session.remove("tempDate")
+    FYSCloud.Session.remove("tempFoto")
+}
