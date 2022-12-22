@@ -1,10 +1,145 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+<html lang="nl">
 
+<head>
+    <!--Titel en links naar css + javascript-->
+    <meta charset="UTF-8">
+    <meta name="viewpocrt" content="width=device-width, initial-scale=1.0">
+    <title>Talen</title>
+    <link href="assets/css/edit-reizen-naar.css" rel="stylesheet">
+    <link href="assets/css/navbar-en-notifications.css" rel="stylesheet">
+    <script src="https://cdn.fys.cloud/fyscloud/0.0.4/fyscloud.min.js" defer></script>
+    <script src="assets/js/config.js" defer></script>
+    <script src="assets/js/main.js" defer></script>
+    <script src="assets/js/edit-interesses.js" defer></script>
+    <script src="assets/js/notifications.js" defer></script>
+</head>
+
+<body>
+<nav class="navbar">                                                         <!--normale navbar-->
+</nav>
+
+<main>
+    <article class="textbox">
+        <header>
+            <div class="bovenleft">
+                <a class="airplane">&#127758;</a>
+            </div>
+            <div class="boven">
+                <a class="banner"><strong>Talen</strong></a>
+            </div>
+
+            <div class="bovenright">
+                <p>Gesorteerd op: meest populair</p>
+            </div>
+        </header>
+        <section>
+            <article class="left">
+                <div>
+                    <p class="tekst">
+                        <Strong>Top 10 meest gesproken talen
+                            </Strong><br>Mandarijn<br>
+                            Spaans<br>Engels<br>Hindi<br>Arabisch<br>Portugees<br>
+                        Bengaals<br>Russisch<br>Japans<br>Punjabi
+                    </p>
+                </div>
+
+                <div>
+                    <p class="vlaggen">
+                        <br>&#127464;&#127475;
+                        <label class="container"> <input onclick="Check(this)" id="mandarijn" type="checkbox"> <span
+                                class="checkmark"></span>
+                        </label><br>&#127466;&#127480;
+                        <label class="container"> <input onclick="Check(this)" id="spaans" type="checkbox"> <span
+                                class="checkmark"></span>
+                        </label><br>&#127466;&#127480;
+                        <label class="container"> <input onclick="Check(this)" id="engels" type="checkbox"> <span
+                                class="checkmark"></span>
+                        </label><br>&#127470;&#127475;
+                        <label class="container"> <input onclick="Check(this)" id="hindi" type="checkbox"> <span
+                                class="checkmark"></span>
+                        </label><br>&#127480;&#127462;
+                        <label class="container"> <input onclick="Check(this)" id="arabisch" type="checkbox"> <span
+                                class="checkmark"></span>
+                        </label><br>&#127477;&#127481;
+                        <label class="container"> <input onclick="Check(this)" id="portugees" type="checkbox"> <span
+                                class="checkmark"></span>
+                        </label><br>&#127463;&#127465;
+                        <label class="container"> <input onclick="Check(this)" id="bengaals" type="checkbox"> <span
+                                class="checkmark"></span>
+                        </label><br>&#127479;&#127482;
+                        <label class="container"> <input onclick="Check(this)" id="russisch" type="checkbox"> <span
+                                class="checkmark"></span>
+                        </label><br>&#127471;&#127477;
+                        <label class="container"> <input onclick="Check(this)" id="japans" type="checkbox"> <span
+                                class="checkmark"></span>
+                        </label><br>&#127477;&#127472;
+                        <label class="container"> <input onclick="Check(this)" id="punjabi" type="checkbox"> <span
+                                class="checkmark"></span>
+                        </label>
+                    </p>
+                </div>
+            </article>
+
+            <article class="right">
+                <div>
+                    <p class="tekst">
+                        <strong>Meest gesproken talen </strong><br>
+                        Duits<br>Frans<br>Italiaans<br>Pools<br>
+                        Nederlands<br>Grieks<br>Zweeds<br>Deens<br>
+                        Noors
+                    </p>
+                </div>
+
+                <div>
+                    <p class="vlaggen">
+
+                        <br>&#127465;&#127466;
+                        <label class="container"> <input onclick="Check(this)" id="duits" type="checkbox"> <span
+                                class="checkmark"></span>
+                        </label><br>&#127467;&#127479;
+                        <label class="container"> <input onclick="Check(this)" id="frans" type="checkbox"> <span
+                                class="checkmark"></span>
+                        </label><br>&#127470;&#127481;
+                        <label class="container"> <input onclick="Check(this)" id="italiaans" type="checkbox"> <span
+                                class="checkmark"></span>
+                        </label><br>&#127477;&#127473;
+                        <label class="container"> <input onclick="Check(this)" id="pools" type="checkbox"> <span
+                                class="checkmark"></span>
+                        </label><br>&#127475;&#127473;
+                        <label class="container"> <input onclick="Check(this)" id="nederlands" type="checkbox"> <span
+                                class="checkmark"></span>
+                        </label><br>&#127468;&#127479;
+                        <label class="container"> <input onclick="Check(this)" id="grieks" type="checkbox"> <span
+                                class="checkmark"></span>
+                        </label><br>&#127480;&#127466;
+                        <label class="container"> <input onclick="Check(this)" id="zweeds" type="checkbox"> <span
+                                class="checkmark"></span>
+                        </label><br>&#127465;&#127472;
+                        <label class="container"> <input onclick="Check(this)" id="deens" type="checkbox"> <span
+                                class="checkmark"></span>
+                        </label><br>&#127475;&#127476;
+                        <label class="container"> <input onclick="Check(this)" id="noors" type="checkbox"> <span
+                                class="checkmark"></span>
+                        </label><br>
+                    </p>
+                </div>
+            </article>
+
+        </section>
+        <a>Bron: Corendon.nl</a>
+        <footer>
+            <div class="main">
+                <p class="button"><a class="annuleren" href="profiel.html"> Annuleren</a></p>
+            </div>
+
+            <div class="main">
+                <p class="button"><a class="opslaan" href="profiel.html"> Opslaan</a></p>
+            </div>
+        </footer>
+
+    </article>
+</main>
 </body>
+
 </html>
