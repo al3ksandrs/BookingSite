@@ -87,7 +87,7 @@ FYSCloud.API.queryDatabase(
 info = document.getElementById("reis");
 count = 0;
 FYSCloud.API.queryDatabase(
-    'SELECT * FROM `talen` WHERE (`gebruiker_id` = ?)', [userId]
+    'SELECT * FROM `reis` WHERE (`gebruiker_id` = ?)', [userId]
 ).then(function (data) {
     // Loop through all the columns of first row
     for (let i = 1; i < Object.keys(data[0]).length; i++) {
