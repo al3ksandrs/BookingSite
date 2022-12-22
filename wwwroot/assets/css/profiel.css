@@ -34,6 +34,14 @@ img.profile2 {
     margin: auto;
 }
 
+img.profile4 {
+    border-radius: 47px;
+    display: block;
+    width: 77px;
+    height: 90px;
+    margin: auto;
+}
+
 img.profile3 {
     border-radius: 20px;
     display: block;
@@ -512,6 +520,7 @@ body {
 @media (max-width: 400px) {
     main {
         flex-direction: column;
+
     }
 
     /* Pop up context media */
@@ -542,5 +551,9 @@ body {
     /* Pop up media */
     .popup-box .popup-content {
         width: inherit;
+    }
+    .img.profile4 {
+        height: 90px;
+        width: 77px;
     }
 }

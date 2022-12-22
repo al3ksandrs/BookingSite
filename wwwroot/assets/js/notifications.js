@@ -10,20 +10,20 @@ window.addEventListener('load', function () {
     function nieuweNotification(naam, leeftijd) {
         /* Notificatie template opslaan als variabel. */
         const notification = `        <!--NOTIFICATION-->
-            <article class="notification-item">
+            <articleno class="notification-item">
                 <p class="notification-text">Gematched met:</p>
                 <a href="andermans-profiel.html" class="notification-button">Bezoek profiel</a>
-            </article>
-            <article class="notification-informatie">
+            </articleno>
+            <articleno class="notification-informatie">
                 <img src=assets/img/rayan.png alt = "profielfoto" class="notification-item-foto"></src>
-                <article class="notification-naam-leeftijd">
+                <articleno class="notification-naam-leeftijd">
                     <p class="notification-foto-naam">` + naam + `</p>
                     <p class="notification-foto-leeftijd">` + leeftijd + `</p>
-                </article>
-            </article>
-            <button class="notification-delete" onclick="this.parentNode.parentNode.removeChild(this.parentNode); verwijderNotification();">
+                </articleno>
+            </articleno>
+            <button123 class="notification-delete" onclick="this.parentNode.parentNode.removeChild(this.parentNode); verwijderNotification();">
                 <i><img src=assets/img/delete.webp alt = "verwijder" class="kruis" height="30" width="30"></i>
-            </button>`
+            </button123>`
 
         let list = document.createElement("li")
         list.className = "notification"
