@@ -1,7 +1,6 @@
-function clearIUnputFields() {
-    document.getElementById("test22").remove();
 
-}
+
+
 const dropdowns = document.querySelectorAll('.dropdown');
 
 dropdowns.forEach(dropdown => {
