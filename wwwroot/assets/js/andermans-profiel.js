@@ -51,7 +51,7 @@ FYSCloud.API.queryDatabase(
         if (Object.values(data[0])[i] === 1) {
             let x = document.createElement("h3");
             x.classList.add("infotext");
-            x.innerText = column_name;
+            x.innerText = "- " + column_name;
             document.getElementById("interesses").append(x);
             count += 1;
         }
@@ -71,7 +71,7 @@ FYSCloud.API.queryDatabase(
         if (Object.values(data[0])[i] === 1) {
             let x = document.createElement("h3");
             x.classList.add("infotext");
-            x.innerText = column_name;
+            x.innerText = "- " + column_name;
             document.getElementById("spreekt").append(x);
             count += 1;
         }
@@ -92,7 +92,7 @@ FYSCloud.API.queryDatabase(
         if (Object.values(data[0])[i] === 1) {
             let x = document.createElement("h3");
             x.classList.add("infotext");
-            x.innerText = column_name;
+            x.innerText = "- " + column_name;
             document.getElementById("reizen").append(x);
             count += 1;
         }
