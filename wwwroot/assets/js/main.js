@@ -76,7 +76,7 @@ function loadNavbar(){
             <li><a href="profiel.html" class="navbar-menu-link">Profiel</a></li>
         </ul>
     </ul>
-    <button onclick="uitloggenClicked()" id="uitlogButton">Uitloggen</button>`
+    <buttonInloggen onclick="uitloggenClicked()" id="uitlogButton">Uitloggen</buttonInloggen>`
     const navbarNietIngelogd = `    <ul>
         <li><a href="index.html" class="navbar-normale-button">Home</a></li>
         <li><a href="over-ons.html" class="navbar-normale-button">Over ons</a></li>
