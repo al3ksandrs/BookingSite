@@ -84,10 +84,10 @@
                 <label for="emailin">Email:</label>
                 <label for="wachtwoordin">Wachtwoord:</label>
             </section>
-            <section class="inputs text">
+            <form id="inputs" class="inputs text">
                 <input id="emailin" name="email" type="text" placeholder="Type Hier...">
                 <input id="wachtwoordin" name="wachtwoord" type="password" placeholder="Type Hier...">
-            </section>
+            </form>
             <section class="alert">
                 <div></div>
             </section>
@@ -96,7 +96,7 @@
             <button id="backout" type="button">
                 Annuleren
             </button>
-            <input id="submit" type="submit" value="Verder">
+            <input form="inputs" id="submit" type="submit" value="Verder">
         </section>
     </section>
 </main>
