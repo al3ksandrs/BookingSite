@@ -84,7 +84,7 @@ FYSCloud.API.queryDatabase(
 })
 
 // Reizen naar inladen DB
-info = document.getElementById("reis");
+info = document.getElementById("reizen");
 count = 0;
 FYSCloud.API.queryDatabase(
     'SELECT * FROM `reis` WHERE (`gebruiker_id` = ?)', [userId]
