@@ -46,7 +46,7 @@ function createFoto(id, fotoextensie, naam, leeftijd) {
 
     let textBox = document.createElement("p");
     textBox.classList.add("naam");
-    textBox.innerText = (naam + age(leeftijd));
+    textBox.innerText = (naam + "   " + age(leeftijd));
 
     pfBox.append(imageBox, textBox);
     return pfBox;
