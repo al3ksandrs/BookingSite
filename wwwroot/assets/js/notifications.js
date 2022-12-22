@@ -52,7 +52,7 @@ function checkNotificationMenuFoto(){
 }
 
 /* Voer elke 100 milliseconden checkNotificationMenuFoto() uit. */
-setInterval(checkNotificationMenuFoto,100)
+setInterval(checkNotificationMenuFoto,1000)
 
 function verwijderNotification(){
     lijstLengte -= 1
