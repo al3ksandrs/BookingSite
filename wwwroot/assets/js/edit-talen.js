@@ -7,13 +7,11 @@ FYSCloud.API.queryDatabase(
 // Loop through all the columns of first row
     for (let i = 1; i < Object.keys(data[0]).length; i++) {
         language = Object.keys(data[0])[i]
-        document.getElementById(country).checked = Object.values(data[0])[i] === 1;
+        document.getElementById(language).checked = Object.values(data[0])[i] === 1;
     }
 }).catch(function (reason){
     console.log(reason)
 })
-
-
 
 // checkt of de checkbox gecheckt is
 function Check(checkbox) {

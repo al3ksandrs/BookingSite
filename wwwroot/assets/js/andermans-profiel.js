@@ -23,7 +23,7 @@ function age(dateString) {
     let beforeBirth = ((() => {birth.setDate(now.getDate());birth.setMonth(now.getMonth()); return birth.getTime()})() < birth.getTime()) ? 0 : 1;
     return now.getFullYear() - birth.getFullYear() - beforeBirth;
 }
-
+// database informatie ophalen
 FYSCloud.API.queryDatabase(
     'SELECT * FROM gebruiker WHERE id = ?', [userId]
 ).then(function (data){
@@ -31,6 +31,72 @@ FYSCloud.API.queryDatabase(
     pfpInh.src = "/uploads/" + data[0].fotonaam + "." + data[0].fotoextensie
     prlInh.innerHTML = data[0].naam + "         " + age(data[0].leeftijd)
 
+}).catch(function (reason){
+    console.log(reason)
+})
+let info;
+let column_name;
+const LIMIT_INFO = 3;
+const MAX_REIS = 5;
+
+    // Interesses ophalen DB
+FYSCloud.API.queryDatabase(
+    'SELECT * FROM `interesses` WHERE (`gebruiker_id` = ?)', [userId]
+).then(function (data) {
+    // Loop through all the columns of first row
+    let countInteresses = 0;
+    for (let i = 1; i < Object.keys(data[0]).length; i++) {
+        column_name = Object.keys(data[0])[i];
+        if (Object.values(data[0])[i] === 1) {
+            let x = document.createElement("h3");
+            x.classList.add("infotext");
+            x.innerText = "- " + column_name;
+            document.getElementById("interesses").append(x);
+            countInteresses += 1;
+        }
+        if (countInteresses === LIMIT_INFO) {break;}
+    }
+}).catch(function (reason){
+    console.log(reason)
+})
+    // Talen spreekt inladen DB
+FYSCloud.API.queryDatabase(
+    'SELECT * FROM `talen` WHERE (`gebruiker_id` = ?)', [userId]
+).then(function (data) {
+    // Loop through all the columns of first row
+    let countTalen = 0;
+    for (let i = 1; i < Object.keys(data[0]).length; i++) {
+        column_name = Object.keys(data[0])[i];
+        if (Object.values(data[0])[i] === 1) {
+            let x = document.createElement("h3");
+            x.classList.add("infotext");
+            x.innerText = "- " + column_name;
+            document.getElementById("spreekt").append(x);
+            countTalen += 1;
+        }
+        if (countTalen === LIMIT_INFO) {break;}
+    }
+}).catch(function (reason){
+    console.log(reason)
+})
+
+// Reizen naar inladen DB
+FYSCloud.API.queryDatabase(
+    'SELECT * FROM `reis` WHERE (`gebruiker_id` = ?)', [userId]
+).then(function (data) {
+    // Loop through all the columns of first row
+    let countReis = 0;
+    for (let i = 1; i < Object.keys(data[0]).length; i++) {
+        column_name = Object.keys(data[0])[i];
+        if (Object.values(data[0])[i] === 1) {
+            let x = document.createElement("h3");
+            x.classList.add("infotext");
+            x.innerText = "- " + column_name;
+            document.getElementById("reizen").append(x);
+            countReis += 1;
+        }
+        if (countReis === MAX_REIS) {break;}
+    }
 }).catch(function (reason){
     console.log(reason)
 })
