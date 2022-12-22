@@ -75,7 +75,6 @@ main {
     flex-direction: row;
     margin: 10px;
     padding: 10px;
-    width: 100%;
     justify-content: space-evenly;
 }
 .pf {
@@ -153,6 +152,7 @@ body {
     .left, .middle, .right {
         justify-content: center;
         width: auto;
+        max-width: 410px;
     }
     .extra {
         width: 100%;
@@ -160,6 +160,7 @@ body {
     section {
         flex-direction: column;
         justify-content: center;
+        align-items: center;
     }
 
     footer {
@@ -170,7 +171,6 @@ body {
     }
     .pictures {
         flex-wrap: wrap;
-        width: 97%
     }
     .pictureText {
         font-size: 24px;
