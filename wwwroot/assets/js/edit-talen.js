@@ -28,3 +28,14 @@ function Check(checkbox) {
         // checkboxFalseDb(checkbox)
     }
 }
+
+function checkboxDb(checkbox, bool) {
+    FYSCloud.API.queryDatabase(
+        "UPDATE `talen` SET " + checkbox.id + " = ? WHERE `gebruiker_id` = ?;",
+        [bool, currentUser]
+        // wat de datebase terug stuurt
+    ).then(function (data) {
+        // waarom het mis gaat
+    }).catch(function (reason) {
+        console.log(reason);});
+}
