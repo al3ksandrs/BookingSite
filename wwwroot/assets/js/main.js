@@ -1,5 +1,5 @@
 function clearIUnputFields() {
-    document.getElementById("interesses").value = '';
+    document.getElementById("test22").remove();
 
 }
 const dropdowns = document.querySelectorAll('.dropdown');
@@ -35,17 +35,17 @@ dropdowns.forEach(dropdown => {
 // checkLoginStatus() heb ik gehide omdat logout button al in de navbar automatisch staat en als de navbar verandert dan is dit niet nodig
 
 /*function checkLoginStatus() {
-    // Check the login status of the user
+    // Checked of de gebruiker is ingelogd
     var isLoggedIn = !(FYSCloud.Session.get("userId", "Not Found") === "Not Found") /!* check login status *!/;
 
-    // Get the logout button
+    // Maakt de logout button
     var logoutButton = document.getElementById('loguit-knop');
 
-    // If the user is logged in, show the logout button
+    // Als de gebruiker is ingelogd laat hij de button zien en anders komt de else statement.
     if (isLoggedIn) {
         logoutButton.style.display = 'block';
     }
-    // If the user is not logged in, hide the logout button
+    // Als de gebruiker niet is ingelogd word de button niet gedisplayd
     else {
         logoutButton.style.display = 'none';
     }
