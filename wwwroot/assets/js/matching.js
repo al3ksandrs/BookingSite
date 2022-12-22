@@ -165,3 +165,4 @@ function age(dateString){
     let beforeBirth = ((() => {birth.setDate(now.getDate());birth.setMonth(now.getMonth()); return birth.getTime()})() < birth.getTime()) ? 0 : 1;
     return now.getFullYear() - birth.getFullYear() - beforeBirth;
 }
+
