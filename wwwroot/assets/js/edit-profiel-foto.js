@@ -172,7 +172,7 @@ function updateGebruikerDb(naam, leeftijd, biografie) {
 }
 
 function infoStorage() {
-    FYSCloud.Session.set("tempBio", bioInh.innerText);
+    FYSCloud.Session.set("tempBio", bioInh.value);
     FYSCloud.Session.set("tempName", prlInh.value);
     FYSCloud.Session.set("tempDate", leeftijd.value);
     FYSCloud.Session.set("tempFoto", pfpInh.src)
