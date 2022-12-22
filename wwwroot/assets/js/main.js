@@ -133,8 +133,26 @@ function uitloggenClicked(){
     window.location.href="index.html"
 }
 
-function Reset() {
+
+// Filter naar standaard waarde
+function Reset1() {
     var dropDown = document.getElementById("interesses");
     dropDown.selectedIndex = 0;
 }
+
+function Reset2() {
+    var dropDown = document.getElementById("Geslacht");
+    dropDown.selectedIndex = 0;
+}
+
+function Reset3() {
+    var dropDown = document.getElementById("Leeftijd");
+    dropDown.selectedIndex = 0;
+}
+
+function Reset4() {
+    var dropDown = document.getElementById("Bestemming");
+    dropDown.selectedIndex = 0;
+}
+
 
