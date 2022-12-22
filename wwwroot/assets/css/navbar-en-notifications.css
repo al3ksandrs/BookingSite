@@ -188,8 +188,7 @@ nav li {
 
 #notification-toggle:checked ~ .notification-menu li {
     display: flex;
-    height: 11em;
-    width: 27em;
+    height: 12em;
     padding: 0;
     border-bottom: 1px solid black;
 
