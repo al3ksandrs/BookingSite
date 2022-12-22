@@ -91,7 +91,7 @@ a {
     line-height: 10px;
 }
 
-.textName {
+textName {
     margin: 15px;
     padding: 0px;
     position: center;
@@ -293,6 +293,7 @@ main {
     justify-content: start;
     align-items: flex-start;
 }
+
 /*Div voor het gebruiken van de popup context*/
 .diveroo {
     display: flex;
@@ -376,26 +377,25 @@ button:hover::before {
     transition: .4s;
 }
 
-.button5{
+.button5 {
     width: 770px;
 }
 
-.btn{
+.btn {
     height: 50px;
     width: 103px;
 }
+
 /* Hovering rgb voor de profielbewerk knop */
 .button4:hover {
     z-index: 1;
     border-color: transparent;
     background: linear-gradient(
             90deg,
-            #f9d923,
-            #00a19d,
-            #0c87b7,
-            #cb49ff,
-            #ff6666,
-            #f9d923
+            #D81E05,
+            #26A514,
+            #26A514,
+            #D81E05);
     );
     background-size: 400%;
     box-shadow: 0 0 15px rgb(2, 4, 24);
