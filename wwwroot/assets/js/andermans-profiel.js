@@ -23,7 +23,7 @@ function age(dateString) {
     let beforeBirth = ((() => {birth.setDate(now.getDate());birth.setMonth(now.getMonth()); return birth.getTime()})() < birth.getTime()) ? 0 : 1;
     return now.getFullYear() - birth.getFullYear() - beforeBirth;
 }
-
+// database informatie ophalen
 FYSCloud.API.queryDatabase(
     'SELECT * FROM gebruiker WHERE id = ?', [userId]
 ).then(function (data){
@@ -31,6 +31,27 @@ FYSCloud.API.queryDatabase(
     pfpInh.src = "/uploads/" + data[0].fotonaam + "." + data[0].fotoextensie
     prlInh.innerHTML = data[0].naam + "         " + age(data[0].leeftijd)
 
+}).catch(function (reason){
+    console.log(reason)
+})
+
+let info = document.querySelector("#Interesses");
+let count = 0;
+const LIMIT_INFO = 5;
+FYSCloud.API.queryDatabase(
+    'SELECT * FROM `interesses` WHERE (`gebruiker_id` = ?)', [userId]
+).then(function (data) {
+    // Loop through all the columns of first row
+    for (let i = 1; i < Object.keys(data[0]).length; i++) {
+        column_name = Object.keys(data[0])[i];
+        if (Object.values(data[0])[i] === 1) {
+            let x = document.createElement("h3");
+            x.innerText = column_name;
+            info.append(x);
+            count += 1;
+        }
+        if (count === LIMIT_INFO) {break;}
+    }
 }).catch(function (reason){
     console.log(reason)
 })
