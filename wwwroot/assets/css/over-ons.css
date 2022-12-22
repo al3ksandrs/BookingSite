@@ -146,12 +146,16 @@ body {
     margin: 15px;
 }
 
+
 /* responsive layout */
 @media screen and (max-width: 1000px) {
 
     .left, .middle, .right {
         justify-content: center;
         width: auto;
+    }
+    .extra {
+        width: 100%;
     }
     section {
         flex-direction: column;
@@ -161,7 +165,25 @@ body {
     footer {
         flex-direction: column;
     }
+    .infoLeft, .infoRight {
+        width: 100%;
+    }
+    .pictures {
+        flex-wrap: wrap;
+        width: 97%
+    }
     .pictureText {
+        font-size: 24px;
+    }
+}
+@media screen and (max-width: 460px) {
+    a.box {
+        font-size: 36px;
+    }
+}
+
+@media screen and (max-width: 360px) {
+    a.box {
         font-size: 24px;
     }
 }

@@ -1,14 +1,3 @@
-// Fys cloud datebase
-FYSCloud.API.queryDatabase(
-    "SELECT * FROM gebruiker WHERE email = 'emily56@email.com'"
-    // wat de datebase terug stuurt
-).then(function (data) {
-    console.log(data);
-// waarom het mis gaat
-}).catch(function (reason) {
-    console.log(reason);});
-    // Laden van de database gebruiker gegevens
-
 // Inhoud Stuff
 const bioInh = document.querySelector("#biografie_inhoud");
 const pfpInh = document.querySelector("#profielfoto");
@@ -21,7 +10,7 @@ function age(dateString) {
     let birth = new Date(dateString);
     let now = new Date();
     let beforeBirth = ((() => {birth.setDate(now.getDate());birth.setMonth(now.getMonth()); return birth.getTime()})() < birth.getTime()) ? 0 : 1;
-    return now.getFullYear() - birth.getFullYear() - beforeBirth;
+    return now.getFullYear() - birth.getFullYear() - beforeBirth + 1;
 }
 // database informatie ophalen
 FYSCloud.API.queryDatabase(
@@ -151,23 +140,7 @@ console.log("test")
 checkMatch();
 
 // Zakaria Testing
-// // // Fys cloud datebase
-// // FYSCloud.API.queryDatabase(
-// //     "SELECT * FROM gebruiker WHERE email = 'emily56@email.com'"
-// //     // wat de datebase terug stuurt
-// // ).then(function (data) {
-// //     console.log(data);
-// // // waarom het mis gaat
-// // }).catch(function (reason) {
-// //     console.log(reason);});
-//
-//
-// // Inhoud Stuff
-// const bioInh = document.querySelector("#biografie_inhoud");
-// const pfpInh = document.querySelector("#profielfoto");
-// const prlInh = document.querySelector("#profielnaam");
-// const buttons = document.querySelector(".buttons")
-// // removing the first character '?'
+
 // // // Why this?
 // // const search = window.location.search;
 // // const userId = search.slice(1);
@@ -175,37 +148,7 @@ checkMatch();
 //
 // // And not this?
 // const userIdO = Object.values(FYSCloud.URL.queryString());
-//
-// const userId = FYSCloud.Session.get("userId", "Not Found")
-//
-// FYSCloud.API.queryDatabase(
-//     'SELECT * FROM gebruiker_has_gebruiker WHERE ingelogde_gebruiker_id = ? AND liked_persoon_id = ? OR liked_persoon_id = ? AND ingelogde_gebruiker_id = ?;',
-//     [userId, userIdO, userId, userIdO]
-// ).then(function (data) {
-//     console.log(data)
-// }).catch(function (reason) {
-//     console.log(reason)
-// })
-//
-// function age(dateString) {
-//     let birth = new Date(dateString);
-//     let now = new Date();
-//     let beforeBirth = ((() => {birth.setDate(now.getDate());birth.setMonth(now.getMonth()); return birth.getTime()})() < birth.getTime()) ? 0 : 1;
-//     return now.getFullYear() - birth.getFullYear() - beforeBirth;
-// }
-//
-// FYSCloud.API.queryDatabase(
-//     'SELECT * FROM gebruiker WHERE id = ?', [userId]
-// ).then(function (data){
-//     bioInh.innerHTML = data[0].biografie
-//     pfpInh.src = "/uploads/" + data[0].id + "." + data[0].fotoextensie
-//     prlInh.innerHTML = data[0].naam + "         " + age(data[0].leeftijd)
-//
-// }).catch(function (reason){
-//     console.log(reason)
-// })
-//
-//
+
 // // LIKE/MATCHING SYSTEEM
 //
 // function likeButtonClick(){             //kan nu const window.location.search gebruiken
