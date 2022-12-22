@@ -157,7 +157,7 @@ function Reset4() {
 
 function searchUsers(query){
     FYSCloud.API.queryDatabase(
-        'SELECT * FROM fys_is104_4_dev WHERE interesses ?',
+        'SELECT * FROM fys_is104_4_dev WHERE interesses VALUES (clubben)',
         ['%' + query + '%'],
         function(error, results, fields) {
             if (error) throw error;
