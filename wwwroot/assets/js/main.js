@@ -155,4 +155,22 @@ function Reset4() {
     dropDown.selectedIndex = 0;
 }
 
+function searchUsers(query){
+    FYSCloud.API.queryDatabase(
+        'SELECT * FROM `interesses` WHERE (`gebruiker_id` = ?)',
+        ['%' + query + '%'],
+        function(error, results, fields) {
+            if (error) throw error;
+
+            // Loop through the result set and display the users
+            for (let i = 0; i < results.length; i++) {
+                console.log(results[i].name);
+            }
+        })
+        .catch(function(reason) {
+            console.error(reason);
+        });
+}
+
+
 
