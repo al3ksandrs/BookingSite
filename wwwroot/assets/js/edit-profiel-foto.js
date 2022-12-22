@@ -21,14 +21,26 @@ let column_name;
 console.log(FYSCloud.Session.get("userId", "Not Found"));
 console.log(FYSCloud.Session.get("email", "Not Found"))
 
+const tempBio = FYSCloud.Session.get("tempBio")
+const tempName = FYSCloud.Session.get("tempName")
+const tempDate = FYSCloud.Session.get("tempDate")
+const tempFoto = FYSCloud.Session.get("tempFoto")
+
+
 FYSCloud.API.queryDatabase(
     'SELECT * FROM gebruiker WHERE id = ?', [FYSCloud.Session.get("userId", "Not Found")]
 ).then(function (data){
-    bioInh.innerHTML = data[0].biografie
-    pfpInh.src = "/uploads/" + data[0].fotonaam + "." + data[0].fotoextensie
-    leeftijd.value = (data[0].leeftijd).slice(0, 10);
-    prlInh.value = data[0].naam
-
+    if (tempBio === undefined) {
+        bioInh.innerHTML = data[0].biografie
+        pfpInh.src = "/uploads/" + data[0].fotonaam + "." + data[0].fotoextensie
+        leeftijd.value = (data[0].leeftijd).slice(0, 10);
+        prlInh.value = data[0].naam
+    } else {
+        bioInh.innerHTML = tempBio
+        pfpInh.src = tempFoto
+        leeftijd.value = tempDate
+        prlInh.value = tempName
+    }
 }).catch(function (reason){
     console.log(reason)
 })
@@ -160,10 +172,8 @@ function updateGebruikerDb(naam, leeftijd, biografie) {
 }
 
 function infoStorage() {
-    sessionStorage.setItem("tempBio", bioInh.innerHTML);
-    sessionStorage.setItem("tempName", prlInh.value);
-    sessionStorage.setItem("tempDate", leeftijd.value);
-    sessionStorage.setItem("tempFoto", pfpInh.src);
-    console.log(bioInh.innerHTML);
-    console.log(bioInh.innerText);
+    FYSCloud.Session.set("tempBio", bioInh.innerHTML);
+    FYSCloud.Session.set("tempName", prlInh.value);
+    FYSCloud.Session.set("tempDate", leeftijd.value);
+    FYSCloud.Session.set("tempFoto", pfpInh.src)
 }

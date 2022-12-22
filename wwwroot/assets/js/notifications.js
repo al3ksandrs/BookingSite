@@ -1,8 +1,12 @@
-const notificationMenu = document.getElementsByClassName("notification-menu")
-const notificationItems = document.getElementsByClassName("notification")
-const notificationMenuFoto = document.getElementById("notification-foto")
+window.addEventListener("DOMContentLoaded", function () {
+    const notificationMenu = document.getElementsByClassName("notification-menu")
+    const notificationItems = document.getElementsByClassName("notification")
+    const notificationMenuFoto = document.getElementById("notification-foto")
 
-let lijstLengte = notificationItems.length
+    let lijstLengte = notificationItems.length
+
+
+})
 
 window.addEventListener('load', function() {
 
