@@ -1,21 +1,12 @@
-// Fys Cloud stuff
-//
-// FYSCloud.API.queryDatabase(
-//     "SELECT * FROM gebruiker WHERE email = 'example@email.com'"
-// ).then(function(data) {
-//     console.log(data);
-// }).catch(function(reason) {
-//     console.log(reason);
-// });
+
 
 // Set the document references
-let email = document.getElementById("emailin");
-let wachtwoord = document.getElementById("wachtwoordin");
-let submission = document.querySelector("#submit");
-let backout = document.querySelector("#backout")
-let alerts = document.querySelector(".alert div")
-let mailFormat = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-
+    let email = document.getElementById("emailin");
+    let wachtwoord = document.getElementById("wachtwoordin");
+    let submission = document.querySelector("#submit");
+    let backout = document.querySelector("#backout")
+    let alerts = document.querySelector(".alert div")
+    let mailFormat = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 
 // Valideert de email op karakters, later ook op database bestaan
 function ValidateEmail(inputEText) {
@@ -43,7 +34,7 @@ function ValidateEmail(inputEText) {
     }
     // Voor als het niet een correcte email is
     else {
-        console.log("You have entered an invalid email address!");    // Dit wordt een div die tevoorschijn komt
+        alerts.innerHTML = "You have entered an invalid email address!";
         email.focus();
         wachtwoord.value = '';
     }
@@ -80,8 +71,9 @@ function ValidateAccount(inputEText, inputWText) {
 }
 
 submission.addEventListener("click",
-    function () {
+    function (event) {
         ValidateEmail(email)
+        event.preventDefault();
     })
 
 backout.addEventListener("click", function () {

@@ -32,9 +32,11 @@ dropdowns.forEach(dropdown => {
     });
 });
 
-function checkLoginStatus() {
+// checkLoginStatus() heb ik gehide omdat logout button al in de navbar automatisch staat en als de navbar verandert dan is dit niet nodig
+
+/*function checkLoginStatus() {
     // Check the login status of the user
-    var isLoggedIn = !(FYSCloud.Session.get("userId", "Not Found") === "Not Found") /* check login status */;
+    var isLoggedIn = !(FYSCloud.Session.get("userId", "Not Found") === "Not Found") /!* check login status *!/;
 
     // Get the logout button
     var logoutButton = document.getElementById('loguit-knop');
@@ -42,28 +44,92 @@ function checkLoginStatus() {
     // If the user is logged in, show the logout button
     if (isLoggedIn) {
         logoutButton.style.display = 'block';
-
     }
     // If the user is not logged in, hide the logout button
     else {
         logoutButton.style.display = 'none';
     }
+}*/
+
+// CORRECTE NAVBAR LOADEN WANNEER PAGE GE-OPENED IS
+
+function loadNavbar(){
+    var isLoggedIn = !(FYSCloud.Session.get("userId", "Not Found") === "Not Found") /* checked login status */;
+
+    const navbar = document.querySelector('.navbar');
+    const main = document.querySelector('main');
+    const navbarIngelogd = `    <ul>
+        <li><a href="index.html" class="navbar-normale-button">Home</a></li>
+        <li><a href="over-ons.html" class="navbar-normale-button">Over ons</a></li>
+        <li class="logo"><img src=assets/img/logo.PNG class="logo-foto"></src></li>
+        <li><a href="matching-met-filter.html" class="navbar-normale-button">Matches</a></li>
+        <li><a href="profiel.html" class="navbar-normale-button">Profiel</a></li>
+
+        <input id="navbar-menu-toggle" type="checkbox"/>                               <!--navbar menu voor mobile-->
+        <label class='navbar-menu-container' for="navbar-menu-toggle">
+            <div class='navbar-menu-button'><img src=assets/img/burger-menu.png class="navbar-foto"></src></div>
+        </label>
+        <ul class="navbar-links">
+            <li><a href="index.html" class="navbar-menu-link">Home</a></li>
+            <li><a href="over-ons.html" class="navbar-menu-link">Over ons</a></li>
+            <li><a href="matching.html" class="navbar-menu-link">Matches</a></li>
+            <li><a href="profiel.html" class="navbar-menu-link">Profiel</a></li>
+        </ul>
+    </ul>
+    <button onclick="uitloggenClicked()" id="uitlogButton">Uitloggen</button>`
+    const navbarNietIngelogd = `    <ul>
+        <li><a href="index.html" class="navbar-normale-button">Home</a></li>
+        <li><a href="over-ons.html" class="navbar-normale-button">Over ons</a></li>
+        <li class="logo"><img src=assets/img/logo.PNG class="logo-foto"></src></li>
+        <li><a href="inloggen.html" class="navbar-normale-button">Inloggen</a></li>
+        <li><a href="registreren.html" class="navbar-normale-button">Registreren</a></li>
+
+        <input id="navbar-menu-toggle" type="checkbox"/>                               <!--navbar menu voor mobile-->
+        <label class='navbar-menu-container' for="navbar-menu-toggle">
+            <div class='navbar-menu-button'><img src=assets/img/burger-menu.png class="navbar-foto"></src></div>
+        </label>
+        <ul class="navbar-links">
+            <li><a href="index.html" class="navbar-menu-link">Home</a></li>
+            <li><a href="over-ons.html" class="navbar-menu-link">Over ons</a></li>
+            <li><a href="inloggen.html" class="navbar-menu-link">Inloggen</a></li>
+            <li><a href="registreren.html" class="navbar-menu-link">Registreren</a></li>
+        </ul>`
+    const notificationMenu = `    <input id="notification-toggle" type="checkbox"/>                               <!--notification knop-->
+    <label class="notification-container" for="notification-toggle">
+        <div class="notification-menu-button">
+        <img src="assets/img/notification-knop-alert.png" id="notification-foto">
+        </div>
+    </label>
+
+    <ul class="notification-menu">
+    </ul>
+`
+
+    if (isLoggedIn) {
+        navbar.innerHTML = navbarIngelogd
+        navbar.innerHTML += notificationMenu
+        console.log("Huidige navbar: Ingelogd")
+    }
+    else {
+        navbar.innerHTML = navbarNietIngelogd
+        console.log("Huidige navbar: Niet Ingelogd")
+    }
 }
 
-// Run the checkLoginStatus function when the page loads
-window.onload = checkLoginStatus;
+// Run the checkLoginStatus + loadNavbar functions when the page loads
+/*window.onload = checkLoginStatus;*/
+window.onload = loadNavbar;
 
 
-
-
+// Checken of iemand op dit moment ingelogd is
 console.log(FYSCloud.Session.get("userId"))
 console.log(FYSCloud.Session.get("email"))
 
 //UITLOGGEN
 
 function uitloggenClicked(){
-    FYSCloud.Session.remove("userId", "email");
-    location.reload();
+    FYSCloud.Session.remove("userId");
+    FYSCloud.Session.remove("email");
     window.location.href="index.html"
 }
 
