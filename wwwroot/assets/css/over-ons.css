@@ -26,7 +26,8 @@ main {
     background: rgba(217, 217, 217, 0.8);
     border-radius: 20px;
     margin: 10px;
-    width: 50%
+    width: 50%;
+    border: 1px solid black;
 }
 
 .persoon {
@@ -39,6 +40,7 @@ main {
 .foto {
     margin: 15px;
     border-radius: 20px;
+    border: 2px solid black;
 }
 
 .contact {
@@ -47,6 +49,7 @@ main {
 
 .droom {
     justify-content: center;
+    margin-bottom: 20px;
 }
 
 .extra {
@@ -62,8 +65,9 @@ main {
 .team {
     display: flex;
     flex-direction: column;
-    background: rgba(255, 255, 255, 0.85);
+    background: rgba(255, 255, 255, 0.8);
     border-radius: 20px;
+    border: 1px solid black;
 }
 
 .pictures {
@@ -89,9 +93,18 @@ main {
 
 .tekst {
     padding: 20px;
-    font-size: 36px;
+    font-size: 24px;
+    line-height: 35px;
     font-family: "Roboto Thin", sans-serif;
     text-align: center;
+}
+
+.kopje {
+    font-size: 24px;
+    line-height: 35px;
+    font-family: "Roboto Thin", sans-serif;
+    text-align: center;
+    padding-top: 10px;
 }
 
 .vlaggen {
