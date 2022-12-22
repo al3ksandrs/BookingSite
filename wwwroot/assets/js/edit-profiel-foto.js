@@ -172,10 +172,8 @@ function updateGebruikerDb(naam, leeftijd, biografie) {
 }
 
 function infoStorage() {
-    FYSCloud.Session.set("tempBio", bioInh.innerHTML);
+    FYSCloud.Session.set("tempBio", bioInh.innerText);
     FYSCloud.Session.set("tempName", prlInh.value);
     FYSCloud.Session.set("tempDate", leeftijd.value);
     FYSCloud.Session.set("tempFoto", pfpInh.src)
-    console.log(bioInh.innerHTML);
-    console.log(bioInh.innerText);
 }
