@@ -34,7 +34,6 @@ FYSCloud.API.queryDatabase(
 }).catch(function (reason){
     console.log(reason)
 })
-let count;
 let info;
 let column_name;
 const LIMIT_INFO = 3;
@@ -45,7 +44,7 @@ FYSCloud.API.queryDatabase(
     'SELECT * FROM `interesses` WHERE (`gebruiker_id` = ?)', [userId]
 ).then(function (data) {
     // Loop through all the columns of first row
-    count = 0;
+    let countInteresses = 0;
     for (let i = 1; i < Object.keys(data[0]).length; i++) {
         column_name = Object.keys(data[0])[i];
         if (Object.values(data[0])[i] === 1) {
@@ -55,7 +54,7 @@ FYSCloud.API.queryDatabase(
             document.getElementById("interesses").append(x);
             count += 1;
         }
-        if (count === LIMIT_INFO) {break;}
+        if (countInteresses === LIMIT_INFO) {break;}
     }
 }).catch(function (reason){
     console.log(reason)
@@ -65,7 +64,7 @@ FYSCloud.API.queryDatabase(
     'SELECT * FROM `talen` WHERE (`gebruiker_id` = ?)', [userId]
 ).then(function (data) {
     // Loop through all the columns of first row
-    count = 0;
+    let countTalen = 0;
     for (let i = 1; i < Object.keys(data[0]).length; i++) {
         column_name = Object.keys(data[0])[i];
         if (Object.values(data[0])[i] === 1) {
@@ -75,7 +74,7 @@ FYSCloud.API.queryDatabase(
             document.getElementById("spreekt").append(x);
             count += 1;
         }
-        if (count === LIMIT_INFO) {break;}
+        if (countTalen === LIMIT_INFO) {break;}
     }
 }).catch(function (reason){
     console.log(reason)
@@ -86,7 +85,7 @@ FYSCloud.API.queryDatabase(
     'SELECT * FROM `reis` WHERE (`gebruiker_id` = ?)', [userId]
 ).then(function (data) {
     // Loop through all the columns of first row
-    count = 0;
+    let countReis = 0;
     for (let i = 1; i < Object.keys(data[0]).length; i++) {
         column_name = Object.keys(data[0])[i];
         if (Object.values(data[0])[i] === 1) {
@@ -94,9 +93,9 @@ FYSCloud.API.queryDatabase(
             x.classList.add("infotext");
             x.innerText = "- " + column_name;
             document.getElementById("reizen").append(x);
-            count += 1;
+            countReis += 1;
         }
-        if (count === MAX_REIS) {break;}
+        if (countReis === MAX_REIS) {break;}
     }
 }).catch(function (reason){
     console.log(reason)
