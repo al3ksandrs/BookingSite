@@ -1,10 +1,9 @@
-const notificationMenu = document.getElementsByClassName("notification-menu")
-const notificationItems = document.getElementsByClassName("notification")
-const notificationMenuFoto = document.getElementById("notification-foto")
-
-let lijstLengte = notificationItems.length
-
 window.addEventListener('load', function () {
+    const notificationMenu = document.getElementsByClassName("notification-menu")
+    const notificationItems = document.getElementsByClassName("notification")
+    const notificationMenuFoto = document.getElementById("notification-foto")
+
+    let lijstLengte = notificationItems.length
 
     /* Nieuwe notificatie aanmaken */
     function nieuweNotification(naam, leeftijd) {
@@ -39,20 +38,18 @@ window.addEventListener('load', function () {
     nieuweNotification("Henrik", 54)
     nieuweNotification("Alberto", 46)
 
-})
-
-/* Checken of lijstLengte 0 is zodat de alert op de menuknop weggaat of blijft. */
-function checkNotificationMenuFoto() {
-    if (lijstLengte === 0) {
-        notificationMenuFoto.src = "assets/img/notification-knop.png"
-    } else {
-        notificationMenuFoto.src = "assets/img/notification-knop-alert.png"
+    function checkNotificationMenuFoto() {
+        if (lijstLengte === 0) {
+            notificationMenuFoto.src = "assets/img/notification-knop.png"
+        } else {
+            notificationMenuFoto.src = "assets/img/notification-knop-alert.png"
+        }
     }
-}
 
-/* Voer elke 100 milliseconden checkNotificationMenuFoto() uit. */
-setInterval(checkNotificationMenuFoto, 1000)
+    /* Voer elke 100 milliseconden checkNotificationMenuFoto() uit. */
+    setInterval(checkNotificationMenuFoto, 1000)
 
-function verwijderNotification() {
-    lijstLengte -= 1
-}
+    function verwijderNotification() {
+        lijstLengte -= 1
+    }
+})
