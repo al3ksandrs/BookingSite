@@ -133,3 +133,8 @@ function uitloggenClicked(){
     window.location.href="index.html"
 }
 
+function Reset() {
+    var dropDown = document.getElementById("interesses");
+    dropDown.selectedIndex = 0;
+}
+

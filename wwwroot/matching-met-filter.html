@@ -36,61 +36,65 @@
 
     </ul>
 </nav>
-<!-- Hier begint de filter. Elke categorie heeft een value.-->
+
 <main>
+
+    <!--    Hier begint de filter-->
     <div class="dropdownmenu">
         <div class="dropdown">
             <div class="select">
-                <span class="selected" value="0" >Interesses</span>
-                <div class="caret"></div>
+                <select class="selected" id="interesses">
+                    <option value="0">interesses</option>
+                    <option value="1">shoppen</option>
+                    <option value="2">clubben</option>
+                    <option value="3">uitgaan</option>
+                    <option value="4">zwemmen</option>
+                    <option value="5">wandelen</option>
+                </select>
             </div>
-            <ul class="menu">
-                <li>Shoppen</li>
-                <li>Clubben</li>
-                <li class="active">Uitgaan</li>
-                <li>Zwemmen</li>
-                <li>Wandelen</li>
-            </ul>
         </div>
+    </div>
 
+    <div class="dropdownmenu">
         <div class="dropdown">
             <div class="select">
-                <span class="selected">Geslacht</span>
-                <div class="caret"></div>
+                <select class="selected" id="Geslacht">
+                    <option value="0">Geslacht</option>
+                    <option value="1">Man</option>
+                    <option value="2">Vrouw</option>
+                </select>
             </div>
-            <ul class="menu">
-                <li>Man</li>
-                <li class="active">Vrouw</li>
-            </ul>
         </div>
+    </div>
 
+    <div class="dropdownmenu">
         <div class="dropdown">
             <div class="select">
-                <span class="selected">Leeftijd</span>
-                <div class="caret"></div>
+                <select class="selected" id="Leeftijd">
+                    <option value="0">Leeftijd</option>
+                    <option value="1">45 - 55</option>
+                    <option value="2">55 - 65</option>
+                    <option value="3">65+</option>
+                </select>
             </div>
-            <ul class="menu">
-                <li>45 - 55</li>
-                <li class="active">55 - 65</li>
-                <li>65+</li>
-            </ul>
         </div>
+    </div>
 
+    <div class="dropdownmenu">
         <div class="dropdown">
             <div class="select">
-                <span class="selected">Bestemming</span>
-                <div class="caret"></div>
+                <select class="selected" id="Bestemming">
+                    <option value="0">Bestemming</option>
+                    <option value="1">Azie</option>
+                    <option value="2">Europa</option>
+                    <option value="3">Africa</option>
+                    <option value="4">VS</option>
+                </select>
             </div>
-            <ul class="menu">
-                <li class="active">Azie</li>
-                <li>Europa</li>
-                <li>Africa</li>
-                <li>VS</li>
-            </ul>
         </div>
-        <div class="dropdown">
-            <input type="button" id="btnReset" value="Reset" onclick="Reset();"/>
-        </div>
+
+    <div class="dropdown">
+        <input type="button" id="btnReset" value="Reset" onclick="Reset();"/>
     </div>
 </main>
 
