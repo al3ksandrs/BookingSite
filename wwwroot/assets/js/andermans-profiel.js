@@ -41,11 +41,11 @@ const LIMIT_INFO = 3;
 const MAX_REIS = 5;
 
     // Interesses ophalen DB
-count = 0;
 FYSCloud.API.queryDatabase(
     'SELECT * FROM `interesses` WHERE (`gebruiker_id` = ?)', [userId]
 ).then(function (data) {
     // Loop through all the columns of first row
+    count = 0;
     for (let i = 1; i < Object.keys(data[0]).length; i++) {
         column_name = Object.keys(data[0])[i];
         if (Object.values(data[0])[i] === 1) {
@@ -61,11 +61,11 @@ FYSCloud.API.queryDatabase(
     console.log(reason)
 })
     // Talen spreekt inladen DB
-count = 0;
 FYSCloud.API.queryDatabase(
     'SELECT * FROM `talen` WHERE (`gebruiker_id` = ?)', [userId]
 ).then(function (data) {
     // Loop through all the columns of first row
+    count = 0;
     for (let i = 1; i < Object.keys(data[0]).length; i++) {
         column_name = Object.keys(data[0])[i];
         if (Object.values(data[0])[i] === 1) {
@@ -82,11 +82,11 @@ FYSCloud.API.queryDatabase(
 })
 
 // Reizen naar inladen DB
-count = 0;
 FYSCloud.API.queryDatabase(
     'SELECT * FROM `reis` WHERE (`gebruiker_id` = ?)', [userId]
 ).then(function (data) {
     // Loop through all the columns of first row
+    count = 0;
     for (let i = 1; i < Object.keys(data[0]).length; i++) {
         column_name = Object.keys(data[0])[i];
         if (Object.values(data[0])[i] === 1) {
