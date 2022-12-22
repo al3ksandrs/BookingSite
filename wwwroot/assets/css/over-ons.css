@@ -154,6 +154,9 @@ body {
         width: auto;
         max-width: 410px;
     }
+    .middle {
+        margin-top: 10px;
+    }
     .extra {
         width: 100%;
     }
