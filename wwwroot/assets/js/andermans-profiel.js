@@ -52,7 +52,7 @@ FYSCloud.API.queryDatabase(
             x.classList.add("infotext");
             x.innerText = "- " + column_name;
             document.getElementById("interesses").append(x);
-            count += 1;
+            countInteresses += 1;
         }
         if (countInteresses === LIMIT_INFO) {break;}
     }
@@ -72,7 +72,7 @@ FYSCloud.API.queryDatabase(
             x.classList.add("infotext");
             x.innerText = "- " + column_name;
             document.getElementById("spreekt").append(x);
-            count += 1;
+            countTalen += 1;
         }
         if (countTalen === LIMIT_INFO) {break;}
     }
