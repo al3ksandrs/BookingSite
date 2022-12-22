@@ -50,18 +50,18 @@ function likeButtonClick(){
     console.log("Query is gestuurd naar database. (Like systeem)")
 }
 
-FYSCloud.API.queryDatabase(
-    /* Checken of er een match is in de gebruiker_has_gebruiker tabel (likes) */
-    "SELECT * FROM `fys_is104_4_dev`.`gebruiker_has_gebruiker` WHERE ingelogde_gebruiker_id = ? AND liked_persoon_id = ? OR liked_persoon_id = ? AND ingelogde_gebruiker_id = ?;",
-    [FYSCloud.Session.get("userId", "Not Found"), userId, FYSCloud.Session.get("userId", "Not Found"), userId]
-).then(function (data){
-    /* Als er een match ook is dan voert de code hieronder uit */
-    FYSCloud.API.queryDatabase(
-        "INSERT INTO `matches` SET `gebruiker_id1` = ?, `gebruiker_id2` = ?;",
-        [FYSCloud.Session.get("userId", "Not Found"), userId]
-    )
-    console.log("Match toegevoegd aan matches")
-})
+// FYSCloud.API.queryDatabase(
+//     /* Checken of er een match is in de gebruiker_has_gebruiker tabel (likes) */
+//     "SELECT * FROM `fys_is104_4_dev`.`gebruiker_has_gebruiker` WHERE ingelogde_gebruiker_id = ? AND liked_persoon_id = ? OR liked_persoon_id = ? AND ingelogde_gebruiker_id = ?;",
+//     [FYSCloud.Session.get("userId", "Not Found"), userId, FYSCloud.Session.get("userId", "Not Found"), userId]
+// ).then(function (data){
+//     /* Als er een match ook is dan voert de code hieronder uit */
+//     FYSCloud.API.queryDatabase(
+//         "INSERT INTO `matches` SET `gebruiker_id1` = ?, `gebruiker_id2` = ?;",
+//         [FYSCloud.Session.get("userId", "Not Found"), userId]
+//     )
+//     console.log("Match toegevoegd aan matches")
+// })
 
 // checkt of er een match is
 function checkMatch() {
