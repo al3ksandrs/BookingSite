@@ -96,8 +96,9 @@ function loadNavbar(){
         </ul>`
     const notificationMenu = `    <input id="notification-toggle" type="checkbox"/>                               <!--notification knop-->
     <label class="notification-container" for="notification-toggle">
-        <div class="notification-menu-button"><img src=assets/img/notification-knop-alert.png
-                                                   id="notification-foto"></src></div>
+        <div class="notification-menu-button">
+        <img src="assets/img/notification-knop-alert.png" id="notification-foto">
+        </div>
     </label>
 
     <ul class="notification-menu">
