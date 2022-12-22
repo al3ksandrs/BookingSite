@@ -1,15 +1,3 @@
-// alert ('Hello World ');
-// FYSCloud.API.queryDatabase(
-//     "SELECT * FROM gebruiker WHERE email = 'emily56@email.com'"
-//
-//  // Dit stuurt de data terug van de database
-// ).then(function (data) {
-//     console.log(data);
-//
-// // melding als er iets mis is gegaan
-// }).catch(function (reason) {
-//     console.log(reason);});
-
 // Inhoud Stuff
 const bioInh = document.querySelector("#biografieinhoud");
 const pfpInh = document.querySelector("#profielfoto");
@@ -21,14 +9,26 @@ let column_name;
 console.log(FYSCloud.Session.get("userId", "Not Found"));
 console.log(FYSCloud.Session.get("email", "Not Found"))
 
+const tempBio = FYSCloud.Session.get("tempBio")
+const tempName = FYSCloud.Session.get("tempName")
+const tempDate = FYSCloud.Session.get("tempDate")
+const tempFoto = FYSCloud.Session.get("tempFoto")
+
+
 FYSCloud.API.queryDatabase(
     'SELECT * FROM gebruiker WHERE id = ?', [FYSCloud.Session.get("userId", "Not Found")]
 ).then(function (data){
-    bioInh.innerHTML = data[0].biografie
-    pfpInh.src = "/uploads/" + data[0].fotonaam + "." + data[0].fotoextensie
-    leeftijd.value = (data[0].leeftijd).slice(0, 10);
-    prlInh.value = data[0].naam
-
+    if (tempBio === undefined) {
+        bioInh.innerHTML = data[0].biografie
+        pfpInh.src = "/uploads/" + data[0].fotonaam + "." + data[0].fotoextensie
+        leeftijd.value = (data[0].leeftijd).slice(0, 10);
+        prlInh.value = data[0].naam
+    } else {
+        bioInh.innerHTML = tempBio
+        pfpInh.src = tempFoto
+        leeftijd.value = tempDate
+        prlInh.value = tempName
+    }
 }).catch(function (reason){
     console.log(reason)
 })
@@ -152,6 +152,10 @@ function updateGebruikerDb(naam, leeftijd, biografie) {
         [naam.value, leeftijd.value, biografie.value, FYSCloud.Session.get("userId", "Not Found")]
     ).then(function (data) {
         // Logged
+        FYSCloud.Session.remove("tempBio")
+        FYSCloud.Session.remove("tempName")
+        FYSCloud.Session.remove("tempDate")
+        FYSCloud.Session.remove("tempFoto")
         window.location.href = "profiel.html"
     }).catch(function (reason) {
         console.log(reason)
@@ -160,8 +164,8 @@ function updateGebruikerDb(naam, leeftijd, biografie) {
 }
 
 function infoStorage() {
-    sessionStorage.setItem("tempBio", bioInh.innerHTML);
-    sessionStorage.setItem("tempName", prlInh.value);
-    sessionStorage.setItem("tempDate", leeftijd.value);
-    sessionStorage.setItem("tempFoto", pfpInh.src)
+    FYSCloud.Session.set("tempBio", bioInh.value);
+    FYSCloud.Session.set("tempName", prlInh.value);
+    FYSCloud.Session.set("tempDate", leeftijd.value);
+    FYSCloud.Session.set("tempFoto", pfpInh.src)
 }
