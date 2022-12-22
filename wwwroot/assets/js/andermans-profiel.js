@@ -2,6 +2,9 @@
 const bioInh = document.querySelector("#biografie_inhoud");
 const pfpInh = document.querySelector("#profielfoto");
 const prlInh = document.querySelector("#profielnaam");
+const twitter = document.querySelector("#twitter");
+const facebook = document.querySelector("#facebook");
+const instagram = document.querySelector("#instagram");
 // removing the first character '?'
 const search = window.location.search;
 const userId = search.slice(1);
@@ -19,7 +22,6 @@ FYSCloud.API.queryDatabase(
     bioInh.innerHTML = data[0].biografie
     pfpInh.src = "/uploads/" + data[0].fotonaam + "." + data[0].fotoextensie
     prlInh.innerHTML = data[0].naam + "         " + age(data[0].leeftijd)
-
 }).catch(function (reason){
     console.log(reason)
 })

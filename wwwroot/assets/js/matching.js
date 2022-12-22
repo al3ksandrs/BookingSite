@@ -1,6 +1,10 @@
 window.addEventListener("DOMContentLoaded", initialize);
 let column_name;
 const LIMIT_INFO = 3;
+const interessesKeus = document.querySelector("#interesses")
+const geslachtKeus = document.querySelector("#geslacht");
+const leeftijdKeus = document.querySelector("#leeftijd");
+const bestemmingKeus = document.querySelector("#bestemming");
 
 function initialize() {
     initializeMessageBoard();
@@ -166,3 +170,19 @@ function age(dateString){
     return now.getFullYear() - birth.getFullYear() - beforeBirth;
 }
 
+// Filter naar standaard waarde
+function Reset1() {
+    interessesKeus.selectedIndex = 0;
+}
+
+function Reset2() {
+    geslachtKeus.selectedIndex = 0;
+}
+
+function Reset3() {
+    leeftijdKeus.selectedIndex = 0;
+}
+
+function Reset4() {
+    bestemmingKeus.selectedIndex = 0;
+}
