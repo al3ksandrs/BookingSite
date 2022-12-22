@@ -34,10 +34,15 @@ FYSCloud.API.queryDatabase(
 }).catch(function (reason){
     console.log(reason)
 })
+let count;
+let info;
+let column_name;
+const LIMIT_INFO = 3;
+const MAX_REIS = 5;
 
-let info = document.querySelector("#Interesses");
-let count = 0;
-const LIMIT_INFO = 5;
+    // Interesses ophalen DB
+info = document.getElementById("interesses");
+count = 0;
 FYSCloud.API.queryDatabase(
     'SELECT * FROM `interesses` WHERE (`gebruiker_id` = ?)', [userId]
 ).then(function (data) {
@@ -46,11 +51,55 @@ FYSCloud.API.queryDatabase(
         column_name = Object.keys(data[0])[i];
         if (Object.values(data[0])[i] === 1) {
             let x = document.createElement("h3");
+            x.classList.add("infotext");
             x.innerText = column_name;
             info.append(x);
             count += 1;
         }
         if (count === LIMIT_INFO) {break;}
+    }
+}).catch(function (reason){
+    console.log(reason)
+})
+    // Talen spreekt inladen DB
+info = document.getElementById("spreekt");
+count = 0;
+FYSCloud.API.queryDatabase(
+    'SELECT * FROM `talen` WHERE (`gebruiker_id` = ?)', [userId]
+).then(function (data) {
+    // Loop through all the columns of first row
+    for (let i = 1; i < Object.keys(data[0]).length; i++) {
+        column_name = Object.keys(data[0])[i];
+        if (Object.values(data[0])[i] === 1) {
+            let x = document.createElement("h3");
+            x.classList.add("infotext");
+            x.innerText = column_name;
+            info.append(x);
+            count += 1;
+        }
+        if (count === LIMIT_INFO) {break;}
+    }
+}).catch(function (reason){
+    console.log(reason)
+})
+
+// Reizen naar inladen DB
+info = document.getElementById("reis");
+count = 0;
+FYSCloud.API.queryDatabase(
+    'SELECT * FROM `talen` WHERE (`gebruiker_id` = ?)', [userId]
+).then(function (data) {
+    // Loop through all the columns of first row
+    for (let i = 1; i < Object.keys(data[0]).length; i++) {
+        column_name = Object.keys(data[0])[i];
+        if (Object.values(data[0])[i] === 1) {
+            let x = document.createElement("h3");
+            x.classList.add("infotext");
+            x.innerText = column_name;
+            info.append(x);
+            count += 1;
+        }
+        if (count === MAX_REIS) {break;}
     }
 }).catch(function (reason){
     console.log(reason)
