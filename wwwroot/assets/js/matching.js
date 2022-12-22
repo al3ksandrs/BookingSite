@@ -12,12 +12,14 @@ function initializeMessageBoard(){
 
 function loadMatches(){
     FYSCloud.API.queryDatabase(
-        "SELECT * FROM gebruiker WHERE NOT gebruiker_id = ?"
+        "SELECT * FROM gebruiker"
     [FYSCloud.Session.get("userId", "Not Found")]
     ).then(matches => {
             for (const matchJson of matches) {
                 let gebruiker = convertDbJson(matchJson)
-                displayMessage(gebruiker);
+                if (gebruiker.id !== FYSCloud.Session.get("userId", "Not Found")) {
+                    displayMessage(gebruiker);
+                }
             }
         })
         .catch(function(reason) {
