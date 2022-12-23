@@ -328,7 +328,7 @@ body{
 }
 
 .gematched {
-    background: green;
+    background: lightgreen;
     display: none;
     flex-direction: row;
     width: 92%;
