@@ -339,5 +339,6 @@ body{
 }
 @media (max-width: 499px) {
     .gematched{
-
+        flex-direction: column;
+        justify-content: center;
     }}
