@@ -1,7 +1,4 @@
-function clearIUnputFields() {
-    document.getElementById("test22").remove();
 
-}
 // const dropdowns = document.querySelectorAll('.dropdown');
 //
 // dropdowns.forEach(dropdown => {
@@ -72,7 +69,7 @@ function loadNavbar(){
         <ul class="navbar-links">
             <li><a href="index.html" class="navbar-menu-link">Home</a></li>
             <li><a href="over-ons.html" class="navbar-menu-link">Over ons</a></li>
-            <li><a href="matching.html" class="navbar-menu-link">Matches</a></li>
+            <li><a href="matching-met-filter.html" class="navbar-menu-link">Matches</a></li>
             <li><a href="profiel.html" class="navbar-menu-link">Profiel</a></li>
         </ul>
     </ul>
@@ -134,7 +131,7 @@ function uitloggenClicked(){
 }
 
 
-// Filter naar standaard waarde
+// Filter reset naar standaard waarde 0
 function Reset() {
     var dropDown = document.getElementById("interesses");
     dropDown.selectedIndex = 0;
@@ -155,6 +152,7 @@ function Resets4() {
     dropDown.selectedIndex = 0;
 }
 
+// Functie om de filter te laten filteren op bepaalde criteria
 function searchUsers(query){
     FYSCloud.API.queryDatabase(
         'SELECT * FROM fys_is104_4_dev.gebruiker WHERE id IN(SELECT gebruiker_id FROM fys_is104_4_dev.interesses WHERE gamen = 1)',
