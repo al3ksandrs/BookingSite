@@ -49,7 +49,7 @@ function age(dateString){
     let birth = new Date(dateString);
     let now = new Date();
     let beforeBirth = ((() => {birth.setDate(now.getDate());birth.setMonth(now.getMonth()); return birth.getTime()})() < birth.getTime()) ? 0 : 1;
-    return now.getFullYear() - birth.getFullYear() - beforeBirth;
+    return now.getFullYear() - birth.getFullYear() - beforeBirth + 1;
 }
 
 let ulInteresses = document.querySelector("#interesses");

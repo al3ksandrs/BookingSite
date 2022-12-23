@@ -4,9 +4,7 @@ window.addEventListener('load', function () {
     const notificationMenu = document.getElementsByClassName("notification-menu")
     const notificationItems = document.getElementsByClassName("notification")
     const notificationMenuFoto = document.getElementById("notification-foto")
-
-    const userId = FYSCloud.Session.get("userId", "Not Found");
-
+    const userIdNot = FYSCloud.Session.get("userId", "Not Found");
     lijstLengte = notificationItems.length
 
     /* Nieuwe notificatie aanmaken */
@@ -14,7 +12,7 @@ window.addEventListener('load', function () {
         /* Notificatie template opslaan als variabel. */
         const notification = `        <!--NOTIFICATION-->
             <articleno class="notification-item">
-                <p class="notification-text">Gematched met:</p>
+                <p class="notification-text">Like verzoek van:</p>
                 <a href="andermans-profiel.html?` + fotoNaam + `" class="notification-button">Bezoek profiel</a>
             </articleno>
             <articleno class="notification-informatie">
@@ -24,7 +22,7 @@ window.addEventListener('load', function () {
                     <p class="notification-foto-leeftijd">` + leeftijd + `</p>
                 </articleno>
             </articleno>
-            <button123 class="notification-delete" onclick="this.parentNode.parentNode.removeChild(this.parentNode); verwijderNotification();">
+            <button123 class="notification-delete" onclick="this.parentNode.parentNode.removeChild(this.parentNode); verwijderNotification(`+fotoNaam+", "+userIdNot+`);">
                 <i><img src=assets/img/delete.webp alt = "verwijder" class="kruis" height="30" width="30"></i>
             </button123>`
 
@@ -45,7 +43,7 @@ window.addEventListener('load', function () {
 
     function getLikes() {
         FYSCloud.API.queryDatabase(
-            "SELECT * FROM fys_is104_4_dev.gebruiker WHERE id IN(SELECT ingelogde_gebruiker_id FROM fys_is104_4_dev.gebruiker_has_gebruiker WHERE liked_persoon_id = ? AND NOT ingelogde_gebruiker_id IN(SELECT liked_persoon_id FROM fys_is104_4_dev.gebruiker_has_gebruiker WHERE ingelogde_gebruiker_id = ?))", [userId, userId]
+            "SELECT * FROM fys_is104_4_dev.gebruiker WHERE id IN(SELECT ingelogde_gebruiker_id FROM fys_is104_4_dev.gebruiker_has_gebruiker WHERE liked_persoon_id = ? AND NOT ingelogde_gebruiker_id IN(SELECT liked_persoon_id FROM fys_is104_4_dev.gebruiker_has_gebruiker WHERE ingelogde_gebruiker_id = ?))", [userIdNot, userIdNot]
         ).then(function (data) {
             let length = Object.keys(data).length;
             for (let i = 0; i < length; i++) {
@@ -68,6 +66,13 @@ window.addEventListener('load', function () {
     getLikes()
 })
 
-function verwijderNotification() {
-    lijstLengte -= 1
+function verwijderNotification(rem, userId) {
+    FYSCloud.API.queryDatabase(
+        "DELETE FROM gebruiker_has_gebruiker WHERE ingelogde_gebruiker_id = ? AND liked_persoon_id = ?", [rem, userId]
+    ).then(function () {
+        lijstLengte -= 1
+    }).catch(function (reason) {
+        console.log(reason)
+    })
+
 }
