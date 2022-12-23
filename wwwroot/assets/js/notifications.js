@@ -61,7 +61,8 @@ window.addEventListener('load', function () {
     /* Voer elke 100 milliseconden checkNotificationMenuFoto() uit. */
     setInterval(checkNotificationMenuFoto, 1000)
 
-    function verwijderNotification() {
-        lijstLengte -= 1
-    }
+
 })
+function verwijderNotification() {
+    lijstLengte -= 1
+}
