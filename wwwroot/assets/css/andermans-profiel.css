@@ -233,7 +233,7 @@ body{
 }
 .Move .textt{
     position: relative;
-    color: #4070F4;
+    color: navy;
     font-size: 30px;
     font-weight: 600;
 }
@@ -247,8 +247,8 @@ body{
     left: 0;
     height: 60px;
     width: 500px;
-    background-color: green;
-    border-left: 2px solid #4070F4;
+    background-color: lightgreen;
+    border-left: 2px solid navy;
     animation: animate 4s steps(12) infinite;
 }
 @keyframes animate{
