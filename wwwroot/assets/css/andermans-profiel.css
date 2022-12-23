@@ -227,17 +227,17 @@ body{
 
 /* Move text*/
 
-.containerr{
+.Move{
     width: 500px;
     overflow: hidden;
 }
-.containerr .text{
+.Move .text{
     position: relative;
     color: #4070F4;
     font-size: 30px;
     font-weight: 600;
 }
-.containerr .text.first-text{
+.Move .text.first-text{
     color: #FFF;
 }
 .text.sec-text:before{
