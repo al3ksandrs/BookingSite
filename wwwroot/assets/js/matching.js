@@ -2,7 +2,7 @@ window.addEventListener("DOMContentLoaded", initialize);
 let column_name;
 const LIMIT_INFO = 3;
 const interessesKeus = document.querySelector("#interesses")
-const geslachtKeus = document.querySelector("#geslacht");
+const geslachtKeus = document.querySelector("#Talen");
 const leeftijdKeus = document.querySelector("#leeftijd");
 const bestemmingKeus = document.querySelector("#bestemming");
 
@@ -167,22 +167,29 @@ function age(dateString){
     let birth = new Date(dateString);
     let now = new Date();
     let beforeBirth = ((() => {birth.setDate(now.getDate());birth.setMonth(now.getMonth()); return birth.getTime()})() < birth.getTime()) ? 0 : 1;
-    return now.getFullYear() - birth.getFullYear() - beforeBirth;
+    return now.getFullYear() - birth.getFullYear() - beforeBirth + 1;
 }
 
 // Filter naar standaard waarde
-function Reset1() {
+// function Reset1() {
+//     interessesKeus.selectedIndex = 0;
+// }
+//
+// function Reset2() {
+//     geslachtKeus.selectedIndex = 0;
+// }
+//
+// function Reset3() {
+//     leeftijdKeus.selectedIndex = 0;
+// }
+//
+// function Reset4() {
+//     bestemmingKeus.selectedIndex = 0;
+// }
+
+function Reset5() {
     interessesKeus.selectedIndex = 0;
-}
-
-function Reset2() {
     geslachtKeus.selectedIndex = 0;
-}
-
-function Reset3() {
     leeftijdKeus.selectedIndex = 0;
-}
-
-function Reset4() {
     bestemmingKeus.selectedIndex = 0;
 }

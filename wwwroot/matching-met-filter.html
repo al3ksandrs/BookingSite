@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="assets/css/matching.css">
     <link href="assets/css/navbar-en-notifications.css" rel="stylesheet">
 
@@ -24,7 +25,8 @@
 
         <input id="navbar-menu-toggle" type="checkbox"/>                               <!--navbar menu voor mobile-->
         <label class='navbar-menu-container' for="navbar-menu-toggle">
-            <div class='navbar-menu-button'><img src=assets/img/burger-menu.png class="navbar-foto" alt="burger-menu-foto"></div>
+            <div class='navbar-menu-button'><img src=assets/img/burger-menu.png class="navbar-foto"
+                                                 alt="burger-menu-foto"></div>
         </label>
         <ul class="navbar-links">
             <li><a href="inloggen.html" class="navbar-menu-link">Home</a></li>
@@ -36,72 +38,59 @@
     <ul>
 
 
-
     </ul>
 </nav>
 
 <main>
     <div class="dropdownmenus">
         <!--    Hier begint de filter-->
-        <div class="dropdownmenu">
+        <div class="drop1">
             <div class="dropdown">
-                <div class="select1">
-                    <select class="select" id="interesses">
-                        <option value="0">interesses</option>
-                        <option value="1">shoppen</option>
-                        <option value="2">clubben</option>
-                        <option value="3">uitgaan</option>
-                        <option value="4">zwemmen</option>
-                        <option value="5">wandelen</option>
-                    </select>
-                </div>
+                <select class="select" id="interesses">
+                    <option value="0" hidden>interesses</option>
+                    <option value="1">shoppen</option>
+                    <option value="2">clubben</option>
+                    <option value="3">uitgaan</option>
+                    <option value="4">zwemmen</option>
+                    <option value="5">wandelen</option>
+                </select>
+            </div>
+            <div class="dropdown">
+                <select class="select" id="Talen">
+                    <option value="0" hidden>Talen</option>
+                    <option value="1">Man</option>
+                    <option value="2">Vrouw</option>
+                </select>
             </div>
         </div>
-
-        <div class="dropdownmenu">
+        <div class="drop2">
             <div class="dropdown">
-                <div class="select1">
-                    <select class="select" id="geslacht">
-                        <option value="0">Geslacht</option>
-                        <option value="1">Man</option>
-                        <option value="2">Vrouw</option>
-                    </select>
-                </div>
+
+                <select class="select" id="bestemming">
+                    <option value="0" hidden>Bestemming</option>
+                    <option value="1">Azie</option>
+                    <option value="2">Europa</option>
+                    <option value="3">Africa</option>
+                    <option value="4">VS</option>
+                </select>
             </div>
-        </div>
-
-        <div class="dropdownmenu">
             <div class="dropdown">
-                <div class="select1">
-                    <select class="select" id="leeftijd">
-                        <option value="0">Leeftijd</option>
-                        <option value="1">45 - 55</option>
-                        <option value="2">55 - 65</option>
-                        <option value="3">65+</option>
-                    </select>
-                </div>
-            </div>
-        </div>
-
-        <div class="dropdownmenu">
-            <div class="dropdown">
-                <div class="select1">
-                    <select class="select" id="bestemming">
-                        <option value="0">Bestemming</option>
-                        <option value="1">Azie</option>
-                        <option value="2">Europa</option>
-                        <option value="3">Africa</option>
-                        <option value="4">VS</option>
-                    </select>
-                </div>
+                <select class="select" id="leeftijd">
+                    <option value="0" hidden>Leeftijd</option>
+                    <option value="1">45 - 55</option>
+                    <option value="2">55 - 65</option>
+                    <option value="3">65+</option>
+                </select>
             </div>
         </div>
     </div>
+
     <div class="dropdownRS">
-        <input type="button" id="btnReset" value="Reset interesses" onclick="Reset();" />
-        <input type="button" id="btnReset" value="Reset geslacht" onclick="Resets();" />
-        <input type="button" id="btnReset" value="Reset Leeftijd" onclick="Resetss();" />
-        <input type="button" id="btnReset" value="Reset Bestemming" onclick="Resets4();" />
+        <!--        <input type="button" id="btnReset" value="Reset interesses" onclick="Reset();" />-->
+        <!--        <input type="button" id="btnReset" value="Reset geslacht" onclick="Resets();" />-->
+        <!--        <input type="button" id="btnReset" value="Reset Leeftijd" onclick="Resetss();" />-->
+        <!--        <input type="button" id="btnReset" value="Reset Bestemming" onclick="Resets4();" />-->
+        <input type="button" id="btnReset" value="Reset filters" onclick="Reset5();"/>
     </div>
 </main>
 

@@ -154,7 +154,7 @@ function updateGebruikerDb(naam, leeftijd, biografie) {
     FYSCloud.API.queryDatabase(
         "UPDATE gebruiker SET naam = ?, leeftijd = ?, biografie = ? WHERE id = ?;",
         [naam.value, leeftijd.value, biografie.value, FYSCloud.Session.get("userId", "Not Found")]
-    ).then(function (data) {
+    ).then(function () {
         // Logged
         FYSCloud.Session.remove("tempBio")
         FYSCloud.Session.remove("tempName")

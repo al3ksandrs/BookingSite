@@ -171,8 +171,9 @@ body {
     transition: background 0.4s;
 }
 
-#btnReset{
-    border: 1px #26489a;
+#btnReset:hover {
+    border: 1px #26489a solid;
+    background-color: #26A514;
 }
 
 /*#btnReset{*/
@@ -222,24 +223,56 @@ body {
     align-items: center;
     justify-content: center;
 }
+
+.drop1, .drop2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.select {
+    width: 250px;
+    align-items: center;
+    text-align: center;
+}
+
+.select option {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
 /* Responsive layout */
 
-/@media all and (max-width: 930px){/
-    /*    main{*/
-    /*        flex-direction: column;*/
-    /*        font-size: 20px;*/
-    /*    }*/
-    /*    div{*/
-    /*        font-size: 20px;*/
-    /*        flex-direction: column;*/
-    /*    }*/
-    /*    h1{*/
-    /*        font-size: 1.5em;*/
-    /*    }*/
-    /*    nav ul{*/
-    /*        flex-wrap: wrap;*/
-    /*    }*/
-    /*    div.dropdownmenu{*/
-    /*        grid-template-columns: repeat(2, 1fr);*/
-    /*    }*/
-/}/
+@media screen and (max-width: 1261px) {
+    .dropdownmenus {
+        flex-direction: column;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .drop1, .drop2 {
+        flex-direction: column;
+    }
+}
+
+/*@media all and (max-width: 930px){*/
+/*        main{*/
+/*            flex-direction: column;*/
+/*            font-size: 20px;*/
+/*        }*/
+/*        div{*/
+/*            font-size: 20px;*/
+/*            flex-direction: column;*/
+/*        }*/
+/*        h1{*/
+/*            font-size: 1.5em;*/
+/*        }*/
+/*        nav ul{*/
+/*            flex-wrap: wrap;*/
+/*        }*/
+/*        div.dropdownmenu{*/
+/*            grid-template-columns: repeat(2, 1fr);*/
+/*        }*/
+/*}*/
