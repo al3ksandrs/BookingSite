@@ -135,23 +135,23 @@ function uitloggenClicked(){
 
 
 // Filter naar standaard waarde
-function Reset1() {
+function Reset() {
     var dropDown = document.getElementById("interesses");
     dropDown.selectedIndex = 0;
 }
 
-function Reset2() {
-    var dropDown = document.getElementById("Geslacht");
+function Resets() {
+    var dropDown = document.getElementById("geslacht");
     dropDown.selectedIndex = 0;
 }
 
-function Reset3() {
-    var dropDown = document.getElementById("Leeftijd");
+function Resetss() {
+    var dropDown = document.getElementById("leeftijd");
     dropDown.selectedIndex = 0;
 }
 
-function Reset4() {
-    var dropDown = document.getElementById("Bestemming");
+function Resets4() {
+    var dropDown = document.getElementById("bestemming");
     dropDown.selectedIndex = 0;
 }
 
