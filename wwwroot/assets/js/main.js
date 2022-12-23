@@ -172,7 +172,7 @@ function Resets4() {
 
 function searchUsers(){
     FYSCloud.API.queryDatabase(
-        "SELECT clubben FROM interesses;"
+        "SELECT clubben FROM interesses VALUES (1);"
     ).then(function(data) {
         console.log(data);
     }).catch(function(reason) {
