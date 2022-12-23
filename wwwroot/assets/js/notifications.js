@@ -13,7 +13,7 @@ window.addEventListener('load', function () {
         const notification = `        <!--NOTIFICATION-->
             <articleno class="notification-item">
                 <p class="notification-text">Gematched met:</p>
-                <a href="andermans-profiel.html" class="notification-button">Bezoek profiel</a>
+                <a href="andermans-profiel.html?`+ fotoNaam +`" class="notification-button">Bezoek profiel</a>
             </articleno>
             <articleno class="notification-informatie">
                 <img src=` + "/uploads/" + fotoNaam + "." + fotoExt + ` alt = "profielfoto" class="notification-item-foto"></src>
