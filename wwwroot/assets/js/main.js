@@ -153,21 +153,31 @@ function Resets4() {
 }
 
 // Functie om de filter te laten filteren op bepaalde criteria
-function searchUsers(query){
-    FYSCloud.API.queryDatabase(
-        'SELECT * FROM fys_is104_4_dev.gebruiker WHERE id IN(SELECT gebruiker_id FROM fys_is104_4_dev.interesses WHERE gamen = 1)',
-        ['%' + query + '%'],
-        function(error, results, fields) {
-            if (error) throw error;
+// function searchUsers(query){
+//     FYSCloud.API.queryDatabase(
+//         'SELECT interesses FROM fys_is104_4_dev.gebruiker WHERE id IN(SELECT gebruiker_id FROM fys_is104_4_dev.interesses WHERE gamen = 1)',
+//         ['%' + query + '%'],
+//         function(error, results, fields) {
+//             if (error) throw error;
+//
+//             // Loop through the result set and display the users
+//             for (let i = 0; i < results.length; i++) {
+//                 console.log(results[i].name);
+//             }
+//         })
+//         .catch(function(reason) {
+//             console.error(reason);
+//         });
+// }
 
-            // Loop through the result set and display the users
-            for (let i = 0; i < results.length; i++) {
-                console.log(results[i].name);
-            }
-        })
-        .catch(function(reason) {
-            console.error(reason);
-        });
+function searchUsers(){
+    FYSCloud.API.queryDatabase(
+        "SELECT clubben FROM interesses;"
+    ).then(function(data) {
+        console.log(data);
+    }).catch(function(reason) {
+        console.log(reason);
+    });
 }
 
 
