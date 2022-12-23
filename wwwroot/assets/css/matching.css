@@ -251,7 +251,7 @@ body {
     }
 }
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 630px) {
     .drop1, .drop2 {
         flex-direction: column;
     }
