@@ -233,10 +233,10 @@ body {
         margin: 0.1em;
     }
     .select{
-        font-size: 10px;
+        font-size: 15px;
     }
     .btnReset {
-        font-size: 10px;
+        font-size: 15px;
     }
     .dropdownRS {
         display: flex;
