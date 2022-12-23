@@ -301,6 +301,7 @@ main {
     justify-content: start;
     align-items: flex-start;
 }
+
 /*Div voor het gebruiken van de popup context*/
 .diveroo {
     display: flex;
@@ -321,6 +322,7 @@ button {
     border-radius: 18px;
     transition: .4s;
 }
+
 /*De kleurenpanel voor de rg button */
 button:hover {
     z-index: 1;
@@ -332,7 +334,7 @@ button:hover {
             #26A514,
             #D81E05);
 
-    );
+);
     background-size: 400%;
     box-shadow: 0 0 15px rgb(2, 4, 24);
     animation: glow 12s linear forwards;
@@ -383,6 +385,7 @@ button4 {
     border-radius: 18px;
     transition: .4s;
 }
+
 /* Hovering rgb voor de profielbewerk knop */
 button4:hover {
     z-index: 1;
@@ -517,11 +520,12 @@ body {
 }
 
 
-@media (max-width: 400px) {
+@media (max-width: 1192px) {
     main {
-        flex-direction: column;
 
     }
+
+
 
     /* Pop up context media */
     .diveroo {
@@ -530,10 +534,7 @@ body {
 
     }
 
-    .profile2 {
-        width: 50%;
-        height: auto;
-    }
+
 
     .container {
         flex-direction: column;
@@ -552,8 +553,20 @@ body {
     .popup-box .popup-content {
         width: inherit;
     }
-    .img.profile4 {
+
+    .img.profile2 {
         height: 90px;
         width: 77px;
+    }
+
+}
+/* Het centered als het kleiner word dan 601 px */
+@media (max-width: 601px) {
+    main {
+        flex-direction: column;
+    }
+
+    section.general-info {
+        align-items: center;
     }
 }

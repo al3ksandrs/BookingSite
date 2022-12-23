@@ -133,9 +133,31 @@ function uitloggenClicked(){
     window.location.href="index.html"
 }
 
+
+// Filter naar standaard waarde
+function Reset() {
+    var dropDown = document.getElementById("interesses");
+    dropDown.selectedIndex = 0;
+}
+
+function Resets() {
+    var dropDown = document.getElementById("geslacht");
+    dropDown.selectedIndex = 0;
+}
+
+function Resetss() {
+    var dropDown = document.getElementById("leeftijd");
+    dropDown.selectedIndex = 0;
+}
+
+function Resets4() {
+    var dropDown = document.getElementById("bestemming");
+    dropDown.selectedIndex = 0;
+}
+
 function searchUsers(query){
     FYSCloud.API.queryDatabase(
-        'SELECT * FROM `interesses` WHERE (`gebruiker_id` = ?)',
+        'SELECT * FROM fys_is104_4_dev.gebruiker WHERE id IN(SELECT gebruiker_id FROM fys_is104_4_dev.interesses WHERE gamen = 1)',
         ['%' + query + '%'],
         function(error, results, fields) {
             if (error) throw error;
