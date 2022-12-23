@@ -230,6 +230,7 @@ body {
 @media (max-width: 1154px) {
     .dropdownmenus {
         flex-wrap: wrap;
+        margin: 0.1em;
     }
     .select{
         font-size: 10px;
@@ -240,13 +241,32 @@ body {
     .dropdownRS {
         display: flex;
         flex-wrap: wrap;
+        margin: 0;
     }
     div.flexbox-container {
         flex-wrap: wrap;
-        border: 5px solid #26A514;
-        border-radius: 10px;
     }
     .flexbox-item-2{
         font-size: 15px;
+    }
+}
+
+@media  (max-width: 558px) {
+    div.flexbox-container {
+        border: 5px solid #26A514;
+        border-radius: 10px;
+    }
+    .dropdownmenus {
+    flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .dropdownRS {
+        flex-direction: column;
+        align-items: flex-end;
+    }
+    .naastElkaar {
+        display: flex;
+        justify-content: space-between;
     }
 }
