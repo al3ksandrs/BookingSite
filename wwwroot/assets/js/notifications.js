@@ -1,3 +1,5 @@
+let lijstLengte
+
 window.addEventListener('load', function () {
     const notificationMenu = document.getElementsByClassName("notification-menu")
     const notificationItems = document.getElementsByClassName("notification")
@@ -5,7 +7,7 @@ window.addEventListener('load', function () {
 
     const userId = FYSCloud.Session.get("userId", "Not Found");
 
-    let lijstLengte = notificationItems.length
+    lijstLengte = notificationItems.length
 
     /* Nieuwe notificatie aanmaken */
     function nieuweNotification(naam, leeftijd, fotoNaam, fotoExt) {
@@ -13,7 +15,7 @@ window.addEventListener('load', function () {
         const notification = `        <!--NOTIFICATION-->
             <articleno class="notification-item">
                 <p class="notification-text">Gematched met:</p>
-                <a href="andermans-profiel.html?`+ fotoNaam +`" class="notification-button">Bezoek profiel</a>
+                <a href="andermans-profiel.html?` + fotoNaam + `" class="notification-button">Bezoek profiel</a>
             </articleno>
             <articleno class="notification-informatie">
                 <img src=` + "/uploads/" + fotoNaam + "." + fotoExt + ` alt = "profielfoto" class="notification-item-foto"></src>
@@ -41,16 +43,19 @@ window.addEventListener('load', function () {
     // nieuweNotification("Henrik", 54)
     // nieuweNotification("Alberto", 46)
 
-    FYSCloud.API.queryDatabase(
-        "SELECT * FROM fys_is104_4_dev.gebruiker WHERE id IN(SELECT ingelogde_gebruiker_id FROM fys_is104_4_dev.gebruiker_has_gebruiker WHERE liked_persoon_id = ? AND NOT ingelogde_gebruiker_id IN(SELECT liked_persoon_id FROM fys_is104_4_dev.gebruiker_has_gebruiker WHERE ingelogde_gebruiker_id = ?))", [userId, userId]
-    ).then(function (data){
-        let length = Object.keys(data).length;
-        for (let i = 0; i < length; i++) {
-            nieuweNotification(data[i].naam, age(data[i].leeftijd), data[i].fotonaam, data[i].fotoextensie)
-        }
-    })
+    function getLikes() {
+        FYSCloud.API.queryDatabase(
+            "SELECT * FROM fys_is104_4_dev.gebruiker WHERE id IN(SELECT ingelogde_gebruiker_id FROM fys_is104_4_dev.gebruiker_has_gebruiker WHERE liked_persoon_id = ? AND NOT ingelogde_gebruiker_id IN(SELECT liked_persoon_id FROM fys_is104_4_dev.gebruiker_has_gebruiker WHERE ingelogde_gebruiker_id = ?))", [userId, userId]
+        ).then(function (data) {
+            let length = Object.keys(data).length;
+            for (let i = 0; i < length; i++) {
+                nieuweNotification(data[i].naam, age(data[i].leeftijd), data[i].fotonaam, data[i].fotoextensie)
+            }
+        })
+    }
 
     function checkNotificationMenuFoto() {
+        lijstLengte = notificationItems.length
         if (lijstLengte === 0) {
             notificationMenuFoto.src = "assets/img/notification-knop.png"
         } else {
@@ -60,9 +65,9 @@ window.addEventListener('load', function () {
 
     /* Voer elke 100 milliseconden checkNotificationMenuFoto() uit. */
     setInterval(checkNotificationMenuFoto, 1000)
-
-
+    getLikes()
 })
+
 function verwijderNotification() {
     lijstLengte -= 1
 }
