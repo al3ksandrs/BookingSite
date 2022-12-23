@@ -225,7 +225,8 @@ body{
     line-height: 22px;
 }
 
-}
+/* Move text*/
+
 body{
     min-height: 100vh;
     display: flex;
