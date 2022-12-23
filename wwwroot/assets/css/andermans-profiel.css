@@ -337,3 +337,7 @@ body{
     width: 500px;
     /* visibility: hidden; kan ook*/
 }
+@media (max-width: 499px) {
+    .gematched{
+        padding: 0 0 0 0;
+    }}
