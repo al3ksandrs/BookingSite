@@ -292,6 +292,7 @@ body{
 }
 
 .gematched {
+    background: green;
     display: none;
     flex-direction: row;
     width: 92%;
