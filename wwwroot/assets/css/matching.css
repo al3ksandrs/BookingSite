@@ -230,6 +230,11 @@ body {
 @media (max-width: 1154px) {
     .dropdownmenus {
         flex-wrap: wrap;
+    }
+    .select{
+        font-size: 10px;
+    }
+    .btnReset {
         font-size: 10px;
     }
     .dropdownRS {
