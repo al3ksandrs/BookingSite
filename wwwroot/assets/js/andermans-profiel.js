@@ -167,3 +167,22 @@ checkMatch();
 // // }).catch(function (reason){
 // //     console.log(reason)
 // // })
+
+/* Dit is voor de tekst die moved */
+
+const text = document.querySelector(".sec-text");
+
+const textLoad = () => {
+    setTimeout(() => {
+        text.textContent = "bent gematched!";
+    }, 0);
+    setTimeout(() => {
+        text.textContent = "heeft uw reismaatje gevonden";
+    }, 4000);
+    setTimeout(() => {
+        text.textContent ="kan samen op reis!" ;
+    }, 8000); //1s = 1000 milliseconds
+}
+
+textLoad();
+setInterval(textLoad, 12000);
