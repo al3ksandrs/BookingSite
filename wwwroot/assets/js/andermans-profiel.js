@@ -170,7 +170,7 @@ checkMatch();
 
 /* Dit is voor de tekst die moved */
 
-const text = document.querySelector(".first-text");
+const text = document.querySelector(".sec-textt");
 
 const textLoad = () => {
     setTimeout(() => {
