@@ -68,7 +68,7 @@ function createInfo(id) {
     let button = document.createElement("a");
     button.classList.add("profiel_link");
     button.classList.add("grid-col-span-2");
-    button.setAttribute("href", ("https://mockup-is104-4.fys.cloud/andermans-profiel.html?"+ id));
+    button.setAttribute("href", ("andermans-profiel.html?"+ id));
     button.innerText = "Bezoek profiel";
 
     infoBox.append(interesses, spreekt, reis, button);
