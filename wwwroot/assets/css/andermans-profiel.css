@@ -231,16 +231,16 @@ body{
     width: 600px;
     overflow: hidden;
 }
-.Move .text{
+.Move .textt{
     position: relative;
     color: #4070F4;
     font-size: 30px;
     font-weight: 600;
 }
-.Move .text.first-text{
+.Move .textt.first-textt{
     color: #FFF;
 }
-.text.sec-text:before{
+.textt.sec-textt:before{
     content: "";
     position: absolute;
     top: 0;
