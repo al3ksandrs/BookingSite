@@ -2,8 +2,10 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="assets/css/matching.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <link href="assets/css/navbar-en-notifications.css" rel="stylesheet">
+    <link href="assets/css/matching.css" rel="stylesheet" >
 
     <script src="https://cdn.fys.cloud/fyscloud/0.0.4/fyscloud.min.js" defer></script>
     <script src="assets/js/config.js" defer></script>
@@ -49,7 +51,7 @@
                     <select class="select" id="interesses">
                         <option value="0">interesses</option>
                         <option value="1">shoppen</option>
-                        <option value="2">clubben</option>
+                        <option value="2" onclick="searchUsers()">clubben</option>
                         <option value="3">uitgaan</option>
                         <option value="4">zwemmen</option>
                         <option value="5">wandelen</option>
@@ -98,10 +100,10 @@
         </div>
     </div>
     <div class="dropdownRS">
-        <input type="button" id="btnReset" value="Reset interesses" onclick="Reset();" />
-        <input type="button" id="btnReset" value="Reset geslacht" onclick="Resets();" />
-        <input type="button" id="btnReset" value="Reset Leeftijd" onclick="Resetss();" />
-        <input type="button" id="btnReset" value="Reset Bestemming" onclick="Resets4();" />
+        <input type="button" class="btnReset" value="Reset interesses" onclick="Reset();" />
+        <input type="button" class="btnReset" value="Reset geslacht" onclick="Resets();" />
+        <input type="button" class="btnReset" value="Reset Leeftijd" onclick="Resetss();" />
+        <input type="button" class="btnReset" value="Reset Bestemming" onclick="Resets4();" />
     </div>
 </main>
 
