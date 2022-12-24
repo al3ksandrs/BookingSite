@@ -304,12 +304,10 @@ body{
         flex-direction: column;
         padding: 0 0 0 0;
     }
-
     img.like {
         width: 100px;
         height: 100px;
     }
-
     p.buttontext {
         margin: 10px 5px 5px 5px;
         font-size: 24px;
@@ -324,11 +322,11 @@ body{
         flex-direction: column;
         height: auto;
     }
-
-    .textt {
+    .textt{
         line-height: revert;
     }
 }
+
 .gematched {
     background: lightgreen;
     display: none;
