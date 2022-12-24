@@ -247,8 +247,29 @@ body {
 
 @media screen and (max-width: 1261px) {
     .dropdownmenus {
-        flex-direction: column;
+        flex-wrap: wrap;
+        margin: 0px;
     }
+    .select{
+        font-size: 15px;
+    }
+    #btnReset{
+    font-size: 10px;
+        margin: 0px;
+    }
+    .dropdownRS {
+        display: flex;
+        flex-wrap: wrap;
+        margin: 0;
+    }
+    div.flexbox-container {
+        flex-wrap: wrap;
+    }
+    .flexbox-item-2{
+        font-size: 15px;
+    }
+}
+
 }
 
 @media screen and (max-width: 630px) {
@@ -256,23 +277,20 @@ body {
         flex-direction: column;
     }
 }
+@media  (max-width: 558px) {
+    div.flexbox-container {
+        border: 5px solid #26A514;
+        border-radius: 10px;
+    }
+    .dropdownmenus {
+        flex-direction: column;
+        align-items: flex-start;
+    }
 
-/*@media all and (max-width: 930px){*/
-/*        main{*/
-/*            flex-direction: column;*/
-/*            font-size: 20px;*/
-/*        }*/
-/*        div{*/
-/*            font-size: 20px;*/
-/*            flex-direction: column;*/
-/*        }*/
-/*        h1{*/
-/*            font-size: 1.5em;*/
-/*        }*/
-/*        nav ul{*/
-/*            flex-wrap: wrap;*/
-/*        }*/
-/*        div.dropdownmenu{*/
-/*            grid-template-columns: repeat(2, 1fr);*/
-/*        }*/
-/*}*/
+    .dropdownRS {
+        flex-direction: column;
+        align-items: flex-end;
+    }
+}
+
+
