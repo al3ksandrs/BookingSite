@@ -62,13 +62,19 @@ article.buttons {
 }
 
 button.like, button.dislike {
-    display:flex;
+    display: flex;
     border-radius: 20px;
     background-color: green;
     cursor: pointer;
 }
-button.like { background-color: green;}
-button.dislike { background-color: #D81E05;;}
+
+button.like {
+    background-color: green;
+}
+
+button.dislike {
+    background-color: #D81E05;;
+}
 
 /* Interesses, spreekt, wilt reizen naar en socials */
 div.informatieVak {
@@ -76,14 +82,16 @@ div.informatieVak {
     flex-direction: row;
     width: 100%;
 }
+
 div.info {
     display: flex;
     flex-direction: column;
     width: 50%;
 }
+
 .green {
     display: flex;
-    font-family: Roboto , sans-serif;
+    font-family: Roboto, sans-serif;
     background: green;
     border-radius: 20px;
     margin: 15px;
@@ -100,6 +108,7 @@ h3.infotext {
     margin: 10px 10px 10px 25px;
     font-size: 14px;
 }
+
 a.infotext {
     font-size: 25px;
     margin: 10px 10px 20px 20px;
@@ -109,6 +118,7 @@ button.socials {
     background: none;
     border: none;
 }
+
 a.social {
     display: flex;
     flex-direction: row;
@@ -119,15 +129,15 @@ a.social {
     font-size: 25px;
     color: black;
 }
+
 p.biografie {
     width: 97%;
     padding: 25px;
 }
 
 
-
 /* voor het geval wij de navbar willen laten bewegen */
-a{
+a {
     text-decoration: none;
 }
 
@@ -220,27 +230,30 @@ article {
 }
 
 
-body{
+body {
     font-size: 14px;
     line-height: 22px;
 }
 
 /* Move text*/
 
-.Move{
+.Move {
     width: 600px;
     overflow: hidden;
 }
-.Move .textt{
+
+.Move .textt {
     position: relative;
     color: navy;
     font-size: 30px;
     font-weight: 600;
 }
-.Move .textt.first-textt{
+
+.Move .textt.first-textt {
     color: #FFF;
 }
-.textt.sec-textt:before{
+
+.textt.sec-textt:before {
     content: "";
     position: absolute;
     top: 0;
@@ -251,11 +264,12 @@ body{
     border-left: 2px solid navy;
     animation: animate 4s steps(12) infinite;
 }
-@keyframes animate{
-    40%, 60%{
+
+@keyframes animate {
+    40%, 60% {
         left: calc(100% + 4px);
     }
-    100%{
+    100% {
         left: 0%;
     }
 }
@@ -265,6 +279,7 @@ body{
     div.informatieVak {
         flex-direction: column;
     }
+
     div.info {
         width: 100%;
     }
@@ -275,14 +290,17 @@ body{
         flex-direction: column;
         justify-content: center;
     }
+
     div.general-info {
         justify-content: center;
         align-items: center;
     }
+
     p.buttontext {
         margin: 20px 5px 5px 5px;
         font-size: 30px;
     }
+
     article {
         width: 93%;
     }
@@ -292,6 +310,7 @@ body{
     .inhoud {
         padding: 0 0 0 0;
     }
+
     p.buttontext {
         margin: 20px 5px 5px 5px;
         font-size: 24px;
@@ -328,19 +347,20 @@ body{
     .textt {
         line-height: revert;
     }
-}
-.gematched {
-    background: lightgreen;
-    display: none;
-    flex-direction: row;
-    width: 92%;
-    justify-content: space-around;
-    margin-top: 0;
-    width: 500px;
-    /* visibility: hidden; kan ook*/
-}
-@media (max-width: 499px) {
-    gematched{
+
+    .gematched {
         flex-direction: column;
         justify-content: center;
-    }}
+    }
+
+    .gematched {
+        background: lightgreen;
+        display: none;
+        flex-direction: row;
+        width: 92%;
+        justify-content: space-around;
+        margin-top: 0;
+        width: 500px;
+        /* visibility: hidden; kan ook*/
+    }
+}
