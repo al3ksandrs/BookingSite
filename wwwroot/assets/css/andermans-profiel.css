@@ -353,15 +353,14 @@ body {
         justify-content: center;
     }
 
-
-
 }
 .gematched {
     background: lightgreen;
     display: none;
     flex-direction: row;
-    width: 90%;
+    width: 92%;
     justify-content: space-around;
     margin-top: 0;
     width: 500px;
+}
 /* visibility: hidden; kan ook*/
