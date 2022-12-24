@@ -245,10 +245,47 @@ body {
 
 /* Responsive layout */
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 @media screen and (max-width: 1261px) {
     .dropdownmenus {
         flex-wrap: wrap;
         margin: 0px;
+        align-items: center;
     }
     .select{
         font-size: 15px;
@@ -270,11 +307,10 @@ body {
     }
 }
 
-}
 
 @media screen and (max-width: 630px) {
     .drop1, .drop2 {
-        flex-direction: column;
+        flex-direction: row;
     }
 }
 @media  (max-width: 558px) {
@@ -283,13 +319,14 @@ body {
         border-radius: 10px;
     }
     .dropdownmenus {
-        flex-direction: column;
-        align-items: flex-start;
+        flex-direction: row;
     }
-
     .dropdownRS {
         flex-direction: column;
-        align-items: flex-end;
+        align-items: center;
+    }
+    .drop1, .drop2 {
+        flex-direction: column;
     }
 }
 
