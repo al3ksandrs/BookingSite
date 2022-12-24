@@ -236,6 +236,15 @@ body {
 }
 
 /* Move text*/
+.gematched {
+    background: lightgreen;
+    display: none;
+    flex-direction: row;
+    width: 92%;
+    justify-content: space-around;
+    margin-top: 0;
+    width: 500px;
+}
 
 .Move {
     width: 600px;
@@ -351,18 +360,28 @@ body {
     .gematched {
         flex-direction: column;
         justify-content: center;
-        width: auto;
+
     }
 
+    .gematched {
+        background: lightgreen;
+        display: none;
+        flex-direction: row;
+        justify-content: space-around;
+        margin-top: 0;
+    }
 }
-.gematched {
-    background: lightgreen;
-    display: none;
-    flex-direction: row;
-    width: 92%;
-    justify-content: space-around;
-    margin-top: 0;
-    width: 500px;
+
+@media (max-width: 470px) {
+    .gematched {
+        background: lightgreen;
+        display: none;
+        flex-direction: row;
+        width: 92%;
+        justify-content: space-around;
+        margin-top: 0;
+    }
 }
+
 
 /* visibility: hidden; kan ook*/
