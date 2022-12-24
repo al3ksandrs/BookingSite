@@ -132,25 +132,25 @@ function uitloggenClicked(){
 
 
 // Filter reset naar standaard waarde 0
-function Reset() {
-    var dropDown = document.getElementById("interesses");
-    dropDown.selectedIndex = 0;
-}
-
-function Resets() {
-    var dropDown = document.getElementById("geslacht");
-    dropDown.selectedIndex = 0;
-}
-
-function Resetss() {
-    var dropDown = document.getElementById("leeftijd");
-    dropDown.selectedIndex = 0;
-}
-
-function Resets4() {
-    var dropDown = document.getElementById("bestemming");
-    dropDown.selectedIndex = 0;
-}
+// function Reset() {
+//     var dropDown = document.getElementById("interesses");
+//     dropDown.selectedIndex = 0;
+// }
+//
+// function Resets() {
+//     var dropDown = document.getElementById("geslacht");
+//     dropDown.selectedIndex = 0;
+// }
+//
+// function Resetss() {
+//     var dropDown = document.getElementById("leeftijd");
+//     dropDown.selectedIndex = 0;
+// }
+//
+// function Resets4() {
+//     var dropDown = document.getElementById("bestemming");
+//     dropDown.selectedIndex = 0;
+// }
 
 // Functie om de filter te laten filteren op bepaalde criteria
 // function searchUsers(query){
