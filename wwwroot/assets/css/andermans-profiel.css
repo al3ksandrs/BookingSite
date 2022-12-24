@@ -338,7 +338,7 @@ body{
     /* visibility: hidden; kan ook*/
 }
 @media (max-width: 499px) {
-    article.gematched{
+    gematched{
         flex-direction: column;
         justify-content: center;
     }}
