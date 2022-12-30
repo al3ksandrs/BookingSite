@@ -172,7 +172,7 @@ function uitloggenClicked(){
 
 function searchUsers(){
     FYSCloud.API.queryDatabase(
-        "SELECT clubben FROM interesses VALUES (1);"
+        "SELECT * FROM fys_is104_4_dev.gebruiker WHERE id IN(SELECT gebruiker_id FROM fys_is104_4_dev.interesses WHERE ? =1);"
     ).then(function(data) {
         console.log(data);
     }).catch(function(reason) {
