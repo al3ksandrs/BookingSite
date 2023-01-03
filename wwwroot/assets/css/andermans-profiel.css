@@ -240,7 +240,6 @@ body {
     background: lightgreen;
     display: none;
     flex-direction: row;
-    width: 92%;
     justify-content: space-around;
     margin-top: 0;
     width: 590px;
