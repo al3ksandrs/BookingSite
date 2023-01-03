@@ -267,8 +267,8 @@ body {
     position: absolute;
     top: 0;
     left: 0;
-    height: 60px;
-    width: 500px;
+    height: 58px;
+    width: 590px;
     background-color: lightgreen;
     border-left: 2px solid navy;
     animation: animate 4s steps(12) infinite;
