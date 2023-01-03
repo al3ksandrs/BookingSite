@@ -243,7 +243,7 @@ body {
     width: 92%;
     justify-content: space-around;
     margin-top: 0;
-    width: 500px;
+    width: 590px;
 }
 
 .Move {
@@ -267,8 +267,8 @@ body {
     position: absolute;
     top: 0;
     left: 0;
-    height: 58px;
-    width: 590px;
+    height: 60px;
+    width: 500px;
     background-color: lightgreen;
     border-left: 2px solid navy;
     animation: animate 4s steps(12) infinite;
