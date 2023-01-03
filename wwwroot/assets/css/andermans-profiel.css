@@ -373,7 +373,7 @@ body {
     }
 }
 
-@media (max-width: 470px) {
+@media (max-width: 603px) {
     .gematched {
         background: lightgreen;
         display: none;
@@ -381,6 +381,18 @@ body {
         width: 92%;
         justify-content: space-around;
         margin-top: 0;
+    }
+
+    @media (max-width: 470px) {
+        .gematched {
+            background: lightgreen;
+            display: none;
+            flex-direction: row;
+            width: 92%;
+            justify-content: space-around;
+            margin-top: 0;
+        }
+
     }
 }
 
