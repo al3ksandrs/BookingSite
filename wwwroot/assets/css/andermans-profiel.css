@@ -367,7 +367,6 @@ body {
     .gematched {
         background: lightgreen;
         display: none;
-        flex-direction: column;
         justify-content: space-around;
         margin-top: 0;
     }
