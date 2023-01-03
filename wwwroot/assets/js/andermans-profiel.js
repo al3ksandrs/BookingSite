@@ -180,7 +180,7 @@ const textLoad = () => {
         text.textContent = "heeft uw reismaatje gevonden";
     }, 4000);
     setTimeout(() => {
-        text.textContent ="kan samen op reis!" ;
+        text.textContent ="kan uw reis boeken!" ;
     }, 8000); //1s = 1000 milliseconds
 }
 
