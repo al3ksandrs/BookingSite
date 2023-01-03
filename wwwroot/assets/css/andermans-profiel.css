@@ -239,7 +239,7 @@ body {
 .gematched {
     background: lightgreen;
     display: none;
-    flex-direction: row;
+    flex-direction: column;
     width: 590px;
     width: 92%;
     justify-content: space-around;
@@ -367,6 +367,7 @@ body {
     .gematched {
         background: lightgreen;
         display: none;
+        flex-direction: column;
         justify-content: space-around;
         margin-top: 0;
     }
