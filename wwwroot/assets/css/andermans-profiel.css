@@ -239,15 +239,16 @@ body {
 .gematched {
     background: lightgreen;
     display: none;
-    flex-direction: row;
+    flex-direction: column;
+    width: 590px;
     width: 92%;
     justify-content: space-around;
     margin-top: 0;
-    width: 500px;
+
 }
 
 .Move {
-    width: 600px;
+    width: 500px;
     overflow: hidden;
 }
 
@@ -366,13 +367,13 @@ body {
     .gematched {
         background: lightgreen;
         display: none;
-        flex-direction: row;
+        flex-direction: column;
         justify-content: space-around;
         margin-top: 0;
     }
 }
 
-@media (max-width: 470px) {
+@media (max-width: 603px) {
     .gematched {
         background: lightgreen;
         display: none;
@@ -380,6 +381,18 @@ body {
         width: 92%;
         justify-content: space-around;
         margin-top: 0;
+    }
+
+    @media (max-width: 470px) {
+        .gematched {
+            background: lightgreen;
+            display: none;
+            flex-direction: row;
+            width: 92%;
+            justify-content: space-around;
+            margin-top: 0;
+        }
+
     }
 }
 
