@@ -1,6 +1,6 @@
 /* Textbox */
 
-.textbox {
+.textboxmain {
     background: rgba(217, 217, 217, 0.8);
     border-radius: 20px;
 }
@@ -25,7 +25,8 @@ body {
     background-attachment: fixed;
     background-size: cover;
 }
-article{
+
+article {
     background: rgba(217, 217, 217, 0.8);
     border-radius: 20px;
     border: #565656 1px solid;
@@ -34,30 +35,35 @@ article{
     max-width: 800px;
     align-items: flex-start;
 }
-.container{
+
+.container {
     flex-direction: row;
     justify-content: flex-start;
     align-items: flex-start;
 }
+
 .container2 {
     justify-content: flex-start;
     align-items: flex-start;
 }
+
 /*section{
     display: flex;
     flex-direction: column;
 }*/
 /*textbox 1 waar de foto staat*/
-section.general-info{
+section.general-info {
     align-items: start;
     display: flex;
     flex-direction: row;
 }
-section.general-info2{
+
+section.general-info2 {
     align-items: start;
     display: flex;
     flex-direction: row;
 }
+
 img.profile {
     border-radius: 20px;
     display: block;
@@ -65,8 +71,9 @@ img.profile {
     height: 294px;
     margin: auto;
 }
+
 /*Voor de kopjes */
-.kopjes{
+.kopjes {
     margin: 0px;
     padding: 0px;
     position: center;
@@ -78,10 +85,12 @@ img.profile {
     font-size: 28px;
     line-height: 34px;
 }
+
 .textbox2 {
     background: green;
     border-radius: 20px;
 }
+
 /*Voor de tekst onder de foto*/
 .text {
     margin: 0px;
@@ -92,52 +101,95 @@ img.profile {
     font-size: 20px;
     line-height: 34px;
 }
+
 /*biografie tekst vakje*/
-textarea{
+textarea {
     width: 625px;
     height: 200px;
     margin: 20px;
     padding: 20px;
-    }
+}
+
 /*Invoer naam tekst vakjes*/
-.naaminvoer{
+.naaminvoer {
     width: 10px;
     height: 20px;
     margin: 10px;
     padding: 5px;
 }
+
 main {
     display: flex;
     flex-direction: column;
     padding: 0 30px 30px 30px;
     font-family: 'Roboto', sans-serif;
 }
-#biografie{
+
+#biografie {
     resize: none;
 }
-.textbox4{
+
+.textbox4 {
     width: 600px;
-   height: auto;
+    height: auto;
 }
-.textbox3{
+
+.textbox3 {
     width: 300px;
     height: 219px;
 }
 
 /*annuleer knop*/
-.annuleerKnop{
+.annuleerKnop {
     color: black;
     text-decoration: none;
 }
+
 /* responsive */
 @media (max-width: 1434px) {
     main {
         flex-direction: column;
-        /*flex-wrap: nowrap;*/
+        flex-wrap: nowrap;
     }
+
     section.general-info {
         display: flex;
         flex-direction: column;
+    }
+
+    article.textboxmain {
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 819px) {
+    article {
+        width: 90%;
+    }
+
+    article.textboxmain {
+        width: 100%;
+    }
+
+    #biografieinhoud {
+        width: 80%;
+    }
+}
+
+@media (max-width: 620px) {
+    .textbox3 {
+        width: 90%;
+    }
+
+}
+
+@media (max-width: 520px) {
+    section.general-info2 {
+        flex-direction: column;
+    }
+    .textbox4 {
+        width: auto;
     }
 
 }
