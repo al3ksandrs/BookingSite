@@ -158,7 +158,7 @@ function displayMessage(gebruiker) {
     let infoBox = createInfo(gebruiker.id);
 
     matchElement.append(pfBox, infoBox);
-    document.querySelector("article").appendChild(matchElement);
+    document.querySelector(".hellooo").appendChild(matchElement);
 }
 
 function createFoto(id, fotoextensie, naam, leeftijd) {
@@ -291,3 +291,5 @@ function age(dateString){
     let beforeBirth = ((() => {birth.setDate(now.getDate());birth.setMonth(now.getMonth()); return birth.getTime()})() < birth.getTime()) ? 0 : 1;
     return now.getFullYear() - birth.getFullYear() - beforeBirth + 1;
 }
+
+loadMatches()
