@@ -198,7 +198,7 @@ function createInfo(id) {
 }
 
 function createUlInteresses(interessesText, id) {
-    let ul = document.createElement("ul");
+    let ul = document.createElement("article");
     ul.innerText = interessesText;
     let count = 0;
     FYSCloud.API.queryDatabase(
