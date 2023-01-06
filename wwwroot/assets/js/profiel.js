@@ -180,7 +180,7 @@ function createFoto(id, fotoextensie, naam, leeftijd) {
 }
 
 function createInfo(id) {
-    let infoBox = document.createElement("article");
+    let infoBox = document.createElement("div");
     infoBox.classList.add("container");
 
     let interesses = createUlInteresses("Interesses", id);
@@ -222,7 +222,7 @@ function createUlInteresses(interessesText, id) {
 }
 
 function createUlSpreekt(spreektText, id) {
-    let ul = document.createElement("ul");
+    let ul = document.createElement("article");
     ul.innerText = spreektText;
     let count = 0;
     FYSCloud.API.queryDatabase(
@@ -246,7 +246,7 @@ function createUlSpreekt(spreektText, id) {
 }
 
 function createUlReis(reisText, id) {
-    let ul = document.createElement("ul");
+    let ul = document.createElement("article");
     ul.innerText = reisText;
     let count = 0;
     FYSCloud.API.queryDatabase(
