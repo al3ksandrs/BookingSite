@@ -128,6 +128,15 @@ FYSCloud.API.queryDatabase(
 
 
 
+
+const interessesKeus = document.querySelector("#interesses")
+const geslachtKeus = document.querySelector("#Talen");
+const leeftijdKeus = document.querySelector("#leeftijd");
+const bestemmingKeus = document.querySelector("#bestemming");
+
+
+
+
 function loadMatches(){
     FYSCloud.API.queryDatabase(
         "SELECT * FROM gebruiker WHERE NOT id = ?", [FYSCloud.Session.get("userId", "Not Found")])
@@ -143,27 +152,27 @@ function loadMatches(){
 }
 
 function displayMessage(gebruiker) {
-    let matchElement = document.createElement("div");
-    matchElement.classList.add("flexbox-container");
+    let matchElement = document.createElement("section");
+    matchElement.classList.add("container");
     let pfBox = createFoto(gebruiker.fotonaam, gebruiker.fotoextensie, gebruiker.naam, gebruiker.leeftijd);
     let infoBox = createInfo(gebruiker.id);
 
     matchElement.append(pfBox, infoBox);
-    document.querySelector("main").appendChild(matchElement);
+    document.querySelector("article").appendChild(matchElement);
 }
 
 function createFoto(id, fotoextensie, naam, leeftijd) {
-    let pfBox = document.createElement("div");
-    pfBox.classList.add("flexbox-item");
-    pfBox.classList.add("flexbox-item-1");
+    let pfBox = document.createElement("article");
+    pfBox.classList.add("textbox1");
+    pfBox.classList.add("text3");
 
     let imageBox = document.createElement("img");
-    imageBox.classList.add("match_foto");
+    imageBox.classList.add("profile2");
     imageBox.src = "/uploads/" + id + "." + fotoextensie
     imageBox.setAttribute("alt", "default.jpg")
 
-    let textBox = document.createElement("p");
-    textBox.classList.add("naam");
+    let textBox = document.createElement("pre");
+    textBox.classList.add("text3");
     textBox.innerText = (naam + "   " + age(leeftijd));
 
     pfBox.append(imageBox, textBox);
@@ -171,26 +180,25 @@ function createFoto(id, fotoextensie, naam, leeftijd) {
 }
 
 function createInfo(id) {
-    let infoBox = document.createElement("div");
-    infoBox.classList.add("flexbox-item");
-    infoBox.classList.add("flexbox-item-2");
+    let infoBox = document.createElement("article");
+    infoBox.classList.add("container");
 
     let interesses = createUlInteresses("Interesses", id);
     let spreekt = createUlSpreekt("Spreekt", id);
     let reis = createUlReis("Wilt graag naar", id);
 
-    let button = document.createElement("a");
-    button.classList.add("profiel_link");
-    button.classList.add("grid-col-span-2");
-    button.setAttribute("href", ("andermans-profiel.html?"+ id));
-    button.innerText = "Bezoek profiel";
+    // let button = document.createElement("a");
+    // button.classList.add("profiel_link");
+    // button.classList.add("grid-col-span-2");
+    // button.setAttribute("href", ("andermans-profiel.html?"+ id));
+    // button.innerText = "Bezoek profiel";
 
-    infoBox.append(interesses, spreekt, reis, button);
+    infoBox.append(interesses, spreekt, reis);
     return infoBox;
 }
 
 function createUlInteresses(interessesText, id) {
-    let ul = document.createElement("ul");
+    let ul = document.createElement("li");
     ul.innerText = interessesText;
     let count = 0;
     FYSCloud.API.queryDatabase(
@@ -214,7 +222,7 @@ function createUlInteresses(interessesText, id) {
 }
 
 function createUlSpreekt(spreektText, id) {
-    let ul = document.createElement("ul");
+    let ul = document.createElement("lu");
     ul.innerText = spreektText;
     let count = 0;
     FYSCloud.API.queryDatabase(
@@ -238,7 +246,7 @@ function createUlSpreekt(spreektText, id) {
 }
 
 function createUlReis(reisText, id) {
-    let ul = document.createElement("ul");
+    let ul = document.createElement("li");
     ul.innerText = reisText;
     let count = 0;
     FYSCloud.API.queryDatabase(
@@ -283,3 +291,4 @@ function age(dateString){
     let beforeBirth = ((() => {birth.setDate(now.getDate());birth.setMonth(now.getMonth()); return birth.getTime()})() < birth.getTime()) ? 0 : 1;
     return now.getFullYear() - birth.getFullYear() - beforeBirth + 1;
 }
+
