@@ -198,7 +198,7 @@ function createInfo(id) {
 }
 
 function createUlInteresses(interessesText, id) {
-    let ul = document.createElement("li");
+    let ul = document.createElement("ul");
     ul.innerText = interessesText;
     let count = 0;
     FYSCloud.API.queryDatabase(
@@ -222,7 +222,7 @@ function createUlInteresses(interessesText, id) {
 }
 
 function createUlSpreekt(spreektText, id) {
-    let ul = document.createElement("lu");
+    let ul = document.createElement("ul");
     ul.innerText = spreektText;
     let count = 0;
     FYSCloud.API.queryDatabase(
@@ -246,7 +246,7 @@ function createUlSpreekt(spreektText, id) {
 }
 
 function createUlReis(reisText, id) {
-    let ul = document.createElement("li");
+    let ul = document.createElement("ul");
     ul.innerText = reisText;
     let count = 0;
     FYSCloud.API.queryDatabase(
