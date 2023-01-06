@@ -244,43 +244,6 @@ body {
 }
 
 /* Responsive layout */
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 @media screen and (max-width: 1261px) {
     .dropdownmenus {
         flex-wrap: wrap;
@@ -289,9 +252,10 @@ body {
     }
     .select{
         font-size: 15px;
+        width: auto;
     }
     #btnReset{
-    font-size: 10px;
+    font-size: 15px;
         margin: 0px;
     }
     .dropdownRS {
