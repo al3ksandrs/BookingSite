@@ -37,8 +37,8 @@ function ValidateReality() {
 
 submission.addEventListener("click",
     function (event) {
-        ValidateReality()
         event.preventDefault();
+        ValidateReality()
     }
 )
 
