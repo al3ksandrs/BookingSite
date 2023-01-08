@@ -29,8 +29,8 @@ FYSCloud.API.sendEmail({
 
 function ValidateReality() {
     if (email.value === eCode.toString()) {
-        console.log("Yaaay")
-    } else console.log("Hmmmmmm")
+        window.location.href = "aanmaken-profiel.html"
+    } else alerts.innerHTML ="<h3>Check ook even uw SPAM box</h3>\n"
 }
 
 // Buttons Werkend krijgen (ook met drukken van enter)
