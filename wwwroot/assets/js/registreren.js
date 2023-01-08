@@ -1,12 +1,12 @@
 // Initializering nuttige variabelen
 
-let email = document.getElementById("emailin");
-let wachtwoord = document.getElementById("wachtwoordin");
-let wachtwoord2 = document.getElementById("wachtwoord2in");
-let submission = document.querySelector("#submit");
-let backout = document.querySelector("#backout");
-let alerts = document.querySelector(".alert div");
-let mailFormat = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+const email = document.getElementById("emailin");
+const wachtwoord = document.getElementById("wachtwoordin");
+const wachtwoord2 = document.getElementById("wachtwoord2in");
+const submission = document.querySelector("#submit");
+const backout = document.querySelector("#backout");
+const alerts = document.querySelector(".alert div");
+const mailFormat = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 
 function ValidateEmail(inputE, inputW1, inputW2) {
     FYSCloud.API.queryDatabase(
@@ -56,7 +56,7 @@ function handleEmail(inputE, inputW1) {
 //     }).catch(function(reason) {
 //         console.log(reason);
 //     })
-    window.location.href="aanmaken-profiel.html";
+    window.location.href="email-confirmation.html";
 }
 
 submission.addEventListener("click",
