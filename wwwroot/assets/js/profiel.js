@@ -138,9 +138,8 @@ const bestemmingKeus = document.querySelector("#bestemming");
 
 
 function loadMatches(){
-
     FYSCloud.API.queryDatabase(
-        'SELECT * FROM `fys_is104_4_dev`.`gebruiker_has_gebruiker`WHERE ingelogde_gebruiker_id = "?" AND liked_persoon_idIN (SELECT ingelogde_gebruiker_id FROM `fys_is104_4_dev`.`gebruiker_has_gebruiker` WHERE liked_persoon_id = "?");', [FYSCloud.Session.get("userId", "Not Found")])
+        "SELECT * FROM gebruiker WHERE NOT id = ?", [FYSCloud.Session.get("userId", "Not Found")])
         .then(matches => {
             for (const matchJson of matches) {
                 let gebruiker = convertDbJson(matchJson)
