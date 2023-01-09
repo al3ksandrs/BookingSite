@@ -1,10 +1,11 @@
 window.addEventListener("DOMContentLoaded", initialize);
 let column_name;
 const LIMIT_INFO = 3;
-const interessesKeus = document.querySelector("#Interesses")
+const interessesKeus = document.querySelector("#interesses")
 const geslachtKeus = document.querySelector("#Talen");
-const leeftijdKeus = document.querySelector("#Leeftijd");
-const bestemmingKeus = document.querySelector("#Bestemming");
+const leeftijdKeus = document.querySelector("#leeftijd");
+const bestemmingKeus = document.querySelector("#bestemming");
+const userId = FYSCloud.Session.get("userId", "Not Found")
 
 function initialize() {
     initializeMessageBoard();
@@ -16,7 +17,7 @@ function initializeMessageBoard(){
 
 function loadMatches(){
     FYSCloud.API.queryDatabase(
-        "SELECT * FROM gebruiker WHERE NOT id = ?", [FYSCloud.Session.get("userId", "Not Found")])
+        "SELECT * FROM gebruiker WHERE NOT id = ?", [userId])
         .then(matches => {
             for (const matchJson of matches) {
                 let gebruiker = convertDbJson(matchJson)
@@ -193,3 +194,9 @@ function Reset5() {
     leeftijdKeus.selectedIndex = 0;
     bestemmingKeus.selectedIndex = 0;
 }
+
+interessesKeus.addEventListener("change", function () {
+    console.log(interessesKeus.value)
+    document.querySelector("main").innerHTML = ""
+    loadMatches()
+})

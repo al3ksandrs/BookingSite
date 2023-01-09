@@ -27,7 +27,7 @@ function ValidateEmail(inputE, inputW1, inputW2) {
 }
 
 function VerifyPass(inputE, inputW1, inputW2) {
-    if ((inputW1 === inputW2) && (inputW1.length >= 6)) {
+    if ((inputW1 === inputW2) && (inputW1.length >= 10)) {
         handleEmail(inputE, inputW1);
     } else alerts.innerHTML = ('Wachtwoorden matchen niet!') // Divify
 }
