@@ -150,10 +150,10 @@ a {
 .textbox1 {
     display: flex;
     flex-direction: column;
+    align-items: center;
     border-radius: 20px;
     justify-content: center;
     width: 93%;
-    max-width: 260px;
     max-height: 390px;
 }
 

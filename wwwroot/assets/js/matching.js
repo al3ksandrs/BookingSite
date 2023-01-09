@@ -1,10 +1,10 @@
 window.addEventListener("DOMContentLoaded", initialize);
 let column_name;
 const LIMIT_INFO = 3;
-const interessesKeus = document.querySelector("#interesses")
+const interessesKeus = document.querySelector("#Interesses")
 const geslachtKeus = document.querySelector("#Talen");
-const leeftijdKeus = document.querySelector("#leeftijd");
-const bestemmingKeus = document.querySelector("#bestemming");
+const leeftijdKeus = document.querySelector("#Leeftijd");
+const bestemmingKeus = document.querySelector("#Bestemming");
 
 function initialize() {
     initializeMessageBoard();
