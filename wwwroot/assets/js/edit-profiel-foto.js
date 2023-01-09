@@ -20,7 +20,7 @@ FYSCloud.API.queryDatabase(
 ).then(function (data){
     if (tempBio === undefined) {
         bioInh.innerHTML = data[0].biografie
-        pfpInh.src = "/live/" + "/uploads/" + data[0].fotonaam + "." + data[0].fotoextensie
+        pfpInh.src = "/uploads/" + data[0].fotonaam + "." + data[0].fotoextensie
         leeftijd.value = (data[0].leeftijd).slice(0, 10);
         prlInh.value = data[0].naam
     } else {
