@@ -1,12 +1,10 @@
-
-
 // Set the document references
-    let email = document.getElementById("emailin");
-    let wachtwoord = document.getElementById("wachtwoordin");
-    let submission = document.querySelector("#submit");
-    let backout = document.querySelector("#backout")
-    let alerts = document.querySelector(".alert div")
-    let mailFormat = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+const email = document.getElementById("emailin");
+const wachtwoord = document.getElementById("wachtwoordin");
+const submission = document.querySelector("#submit");
+const backout = document.querySelector("#backout")
+const alerts = document.querySelector(".alert div")
+const mailFormat = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 
 // Valideert de email op karakters, later ook op database bestaan
 function ValidateEmail(inputEText) {
@@ -34,7 +32,7 @@ function ValidateEmail(inputEText) {
     }
     // Voor als het niet een correcte email is
     else {
-        alerts.innerHTML = "You have entered an invalid email address!";
+        alerts.innerHTML = "Dit email is ongeldig!";
         email.focus();
         wachtwoord.value = '';
     }
@@ -56,15 +54,13 @@ function ValidateAccount(inputEText, inputWText) {
             // ...Verzenden naar profiel ...
             window.location.href = "profiel.html";
         } else {
-            console.log("Wachtwoord verkeerd!") // dit wordt een div die tevoorschijn komt
-            alerts.innerHTML = "Wachtwoord verkeerd!"
+            alerts.innerHTML = "Het wachtwoord is verkeerd!"
             email.focus();
             wachtwoord.value = '';
         }
-
         // Vangnet
     }).catch(function (reason) {
-        console.log("Er ging iets mis, probeer nogmaals");
+        console.log("Er ging iets mis, probeer nogmaals...");
         console.log(reason)
         email.focus();
     })

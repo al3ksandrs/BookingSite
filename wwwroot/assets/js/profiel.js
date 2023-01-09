@@ -75,7 +75,7 @@ FYSCloud.API.queryDatabase(
 let ulSpreekt = document.querySelector("#spreekt");
 let countSpreekt = 0;
 FYSCloud.API.queryDatabase(
-    'SELECT *  FROM talen WHERE (gebruiker_id = ?)', [FYSCloud.Session.get("userId", "Not Found")]
+    'SELECT * FROM talen WHERE (gebruiker_id = ?)', [FYSCloud.Session.get("userId", "Not Found")]
 ).then(function (data) {
     // Loop through all the columns of first row
     for (let i = 1; i < Object.keys(data[0]).length; i++) {
@@ -128,18 +128,17 @@ FYSCloud.API.queryDatabase(
 
 
 
-
 const interessesKeus = document.querySelector("#interesses")
 const geslachtKeus = document.querySelector("#Talen");
 const leeftijdKeus = document.querySelector("#leeftijd");
 const bestemmingKeus = document.querySelector("#bestemming");
 
 
-
+// 'SELECT * FROM `fys_is104_4_dev`.`gebruiker_has_gebruiker` WHERE ingelogde_gebruiker_id = ? AND liked_persoon_id IN (SELECT ingelogde_gebruiker_id FROM `fys_is104_4_dev`.`gebruiker_has_gebruiker` WHERE liked_persoon_id = ?);'
 
 function loadMatches(){
     FYSCloud.API.queryDatabase(
-        "SELECT * FROM gebruiker WHERE NOT id = ?", [FYSCloud.Session.get("userId", "Not Found")])
+        "SELECT * FROM `gebruiker` WHERE id IN (SELECT liked_persoon_id FROM `fys_is104_4_dev`.`gebruiker_has_gebruiker` WHERE ingelogde_gebruiker_id = ? AND liked_persoon_id IN (SELECT ingelogde_gebruiker_id FROM `fys_is104_4_dev`.`gebruiker_has_gebruiker` WHERE liked_persoon_id = ?));", [FYSCloud.Session.get("userId", "Not Found"), FYSCloud.Session.get("userId", "Not Found")])
         .then(matches => {
             for (const matchJson of matches) {
                 let gebruiker = convertDbJson(matchJson)
