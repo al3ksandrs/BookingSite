@@ -125,7 +125,7 @@ function updateGebruikerDb(naam, leeftijd, biografie) {
                 FYSCloud.API.queryDatabase(
                     "SELECT fotoextensie, fotonaam FROM gebruiker WHERE id = ?", [FYSCloud.Session.get("userId", "Not Found")]
                 ).then(function (data) {
-                    if (FYSCloud.AP.fileExists(data[0].fotonaam + "." + data[0].fotoextensie)) {
+                    if (FYSCloud.API.fileExists(data[0].fotonaam + "." + data[0].fotoextensie)) {
                         FYSCloud.API.deleteFile(data[0].fotonaam + "." + data[0].fotoextensie)
                     }
                 }).catch(function (reason){
