@@ -10,8 +10,8 @@
     <script src="assets/js/config.js" defer></script>
     <script src="assets/js/matching.js" defer></script>
 
-    <script src="assets/js/main.js" defer></script>
     <script src="assets/js/notifications.js" defer></script>
+    <script src="assets/js/main.js" defer></script>
     <title>Matchingpagina met filter</title>
 </head>
 <body>
@@ -41,59 +41,57 @@
     </ul>
 </nav>
 
-<div class="dropdownmenus">
-    <!--    Hier begint de filter-->
-    <div class="drop1">
-        <div class="dropdown">
-            <label for="interesses"></label><select class="select" id="interesses">
-            <option value="0" hidden>Interesses</option>
-            <option value="1">Shoppen</option>
-            <option value="2">Clubben</option>
-            <option value="3">Uitgaan</option>
-            <option value="4">Zwemmen</option>
-            <option value="5">Wandelen</option>
-        </select>
-        </div>
-        <div class="dropdown">
-            <label for="Talen"></label><select class="select" id="Talen">
-            <option value="0" hidden>Talen</option>
-            <option value="1"></option>
-            <option value="2"></option>
-        </select>
-        </div>
-    </div>
-    <div class="drop2">
-        <div class="dropdown">
-            <label for="bestemming"></label><select class="select" id="bestemming">
-            <option value="0" hidden>Bestemming</option>
-            <option value="1">Azie</option>
-            <option value="2">Europa</option>
-            <option value="3">Africa</option>
-            <option value="4">VS</option>
-        </select>
-        </div>
-        <div class="dropdown">
-            <label for="leeftijd"></label><select class="select" id="leeftijd">
-            <option value="0" >Leeftijd</option>
-            <option value="1">45 - 55</option>
-            <option value="2">55 - 65</option>
-            <option value="3">65+</option>
-        </select>
-        </div>
-    </div>
-</div>
-
-<div class="dropdownRS">
-    <!--        2 manieren van resetten per stuk of in zijn geheel-->
-    <!--        <input type="button" id="btnReset" value="Reset interesses" onclick="Reset();" />-->
-    <!--        <input type="button" id="btnReset" value="Reset geslacht" onclick="Resets();" />-->
-    <!--        <input type="button" id="btnReset" value="Reset Leeftijd" onclick="Resetss();" />-->
-    <!--        <input type="button" id="btnReset" value="Reset Bestemming" onclick="Resets4();" />-->
-    <input type="button" id="btnReset" value="Reset filters" onclick="Reset5();"/>
-</div>
-
 <main>
+    <div class="dropdownmenus">
+        <!--    Hier begint de filter-->
+        <div class="drop1">
+            <div class="dropdown">
+                <label for="interesses"></label><select class="select" id="interesses">
+                <option value="0" hidden>Interesses</option>
+                <option value="1">Shoppen</option>
+                <option value="2">Clubben</option>
+                <option value="3">Uitgaan</option>
+                <option value="4">Zwemmen</option>
+                <option value="5">Wandelen</option>
+            </select>
+            </div>
+            <div class="dropdown">
+                <label for="Talen"></label><select class="select" id="Talen">
+                <option value="0" hidden>Talen</option>
+                <option value="1"></option>
+                <option value="2"></option>
+            </select>
+            </div>
+        </div>
+        <div class="drop2">
+            <div class="dropdown">
+                <label for="bestemming"></label><select class="select" id="bestemming">
+                <option value="0" hidden>Bestemming</option>
+                <option value="1">Azie</option>
+                <option value="2">Europa</option>
+                <option value="3">Africa</option>
+                <option value="4">VS</option>
+            </select>
+            </div>
+            <div class="dropdown">
+                <label for="leeftijd"></label><select class="select" id="leeftijd">
+                <option value="0" >Leeftijd</option>
+                <option value="1">45 - 55</option>
+                <option value="2">55 - 65</option>
+                <option value="3">65+</option>
+            </select>
+            </div>
+        </div>
+    </div>
 
+    <div class="dropdownRS">
+        <!--        2 manieren van resetten per stuk of in zijn geheel-->
+        <!--        <input type="button" id="btnReset" value="Reset interesses" onclick="Reset();" />-->
+        <!--        <input type="button" id="btnReset" value="Reset geslacht" onclick="Resets();" />-->
+        <!--        <input type="button" id="btnReset" value="Reset Leeftijd" onclick="Resetss();" />-->
+        <!--        <input type="button" id="btnReset" value="Reset Bestemming" onclick="Resets4();" />-->
+        <input type="button" id="btnReset" value="Reset filters" onclick="Reset5();"/>
+    </div>
 </main>
 
 </body>

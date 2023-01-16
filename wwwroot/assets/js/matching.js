@@ -188,6 +188,7 @@ function age(dateString){
 //     bestemmingKeus.selectedIndex = 0;
 // }
 
+// Elke filter waarde wordt nu gereset naar
 function Reset5() {
     interessesKeus.selectedIndex = 0;
     geslachtKeus.selectedIndex = 0;
